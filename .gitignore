@@ -18,3 +18,5 @@
 /research/client-port/reports/live-assets.json
 
 /research/client-port/reports/live-*.json
+
+!/base/

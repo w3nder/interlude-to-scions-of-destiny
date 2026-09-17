@@ -7,7 +7,16 @@ Porte experimental do cliente Interlude para o protocolo C4 do L2Killer. Inclui 
 
 ## Instalar o patch
 
-Feche o jogo e faça backup dos arquivos correspondentes no seu cliente. Copie o conteúdo de `patch/` (pastas `system`, `systextures` e `animations`) para a raiz do cliente Interlude. Abra `system/l2.exe`: o executável carrega `L2KProtocolCore.dll` automaticamente. O `l2.ini` aponta para `server.l2killer.org`.
+Feche o jogo e faça backup da sua pasta `system`.
+
+1. Renomeie a system antiga e crie uma nova pasta `system` no cliente Interlude completo.
+2. Copie todo o conteúdo de `base/C6_System_Win10Supported/` para essa nova `system/`.
+3. Copie as pastas de `patch/` para a raiz do cliente, aceitando substituir os arquivos correspondentes.
+4. Abra `system/l2.exe`: a DLL do porte carrega automaticamente.
+
+A base vem primeiro e o patch por último. Aplicar a base depois do patch desfaz o carregamento automático e as tabelas migradas. O `l2.ini` final aponta para `server.l2killer.org`.
+
+O erro de ponto de entrada `?GL2ShowCMViewer@@3HA` é compatível com mistura de versões: o executável do porte importa esse símbolo da `Core.dll`, presente na base fornecida. Não misture DLLs de outra system.
 
 Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 71 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
 
@@ -22,7 +31,7 @@ pip install -r research/client-port/requirements.txt
 python research/client-port/native/build.py
 ```
 
-As ferramentas de extração, auditoria binária, DAT e Wine dependem dos clientes originais e de ferramentas externas; scripts históricos ainda contêm caminhos absolutos do ambiente de desenvolvimento. Consulte `research/client-port/AUTOMATION.md`, `native/README.md` e `reports/assets-validation.md` antes de executar a pipeline completa. Clientes originais, Wine, ambientes virtuais, caches, backups e logs de sessões não estão versionados.
+As ferramentas de extração, auditoria binária, DAT e Wine dependem dos clientes originais e de ferramentas externas; scripts históricos ainda contêm caminhos absolutos do ambiente de desenvolvimento. Consulte `research/client-port/AUTOMATION.md`, `native/README.md` e `reports/assets-validation.md` antes de executar a pipeline completa. A system Interlude de referência está em `base/`; o cliente completo, Wine, ambientes virtuais, caches, backups e logs de sessões não estão versionados.
 
 ## Estado
 

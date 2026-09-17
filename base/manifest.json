@@ -1,0 +1,681 @@
+{
+  "base": "C6_System_Win10Supported",
+  "files": [
+    {
+      "path": "ALAudio.dll",
+      "bytes": 352276,
+      "sha256": "7e0c506bd1200c6eb681096a2db22dc134e78c2d64b06a4e69da0dc0e0db3881"
+    },
+    {
+      "path": "ALAudio.int",
+      "bytes": 2658,
+      "sha256": "25f4e583409d798cd10cdca79eb8620395ca383a50cdecedd2ab3d501eba803c"
+    },
+    {
+      "path": "Core.dll",
+      "bytes": 1372180,
+      "sha256": "d83449b1cdf0ac717a98be9289caab03cb507324a696ef449e31369e28416639"
+    },
+    {
+      "path": "Core.u",
+      "bytes": 65662,
+      "sha256": "de5f0ee0a773327bce13c96622fd3c654cff7db88b9be065d1232590c140fda0"
+    },
+    {
+      "path": "D3DDrv.dll",
+      "bytes": 1277972,
+      "sha256": "2b496d235cca529b6180588a987ca0059600a2323193d96e87b90014105be0c2"
+    },
+    {
+      "path": "Editor.u",
+      "bytes": 593932,
+      "sha256": "da5c6fe8b2d3639286c0407695465ddfce72c2d5bbacb7c2ee0885451f0dc70f"
+    },
+    {
+      "path": "Engine.int",
+      "bytes": 6700,
+      "sha256": "4f178abee824ebb092aab5012ad4096469d6aaa26e426041bb1954360c7aaa3f"
+    },
+    {
+      "path": "Engine.u",
+      "bytes": 2805259,
+      "sha256": "9b04ff5cb4258e84dfa8efbdd85d9121f3bdcb5822a9a21ca69d200d05a69761"
+    },
+    {
+      "path": "Env.int",
+      "bytes": 5943,
+      "sha256": "972439ef9087daaadcbb3179a988c61a5fa16848c6cd257414690c72873eb587"
+    },
+    {
+      "path": "Fire.dll",
+      "bytes": 319488,
+      "sha256": "ad75c6bce975d8d9ab6cc3c1431576777ebb0bf190357558a9a0b8899f29b752"
+    },
+    {
+      "path": "Fire.u",
+      "bytes": 15491,
+      "sha256": "6933afddb8830aafa754a59b97782fe66dda102c58395b3776e4672aeef76527"
+    },
+    {
+      "path": "GameGuard.des",
+      "bytes": 153375,
+      "sha256": "1ead3f96bf1be83fc648eb26dc99fd5b3f15c6a112e1178cc495995622e0bf31"
+    },
+    {
+      "path": "GamePlay.u",
+      "bytes": 212008,
+      "sha256": "714639cdad265a7caeaf0f91ce76bb50492390eaa3faea15ed5a28a3e830b64a"
+    },
+    {
+      "path": "IpDrv.dll",
+      "bytes": 491540,
+      "sha256": "32d65382123b5c33f21de3b7a85ff5b2777394224eda6aacbcc7a7d3581682ef"
+    },
+    {
+      "path": "IpDrv.u",
+      "bytes": 73703,
+      "sha256": "0a156f4800c5c4c9b3b12e9944a779d9c4fcd517aa25d64964fa523836191f9b"
+    },
+    {
+      "path": "L2.exe",
+      "bytes": 491540,
+      "sha256": "790d9068796714389d82a400d14d26dcb9e6ecdfc6c2b5eba92ebd1a441b10ee"
+    },
+    {
+      "path": "L2CompiledShader.bin",
+      "bytes": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path": "Lineage2us.ini",
+      "bytes": 371,
+      "sha256": "4306807bd24c36bdecdcfd5f75bc5f0529032483080302dac214cbe6f9f3d42c"
+    },
+    {
+      "path": "LineageCreature.dll",
+      "bytes": 131092,
+      "sha256": "c0f4bce6177d926d723654b12d7b8e38e5792e571391ddef18356f7ccbabcd78"
+    },
+    {
+      "path": "LineageCreature.u",
+      "bytes": 12054,
+      "sha256": "6b13fe4e9d92e212aaac6d80bbb56370bdb43ea2be7df7aa7cafb74cfc085907"
+    },
+    {
+      "path": "LineageDeco.u",
+      "bytes": 6752,
+      "sha256": "77a3f23688df5bd8919952c5b15a59e7cc6c5507357ccaf4e443150f882bc387"
+    },
+    {
+      "path": "LineageMonster.int",
+      "bytes": 527907,
+      "sha256": "2f026530e5b7f3d6ba43bbc208252cc665c965cec4d16a1a84d11e48192eb432"
+    },
+    {
+      "path": "LineageMonster.u",
+      "bytes": 176945,
+      "sha256": "f06ac53f7df24bd13d6e7a0d25d9e3ca4e4502af2437518e49d96a053987d7b6"
+    },
+    {
+      "path": "LineageMonster2.u",
+      "bytes": 68190,
+      "sha256": "c623818bfe1b6ef201785afd4bdac3ffc20e443b4c122a78cea79c473fe99420"
+    },
+    {
+      "path": "LineageMonster3.int",
+      "bytes": 55710,
+      "sha256": "04c4aa4e0a6620cfb66d9d8c2a75a1b2cdc73012488e0c3de25f126d2a9c0c0e"
+    },
+    {
+      "path": "LineageMonster3.u",
+      "bytes": 79016,
+      "sha256": "f3b211e69a4cb94aa8962d5fdd3969dad895aa214e5cf60577ec7d3f69fc5709"
+    },
+    {
+      "path": "LineageNpc.int",
+      "bytes": 103714,
+      "sha256": "4b00c3462fa724ecd6d3eb7a6fa5ea5aaae651da4aab5b029b985bb12a2093b9"
+    },
+    {
+      "path": "LineageVehicle.u",
+      "bytes": 9084,
+      "sha256": "79282682d4e49df5287ecfa2d6ac89df4abb01ff6495b46f1ed16c9eaa624066"
+    },
+    {
+      "path": "LineageWarrior.u",
+      "bytes": 31540,
+      "sha256": "747b1e7c3045c748c08b03b54893dc2d29cf7103379f19804ccbeb7764224558"
+    },
+    {
+      "path": "Localization.ini",
+      "bytes": 3647,
+      "sha256": "86dfde34fffda7841f5cdde530dab8acc70eb2faa9f8403fc65157d1afb21e4b"
+    },
+    {
+      "path": "Option.ini",
+      "bytes": 1230,
+      "sha256": "4e8ffb81dc495ad62d845f0d8cf796fc1ae72c07282f0b50f298c94d9c2aedce"
+    },
+    {
+      "path": "UWindow.u",
+      "bytes": 693798,
+      "sha256": "eac8be32d9039d415989e93d8af549dc0bffe1d811e3cf46268318708e8fd3d4"
+    },
+    {
+      "path": "WinDrv.dll",
+      "bytes": 630804,
+      "sha256": "41e8872c53c7f36cf6abba398b0439845f923853059be145f5cfee8d781c7f58"
+    },
+    {
+      "path": "Window.dll",
+      "bytes": 749588,
+      "sha256": "142867e4df7fb0778533382ef115f722faf20649939dd2afebee548952af0dfe"
+    },
+    {
+      "path": "WindowsInfo.ini",
+      "bytes": 2141,
+      "sha256": "8b7b2cc9b8aa7496d2347a032c54382e34ed1d27e39a40996d8064a8fddc47d4"
+    },
+    {
+      "path": "actionname-e.dat",
+      "bytes": 6832,
+      "sha256": "131ca5a5b07ff4b23a4912dcb6a23597931223bfd746679a40316534d5257cc2"
+    },
+    {
+      "path": "armorgrp.dat",
+      "bytes": 101552,
+      "sha256": "1bfcd3b1a4796f235ab1f507114fbde6979a662a650481eee34954c9d9afd6d3"
+    },
+    {
+      "path": "asiahm-medium.ttf",
+      "bytes": 601048,
+      "sha256": "c698593dae0cf4d5202871e92953861d3b7ab2dcea524f32b4222123e3bc9b59"
+    },
+    {
+      "path": "bighead.int",
+      "bytes": 350,
+      "sha256": "a7d939ff5cf2808ff30d33efd8c6e9a6c32e916043efb23a56c8f426ab7f1032"
+    },
+    {
+      "path": "castlename-e.dat",
+      "bytes": 1072,
+      "sha256": "4d26b3064836becae6b5f7173f210e777f53765069daa6cf1f66a9b412da37de"
+    },
+    {
+      "path": "chargrp.dat",
+      "bytes": 2480,
+      "sha256": "2bb52de25ef3558f51e458c0095efcd9c509dfd5b5695a269f268b5f235fbc0f"
+    },
+    {
+      "path": "chatfilter.ini",
+      "bytes": 759,
+      "sha256": "efbdef9a7394c8dc9062984204704961016be73ba46c8ebf41f4db28a1f3da20"
+    },
+    {
+      "path": "classinfo-e.dat",
+      "bytes": 2224,
+      "sha256": "537681972450e4f3264efcc00748a3776f2420fa7e1531556934ebe41e560507"
+    },
+    {
+      "path": "clientdata.dat",
+      "bytes": 432,
+      "sha256": "e62dec398f7a5565a3257efbffd920636d4e46d135fb93e4ae05f41e24c91033"
+    },
+    {
+      "path": "cloak.int",
+      "bytes": 454,
+      "sha256": "4165d0593d8dc627e5bf90f10ce700958916fd7157d890abe212a11a39d35f70"
+    },
+    {
+      "path": "commandname-e.dat",
+      "bytes": 1328,
+      "sha256": "65b37c242f55cbc437cd51551a1fe6c1f241a0e9cc882d19ddbbc066539f9e02"
+    },
+    {
+      "path": "core.int",
+      "bytes": 3423,
+      "sha256": "432a472b6e0cf9a31008a0468670f1e30871f3965f71465a2796951b72a40d27"
+    },
+    {
+      "path": "creditfont.gly",
+      "bytes": 181800,
+      "sha256": "3cd03bf241ef34b8698cb03cb89d48bd0110ba797d94510987469fad8ff68a85"
+    },
+    {
+      "path": "creditgrp-e.dat",
+      "bytes": 816,
+      "sha256": "521f3400a1e5c4700a7fe64279fb3f173889867eda8265399d616cec68e37ecf"
+    },
+    {
+      "path": "defopenal32.dll",
+      "bytes": 102420,
+      "sha256": "96ec36c0631c73072423ad6eb35f07588b37ceb770cc145073a844a7086c20ca"
+    },
+    {
+      "path": "dsetup.dll",
+      "bytes": 62996,
+      "sha256": "d48dfa0f6177fe307c97f36c0af6d2d9027b42c263ddd31b6d463141b0e7d824"
+    },
+    {
+      "path": "encvag.dll",
+      "bytes": 150548,
+      "sha256": "c888278386ad6f171af5db05ab9d892e103fedf5fefa2c859634bae3206620e8"
+    },
+    {
+      "path": "engine.dll",
+      "bytes": 30704468,
+      "sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+    },
+    {
+      "path": "entereventgrp.dat",
+      "bytes": 4016,
+      "sha256": "748a0b56f4c92854ddd639945c40d1956601bbc78a034a79c15ffa415f6608f5"
+    },
+    {
+      "path": "etcitemgrp.dat",
+      "bytes": 80560,
+      "sha256": "8ed2a9ed85ff3e3b9bfb34887ba4636269f13494b5a9e6477260daa7010fa616"
+    },
+    {
+      "path": "eula-e.dat",
+      "bytes": 12464,
+      "sha256": "b435be030473bbf9fd9321decb6b93d5311d8d7578caafcc50ff2cc6540e80ed"
+    },
+    {
+      "path": "gametip-e.dat",
+      "bytes": 12976,
+      "sha256": "e0e1bf2810965f97d69e592509bdd4e4e2edd2cf92a3ad0eb2501626f254d422"
+    },
+    {
+      "path": "hair.int",
+      "bytes": 110933,
+      "sha256": "c5e404054bbc2e0bd88848e33a706e7ec2deb61e27f29034d579a0982b1cbe73"
+    },
+    {
+      "path": "hairaccessarygrp.dat",
+      "bytes": 432,
+      "sha256": "85964918a193c6aa39829f22e1a14c6a27b9076c5cd04a2996fa041f52e500a3"
+    },
+    {
+      "path": "hairaccessorylocgrp.dat",
+      "bytes": 4144,
+      "sha256": "ac38fdb88d26d348df08767814f5b34c73e0dafa9e33158a5c9b0027db1032cb"
+    },
+    {
+      "path": "hairgrp.dat",
+      "bytes": 304,
+      "sha256": "03df44930cd3752e0f67c99ad2f402028a4406d53a5e30978adc92b589c8fa59"
+    },
+    {
+      "path": "helmetgrp.dat",
+      "bytes": 432,
+      "sha256": "ace5b171bf7bd6203de614257a4a523fe07e6fb14abc19af351f7b51c1809237"
+    },
+    {
+      "path": "hennagrp-e.dat",
+      "bytes": 1968,
+      "sha256": "837e1665358e510dbd8e36b5d71737717f894b9e71a8d06db8b68ba29a54a03c"
+    },
+    {
+      "path": "huntingzone-e.dat",
+      "bytes": 5680,
+      "sha256": "658c794efe37538f7c4d6187672cb6012f02392582ddb759447e40c37ea64d2f"
+    },
+    {
+      "path": "ifc23.dll",
+      "bytes": 233492,
+      "sha256": "2a4751b579ab8b68585d61dcef08fa6e9f5b853ce429b026e18a83ae1960fb1c"
+    },
+    {
+      "path": "interface.u",
+      "bytes": 1964561,
+      "sha256": "4ca40e2936138d9551412767c695b6e54e8f2843daf437536811705704b91019"
+    },
+    {
+      "path": "interface.xdat",
+      "bytes": 534267,
+      "sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55"
+    },
+    {
+      "path": "ipdrv.int",
+      "bytes": 1840,
+      "sha256": "3100cd32af272ba43a0046e235da5970bbf502eff7c0fab1dae10f501875cd66"
+    },
+    {
+      "path": "itemname-e.dat",
+      "bytes": 238640,
+      "sha256": "f1f3ebf9ae486f44128af668a9fa4a656275044d7fb9270e015529b3f33880b6"
+    },
+    {
+      "path": "l2.ini",
+      "bytes": 3376,
+      "sha256": "2b31de92408f15b9bfe37d7fd3be00dc2cbcc66d9ca75b6ef882dcb7a931bfcf"
+    },
+    {
+      "path": "l2.int",
+      "bytes": 163,
+      "sha256": "9e0b0d9095105790c51f1c9337a812cbc3a13983f2d3c8c73d3ad9a0666db010"
+    },
+    {
+      "path": "l2forecf.ffe",
+      "bytes": 3516,
+      "sha256": "85d0daa44733bfc97bca3e1b4124c7287b213fd04fc8c321badc9b67e0cac4af"
+    },
+    {
+      "path": "largefont-e.gly",
+      "bytes": 1560,
+      "sha256": "82d0f5eb9b7290c8f335473d5a5f03fc6e2d14440e7d8c5e322500f164c8c048"
+    },
+    {
+      "path": "largefont.gly",
+      "bytes": 185632,
+      "sha256": "f6ea168898793c9923b4af54883ac564d09afc5520e6afdc3bb37bce71dfb819"
+    },
+    {
+      "path": "lineageeffect.u",
+      "bytes": 2006536,
+      "sha256": "ea090154c4b8eb2f4fafab331c85fd8f7e42869ec71eb4f11323b546b550114a"
+    },
+    {
+      "path": "lineageenv.dll",
+      "bytes": 131092,
+      "sha256": "aa84b5be0234c6da1809b26c4550b3ff4b9d35b4675c91e33fe6adc358d7d019"
+    },
+    {
+      "path": "lineageenv.u",
+      "bytes": 12049,
+      "sha256": "0813e3a46aa3eb19c733b4212c7523a15cb4d2507b9f923bb95661a12647297c"
+    },
+    {
+      "path": "lineagemonster2.int",
+      "bytes": 151403,
+      "sha256": "e012c859d1ef01aab1aadbe7c35af06b09f5c51d14cd58b50e9d01e6ea8c6377"
+    },
+    {
+      "path": "lineagenpc.u",
+      "bytes": 91687,
+      "sha256": "22208e416e5b986042fb5d67bca3a519329d81b289843b5ea442d73b2495f7d0"
+    },
+    {
+      "path": "lineagenpc2.int",
+      "bytes": 4344,
+      "sha256": "079fea46921b9521baf398116f2fa91b62c0f9503f542c39f6e4dfeecb01bd63"
+    },
+    {
+      "path": "lineagenpc2.u",
+      "bytes": 14464,
+      "sha256": "3a68b645d1912b7a882bca3bfd41f12be45286dd118798ea63244173fcb7b3fc"
+    },
+    {
+      "path": "lineagenpcev.u",
+      "bytes": 12192,
+      "sha256": "9fdf8e870e7477d6b67b1a05a401f04a76deeeabba7dca8d9a48bc01062e09fb"
+    },
+    {
+      "path": "lineagewarrior.int",
+      "bytes": 193542,
+      "sha256": "8d951cbccd010a849f05df827d7065ec5f9372245953e71f3e88344cf8189485"
+    },
+    {
+      "path": "logongrp.dat",
+      "bytes": 432,
+      "sha256": "ab16f82257ca2033a596f36cf4fd605a39ae51037f9e9c89db12770f968ba6a7"
+    },
+    {
+      "path": "mobskillanimgrp.dat",
+      "bytes": 67632,
+      "sha256": "332606a16ec24dd050abb597604eaed95280cd1887dddc0177858c20c025ff18"
+    },
+    {
+      "path": "msxml4.dll",
+      "bytes": 1233940,
+      "sha256": "26bd2a7dad04a548c22d16c6769ef1bb00d2517f6fa721d05fb06d96befab215"
+    },
+    {
+      "path": "msxml4a.dll",
+      "bytes": 44564,
+      "sha256": "51e38d41a2bc89e65896a48e348ad35d4b12348a665197cadc95fc87fa4a9564"
+    },
+    {
+      "path": "msxml4r.dll",
+      "bytes": 82452,
+      "sha256": "b9d07b33cae92176bd0f31a5aaf8bea5b6362fdc59e6a43b82f8b43db9f6cca9"
+    },
+    {
+      "path": "musicinfo.dat",
+      "bytes": 3376,
+      "sha256": "837692b210a943deec1caa9ad0c6b3a2a5839fef677f500483506f287cd8797b"
+    },
+    {
+      "path": "nosleep.dll",
+      "bytes": 3072,
+      "sha256": "b338900e6f2d5dc26db9b2f7b4f547549f5fdc10bac24b4d8f2d8d3802a6d7bd"
+    },
+    {
+      "path": "npcgrp.dat",
+      "bytes": 233392,
+      "sha256": "f551a0f9a0d6765bd783d8f55b1847ba2d5e17acb9a50ae4268c11e1f13d3e8c"
+    },
+    {
+      "path": "npcname-e.dat",
+      "bytes": 51248,
+      "sha256": "84c79b73a97e489b455f44f21d8c8cba0f4df401ccb1d56887a1eacc62285b9a"
+    },
+    {
+      "path": "npkcrypt.dll",
+      "bytes": 409700,
+      "sha256": "b71a6657ccec9cb9e98a163edba12f9abb654638587de8666d9febd61ffa9f5b"
+    },
+    {
+      "path": "npkcrypt.sys",
+      "bytes": 23217,
+      "sha256": "f556d97050aa9d4573bca01316a1a84b70668694ef759c2576b5af4013870a00"
+    },
+    {
+      "path": "npkcrypt.vxd",
+      "bytes": 26344,
+      "sha256": "444e724ae455d337ed25f9b143b998092773904b145f125c9488856c2d7843f5"
+    },
+    {
+      "path": "npkcusb.sys",
+      "bytes": 15472,
+      "sha256": "7c4aed917ce3b2ac21e233a37db2b70aa1fe8d7f1508428a5a213258d634e179"
+    },
+    {
+      "path": "npkpdb.dll",
+      "bytes": 53268,
+      "sha256": "4d6195979286e35706769fd4420f14e947e489711d4ffca8c1124c5d8d1da4dd"
+    },
+    {
+      "path": "nwindow.dll",
+      "bytes": 3850260,
+      "sha256": "cb85f7a5de375f1e9156ec6559aae2a0a809b3abac4150142aafb14bbf02b47b"
+    },
+    {
+      "path": "nwindow.u",
+      "bytes": 251512,
+      "sha256": "6f3171147d83e447f2427e249c2ad73428e2b385d1557b86c53effa1062ea791"
+    },
+    {
+      "path": "obscene-e.dat",
+      "bytes": 304,
+      "sha256": "c32e793ee0ce2758166634c26f34390ad6c24683fd4f3d74264940dfec20aef4"
+    },
+    {
+      "path": "ogg.dll",
+      "bytes": 61460,
+      "sha256": "732ee0dc9122c14aab0b65818adfe255ea3c35458e5796d5268e7ac773b534e8"
+    },
+    {
+      "path": "openal32.dll",
+      "bytes": 114708,
+      "sha256": "0ae39cd1032b52e257eb64f68fbef3457298193190e50b85a9a6ab3bbc54832a"
+    },
+    {
+      "path": "optiondata_client-e.dat",
+      "bytes": 96176,
+      "sha256": "a1d5d46e8356358686dddfd443de618156dc44fab0a79fe5687f6496f7c3ee4e"
+    },
+    {
+      "path": "orc.dll",
+      "bytes": 1396756,
+      "sha256": "576f1f14602e304c032351f7297cda319b37a2290c9de3995fee9a4f503f97d6"
+    },
+    {
+      "path": "questname-e.dat",
+      "bytes": 188464,
+      "sha256": "1fcbd370a1b9515410cb680630636f4bd1bc9a23c24c31e1d11155306e156561"
+    },
+    {
+      "path": "raiddata-e.dat",
+      "bytes": 29744,
+      "sha256": "5344571b7ee413b616049a73d7eaabd0899b3ace79509b6d17410dd8a7eee359"
+    },
+    {
+      "path": "recipe-c.dat",
+      "bytes": 23856,
+      "sha256": "86cc9502a876ff1128a237d3c414ea56ec1838a034b0ba7c2eb4871e2a2a9813"
+    },
+    {
+      "path": "s_info.ini",
+      "bytes": 40,
+      "sha256": "d545c111a3b1ab3768fde994de2fe44a4f207ab0e77c1acc29a6cf0be4e090ed"
+    },
+    {
+      "path": "servername-e.dat",
+      "bytes": 1328,
+      "sha256": "5f93a71a2c124cb20da034ce04a54679dd4371e5100f90f410545a9df6ed9074"
+    },
+    {
+      "path": "skillgrp.dat",
+      "bytes": 159152,
+      "sha256": "4e245e914048cee34ada7fb6ed6b499976cbe961ad5bd0a8bfdcf00a1e2288d9"
+    },
+    {
+      "path": "skillname-e.dat",
+      "bytes": 297008,
+      "sha256": "84745297ef0add25d2291b568382ff9c76f2d58a438bedbf11841dba82dd972b"
+    },
+    {
+      "path": "skillsoundgrp.dat",
+      "bytes": 28080,
+      "sha256": "14c9df542ccb0b342f1fd091b7177438cdf3705fb43581d0fc69b6c9ceeb14f5"
+    },
+    {
+      "path": "smallfont-e.gly",
+      "bytes": 1560,
+      "sha256": "5089b353720f263cf4ef53857d85a44533745b0a173d530e637d4b1e79dd8232"
+    },
+    {
+      "path": "smallfont.gly",
+      "bytes": 181800,
+      "sha256": "0a8ea3558313661dc0dc69a42589cd7a5755f0ec0ab2cdc3dceb58fa17813ac1"
+    },
+    {
+      "path": "soulshot.int",
+      "bytes": 1702,
+      "sha256": "e5e48315eed13ee4459a57d67bc9198db8790e36814cf1be6a91c6c2232aa324"
+    },
+    {
+      "path": "staticobject-e.dat",
+      "bytes": 2480,
+      "sha256": "9e0a2cfd4c1fa91b77b655d0dbaa76801335fa09bafe9522b3da4705921ee3c5"
+    },
+    {
+      "path": "symbolname-e.dat",
+      "bytes": 304,
+      "sha256": "2b7646a2a400db7c7db5541bc5b5cf040f4b3376eb287ab9768dac6025a0f188"
+    },
+    {
+      "path": "sysstring-e.dat",
+      "bytes": 15024,
+      "sha256": "33053b17ca8e1d157aec8fb40b4ef8542626338858ce6c7b4d799c7609554135"
+    },
+    {
+      "path": "systemmsg-e.dat",
+      "bytes": 49840,
+      "sha256": "74c8424d9e6007719a3bf7934bc8708d0405ba03684ccf89a1c9fd70d21f65ee"
+    },
+    {
+      "path": "timeenv0.int",
+      "bytes": 13233,
+      "sha256": "99fe1d3c71298a03f22d1d9491600e3cec89e0934e56b67a50c8afec08cfae54"
+    },
+    {
+      "path": "timeenv1.int",
+      "bytes": 14452,
+      "sha256": "992a4f473b9dc2e0329c54f76dc32e70abceb61f5fbe04d131bcf46b1c32c3aa"
+    },
+    {
+      "path": "timeenv2.int",
+      "bytes": 13322,
+      "sha256": "9a05072f521557d26d1a21dec6effd30e989f5515359f785f361909dd7b13ce3"
+    },
+    {
+      "path": "timeenv3.int",
+      "bytes": 14099,
+      "sha256": "55a9fe7e8cb80c7e88896d07aa1ace925b6fb3d884ca26308da282eb03e3eeee"
+    },
+    {
+      "path": "ttfontinfo.ini",
+      "bytes": 795,
+      "sha256": "23dc2fda01d6bf08660dc659c3ba125b145e0a34e6fc15318085d7c3b18b2f7f"
+    },
+    {
+      "path": "udebugmenu.u",
+      "bytes": 263641,
+      "sha256": "80ce780ae87300cded6af855e83b071fbb423ace22902b12490e1bc9e10cc543"
+    },
+    {
+      "path": "user.ini",
+      "bytes": 4400,
+      "sha256": "ddf4f1c7bf64ac5f9659425bab756b79c0b2873c1809ed7efd8e83cdc70f8907"
+    },
+    {
+      "path": "variationeffectgrp-e.dat",
+      "bytes": 1456,
+      "sha256": "3f936f7e4f43275085ac9f4172d8ed67465b8c90087ee667cb6cb8a761947643"
+    },
+    {
+      "path": "vorbis.dll",
+      "bytes": 249876,
+      "sha256": "5548137178bc2276043f525d4115b4f433bf89437952f352203cd5a58fabe820"
+    },
+    {
+      "path": "vorbisfile.dll",
+      "bytes": 106516,
+      "sha256": "1e05684598d59b89c38ff9e8857bb6956620eaf4ca486b0b1e3796b59fc1655b"
+    },
+    {
+      "path": "weapongrp.dat",
+      "bytes": 78128,
+      "sha256": "eea267ac21afa5f2e148349d5aaab9670dbc67cde3878f1a8db5aba2364550b9"
+    },
+    {
+      "path": "wform.bm",
+      "bytes": 527005,
+      "sha256": "c52f1782a62f0c5c107c9d6c76218536110aca674ad30c3498f6c19faf9bcf0a"
+    },
+    {
+      "path": "window.int",
+      "bytes": 2337,
+      "sha256": "c471d23c55c4ac7e855893cfd858b46663900def92eb81921d0cc5f5df259ffc"
+    },
+    {
+      "path": "windrv.int",
+      "bytes": 729,
+      "sha256": "1f94173c9a360857f5f39cefc77c9b23823462d21ce418d201c7945c0ffb62bf"
+    },
+    {
+      "path": "wrap_oal.dll",
+      "bytes": 409620,
+      "sha256": "7bce7f6198bc90e0ec24e0455f7407069364113f1d2cc339e22932ec0ace7b83"
+    },
+    {
+      "path": "zonename-e.dat",
+      "bytes": 6064,
+      "sha256": "753d5ae302513a60ef2df304a3e4283e034a23548f9924753bad61993870f57b"
+    }
+  ],
+  "installation": "Copy this folder content into client/system first, then overlay patch/ at client root."
+}
