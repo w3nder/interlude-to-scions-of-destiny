@@ -1,3 +1,5 @@
+> Histórico: ajuste retirado após o usuário reproduzir a falha. Não corrigia o caminho de InventoryWnd em Interface.u. Substituído por [inventory-script-2](inventory-script.md).
+
 # Tattoo AIO: slot do inventário
 
 O ajuste `inventory-slot-1` acrescenta `patch/system/NWindow.dll`. A DLL de

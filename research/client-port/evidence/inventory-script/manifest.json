@@ -1,0 +1,28 @@
+{
+  "function": "InventoryWnd.EquipItemUpdate",
+  "evidence": [
+    {
+      "side": "original",
+      "package_sha256": "4ca40e2936138d9551412767c695b6e54e8f2843daf437536811705704b91019",
+      "function_sha256": "8df627ce2e4e2079ec132e3b9f9295520b7adf9b63c6622a13dab9453b7cee0f",
+      "export_bytes": 1229,
+      "serialized_script_bytes": 1200,
+      "vm_script_bytes": 1664,
+      "parsed_tokens": 547,
+      "left_tattoo_control_index": 0,
+      "aio_tattoo_control_index": 0
+    },
+    {
+      "side": "patched",
+      "package_sha256": "899fbff8edd38b1496b9d4382d31cbc251a7ad64342e99a9db5a89df61428922",
+      "function_sha256": "b1e1f53f33712e0ab42c3967eee4c9b48d24436ca7b062d821e1a150375dda51",
+      "export_bytes": 1230,
+      "serialized_script_bytes": 1201,
+      "vm_script_bytes": 1665,
+      "parsed_tokens": 547,
+      "left_tattoo_control_index": 3,
+      "aio_tattoo_control_index": 0
+    }
+  ],
+  "validation": "6 offline script/package/layout tests passed; live UI pending"
+}

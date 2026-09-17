@@ -18,7 +18,7 @@ A base vem primeiro e o patch por último. Aplicar a base depois do patch desfaz
 
 O erro de ponto de entrada `?GL2ShowCMViewer@@3HA` é compatível com mistura de versões: o executável do porte importa esse símbolo da `Core.dll`, presente na base fornecida. Não misture DLLs de outra system.
 
-Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 80 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
+Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 81 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
 
 ## Fonte e compilação
 
@@ -35,7 +35,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Ajuste adicional `inventory-slot-1`: o `NWindow.dll` do patch restaura um slot visível e clicável para a AIO Tattoo (máscara `0x2000`), separado da tattoo comum. Quatro testes nativos passaram; a confirmação visual em jogo ainda está pendente. Veja [evidência e reprodução](research/client-port/reports/inventory-slot.md).
+Ajuste adicional `inventory-script-2`: corrige `InventoryWnd.EquipItemUpdate` em `Interface.u`, separando Left Tattoo (terceiro slot da primeira linha) e AIO Tattoo (quarto slot). O ajuste nativo anterior foi retirado e `NWindow.dll` restaurado. Seis testes reproduzem a sobreposição original e verificam a correção no bytecode e no layout; a confirmação visual em jogo ainda está pendente. Requer o `interface.xdat` original da base Win10Supported. Veja [evidência e reprodução](research/client-port/reports/inventory-script.md).
 
 Build `protocol-hooks-13-status-content`: restaura a atualização de experiência C4 em `StatusUpdate`, corrige templates de mensagens/quests/eventos e liga as ações de pets aos IDs C4. São 17 DATs migrados e 126 testes automatizados aprovados; dez comandos de summons exclusivos do Interlude são bloqueados antes do envio.
 

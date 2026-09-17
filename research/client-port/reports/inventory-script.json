@@ -1,0 +1,31 @@
+{
+  "build": "inventory-script-2",
+  "interface_sha256": "899fbff8edd38b1496b9d4382d31cbc251a7ad64342e99a9db5a89df61428922",
+  "original_interface_sha256": "4ca40e2936138d9551412767c695b6e54e8f2843daf437536811705704b91019",
+  "required_xdat_sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55",
+  "function": "InventoryWnd.EquipItemUpdate",
+  "export_index": 3176,
+  "left_tattoo": {
+    "mask": 1,
+    "control": "EquipItem_Hair2",
+    "x": 92,
+    "y": 36
+  },
+  "aio_tattoo": {
+    "mask": 8192,
+    "control": "EquipItem_Underwear",
+    "x": 137,
+    "y": 36
+  },
+  "dimensions": [
+    34,
+    34
+  ],
+  "wire_changes": false,
+  "dat_changes": false,
+  "live_visual_validation": "pending",
+  "native_slot_patch": "withdrawn; original NWindow restored",
+  "system": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system",
+  "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-inventory-script-20260917-185512",
+  "activation": "next client start"
+}

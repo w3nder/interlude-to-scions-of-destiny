@@ -400,7 +400,12 @@
     {
       "path": "system/NWindow.dll",
       "bytes": 3850260,
-      "sha256": "c4be7ace2ab15652d919c7f1dac99e223d963c2528aa6638c8aaa2629f66f678"
+      "sha256": "cb85f7a5de375f1e9156ec6559aae2a0a809b3abac4150142aafb14bbf02b47b"
+    },
+    {
+      "path": "system/interface.u",
+      "bytes": 2080419,
+      "sha256": "899fbff8edd38b1496b9d4382d31cbc251a7ad64342e99a9db5a89df61428922"
     }
   ],
   "validation": "126 automated tests passed; native status/decoder/sender comparisons, seven additional DAT roundtrips and cross-catalogue references; no exhaustive live UI certification.",
@@ -417,5 +422,6 @@
     ],
     "report": "research/client-port/reports/content-disposition.json"
   },
-  "inventory_ui_build": "inventory-slot-1"
+  "inventory_ui_build": "inventory-script-2",
+  "required_interface_xdat_sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55"
 }

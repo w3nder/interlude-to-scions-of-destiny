@@ -12,5 +12,7 @@
   "scope": "C4 equipment; Interlude-only second-hair items are not supported by this slot reservation",
   "activation": "next client process; running process is preserved",
   "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/NWindow.before-inventory-20260917-182318.dll",
-  "installed": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/NWindow.dll"
+  "installed": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/NWindow.dll",
+  "status": "withdrawn: native-only change did not affect scripted InventoryWnd",
+  "superseded_by": "inventory-script-2"
 }
