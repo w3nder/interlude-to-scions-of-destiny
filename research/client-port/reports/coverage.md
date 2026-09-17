@@ -17,6 +17,7 @@ Unidades inventariadas: 577 (métodos de envio + slots de recepção; não é co
 - Cifra nativa de game preservada; trace registra apenas opcode, tamanho e decisão.
 - Demais pacotes continuam no caminho original. Nenhuma conversão baseada apenas no tamanho.
 - Auditoria dos argumentos C2S: 142 métodos equivalentes no serializador; não precisam de conversão nesse limite.
+- Listas C2S: 13 métodos comparados nos dois binários em 195 pares de vetores; bytes iguais nos casos testados, sem nova conversão. Evidência: native-list-requests.json.
 - Evidências completas em wire-equivalence.json. Mesmos decoders S2C não provam condições, repetições ou semântica iguais.
 - Contagem de conversores descreve o código candidato; consulte runtime_installation para a DLL realmente instalada.
 

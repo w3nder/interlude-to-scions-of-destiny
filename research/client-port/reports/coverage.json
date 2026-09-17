@@ -1,12 +1,13 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T11:13:04.344361+00:00",
+  "generated_utc": "2026-09-17T13:24:23.105121+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 84,
-    "results": "build/test-results.txt"
+    "unittest_cases": 87,
+    "results": "/tmp/l2k-pending-audit-validation.log",
+    "followup": "3 native-list tests rerun after adapter preservation assertions; /tmp/l2k-native-list-final.log"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
   "user_observed_working": [
@@ -1812,6 +1813,13 @@
       "different_reachable_decoder_sites": 40
     }
   },
+  "native_list_validation": {
+    "status": "passed",
+    "method_count": 13,
+    "vector_pairs": 195,
+    "scope": "Synthetic parameter stacks; exact native Top, stack allocation, list loops, row assembly and final serializer. C++ outbound adapter must preserve the matching bytes. VM stops before socket send. C4 UI diagnostic callback is replaced with a no-op.",
+    "limits": "Finite differential tests are not a proof for every input, UI/caller semantics or live server acceptance. No runtime conversion is enabled. Invalid counts and native buffer overflow behavior are not certified."
+  },
   "runtime_installation": {
     "build": "protocol-hooks-9-pledge-guard",
     "dll_sha256": "41f8f3308f86009c06209c2f4f582612e48f6a6f72cbe62d0ba65db2710a47ac",
@@ -2401,7 +2409,13 @@
       "name": "RequestBuyItem",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2409,7 +2423,13 @@
       "name": "RequestBuySeed",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3096,7 +3116,13 @@
       "name": "RequestPackageSend",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3233,7 +3259,13 @@
       "name": "RequestPreviewItem",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "d",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3305,7 +3337,13 @@
       "name": "RequestProcureCrop",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "ddd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3361,7 +3399,13 @@
       "name": "RequestRecipeShopListSet",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3487,7 +3531,13 @@
       "name": "RequestSellItem",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "ddd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3845,7 +3895,13 @@
       "name": "SendPrivateStoreBuyBuyList",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "ddhhdd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3853,7 +3909,13 @@
       "name": "SendPrivateStoreBuyList",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "ddd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3885,7 +3947,13 @@
       "name": "SendWareHouseDepositList",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3893,7 +3961,13 @@
       "name": "SendWareHouseWithdrawList",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3901,7 +3975,13 @@
       "name": "SetPrivateStoreBuyList",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "dhhdd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -3917,7 +3997,13 @@
       "name": "SetPrivateStoreList",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof",
+      "native_vector_audit": {
+        "resolution": "equal_native_output_for_test_vectors",
+        "vector_pairs": 15,
+        "row_format": "ddd",
+        "evidence": "native-list-requests.json"
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {

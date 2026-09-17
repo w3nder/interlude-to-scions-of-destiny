@@ -31,6 +31,10 @@ def report(validation=None,trace=None):
     validator_names={r['name'] for r in outbound_validators}
     audit=read('reports/handler-audit.json') if (ROOT/'reports/handler-audit.json').exists() else {}
     wire=read('reports/wire-equivalence.json') if (ROOT/'reports/wire-equivalence.json').exists() else {}
+    native_lists=read('reports/native-list-requests.json') if (ROOT/'reports/native-list-requests.json').exists() else {}
+    if native_lists and (native_lists.get('status')!='passed' or any(native_lists.get('hashes',{}).get(side)!=policy[side+'_sha256'] for side in ('source','target'))):
+        raise ValueError('Native list evidence is stale or failed; rerun test_native_list_requests.py')
+    native_list_methods={r['name']:r for r in native_lists.get('methods',[])}
     wire_out={r['name']:r for r in wire.get('outbound',[])}
     wire_in={(r['table'],r['opcode']):r for r in wire.get('inbound',[])}
     ignored={(r['table'],r['opcode']) for r in audit.get('empty_layout_audit',[]) if r['resolution']=='both_handlers_ignore_payload'}
@@ -41,6 +45,11 @@ def report(validation=None,trace=None):
         source=r.get('source') or {};target=r.get('target') or {};converted=(r['table'],r['opcode']) in converted_keys;validated=(r['table'],r['opcode']) in validated_keys
         items.append(dict(direction='S2C',table=r['table'],opcode=r['opcode'],name=target.get('name',source.get('name','unknown')),static_status=r['status'],implementation='strict_C4_to_Interlude_converter' if converted else 'bounded_layout_validator' if validated else 'passthrough',test_coverage='synthetic structure/bounds fixtures; representative native hook integration; gameplay pending' if converted or validated else 'not validated per packet'))
     for item in items:
+        if item['direction']=='C2S' and item['name'] in native_list_methods:
+            native=native_list_methods[item['name']]
+            item['native_vector_audit']={'resolution':native['resolution'],'vector_pairs':len(native['cases']),'row_format':native['row_format'],'evidence':'native-list-requests.json'}
+            if item['implementation']=='passthrough':
+                item['test_coverage']='matching native C4/Interlude bytes on generated lists; finite vectors, not full semantic proof'
         evidence=wire_out.get(item['name']) if item['direction']=='C2S' else wire_in.get((item['table'],item['opcode']))
         if evidence:
             item['wire_audit']=evidence['resolution']
@@ -63,6 +72,7 @@ def report(validation=None,trace=None):
          'pending_semantic_validation':sum(i['implementation']=='passthrough' for i in items),
          'handler_audit':audit,
          'wire_equivalence_summary':{k:wire.get(k,{}) for k in ('summary','inbound_summary')},
+         'native_list_validation':{k:native_lists.get(k) for k in ('status','method_count','vector_pairs','scope','limits')},
          'runtime_installation':read('build/current-runtime.json') if (ROOT/'build/current-runtime.json').exists() else {'status':'not inspected'},
          'blocked_features':policy['denied'],'packets':items}
     if trace:out['observed_game_trace']=summarize_trace(trace)
@@ -82,6 +92,7 @@ def report(validation=None,trace=None):
            '- Cifra nativa de game preservada; trace registra apenas opcode, tamanho e decisão.',
            '- Demais pacotes continuam no caminho original. Nenhuma conversão baseada apenas no tamanho.',
            f"- Auditoria dos argumentos C2S: {wire.get('summary',{}).get('same_serializer_argument_contract',0)} métodos equivalentes no serializador; não precisam de conversão nesse limite.",
+           f"- Listas C2S: {native_lists.get('method_count',0)} métodos comparados nos dois binários em {native_lists.get('vector_pairs',0)} pares de vetores; bytes iguais nos casos testados, sem nova conversão. Evidência: native-list-requests.json.",
            '- Evidências completas em wire-equivalence.json. Mesmos decoders S2C não provam condições, repetições ou semântica iguais.',
            '- Contagem de conversores descreve o código candidato; consulte runtime_installation para a DLL realmente instalada.','',
            '## Pendências automáticas por categoria','', '| Categoria estática | Quantidade |','|---|---|']
