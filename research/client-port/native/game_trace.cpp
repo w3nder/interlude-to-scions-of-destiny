@@ -4,6 +4,8 @@
 #include "structured_codec.h"
 #include "asset_codec.h"
 #include "character_codec.h"
+#include "pledge_bridge.h"
+#include "local_ui.h"
 #include "outbound_policy.h"
 #include <stdarg.h>
 #include "login_hooks.h"
@@ -23,6 +25,10 @@ L2KAssetRecord asset_seen[4096];
 uint32_t asset_count=0;
 bool asset_unknown[256]={};
 CRITICAL_SECTION trace_lock;
+CRITICAL_SECTION pledge_lock;
+L2KPledgeState pledge_state{};
+void* pledge_socket=nullptr;
+uint32_t pledge_socket_id=0;
 uint32_t sequence=0;
 constexpr uint32_t limit=50000;
 
@@ -75,10 +81,37 @@ using Send=void (__cdecl*)(void*,const char*,...);
 using Serialize=int (__cdecl*)(uint8_t*,uint32_t,const char*,va_list);
 Send send_original;
 Serialize serialize_original;
+void pledge_session(void* socket){
+    uint32_t id;memcpy(&id,static_cast<uint8_t*>(socket)+0x38,4);
+    if(socket!=pledge_socket||id!=pledge_socket_id){l2k_pledge_reset(&pledge_state);pledge_socket=socket;pledge_socket_id=id;}
+}
+bool pledge_outgoing(void* socket,const uint8_t* p,uint32_t n){
+    L2KPledgeResult result{};
+    EnterCriticalSection(&pledge_lock);pledge_session(socket);
+    int handled=l2k_pledge_send(&pledge_state,p,n,GetTickCount(),&result);
+    if(result.display_size&&!l2k_queue_local_html(result.display,result.display_size))l2k_log("local clan UI could not be queued");
+    LeaveCriticalSection(&pledge_lock);
+    if(handled<=0)return false;
+    if(result.server_size&&l2k_outbound_convert(result.server,result.server_size)>=0){
+        record(socket,"C2S","converted_C4_pledge",result.server,result.server_size);
+        send_original(socket,"b",result.server_size,result.server);
+    }else record(socket,"C2S","local_C4_pledge",p,n);
+    return true;
+}
+bool pledge_incoming(void* socket,const uint8_t* p,uint32_t n){
+    L2KPledgeResult result{};
+    EnterCriticalSection(&pledge_lock);pledge_session(socket);
+    int handled=l2k_pledge_receive(&pledge_state,p,n,GetTickCount(),&result);
+    if(result.display_size&&!l2k_queue_local_html(result.display,result.display_size))l2k_log("local clan UI could not be queued");
+    LeaveCriticalSection(&pledge_lock);
+    if(handled>0)record(socket,"S2C","local_C4_pledge",p,n);
+    return handled>0;
+}
 void __cdecl send_adapter(void* socket,const char* format,...){
     uint8_t payload[8190];va_list args;va_start(args,format);
     int n=serialize_original(payload,sizeof(payload),format,args);va_end(args);
     if(n<=0||n>(int)sizeof(payload)){l2k_log("outbound rejected: serialization failed");return;}
+    if(pledge_outgoing(socket,payload,(uint32_t)n))return;
     const char* source_format=l2k_outbound_serialization_format(format,payload,(uint32_t)n);
     if(source_format){
         const int previous=n;
@@ -115,6 +148,7 @@ void __fastcall receive_observer(void* socket,void*,uint8_t* frame,uint32_t leng
     if(n<0){record(socket,"S2C",clan?"rejected_clan_layout":"rejected_schema_layout",frame+2,length-2);return;}
     uint8_t* current=frame;uint32_t current_size=length;
     if(n>0){current_size=(uint32_t)n+2;converted[0]=(uint8_t)current_size;converted[1]=(uint8_t)(current_size>>8);current=converted;record(socket,"S2C",clan?"converted_C4_clan":"converted_C4_schema",converted+2,n);}
+    if(pledge_incoming(socket,current+2,current_size-2))return;
     // Native receive copies the selected plaintext into the normal UI queue.
     *enabled=0;receive_original(socket,current,current_size);*enabled=saved;
 }
@@ -137,6 +171,7 @@ bool l2k_install_game_trace(){
     swprintf(slash+1,48,L"L2KGameTrace-%lu-%lu.tsv",(unsigned long)GetCurrentProcessId(),(unsigned long)GetTickCount());
     trace_file=CreateFileW(path,GENERIC_WRITE,FILE_SHARE_READ,nullptr,CREATE_NEW,FILE_ATTRIBUTE_NORMAL,nullptr);if(trace_file==INVALID_HANDLE_VALUE)return false;
     InitializeCriticalSection(&trace_lock);
+    InitializeCriticalSection(&pledge_lock);l2k_pledge_reset(&pledge_state);
     swprintf(slash+1,48,L"L2KAssetAudit-%lu-%lu.tsv",(unsigned long)GetCurrentProcessId(),(unsigned long)GetTickCount());
     asset_file=CreateFileW(path,GENERIC_WRITE,FILE_SHARE_READ,nullptr,CREATE_NEW,FILE_ATTRIBUTE_NORMAL,nullptr);
     if(asset_file!=INVALID_HANDLE_VALUE){
@@ -149,7 +184,7 @@ bool l2k_install_game_trace(){
     if(prepared!=4){
         while(prepared){--prepared;DWORD ignored;VirtualProtect(reinterpret_cast<void*>(base+patches[prepared].slot),4,old[prepared],&ignored);}
         if(asset_file!=INVALID_HANDLE_VALUE){CloseHandle(asset_file);asset_file=INVALID_HANDLE_VALUE;}
-        CloseHandle(trace_file);trace_file=INVALID_HANDLE_VALUE;DeleteCriticalSection(&trace_lock);return false;
+        CloseHandle(trace_file);trace_file=INVALID_HANDLE_VALUE;DeleteCriticalSection(&pledge_lock);DeleteCriticalSection(&trace_lock);return false;
     }
     send_original=reinterpret_cast<Send>(base+0x1029b0);serialize_original=reinterpret_cast<Serialize>(base+0x68b6);
     receive_original=reinterpret_cast<Receive>(base+0x120e60);

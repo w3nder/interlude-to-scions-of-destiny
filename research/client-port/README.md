@@ -60,5 +60,6 @@ python3 research/client-port/native/build.py
 research/client-port/venv/bin/python research/client-port/native/inspect_profile.py
 ```
 
-`build/L2KProtocolCore.dll` é um núcleo Windows x86 testado offline, sem loader
-ou hooks. Ainda não é um patch instalável no jogo.
+`build/L2KProtocolCore.dll` é a biblioteca Windows x86 compilada do código atual,
+incluindo bootstrap e hooks. O artefato candidato pode diferir da versão
+distribuída em `patch/system/`; consulte os manifestos antes de instalar.

@@ -10,9 +10,9 @@ BUILD=ROOT.parent/'build';BUILD.mkdir(exist_ok=True)
 # Public constants are versioned; regeneration is optional and uses the original backend.
 if not (ROOT/'constants.inc').exists():
     subprocess.run([sys.executable,str(ROOT/'generate_constants.py')],check=True)
-common=['-std=c++17','-O2','-Wall','-Wextra','-Werror','-fno-exceptions','-fno-rtti',str(ROOT/'protocol_core.cpp'),str(ROOT/'clan_codec.cpp'),str(ROOT/'schema_codec.cpp'),str(ROOT/'structured_codec.cpp'),str(ROOT/'outbound_policy.cpp'),str(ROOT/'asset_codec.cpp'),str(ROOT/'character_codec.cpp')]
+common=['-std=c++17','-O2','-Wall','-Wextra','-Werror','-fno-exceptions','-fno-rtti',str(ROOT/'protocol_core.cpp'),str(ROOT/'clan_codec.cpp'),str(ROOT/'schema_codec.cpp'),str(ROOT/'structured_codec.cpp'),str(ROOT/'outbound_policy.cpp'),str(ROOT/'asset_codec.cpp'),str(ROOT/'character_codec.cpp'),str(ROOT/'pledge_bridge.cpp')]
 subprocess.run(['clang++',*common,'-dynamiclib','-o',str(BUILD/'libl2k_protocol.dylib')],check=True)
-subprocess.run(['i686-w64-mingw32-g++',*common,str(ROOT/'bootstrap.cpp'),str(ROOT/'login_hooks.cpp'),str(ROOT/'game_trace.cpp'),'-shared','-static-libgcc','-static-libstdc++',
+subprocess.run(['i686-w64-mingw32-g++',*common,str(ROOT/'bootstrap.cpp'),str(ROOT/'login_hooks.cpp'),str(ROOT/'game_trace.cpp'),str(ROOT/'local_ui.cpp'),'-shared','-static-libgcc','-static-libstdc++',
                 '-ladvapi32','-lws2_32','-Wl,--no-insert-timestamp','-o',str(BUILD/'L2KProtocolCore.dll')],check=True)
 artifacts={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in
            [BUILD/'libl2k_protocol.dylib',BUILD/'L2KProtocolCore.dll']}

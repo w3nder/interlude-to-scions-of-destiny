@@ -35,9 +35,9 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-11-quest-channel`: 41 conversores S2C e 6 C2S, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 98 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
+Build `protocol-hooks-12-clan-members`: 41 conversores S2C, 6 C2S e adaptação contextual de permissões de clã, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 111 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
 
-CharacterSelected permanece sem conversão após uma regressão corrigida. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
+O usuário confirmou login, entrada no mundo, movimento, uso de skills, chat, informações de clã e warehouse funcionando. A entrada no mundo usa o caminho preservado de CharacterSelected; ausência de conversão desse pacote não significa falha de entrada. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
 
 ## Atualização de skills
 
@@ -49,7 +49,7 @@ Corrigidos EnterWorld, RequestJoinPartyRoom e RequestExAcceptJoinMPCC. A atualiz
 
 ## Personagens — build 8
 
-Conversão dos layouts C4 completos de CharInfo e UserInfo, incluindo equipamentos, experiência e os quatro indicadores legados de permissão. Pacotes já Interlude e variantes desconhecidas são preservados. A equivalência dos indicadores foi testada nas funções x86 originais para cada um dos 256 bits C4. Isso não conclui a adaptação das operações de alteração de privilégios de clã. Consulte [evidências e pendências](research/client-port/reports/characters-build8.md).
+Conversão dos layouts C4 completos de CharInfo e UserInfo, incluindo equipamentos, experiência e os quatro indicadores legados de permissão. Pacotes já Interlude e variantes desconhecidas são preservados. A equivalência dos indicadores foi testada nas funções x86 originais para cada um dos 256 bits C4. A adaptação das operações por membro foi acrescentada na build 12 descrita abaixo. Consulte [evidências e pendências](research/client-port/reports/characters-build8.md).
 
 ## Proteção de privilégios — build 9
 
@@ -59,4 +59,8 @@ RequestPledgePower C0 agora recusa tamanhos incompatíveis com a ação C4 antes
 
 QuestList 80 e command channel FE30 convertidos com evidências nos binários originais e testes dos hooks. A extração cobre os 304 slots registrados do C4 e 348 do Interlude, incluindo sete registros que o filtro por nome omitia. Nove métodos de movimento/descarte e o inventário do pet receberam comparações nativas; os casos equivalentes preservam os bytes. [Evidências e limites](research/client-port/reports/quest-channel-build11.md).
 
-O porte continua incompleto: permissões de clã por membro/cargo, variantes de CharacterSelected, contratos ainda sem validação semântica e assets ausentes/protegidos permanecem documentados. Passar nos testes automatizados não comprova funcionamento de todas as telas em jogo.
+A auditoria restante deve distinguir funcionalidades comprovadamente ausentes, contratos ainda sem evidência suficiente e referências de assets não resolvidas. A entrada no mundo está confirmada e deve ser preservada. Contagens da extração estática não representam uma lista de funcionalidades quebradas; passar nos testes automatizados também não comprova funcionamento de todas as telas em jogo.
+
+## Permissões por membro — build 12
+
+Os comandos de permissões de cargos do Interlude abrem uma janela local de membros online. O líder consulta e altera direitos no formato C4; outros membros consultam os próprios direitos. Apenas o clique em Aplicar envia uma alteração. IDs de cargos não são enviados como IDs de personagens, e todos os 32 bytes de permissões são preservados. A implementação passou pelos testes dos emissores e da fila nativa; a apresentação da nova janela em jogo ainda não foi confirmada. [Contrato, testes e limites](research/client-port/reports/pledge-members-build12.md).

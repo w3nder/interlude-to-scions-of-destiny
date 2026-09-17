@@ -1,11 +1,11 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T14:46:49.018763+00:00",
+  "generated_utc": "2026-09-17T15:51:08.062205+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 98,
+    "unittest_cases": 111,
     "results": "build/test-results.txt"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
@@ -15,7 +15,8 @@
     "movement",
     "skill_use",
     "chat",
-    "clan_information"
+    "clan_information",
+    "warehouse"
   ],
   "user_observed_failure": [],
   "schema_converters": [
@@ -604,17 +605,17 @@
   ],
   "catalogue_contract": "Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.",
   "counts": {
-    "passthrough": 340,
-    "blocked_by_profile": 28,
+    "passthrough": 339,
+    "blocked_by_profile": 26,
     "native_same_serializer_contract": 142,
     "Interlude_to_C4_converter": 6,
-    "bounded_outbound_validator": 1,
+    "contextual_C4_member_permissions_bridge": 4,
     "native_handlers_ignore_payload": 25,
     "strict_C4_to_Interlude_converter": 41,
     "bounded_layout_validator": 1
   },
   "release_complete": false,
-  "pending_semantic_validation": 340,
+  "pending_semantic_validation": 339,
   "handler_audit": {
     "hashes": {
       "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
@@ -1885,8 +1886,8 @@
     "limits": "Finite differential tests are not a proof for every input, UI/caller semantics or live server acceptance. No runtime conversion is enabled. Invalid counts and native buffer overflow behavior are not certified."
   },
   "runtime_installation": {
-    "build": "protocol-hooks-11-quest-channel",
-    "dll_sha256": "055de034de5d394040f50866ea5c5d544922dd41d37c4360c011fe3947b71f02",
+    "build": "protocol-hooks-12-clan-members",
+    "dll_sha256": "ec355d32587c3b516d228011d76ead08a0592e0a018e46aedf63c03dd6a079d0",
     "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-assets-20260917-052113",
     "tables_installed": [
       {
@@ -1975,13 +1976,208 @@
     "activation": "next client start; running client not interrupted",
     "s2c_converters": 41,
     "c2s_converters": 6,
-    "unsupported_extended_requests_blocked": 28,
+    "unsupported_extended_requests_blocked": 26,
     "candidate_source_is_not_installed": false,
-    "status": "installed; 98 tests passed; build 11 gameplay pending",
-    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-114605.dll",
-    "outbound_validators": 1
+    "status": "installed; 111 offline tests passed; member permission UI visual validation pending; world entry already confirmed by user",
+    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-125038.dll",
+    "outbound_validators": 1,
+    "member_permissions_bridge": true
+  },
+  "member_permissions_bridge": {
+    "requests": [
+      "RequestPledgeMemberPowerInfo",
+      "RequestPledgePower",
+      "RequestPledgePowerGradeList"
+    ],
+    "response": "0x30 C4 32-byte bitset",
+    "evidence": "pledge-members-build12.md",
+    "rank_semantics": "local per-member editor; no fabricated C4 ranks"
   },
   "blocked_features": [
+    {
+      "name": "RequestPledgeSetAcademyMasterPupil",
+      "opcode": 208,
+      "extended": 25,
+      "format": "chdSS",
+      "call_va": "0x10405864"
+    },
+    {
+      "name": "RequestPledgeSetMemberPowerGrade",
+      "opcode": 208,
+      "extended": 28,
+      "format": "chSd",
+      "call_va": "0x1040593f"
+    },
+    {
+      "name": "RequestPledgeMemberInfo",
+      "opcode": 208,
+      "extended": 29,
+      "format": "chdS",
+      "call_va": "0x1040598f"
+    },
+    {
+      "name": "RequestPledgeWarList",
+      "opcode": 208,
+      "extended": 30,
+      "format": "chdd",
+      "call_va": "0x104059df"
+    },
+    {
+      "name": "RequestPledgeReorganizeMember",
+      "opcode": 208,
+      "extended": 36,
+      "format": "chdSdS",
+      "call_va": "0x10405a5c"
+    },
+    {
+      "name": "RequestPCCafeCouponUse",
+      "opcode": 208,
+      "extended": 32,
+      "format": "chS",
+      "call_va": "0x10405af0"
+    },
+    {
+      "name": "RequestExMagicSkillUseGround",
+      "opcode": 208,
+      "extended": 47,
+      "format": "chdddddc",
+      "call_va": "0x1040705b"
+    },
+    {
+      "name": "RequestExMPCCShowPartyMembersInfo",
+      "opcode": 208,
+      "extended": 38,
+      "format": "chd",
+      "call_va": "0x10407a43"
+    },
+    {
+      "name": "RequestExFishRanking",
+      "opcode": 208,
+      "extended": 31,
+      "format": "ch",
+      "call_va": "0x10407c45"
+    },
+    {
+      "name": "RequestCursedWeaponList",
+      "opcode": 208,
+      "extended": 34,
+      "format": "ch",
+      "call_va": "0x10407c85"
+    },
+    {
+      "name": "RequestCursedWeaponLocation",
+      "opcode": 208,
+      "extended": 35,
+      "format": "ch",
+      "call_va": "0x10407cc5"
+    },
+    {
+      "name": "RequestGetBossRecord",
+      "opcode": 208,
+      "extended": 24,
+      "format": "chd",
+      "call_va": "0x10409c63"
+    },
+    {
+      "name": "RequestAskJoinPartyRoom",
+      "opcode": 208,
+      "extended": 20,
+      "format": "chS",
+      "call_va": "0x1040a059"
+    },
+    {
+      "name": "AnswerJoinPartyRoom",
+      "opcode": 208,
+      "extended": 21,
+      "format": "chd",
+      "call_va": "0x1040a139"
+    },
+    {
+      "name": "RequestListPartyMatchingWaitingRoom",
+      "opcode": 208,
+      "extended": 22,
+      "format": "chdddd",
+      "call_va": "0x1040a23e"
+    },
+    {
+      "name": "RequestExitPartyMatchingWaitingRoom",
+      "opcode": 208,
+      "extended": 23,
+      "format": "ch",
+      "call_va": "0x1040a31d"
+    },
+    {
+      "name": "RequestExChangeName",
+      "opcode": 208,
+      "extended": 49,
+      "format": "chdSd",
+      "call_va": "0x1040a413"
+    },
+    {
+      "name": "RequestDuelStart",
+      "opcode": 208,
+      "extended": 39,
+      "format": "chSd",
+      "call_va": "0x1040a508"
+    },
+    {
+      "name": "RequestDuelAnswerStart",
+      "opcode": 208,
+      "extended": 40,
+      "format": "chddd",
+      "call_va": "0x1040a603"
+    },
+    {
+      "name": "RequestConfirmTargetItem",
+      "opcode": 208,
+      "extended": 41,
+      "format": "chd",
+      "call_va": "0x1040a6e1"
+    },
+    {
+      "name": "RequestConfirmRefinerItem",
+      "opcode": 208,
+      "extended": 42,
+      "format": "chdd",
+      "call_va": "0x1040a7b5"
+    },
+    {
+      "name": "RequestConfirmGemStone",
+      "opcode": 208,
+      "extended": 43,
+      "format": "chdddd",
+      "call_va": "0x1040a89d"
+    },
+    {
+      "name": "RequestRefine",
+      "opcode": 208,
+      "extended": 44,
+      "format": "chdddd",
+      "call_va": "0x1040a97d"
+    },
+    {
+      "name": "RequestConfirmCancelItem",
+      "opcode": 208,
+      "extended": 45,
+      "format": "chd",
+      "call_va": "0x1040aa51"
+    },
+    {
+      "name": "RequestRefineCancel",
+      "opcode": 208,
+      "extended": 46,
+      "format": "chd",
+      "call_va": "0x1040ab21"
+    },
+    {
+      "name": "RequestDuelSurrender",
+      "opcode": 208,
+      "extended": 48,
+      "format": "ch",
+      "call_va": "0x1040abed"
+    }
+  ],
+  "fallback_policy_guards": [
     {
       "name": "RequestPledgeSetAcademyMasterPupil",
       "opcode": 208,
@@ -3317,23 +3513,23 @@
       "direction": "C2S",
       "name": "RequestPledgeMemberPowerInfo",
       "static_status": "target_only_in_extraction",
-      "implementation": "blocked_by_profile",
-      "test_coverage": "selector policy tested"
+      "implementation": "contextual_C4_member_permissions_bridge",
+      "test_coverage": "native C4 request serialization, native Interlude queue ABI, state/roster and hook integration; live UI pending"
     },
     {
       "direction": "C2S",
       "name": "RequestPledgePower",
       "static_status": "different_observed_opcode_or_format",
-      "implementation": "bounded_outbound_validator",
-      "test_coverage": "exact native sender action contracts and pre-send rejection tests",
+      "implementation": "contextual_C4_member_permissions_bridge",
+      "test_coverage": "native C4 request serialization, native Interlude queue ABI, state/roster and hook integration; live UI pending",
       "wire_audit": "requires_deeper_analysis"
     },
     {
       "direction": "C2S",
       "name": "RequestPledgePowerGradeList",
       "static_status": "target_only_in_extraction",
-      "implementation": "blocked_by_profile",
-      "test_coverage": "selector policy tested"
+      "implementation": "contextual_C4_member_permissions_bridge",
+      "test_coverage": "native C4 request serialization, native Interlude queue ABI, state/roster and hook integration; live UI pending"
     },
     {
       "direction": "C2S",
@@ -5524,8 +5720,8 @@
       "opcode": "0x30",
       "name": "ManagePledgePowerPacket",
       "static_status": "different_observed_decode_segments",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "contextual_C4_member_permissions_bridge",
+      "test_coverage": "native C4 request serialization, native Interlude queue ABI, state/roster and hook integration; live UI pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {

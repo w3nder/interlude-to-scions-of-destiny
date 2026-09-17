@@ -1,14 +1,14 @@
 # Comparação estática: L2Killer → system-1
 
 Objetivo: adaptar somente o cliente de destino para o servidor atual do Killer.
-Nenhuma alteração de binário ou validação de conexão foi realizada.
+Este relatório descreve somente a extração estática, não o estado do patch. Login e entrada no mundo já foram confirmados pelo usuário; consulte o README e reports/coverage.md para implementação e evidências atuais.
 
 ## Cobertura e conferência
 
 - Origem: SHA-256 confirmado; 213 pontos de envio no catálogo original.
 - Reextração: 211 envios reproduzidos com opcode/formato idênticos; ValidatePosition e VoteSociality não foram recuperados pelo percurso dos exports.
 - Os 304 registros de recepção do catálogo foram reproduzidos, com os mesmos nomes e slots.
-- Destino: 237 pontos de envio e 348 registros de recepção (255 primários, 86 estendidos).
+- Destino: 237 pontos de envio e 348 registros de recepção (255 primários, 93 estendidos).
 - 31 handlers da origem têm divergências de segmentos em relação ao catálogo antigo; evidência detalhada em comparison.json.
 - Exemplo confirmado: o segmento antigo de MoveToLocation em 0x104132ba fica numa rotina posterior, iniciada em 0x10413280 e separada por padding INT3. Não deve ser concatenado ao handler 0x10413120.
 - Os limites de função são heurísticos (exports e padding); helpers e formatos construídos dinamicamente podem ficar fora da extração.
@@ -59,12 +59,9 @@ Os seis métodos com formatos diferentes são ConfirmDlg, RequestEnterWorldPacke
 
 MTLPacket, NSPacket, CIPacket e UIPacket são nomes abreviados do destino. A associação pelo slot é uma hipótese de correspondência, não validação de equivalência.
 
-## Próximo marco de implementação
+## Como usar esta comparação
 
-1. Identificar versão enviada, framing, criptografia e transição login/game nas duas engines.
-2. Resolver os campos de CharacterSelectionInfo (0x13), CharacterSelected (0x15) e UserInfo/UIPacket (0x04).
-3. Localizar interceptação de payload após decriptação e antes do dispatch, e envio antes de encriptação.
-4. Implementar e testar conversores com amostras conhecidas; só depois testar login/seleção/entrada no mundo.
-5. Prosseguir com CharInfo, NPCs, inventário e movimento; recursos visuais também dependem dos assets do cliente correspondente.
+Diferenças de nomes ou formatos orientam a investigação; não demonstram que uma ação esteja quebrada. A comparação não desconta conversores já implementados nem substitui os testes de execução das rotinas originais.
+Login, entrada no mundo, movimento, skills, chat, informações de clã e warehouse já têm confirmação do usuário. Preserve esses fluxos e confronte as diferenças com os conversores e relatórios atuais antes de classificá-las como trabalho faltante.
 
 Não copiar endereços, vtables ou estruturas de memória do patch C4 para a engine de destino.

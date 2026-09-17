@@ -62,6 +62,8 @@ class LoginHooksTests(unittest.TestCase):
             a,b,n=self.args(3);self.ret(value=0 if self.u.mem_read(a,n)==self.u.mem_read(b,n) else 1)
         elif name=='memset':
             dst,value,n=self.args(3);self.u.mem_write(dst,bytes([value&255])*n);self.ret(value=dst)
+        elif name in ('EnterCriticalSection','LeaveCriticalSection','InitializeCriticalSection','DeleteCriticalSection'):self.ret(4)
+        elif name=='GetTickCount':self.ret(value=1000)
         elif name=='GetModuleHandleW':self.ret(4,self.engine)
         elif name=='GetModuleFileNameW':
             module,path,cap=self.args(3);self.u.mem_write(path,'engine.dll\0'.encode('utf-16le'));self.ret(12,10)

@@ -6,6 +6,7 @@ from collections import Counter,defaultdict
 from datetime import datetime,timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
+PLEDGE_REQUESTS={'RequestPledgePower','RequestPledgePowerGradeList','RequestPledgeMemberPowerInfo'}
 
 def read(name):return json.loads((ROOT/name).read_text())
 def write(path,data):path.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
@@ -49,6 +50,9 @@ def report(validation=None,trace=None):
         source=r.get('source') or {};target=r.get('target') or {};converted=(r['table'],r['opcode']) in converted_keys;validated=(r['table'],r['opcode']) in validated_keys
         items.append(dict(direction='S2C',table=r['table'],opcode=r['opcode'],name=target.get('name',source.get('name','unknown')),static_status=r['status'],implementation='strict_C4_to_Interlude_converter' if converted else 'bounded_layout_validator' if validated else 'passthrough',test_coverage='synthetic structure/bounds fixtures; representative native hook integration; gameplay pending' if converted or validated else 'not validated per packet'))
     for item in items:
+        if (item['direction']=='C2S' and item['name'] in PLEDGE_REQUESTS) or (item['direction']=='S2C' and (item['table'],item['opcode'])==('primary','0x30')):
+            item['implementation']='contextual_C4_member_permissions_bridge'
+            item['test_coverage']='native C4 request serialization, native Interlude queue ABI, state/roster and hook integration; live UI pending'
         if item['direction']=='C2S' and item['name'] in native_movement.get('methods',{}):
             item['native_movement_audit']={'vector_pairs':native_movement['methods'][item['name']], 'evidence':'native-movement-requests.json','limits':native_movement['limits']}
             if item['implementation']=='passthrough':
@@ -69,7 +73,7 @@ def report(validation=None,trace=None):
          'source_sha256':policy['source_sha256'],'target_sha256':policy['target_sha256'],
          'validation':validation or {'status':'not run by this invocation'},
          'limits':'Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.',
-         'user_observed_working':['login','enter_world','movement','skill_use','chat','clan_information'],
+         'user_observed_working':['login','enter_world','movement','skill_use','chat','clan_information','warehouse'],
          'user_observed_failure':[],
          'schema_converters':schemas,
          'outbound_schema_converters':outbound,
@@ -83,7 +87,9 @@ def report(validation=None,trace=None):
          'native_movement_validation':native_movement,
          'native_list_validation':{k:native_lists.get(k) for k in ('status','method_count','vector_pairs','scope','limits')},
          'runtime_installation':read('build/current-runtime.json') if (ROOT/'build/current-runtime.json').exists() else {'status':'not inspected'},
-         'blocked_features':policy['denied'],'packets':items}
+         'member_permissions_bridge':{'requests':sorted(PLEDGE_REQUESTS),'response':'0x30 C4 32-byte bitset','evidence':'pledge-members-build12.md','rank_semantics':'local per-member editor; no fabricated C4 ranks'},
+         'blocked_features':[p for p in policy['denied'] if p['name'] not in PLEDGE_REQUESTS],
+         'fallback_policy_guards':policy['denied'],'packets':items}
     if trace:out['observed_game_trace']=summarize_trace(trace)
     directory=ROOT/'reports';directory.mkdir(exist_ok=True);write(directory/'coverage.json',out)
     lines=['# Migração automática — perfil Killer C4 → Interlude','',
@@ -94,17 +100,17 @@ def report(validation=None,trace=None):
            '- Login C4 integrado; já validado em jogo na build anterior.',
            '- Recepção 0x53, 0x54 e 0x55: listas/membros de clã C4 convertidos ao layout Interlude.',
            '- Pacotes de clã que já têm o layout Interlude são preservados.',
-           f"- {len(policy['denied'])} solicitações exclusivas do Interlude bloqueadas antes da cifra/envio.",
+           f"- {len(out['blocked_features'])} solicitações exclusivas do Interlude bloqueadas antes da cifra/envio; outras duas são atendidas pela interface local de permissões por membro.",
            f"- {len(converted_keys)} conversores S2C, {len(outbound)} conversores C2S e {len(validated_keys)} validador estrutural. Detalhes e variantes em schema-inbound.json, structured-inbound.json e outbound-schemas.json.",
            '- Testes estruturais não validam por si só significado de campos nem comportamento de todas as telas.',
-           '- RequestPledgePower C0: tamanhos incompatíveis com a ação C4 são bloqueados antes do envio; alteração de privilégios por rank continua sem adaptação.',
+           '- Permissões de clã: C0/D0:1A/D0:1B abrem consulta/edição por membro; o envio usa C0 C4 e preserva o bitset de 32 bytes. Resposta 30 legada alimenta a interface local. Veja pledge-members-build12.md.',
            '- Cifra nativa de game preservada; trace registra apenas opcode, tamanho e decisão.',
            '- Demais pacotes continuam no caminho original. Nenhuma conversão baseada apenas no tamanho.',
            f"- Auditoria dos argumentos C2S: {wire.get('summary',{}).get('same_serializer_argument_contract',0)} métodos equivalentes no serializador; não precisam de conversão nesse limite.",
            f"- Listas C2S: {native_lists.get('method_count',0)} métodos comparados nos dois binários em {native_lists.get('vector_pairs',0)} pares de vetores; bytes iguais nos casos testados, sem nova conversão. Evidência: native-list-requests.json.",
            '- Evidências completas em wire-equivalence.json. Mesmos decoders S2C não provam condições, repetições ou semântica iguais.',
            '- Contagem de conversores descreve o código candidato; consulte runtime_installation para a DLL realmente instalada.','',
-           '## Pendências automáticas por categoria','', '| Categoria estática | Quantidade |','|---|---|']
+           '## Categorias da extração estática (não são contagens de falhas)','', '| Categoria estática | Quantidade |','|---|---|']
     for status,n in sorted(Counter(i['static_status'] for i in items).items()):lines.append(f'| {status} | {n} |')
     lines+=['','Detalhamento por pacote em coverage.json. Tráfego observado prova ocorrência, não correção semântica.',
             'Funções novas sem regra confirmada permanecem pendentes; o catálogo estático não é prova de ausência no C4.','']
@@ -129,8 +135,8 @@ def main():
     if args.action=='package':
         build_hash=hashlib.sha256((ROOT/'build/L2KProtocolCore.dll').read_bytes()).hexdigest();dest=ROOT/'dist'/('L2Killer-ProtocolPatch-'+build_hash[:8]);dest.mkdir(parents=True,exist_ok=True)
         for src,name in [(ROOT/'build/L2KProtocolCore.dll','L2KProtocolCore.dll'),(ROOT/'reports/coverage.json','coverage.json'),(ROOT/'reports/coverage.md','coverage.md'),(ROOT/'outbound-policy.json','outbound-policy.json'),(ROOT/'schema-inbound.json','schema-inbound.json'),(ROOT/'structured-inbound.json','structured-inbound.json'),(ROOT/'outbound-schemas.json','outbound-schemas.json')]:shutil.copyfile(src,dest/name)
-        write(dest/'manifest.json',{'build':'protocol-hooks-11-quest-channel','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
-        (dest/'LEIA-ME.txt').write_text('Atualizacao para a system LoginTest ja instalada.\nA DLL inclui conversores S2C/C2S e validacao de parametros de mensagens; bloqueia 28 pedidos exclusivos do Interlude. Consulte os catalogos incluidos para estruturas, condicoes e limitacoes.\nCifra do jogo preservada. Limite: academias/subunidades e demais recursos novos nao passam a existir no servidor C4.\nO gerador ainda nao adapta todos os pacotes. Consulte coverage.json.\nO trace L2KGameTrace-<PID>-<tick>.tsv permite classificar o trafego sem gravar payloads/credenciais/chat.\nA instalacao atomica pelo install_protocol_update.py preserva a DLL anterior; vale na proxima abertura.\n')
+        write(dest/'manifest.json',{'build':'protocol-hooks-12-clan-members','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
+        (dest/'LEIA-ME.txt').write_text('Atualizacao para a system LoginTest ja instalada.\nA DLL inclui conversores S2C/C2S e validacao de parametros de mensagens; bloqueia 26 pedidos exclusivos do Interlude e atende duas consultas de permissao pela interface local de membros. Consulte os catalogos incluidos para estruturas, condicoes e limitacoes.\nCifra do jogo preservada. Limite: academias/subunidades e demais recursos novos nao passam a existir no servidor C4.\nO gerador ainda nao adapta todos os pacotes. Consulte coverage.json.\nO trace L2KGameTrace-<PID>-<tick>.tsv permite classificar o trafego sem gravar payloads/credenciais/chat.\nA instalacao atomica pelo install_protocol_update.py preserva a DLL anterior; vale na proxima abertura.\n')
         archive=shutil.make_archive(str(dest),'zip',dest.parent,dest.name);print('PACKAGE '+archive)
     print('REPORT '+str(ROOT/'reports/coverage.md'))
 if __name__=='__main__':main()

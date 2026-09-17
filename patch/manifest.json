@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-11-quest-channel",
+  "build": "protocol-hooks-12-clan-members",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 329876,
-      "sha256": "055de034de5d394040f50866ea5c5d544922dd41d37c4360c011fe3947b71f02"
+      "bytes": 346906,
+      "sha256": "ec355d32587c3b516d228011d76ead08a0592e0a018e46aedf63c03dd6a079d0"
     },
     {
       "path": "system/skillname-e.dat",

@@ -11,13 +11,16 @@ class GameTraceTests(unittest.TestCase):
         cls.engine=pefile.PE(data=(ROOT/'build/interlude-engine.dll').read_bytes(),fast_load=True)
     def setUp(self):
         self.h=harness.LoginHooksTests(methodName='runTest');self.h.setUp();h=self.h
-        self.events=[];self.state=h.sock+0x50c0
+        self.events=[];self.local_html=[];self.state=h.sock+0x50c0
         for rva,size in [(0x101fd0,0x80),(0x102070,0x90)]:h.u.mem_write(h.engine+rva,self.engine.get_data(rva,size))
         h.w32(h.symbol('game_trace::encrypt_original'),h.engine+0x101fd0);h.w32(h.symbol('game_trace::decrypt_original'),h.engine+0x102070)
         h.w32(h.symbol('game_trace::receive_original'),h.engine+0x120e60)
         h.callbacks[h.symbol('game_trace::record(')]=self.observe
         h.callbacks[h.engine+0x4a67d9]=self.native_copy
         h.callbacks[h.engine+0x120e60]=self.native_receive
+        h.callbacks[h.symbol('l2k_queue_local_html(')]=self.local_display
+    def local_display(self):
+        h=self.h;p,n=h.args(2);self.local_html.append(bytes(h.u.mem_read(p,n)));h.ret(value=1)
     def native_copy(self):
         h=self.h;dst,cap,src,n=h.args(4);self.assertLessEqual(n,cap);h.u.mem_write(dst,bytes(h.u.mem_read(src,n)));h.ret(value=0)
     def observe(self):
@@ -136,7 +139,7 @@ class GameTraceTests(unittest.TestCase):
             sock,fmt,n,data=h.args(4);sent.append(bytes(h.u.mem_read(data,n)));h.ret()
         h.callbacks[h.engine+0x68b6]=serialize;h.callbacks[h.engine+0x1029b0]=send
         cases=[(b'\xc0'+d(77,2,255),None),
-               (b'\xc0'+d(77,1),b'\xc0'+d(77,1)),
+               (b'\xc0'+d(77,1),None),
                (b'\x24'+d(123,0),b'\x24'+d(123)),(b'\x24'+d(123,100),None),
                (b'\xa7'+d(100,200,3,0,0),b'\xa7'+d(100,200,3)),
                (b'\xa7'+d(100,200,3,1,0),None),
@@ -158,6 +161,42 @@ class GameTraceTests(unittest.TestCase):
         h.u.mem_write(h.buf,frame);h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
         small=struct.pack('<H',4)+b'\x2d\0';h.u.mem_write(h.buf,small);h.call('receive_observer',[h.buf,len(small)],h.sock,8)
         self.assertEqual(decrypted,[9000,2]);self.assertEqual(h.frames,[frame,small])
+        self.assertEqual(h.r32(h.sock+0x50bc),1)
+
+    def test_member_permissions_bridge_through_real_send_and_receive_hooks(self):
+        import re
+        from test_structured_codec import d,s,h as word
+        from test_pledge_bridge import roster
+        h=self.h;sent=[];decrypted=[]
+        h.w32(h.symbol('game_trace::serialize_original'),h.engine+0x68b6)
+        h.w32(h.symbol('game_trace::send_original'),h.engine+0x1029b0)
+        def serialize():
+            dst,cap,fmt,args=h.args(4);h.u.mem_write(dst,self.outgoing);h.ret(value=len(self.outgoing))
+        def send():
+            sock,fmt,n,p=h.args(4);sent.append(bytes(h.u.mem_read(p,n)));h.ret()
+        h.callbacks[h.engine+0x68b6]=serialize;h.callbacks[h.engine+0x1029b0]=send
+        def incoming(p):
+            frame=word(len(p)+2)+p;h.u.mem_write(h.buf,frame);h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
+        def outgoing(p):
+            self.outgoing=p;h.call('game_trace::send_adapter',[h.sock,h.buf])
+        def click(action,arg=0):
+            html=self.local_html[-1][5:-6].decode('utf-16le')
+            command=re.search(r'l2k_priv_\d+_'+action+'_'+str(arg)+r'(?=")',html)
+            self.assertIsNotNone(command);outgoing(b'\x21'+s(command[0]))
+        h.w32(h.sock+0x50bc,0);incoming(b'\x15'+s('Leader')+d(100))
+        modern=roster([('Member',200)])
+        source=modern[:1]+modern[5:9]+modern[13:-4]
+        incoming(source);self.assertEqual(h.frames[-1][2:],modern)
+        outgoing(b'\xd0\x1b\0'+d(0)+s('Member'))
+        self.assertEqual(sent,[b'\xc0'+d(200,2)])
+        h.w32(h.sock+0x50bc,1)
+        def decrypt():decrypted.append(1);h.ret(12)
+        h.callbacks[h.engine+0x102070]=decrypt
+        rights=bytes(range(32));count=len(h.frames);incoming(b'\x30'+d(0,0)+rights)
+        self.assertEqual(len(h.frames),count);self.assertEqual(decrypted,[1])
+        click('T');self.assertEqual(len(sent),1);click('A')
+        changed=bytearray(rights);changed[0]^=1
+        self.assertEqual(sent,[b'\xc0'+d(200,2),b'\xc0'+d(200,3)+changed])
         self.assertEqual(h.r32(h.sock+0x50bc),1)
 
     def test_enterworld_serializer_boundary_preserves_variable_blob(self):

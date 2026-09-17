@@ -8,6 +8,24 @@ from unicorn.x86_const import UC_X86_REG_ESP,UC_X86_REG_ECX
 from test_cpp_core import ROOT
 
 class NativePledgeRequestsTests(unittest.TestCase):
+    def test_bridge_requests_match_native_c4_serialization_and_member_menu(self):
+        from native_emitter_audit import NativeEmitter
+        from test_pledge_bridge import PledgeBridgeTests
+        from test_structured_codec import s,d
+        PledgeBridgeTests.setUpClass()
+        bridge=PledgeBridgeTests(methodName='runTest');bridge.setUp();bridge.setup_clan()
+        target=NativeEmitter('target');name=s('Member')
+        menu=target.run(0x104058d0,[],{0x10000:name},direct_arguments=[0,target.DATA+0x10000])['wire']
+        self.assertEqual(menu,b'\xd0\x1b\0'+d(0)+name)
+        bridge.call(menu);source=NativeEmitter('source')
+        for action,wire,rights in [(2,bridge.wire,bytes(32))]:
+            emitted=source.run(0x103fb950,[],{0x10000:rights},direct_arguments=[200,action,source.DATA+0x10000])['wire']
+            self.assertEqual(wire,emitted)
+        rights=bytes(range(32));bridge.response(rights);bridge.click('T',10);bridge.click('A')
+        edited=bytearray(rights);edited[1]^=4
+        emitted=source.run(0x103fb950,[],{0x10000:bytes(edited)},direct_arguments=[200,3,source.DATA+0x10000])['wire']
+        self.assertEqual(bridge.wire,emitted)
+
     def test_actions_match_original_c4_sender_and_reject_interlude_update(self):
         lib=C.CDLL(str(ROOT/'build/libl2k_protocol.dylib'))
         fn=lib.l2k_outbound_convert
