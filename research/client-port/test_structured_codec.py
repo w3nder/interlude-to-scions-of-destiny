@@ -23,8 +23,27 @@ class StructuredCodecTests(unittest.TestCase):
         if old==new:self.assertEqual(self.convert(old)[0],0);return
         self.assertEqual(self.convert(old),(len(new),new));self.assertEqual(self.convert(new)[0],0)
         self.assertEqual(self.convert(old,len(new)-1)[0],-2)
+    def test_gm_character_fields_equipment_cp_and_modern_passthrough(self):
+        wire=json.loads((ROOT/'reports/wire-equivalence.json').read_text())
+        row=next(r for r in wire['inbound'] if r['table']=='primary' and r['opcode']=='0x8F')
+        fmt=row['source']['reachable_decoder_calls'][0]['format']
+        self.assertEqual(fmt, 'd'*5+'S'+'d'*71+'f'*4+'d'*4+'S'+'d'*3+'c'*3+'d'*2+'h'*2+'d'*3)
+        for seed in [0,1,7,99]:
+            fields=encode(fmt,seed)
+            fields[10]=d(0xfedcba98) # unsigned C4 experience
+            fields[96]=d(88);fields[97]=d(123456);fields[98]=d(65432)
+            old=b'\x8f'+b''.join(fields)
+            modern=(b'\x8f'+b''.join(fields[:11])+d(0)+b''.join(fields[11:41])+d(0)
+                    +b''.join(fields[41:57])+d(0)+bytes(68)+b''.join(fields[57:97])+d(0)
+                    +b''.join(fields[97:])+bytes(8)+d(0xffffff,0xffffff))
+            self.assertEqual(len(modern)-len(old),100)
+            self.pair(old,modern)
+            for size in range(1,len(old)):
+                self.assertEqual(self.convert(old[:size])[0],0)
+            self.assertEqual(self.convert(old+b'\x99')[0],0)
+
     def test_fixed_extensions(self):
-        for op,size,extra in [(0x29,21,4),(0x2a,17,4),(0xa6,7,4),(0x4c,9,4),(0xc5,29,4),(0xc7,41,4),(0xcd,25,4),(0xf3,21,8)]:
+        for op,size,extra in [(0x86,17,12),(0x29,21,4),(0x2a,17,4),(0xa6,7,4),(0x4c,9,4),(0xc5,29,4),(0xc7,41,4),(0xcd,25,4),(0xf3,21,8)]:
             p=bytes([op])+bytes(range(size-1));self.pair(p,p+b'\0'*extra)
             for n in range(1,len(p)):self.assertLess(self.convert(p[:n])[0],0)
     def test_character_selection_equipment_and_experience(self):

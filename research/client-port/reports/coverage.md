@@ -11,7 +11,7 @@ Unidades inventariadas: 577 (métodos de envio + slots de recepção; não é co
 - Recepção 0x53, 0x54 e 0x55: listas/membros de clã C4 convertidos ao layout Interlude.
 - Pacotes de clã que já têm o layout Interlude são preservados.
 - 28 solicitações exclusivas do Interlude bloqueadas antes da cifra/envio.
-- 37 conversores S2C, 6 conversores C2S e 1 validador estrutural. Detalhes e variantes em schema-inbound.json, structured-inbound.json e outbound-schemas.json.
+- 39 conversores S2C, 6 conversores C2S e 1 validador estrutural. Detalhes e variantes em schema-inbound.json, structured-inbound.json e outbound-schemas.json.
 - Testes estruturais não validam por si só significado de campos nem comportamento de todas as telas.
 - RequestPledgePower C0: tamanhos incompatíveis com a ação C4 são bloqueados antes do envio; alteração de privilégios por rank continua sem adaptação.
 - Cifra nativa de game preservada; trace registra apenas opcode, tamanho e decisão.

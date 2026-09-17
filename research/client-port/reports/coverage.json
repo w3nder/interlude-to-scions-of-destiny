@@ -1,13 +1,12 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T13:24:23.105121+00:00",
+  "generated_utc": "2026-09-17T13:53:06.399449+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 87,
-    "results": "/tmp/l2k-pending-audit-validation.log",
-    "followup": "3 native-list tests rerun after adapter preservation assertions; /tmp/l2k-native-list-final.log"
+    "unittest_cases": 90,
+    "results": "build/test-results.txt"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
   "user_observed_working": [
@@ -491,6 +490,30 @@
       "evidence": "Exact engine decompilations; native User::SetPledgePower differential execution in test_native_character_permissions.py; full fixtures and receive hook integration",
       "validation": "Automated structure/bounds and native permission checks; gameplay pending",
       "recognition": "Convert only uniquely recognized complete C4 layout. Preserve modern and unknown variants unchanged."
+    },
+    {
+      "table": "primary",
+      "opcode": "0x86",
+      "name": "RidePacket",
+      "kind": "converter",
+      "source_layout": "dddd",
+      "target_layout": "ddddddd",
+      "conversion": "Append three zero coordinates: native RiderEnter and RiderEnd use the current pawn location for the zero FVector sentinel.",
+      "evidence": "reports/gm-ride-build10.md",
+      "validation": "Synthetic bounds, original x86 functions/decoders, receive-hook integration; gameplay pending",
+      "recognition": "Exact complete source/target layouts; unknown GM variants preserved"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8F",
+      "name": "GMViewCharacterInfoPacket",
+      "kind": "converter",
+      "source_layout": "C4 99-field native format",
+      "target_layout": "Interlude 143-field native format",
+      "conversion": "Zero-extend experience; add face slots, augmentation, effect and Interlude-only flags; preserve class/maxCP/currentCP ordering; default colors white.",
+      "evidence": "reports/gm-ride-build10.md",
+      "validation": "Synthetic bounds, original x86 functions/decoders, receive-hook integration; gameplay pending",
+      "recognition": "Exact complete source/target layouts; unknown GM variants preserved"
     }
   ],
   "outbound_schema_converters": [
@@ -553,17 +576,17 @@
   ],
   "catalogue_contract": "Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.",
   "counts": {
-    "passthrough": 337,
+    "passthrough": 335,
     "blocked_by_profile": 28,
     "native_same_serializer_contract": 142,
     "Interlude_to_C4_converter": 6,
     "bounded_outbound_validator": 1,
     "native_handlers_ignore_payload": 25,
-    "strict_C4_to_Interlude_converter": 37,
+    "strict_C4_to_Interlude_converter": 39,
     "bounded_layout_validator": 1
   },
   "release_complete": false,
-  "pending_semantic_validation": 337,
+  "pending_semantic_validation": 335,
   "handler_audit": {
     "hashes": {
       "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
@@ -1821,8 +1844,8 @@
     "limits": "Finite differential tests are not a proof for every input, UI/caller semantics or live server acceptance. No runtime conversion is enabled. Invalid counts and native buffer overflow behavior are not certified."
   },
   "runtime_installation": {
-    "build": "protocol-hooks-9-pledge-guard",
-    "dll_sha256": "41f8f3308f86009c06209c2f4f582612e48f6a6f72cbe62d0ba65db2710a47ac",
+    "build": "protocol-hooks-10-gm-ride",
+    "dll_sha256": "d7e10bcc6392f0d0a0d9586c3f6ab9f31f790458403bdcb14302194d95f5a52e",
     "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-assets-20260917-052113",
     "tables_installed": [
       {
@@ -1909,12 +1932,12 @@
     ],
     "asset_manifest": "/Users/wenderteixeira/Documents/L2Killer/research/client-port/build/assets-interlude/assets-manifest.json",
     "activation": "next client start; running client not interrupted",
-    "s2c_converters": 37,
+    "s2c_converters": 39,
     "c2s_converters": 6,
     "unsupported_extended_requests_blocked": 28,
     "candidate_source_is_not_installed": false,
-    "status": "installed; 84 tests passed; build 9 gameplay pending",
-    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-081233.dll",
+    "status": "installed; 90 tests passed; build 10 gameplay pending",
+    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-105151.dll",
     "outbound_validators": 1
   },
   "blocked_features": [
@@ -6212,8 +6235,8 @@
       "opcode": "0x86",
       "name": "RidePacket",
       "static_status": "different_observed_decode_segments",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "strict_C4_to_Interlude_converter",
+      "test_coverage": "synthetic structure/bounds fixtures; representative native hook integration; gameplay pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {
@@ -6302,8 +6325,8 @@
       "opcode": "0x8F",
       "name": "GMViewCharacterInfoPacket",
       "static_status": "different_observed_decode_segments",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "strict_C4_to_Interlude_converter",
+      "test_coverage": "synthetic structure/bounds fixtures; representative native hook integration; gameplay pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {

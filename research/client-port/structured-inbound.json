@@ -364,6 +364,30 @@
       "evidence": "Exact engine decompilations; native User::SetPledgePower differential execution in test_native_character_permissions.py; full fixtures and receive hook integration",
       "validation": "Automated structure/bounds and native permission checks; gameplay pending",
       "recognition": "Convert only uniquely recognized complete C4 layout. Preserve modern and unknown variants unchanged."
+    },
+    {
+      "table": "primary",
+      "opcode": "0x86",
+      "name": "RidePacket",
+      "kind": "converter",
+      "source_layout": "dddd",
+      "target_layout": "ddddddd",
+      "conversion": "Append three zero coordinates: native RiderEnter and RiderEnd use the current pawn location for the zero FVector sentinel.",
+      "evidence": "reports/gm-ride-build10.md",
+      "validation": "Synthetic bounds, original x86 functions/decoders, receive-hook integration; gameplay pending",
+      "recognition": "Exact complete source/target layouts; unknown GM variants preserved"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8F",
+      "name": "GMViewCharacterInfoPacket",
+      "kind": "converter",
+      "source_layout": "C4 99-field native format",
+      "target_layout": "Interlude 143-field native format",
+      "conversion": "Zero-extend experience; add face slots, augmentation, effect and Interlude-only flags; preserve class/maxCP/currentCP ordering; default colors white.",
+      "evidence": "reports/gm-ride-build10.md",
+      "validation": "Synthetic bounds, original x86 functions/decoders, receive-hook integration; gameplay pending",
+      "recognition": "Exact complete source/target layouts; unknown GM variants preserved"
     }
   ],
   "limits": "Structural translation is implemented for these variants, not proof of complete semantic compatibility. All other packets remain pending or unchanged."

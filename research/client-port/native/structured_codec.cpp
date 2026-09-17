@@ -74,6 +74,31 @@ bool character_selection(Reader& r,Writer& w,bool modern){
         start=r.pos;if(!r.format(modern?"dddffdddchh":"dddffdddc"))return false;w.raw(r.p+start,r.pos-start);if(!modern)w.zero(4);
     }return r.pos==r.n;
 }
+// GMViewCharacterInfo is a fixed record, unlike UserInfo's variable cubics/permissions.
+// Exact native formats: C4 10415800, Interlude 10426930. Preserve unknown variants.
+bool gm_character(Reader& r,Writer& w,bool modern){
+    if(!r.format("dddddS"))return false;
+    w.raw(r.p,r.pos);
+    uint32_t start=r.pos;
+    if(!r.take(16+(modern?8:4)))return false; // race/sex/class/level, experience
+    w.raw(r.p+start,r.pos-start);if(!modern)w.zero(4);
+    start=r.pos;if(!r.take(56))return false;w.raw(r.p+start,56);
+    for(unsigned group=0;group<2;++group){
+        start=r.pos;if(!r.take(modern?68:64))return false;
+        w.raw(r.p+start,r.pos-start);if(!modern)w.zero(4);
+    }
+    if(modern){start=r.pos;if(!r.take(68))return false;w.raw(r.p+start,68);}
+    else w.zero(68); // no C4 augmentation data
+    start=r.pos;
+    if(!r.format("ddddddddddddddddddddffffddddSdddcccddhhd"))return false;
+    w.raw(r.p+start,r.pos-start); // includes class ID following recommendation counters
+    if(modern){start=r.pos;if(!r.take(4))return false;w.raw(r.p+start,4);}
+    else w.zero(4); // Interlude-only effect field precedes max/current CP
+    start=r.pos;if(!r.take(8))return false;w.raw(r.p+start,8);
+    if(modern){start=r.pos;if(!r.format("ccdccdd"))return false;w.raw(r.p+start,r.pos-start);}
+    else{w.zero(8);w.number(0xffffff);w.number(0xffffff);} // extra flags/rank absent; default colors
+    return r.pos==r.n;
+}
 // Quarantined: the live server's 281/289-byte variants do not match this model.
 // Retain the draft for research; never route live CharacterSelected through it.
 [[maybe_unused]] bool character_selected(Reader& r,Writer& w,bool modern){
@@ -132,6 +157,8 @@ L2K_API int l2k_structured_convert(const uint8_t* p,uint32_t n,uint8_t* out,uint
     switch(p[0]){
     case 0x13:return parsed(p,n,out,cap,character_selection);
     case 0x15:return 0; // Preserve the previously working native world-entry path.
+    // RiderEnter/RiderEnd interpret a zero FVector as the actor's current location.
+    case 0x86:return padded(p,n,out,cap,17,12);
     case 0x29:return padded(p,n,out,cap,21,4);
     case 0x2a:return padded(p,n,out,cap,17,4);
     case 0xa6:return padded(p,n,out,cap,7,4);
@@ -147,6 +174,11 @@ L2K_API int l2k_structured_convert(const uint8_t* p,uint32_t n,uint8_t* out,uint
     case 0x64:case 0xed:return parsed(p,n,out,cap,message);
     case 0xd0:return parsed(p,n,out,cap,multisell);
     case 0x90:return parsed(p,n,out,cap,gmclan);
+    case 0x8f:{
+        Reader modern{p,n};Writer skip{nullptr};if(gm_character(modern,skip,true))return 0;
+        Reader legacy{p,n};Writer measure{nullptr};if(!gm_character(legacy,measure,false))return 0;
+        return parsed(p,n,out,cap,gm_character);
+    }
     case 0x32:{Reader r{p,n};if(!r.take(4)||!r.str())return L2K_INVALID;uint32_t end=r.pos;
         if(end==n)return padded(p,n,out,cap,n,4);
         uint32_t type;if(!r.num(type))return L2K_INVALID;if(type&&!r.str())return L2K_INVALID;return r.pos==n?0:L2K_INVALID;}

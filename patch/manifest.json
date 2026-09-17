@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-9-pledge-guard",
+  "build": "protocol-hooks-10-gm-ride",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 325073,
-      "sha256": "41f8f3308f86009c06209c2f4f582612e48f6a6f72cbe62d0ba65db2710a47ac"
+      "bytes": 328241,
+      "sha256": "d7e10bcc6392f0d0a0d9586c3f6ab9f31f790458403bdcb14302194d95f5a52e"
     },
     {
       "path": "system/skillname-e.dat",
@@ -358,6 +358,6 @@
       "sha256": "833c6520c0477701df73efc5c8090d7133314e7fa29e76665da9a1b89a42eb39"
     }
   ],
-  "validation": "84 automated tests passed, including exact native C4/Interlude pledge sender action contracts, native permission flags and receive/send hook checks. Build 9 gameplay pending.",
+  "validation": "90 automated tests passed; GM/Ride native evidence; gameplay pending; port incomplete",
   "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending."
 }
