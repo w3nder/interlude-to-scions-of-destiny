@@ -6,8 +6,8 @@ A auditoria é somente leitura e não ativa conversões. As contagens descrevem 
 
 | Classificação | Métodos |
 |---|---:|
-| Controle de fluxo, helpers ou buffers fora do modelo conservador | 55 |
-| Mesmos argumentos, ordem e constantes; nenhuma conversão necessária nesse limite | 137 |
+| Controle de fluxo, helpers ou buffers fora do modelo conservador | 50 |
+| Mesmos argumentos, ordem e constantes; nenhuma conversão necessária nesse limite | 142 |
 | Argumentos ou formato diferentes | 5 |
 
 Comparação limitada a prefixes sem desvios até o envio. O interpretador recusa instruções desconhecidas, registradores não modelados, buffers variáveis e helpers desconhecidos. Não substitui essas informações por curingas. A abstração de L2ParamStack.Top foi conferida em x86 nos dois binários para sequência, cursor e fim da lista.
@@ -35,3 +35,5 @@ Diferença adicional identificada: `RequestExAcceptJoinMPCC` conserva D0:0E, mas
 - DLL instalada: `9bd942c5` (build 4, 13 conversores S2C). O trace da sessão restaurada contém EnterWorld e atualizações do mundo.
 - Código candidato: conversão 15 em quarentena, passthrough restaurado. 65 testes passaram; o candidato não foi reinstalado.
 - Os arquivos de evidência não contêm payloads capturados, contas, chat ou chaves.
+
+Build 8: modeladas leituras de AL/AH/AX e registradores equivalentes e extensões de sinal/zero. Escritas parciais continuam recusadas. Cinco contratos adicionais foram reconhecidos sem mudar pacotes; testes distinguem extensão com e sem sinal e partes altas/baixas.

@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-7-outbound",
+  "build": "protocol-hooks-8-characters",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 321635,
-      "sha256": "f88387f99dc84d3c5e5ad4a83af3546afaaddd7de97c0c8688c8feaeef222f9c"
+      "bytes": 325073,
+      "sha256": "3fcef81e7f3d07f97f94a7f02b9fc29f558339f8df0e1f27c5ccd8097a30b706"
     },
     {
       "path": "system/skillname-e.dat",
@@ -358,6 +358,6 @@
       "sha256": "833c6520c0477701df73efc5c8090d7133314e7fa29e76665da9a1b89a42eb39"
     }
   ],
-  "validation": "74 automated tests passed, including actual x86 serializer execution and send-hook sequencing. Build 7 gameplay validation pending.",
+  "validation": "82 automated tests passed, including all 256 C4 permission bits through actual native User methods and character receive-hook integration. Build 8 gameplay pending.",
   "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending."
 }

@@ -1,12 +1,12 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T10:34:28.882254+00:00",
+  "generated_utc": "2026-09-17T11:05:00.366379+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 74,
-    "results": "build/outbound-build7-validation.log"
+    "unittest_cases": 82,
+    "results": "build/test-results.txt"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
   "user_observed_working": [
@@ -462,6 +462,34 @@
       "evidence": "Exact engine handlers exported in decompiled/batch; comparison.json callsites; structural fixtures in test_structured_codec.py",
       "validation": "FAILED LIVE: rejected server CharacterSelected variants (281/289 bytes); native passthrough restored. Draft parser not used.",
       "recognition": "Full bounded parse; accept complete target layout unchanged; otherwise convert complete source layout; reject unmatched variant"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x03",
+      "name": "CharInfoPacket",
+      "kind": "converter",
+      "source_handler": "0x10422390",
+      "target_handler": "0x104366f0",
+      "source_layout": "Complete C4 character layout in native/asset_codec.cpp",
+      "target_layout": "Complete Interlude character layout in native/asset_codec.cpp",
+      "conversion": "Add empty face slot, 48 augmentation bytes and six Interlude-only trailing dwords; white title color. Only the complete protocol >420 C4 variant is recognized.",
+      "evidence": "Exact engine decompilations; native User::SetPledgePower differential execution in test_native_character_permissions.py; full fixtures and receive hook integration",
+      "validation": "Automated structure/bounds and native permission checks; gameplay pending",
+      "recognition": "Convert only uniquely recognized complete C4 layout. Preserve modern and unknown variants unchanged."
+    },
+    {
+      "table": "primary",
+      "opcode": "0x04",
+      "name": "UserInfoPacket",
+      "kind": "converter",
+      "source_handler": "0x10423a00",
+      "target_handler": "0x104342f0",
+      "source_layout": "Complete C4 character layout in native/asset_codec.cpp",
+      "target_layout": "Complete Interlude character layout in native/asset_codec.cpp",
+      "conversion": "Zero-extend experience; add empty face object/template slots and 68 augmentation bytes; map legacy User permission bits 0,1,3,10 to Interlude bits 1,2,7,5; default new tail fields, white title color. This does not implement RequestPledgePower rank/member operations.",
+      "evidence": "Exact engine decompilations; native User::SetPledgePower differential execution in test_native_character_permissions.py; full fixtures and receive hook integration",
+      "validation": "Automated structure/bounds and native permission checks; gameplay pending",
+      "recognition": "Convert only uniquely recognized complete C4 layout. Preserve modern and unknown variants unchanged."
     }
   ],
   "outbound_schema_converters": [
@@ -511,16 +539,16 @@
   ],
   "catalogue_contract": "Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.",
   "counts": {
-    "passthrough": 345,
+    "passthrough": 338,
     "blocked_by_profile": 28,
-    "native_same_serializer_contract": 137,
+    "native_same_serializer_contract": 142,
     "Interlude_to_C4_converter": 6,
     "native_handlers_ignore_payload": 25,
-    "strict_C4_to_Interlude_converter": 35,
+    "strict_C4_to_Interlude_converter": 37,
     "bounded_layout_validator": 1
   },
   "release_complete": false,
-  "pending_semantic_validation": 345,
+  "pending_semantic_validation": 338,
   "handler_audit": {
     "hashes": {
       "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
@@ -1759,8 +1787,8 @@
   },
   "wire_equivalence_summary": {
     "summary": {
-      "requires_deeper_analysis": 55,
-      "same_serializer_argument_contract": 137,
+      "requires_deeper_analysis": 50,
+      "same_serializer_argument_contract": 142,
       "different_serializer_argument_contract": 5
     },
     "inbound_summary": {
@@ -1771,8 +1799,8 @@
     }
   },
   "runtime_installation": {
-    "build": "protocol-hooks-7-outbound",
-    "dll_sha256": "f88387f99dc84d3c5e5ad4a83af3546afaaddd7de97c0c8688c8feaeef222f9c",
+    "build": "protocol-hooks-8-characters",
+    "dll_sha256": "3fcef81e7f3d07f97f94a7f02b9fc29f558339f8df0e1f27c5ccd8097a30b706",
     "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-assets-20260917-052113",
     "tables_installed": [
       {
@@ -1859,11 +1887,12 @@
     ],
     "asset_manifest": "/Users/wenderteixeira/Documents/L2Killer/research/client-port/build/assets-interlude/assets-manifest.json",
     "activation": "next client start; running client not interrupted",
-    "s2c_converters": 35,
+    "s2c_converters": 37,
     "c2s_converters": 6,
     "unsupported_extended_requests_blocked": 28,
     "candidate_source_is_not_installed": false,
-    "status": "installed; 74 tests passed; new outbound rules need live validation"
+    "status": "installed; 82 tests passed; character conversion gameplay pending",
+    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-080333.dll"
   },
   "blocked_features": [
     {
@@ -2261,9 +2290,9 @@
       "direction": "C2S",
       "name": "RequestActionUse",
       "static_status": "same_observed_opcode_and_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
-      "wire_audit": "requires_deeper_analysis"
+      "implementation": "native_same_serializer_contract",
+      "test_coverage": "binary argument dataflow; native parameter-stack helper checks; caller/UI semantics outside this proof",
+      "wire_audit": "same_serializer_argument_contract"
     },
     {
       "direction": "C2S",
@@ -2758,9 +2787,9 @@
       "direction": "C2S",
       "name": "RequestGameStart",
       "static_status": "same_observed_opcode_and_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
-      "wire_audit": "requires_deeper_analysis"
+      "implementation": "native_same_serializer_contract",
+      "test_coverage": "binary argument dataflow; native parameter-stack helper checks; caller/UI semantics outside this proof",
+      "wire_audit": "same_serializer_argument_contract"
     },
     {
       "direction": "C2S",
@@ -2932,9 +2961,9 @@
       "direction": "C2S",
       "name": "RequestMagicSkillUse",
       "static_status": "same_observed_opcode_and_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
-      "wire_audit": "requires_deeper_analysis"
+      "implementation": "native_same_serializer_contract",
+      "test_coverage": "binary argument dataflow; native parameter-stack helper checks; caller/UI semantics outside this proof",
+      "wire_audit": "same_serializer_argument_contract"
     },
     {
       "direction": "C2S",
@@ -3538,9 +3567,9 @@
       "direction": "C2S",
       "name": "RequestShortCutUse",
       "static_status": "same_observed_opcode_and_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
-      "wire_audit": "requires_deeper_analysis"
+      "implementation": "native_same_serializer_contract",
+      "test_coverage": "binary argument dataflow; native parameter-stack helper checks; caller/UI semantics outside this proof",
+      "wire_audit": "same_serializer_argument_contract"
     },
     {
       "direction": "C2S",
@@ -3594,9 +3623,9 @@
       "direction": "C2S",
       "name": "RequestTargetCancel",
       "static_status": "same_observed_opcode_and_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
-      "wire_audit": "requires_deeper_analysis"
+      "implementation": "native_same_serializer_contract",
+      "test_coverage": "binary argument dataflow; native parameter-stack helper checks; caller/UI semantics outside this proof",
+      "wire_audit": "same_serializer_argument_contract"
     },
     {
       "direction": "C2S",
@@ -4772,8 +4801,8 @@
       "opcode": "0x03",
       "name": "CIPacket",
       "static_status": "renamed_slot_requires_review",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "strict_C4_to_Interlude_converter",
+      "test_coverage": "synthetic structure/bounds fixtures; representative native hook integration; gameplay pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {
@@ -4782,8 +4811,8 @@
       "opcode": "0x04",
       "name": "UIPacket",
       "static_status": "renamed_slot_requires_review",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "strict_C4_to_Interlude_converter",
+      "test_coverage": "synthetic structure/bounds fixtures; representative native hook integration; gameplay pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {

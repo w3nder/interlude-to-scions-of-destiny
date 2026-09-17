@@ -3,6 +3,7 @@
 #include "schema_codec.h"
 #include "structured_codec.h"
 #include "asset_codec.h"
+#include "character_codec.h"
 #include "outbound_policy.h"
 #include <stdarg.h>
 #include "login_hooks.h"
@@ -110,6 +111,7 @@ void __fastcall receive_observer(void* socket,void*,uint8_t* frame,uint32_t leng
     bool clan=n!=0;
     if(!n)n=l2k_schema_convert(frame+2,length-2,converted+2,sizeof(converted)-2);
     if(!n)n=l2k_structured_convert(frame+2,length-2,converted+2,sizeof(converted)-2);
+    if(!n)n=l2k_character_convert(frame+2,length-2,converted+2,sizeof(converted)-2);
     if(n<0){record(socket,"S2C",clan?"rejected_clan_layout":"rejected_schema_layout",frame+2,length-2);return;}
     uint8_t* current=frame;uint32_t current_size=length;
     if(n>0){current_size=(uint32_t)n+2;converted[0]=(uint8_t)current_size;converted[1]=(uint8_t)(current_size>>8);current=converted;record(socket,"S2C",clan?"converted_C4_clan":"converted_C4_schema",converted+2,n);}

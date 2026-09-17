@@ -35,7 +35,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-7-outbound`: 35 conversores S2C e 6 C2S, seis DATs migrados e 55 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 74 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
+Build `protocol-hooks-8-characters`: 37 conversores S2C e 6 C2S, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 82 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
 
 CharacterSelected permanece sem conversão após uma regressão corrigida. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
 
@@ -46,3 +46,7 @@ Incluídos `skillname-e.dat`, `skillgrp.dat`, `skillsoundgrp.dat` e `mobskillani
 ## Contratos de envio — build 7
 
 Corrigidos EnterWorld, RequestJoinPartyRoom e RequestExAcceptJoinMPCC. A atualização está em `patch/system/L2KProtocolCore.dll`; feche o jogo antes de substituir. Consulte [evidências e limites](research/client-port/reports/outbound-build7.md). A build passou por testes automatizados; isso não confirma que todas as desconexões observadas no Windows estejam resolvidas.
+
+## Personagens — build 8
+
+Conversão dos layouts C4 completos de CharInfo e UserInfo, incluindo equipamentos, experiência e os quatro indicadores legados de permissão. Pacotes já Interlude e variantes desconhecidas são preservados. A equivalência dos indicadores foi testada nas funções x86 originais para cada um dos 256 bits C4. Isso não conclui a adaptação das operações de alteração de privilégios de clã. Consulte [evidências e pendências](research/client-port/reports/characters-build8.md).

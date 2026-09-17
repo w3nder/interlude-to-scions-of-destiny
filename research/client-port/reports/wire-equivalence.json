@@ -16,8 +16,8 @@
   },
   "scope": "Exact serializer argument expressions for supported straight-line prefixes. No semantic claim for callers/UI, unmodeled helpers, variable buffers or control flow. No runtime transformations are enabled by this report.",
   "summary": {
-    "requires_deeper_analysis": 55,
-    "same_serializer_argument_contract": 137,
+    "requires_deeper_analysis": 50,
+    "same_serializer_argument_contract": 142,
     "different_serializer_argument_contract": 5
   },
   "inbound_summary": {
@@ -1070,17 +1070,157 @@
         {
           "call_va": "0x103f8ca6",
           "method_va": "0x103f8c70",
-          "pending_reason": "partial/unknown register al"
+          "contract": {
+            "format": "cddc",
+            "arguments": [
+              69,
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "zero_extend",
+                1,
+                [
+                  "low",
+                  8,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    2
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                2
+              ]
+            ]
+          }
         }
       ],
       "target": [
         {
           "call_va": "0x104074ac",
           "method_va": "0x10407470",
-          "pending_reason": "partial/unknown register al"
+          "contract": {
+            "format": "cddc",
+            "arguments": [
+              69,
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "zero_extend",
+                1,
+                [
+                  "low",
+                  8,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    2
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                2
+              ]
+            ]
+          }
         }
       ],
-      "resolution": "requires_deeper_analysis"
+      "resolution": "same_serializer_argument_contract"
     },
     {
       "name": "RequestAddTradeItem",
@@ -4062,17 +4202,97 @@
         {
           "call_va": "0x103f5067",
           "method_va": "0x103f5040",
-          "pending_reason": "control flow/instruction requires review: movsx"
+          "contract": {
+            "format": "cdhddd",
+            "arguments": [
+              13,
+              [
+                "argument",
+                4,
+                4
+              ],
+              [
+                "sign_extend",
+                2,
+                [
+                  "low",
+                  16,
+                  0,
+                  [
+                    "argument",
+                    8,
+                    2
+                  ]
+                ]
+              ],
+              [
+                "argument",
+                12,
+                4
+              ],
+              [
+                "argument",
+                16,
+                4
+              ],
+              [
+                "argument",
+                20,
+                4
+              ]
+            ],
+            "parameter_stack_reads": []
+          }
         }
       ],
       "target": [
         {
           "call_va": "0x1040420a",
           "method_va": "0x104041e0",
-          "pending_reason": "control flow/instruction requires review: movsx"
+          "contract": {
+            "format": "cdhddd",
+            "arguments": [
+              13,
+              [
+                "argument",
+                4,
+                4
+              ],
+              [
+                "sign_extend",
+                2,
+                [
+                  "low",
+                  16,
+                  0,
+                  [
+                    "argument",
+                    8,
+                    2
+                  ]
+                ]
+              ],
+              [
+                "argument",
+                12,
+                4
+              ],
+              [
+                "argument",
+                16,
+                4
+              ],
+              [
+                "argument",
+                20,
+                4
+              ]
+            ],
+            "parameter_stack_reads": []
+          }
         }
       ],
-      "resolution": "requires_deeper_analysis"
+      "resolution": "same_serializer_argument_contract"
     },
     {
       "name": "RequestGetItemFromPet",
@@ -5520,17 +5740,157 @@
         {
           "call_va": "0x103f86f6",
           "method_va": "0x103f86c0",
-          "pending_reason": "partial/unknown register al"
+          "contract": {
+            "format": "cddc",
+            "arguments": [
+              47,
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "zero_extend",
+                1,
+                [
+                  "low",
+                  8,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    2
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                2
+              ]
+            ]
+          }
         }
       ],
       "target": [
         {
           "call_va": "0x10406fac",
           "method_va": "0x10406f70",
-          "pending_reason": "partial/unknown register al"
+          "contract": {
+            "format": "cddc",
+            "arguments": [
+              47,
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "zero_extend",
+                1,
+                [
+                  "low",
+                  8,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    2
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                2
+              ]
+            ]
+          }
         }
       ],
-      "resolution": "requires_deeper_analysis"
+      "resolution": "same_serializer_argument_contract"
     },
     {
       "name": "RequestMakeMacro",
@@ -8572,17 +8932,157 @@
         {
           "call_va": "0x103f8266",
           "method_va": "0x103f8230",
-          "pending_reason": "partial/unknown register al"
+          "contract": {
+            "format": "cddc",
+            "arguments": [
+              52,
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "zero_extend",
+                1,
+                [
+                  "low",
+                  8,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    2
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                2
+              ]
+            ]
+          }
         }
       ],
       "target": [
         {
           "call_va": "0x10406b7c",
           "method_va": "0x10406b40",
-          "pending_reason": "partial/unknown register al"
+          "contract": {
+            "format": "cddc",
+            "arguments": [
+              52,
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "zero_extend",
+                1,
+                [
+                  "low",
+                  8,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    2
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                1
+              ],
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                2
+              ]
+            ]
+          }
         }
       ],
-      "resolution": "requires_deeper_analysis"
+      "resolution": "same_serializer_argument_contract"
     },
     {
       "name": "RequestShowboard",
@@ -8855,17 +9355,85 @@
         {
           "call_va": "0x103f834d",
           "method_va": "0x103f8330",
-          "pending_reason": "control flow/instruction requires review: movsx"
+          "contract": {
+            "format": "ch",
+            "arguments": [
+              55,
+              [
+                "sign_extend",
+                2,
+                [
+                  "low",
+                  16,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    0
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ]
+            ]
+          }
         }
       ],
       "target": [
         {
           "call_va": "0x10406cc4",
           "method_va": "0x10406ca0",
-          "pending_reason": "partial/unknown register ax"
+          "contract": {
+            "format": "ch",
+            "arguments": [
+              55,
+              [
+                "sign_extend",
+                2,
+                [
+                  "low",
+                  16,
+                  0,
+                  [
+                    "Top",
+                    [
+                      "argument",
+                      4,
+                      4
+                    ],
+                    0
+                  ]
+                ]
+              ]
+            ],
+            "parameter_stack_reads": [
+              [
+                "Top",
+                [
+                  "argument",
+                  4,
+                  4
+                ],
+                0
+              ]
+            ]
+          }
         }
       ],
-      "resolution": "requires_deeper_analysis"
+      "resolution": "same_serializer_argument_contract"
     },
     {
       "name": "RequestTeleport",

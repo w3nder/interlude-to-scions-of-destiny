@@ -336,6 +336,34 @@
       "evidence": "Exact engine handlers exported in decompiled/batch; comparison.json callsites; structural fixtures in test_structured_codec.py",
       "validation": "FAILED LIVE: rejected server CharacterSelected variants (281/289 bytes); native passthrough restored. Draft parser not used.",
       "recognition": "Full bounded parse; accept complete target layout unchanged; otherwise convert complete source layout; reject unmatched variant"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x03",
+      "name": "CharInfoPacket",
+      "kind": "converter",
+      "source_handler": "0x10422390",
+      "target_handler": "0x104366f0",
+      "source_layout": "Complete C4 character layout in native/asset_codec.cpp",
+      "target_layout": "Complete Interlude character layout in native/asset_codec.cpp",
+      "conversion": "Add empty face slot, 48 augmentation bytes and six Interlude-only trailing dwords; white title color. Only the complete protocol >420 C4 variant is recognized.",
+      "evidence": "Exact engine decompilations; native User::SetPledgePower differential execution in test_native_character_permissions.py; full fixtures and receive hook integration",
+      "validation": "Automated structure/bounds and native permission checks; gameplay pending",
+      "recognition": "Convert only uniquely recognized complete C4 layout. Preserve modern and unknown variants unchanged."
+    },
+    {
+      "table": "primary",
+      "opcode": "0x04",
+      "name": "UserInfoPacket",
+      "kind": "converter",
+      "source_handler": "0x10423a00",
+      "target_handler": "0x104342f0",
+      "source_layout": "Complete C4 character layout in native/asset_codec.cpp",
+      "target_layout": "Complete Interlude character layout in native/asset_codec.cpp",
+      "conversion": "Zero-extend experience; add empty face object/template slots and 68 augmentation bytes; map legacy User permission bits 0,1,3,10 to Interlude bits 1,2,7,5; default new tail fields, white title color. This does not implement RequestPledgePower rank/member operations.",
+      "evidence": "Exact engine decompilations; native User::SetPledgePower differential execution in test_native_character_permissions.py; full fixtures and receive hook integration",
+      "validation": "Automated structure/bounds and native permission checks; gameplay pending",
+      "recognition": "Convert only uniquely recognized complete C4 layout. Preserve modern and unknown variants unchanged."
     }
   ],
   "limits": "Structural translation is implemented for these variants, not proof of complete semantic compatibility. All other packets remain pending or unchanged."

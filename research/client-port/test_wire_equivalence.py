@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import capstone,pefile
 from unicorn import Uc,UC_ARCH_X86,UC_MODE_32
 from unicorn.x86_const import UC_X86_REG_EAX,UC_X86_REG_ECX,UC_X86_REG_ESP
-from audit_wire_equivalence import Prefix,Unsupported,reachable,SOURCE_HASH,ROOT
+from audit_wire_equivalence import Prefix,Unsupported,reachable,SOURCE_HASH,ROOT,low,extend
 
 class TinyEngine:
     def __init__(self,body,strings=None):
@@ -15,6 +15,22 @@ class TinyEngine:
     def resolve(self,va):return va
 
 class WireEquivalenceTests(unittest.TestCase):
+    def test_partial_register_extension_preserves_signedness(self):
+        value=('input',)
+        self.assertEqual(extend(low(extend(low(value,16),2),16),2,True),extend(low(value,16),2,True))
+        self.assertNotEqual(extend(value,2,True),extend(value,2,False))
+        for v in [0,127,128,255,32767,32768,65535,0x12348001,0xffffffff]:
+            for size in [1,2]:
+                mask=(1<<(8*size))-1
+                expected=v&mask
+                self.assertEqual(extend(v,size),expected)
+                if expected&(1<<(8*size-1)):expected-=mask+1
+                self.assertEqual(extend(v,size,True),expected&0xffffffff)
+        self.assertEqual(low(0x1234,8,8),0x12)
+        self.assertNotEqual(low(value,8,8),low(value,8))
+    def test_partial_register_writes_remain_unproven(self):
+        with self.assertRaisesRegex(Unsupported,'partial register write'):
+            Prefix(TinyEngine(bytes.fromhex('b001c3'))).contract(0x1000,0x1002,'c')
     def test_reachable_does_not_include_next_function(self):
         e=TinyEngine(bytes.fromhex('31c0c39090e800000000c3'))
         nodes,errors=reachable(e,0x1000);self.assertEqual(list(sorted(nodes)),[0x1000,0x1002]);self.assertEqual(errors,[])
@@ -32,12 +48,12 @@ class WireEquivalenceTests(unittest.TestCase):
         for body in [bytes.fromhex('e800000000c3'),bytes.fromhex('7400c3')]:
             with self.assertRaises(Unsupported):Prefix(TinyEngine(body)).contract(0x1000,0x1010,'c')
     def test_native_parameter_stack_helpers_have_same_sequence_contract(self):
-        src=pefile.PE(str(ROOT.parent.parent/'system/engine.dll'))
+        src=pefile.PE(data=(ROOT.parent.parent/'system/engine.dll').read_bytes())
         path=ROOT/'build/interlude-core.dll'
         if not path.exists():path=ROOT.parent.parent.parent.parent/'Downloads/Lineage2_Interlude_Client/system/Core.dll'
         # Use the exact installed Core dependency, not an assumed import behavior.
         if not path.exists():path=__import__('pathlib').Path('/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/Core.dll')
-        target=pefile.PE(str(path))
+        target=pefile.PE(data=path.read_bytes())
         export=next(e for e in target.DIRECTORY_ENTRY_EXPORT.symbols if e.name==b'?Top@L2ParamStack@@QAEPAXXZ')
         va=target.OPTIONAL_HEADER.ImageBase+export.address
         while target.get_data(va-target.OPTIONAL_HEADER.ImageBase,1)==b'\xe9':va+=5+struct.unpack('<i',target.get_data(va-target.OPTIONAL_HEADER.ImageBase+1,4))[0]

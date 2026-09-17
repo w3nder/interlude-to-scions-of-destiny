@@ -17,12 +17,31 @@ def add(a,b):
     if isinstance(a,tuple) and a[0]=='stack' and isinstance(b,int):return ('stack',a[1]+b)
     return ('add',a,b)
 
+def low(value,bits,shift=0):
+    if isinstance(value,int):return (value>>shift)&((1<<bits)-1)
+    if not shift and isinstance(value,tuple) and value[0] in ('zero_extend','sign_extend'):
+        if bits<=value[1]*8:return low(value[2],bits)
+    if not shift and isinstance(value,tuple) and value[0]=='low' and value[2]==0:
+        return ('low',min(bits,value[1]),0,value[3])
+    return ('low',bits,shift,value)
+
+def extend(value,size,signed=False):
+    value=low(value,size*8)
+    if isinstance(value,int):
+        return (value-(1<<(size*8)) if signed and value&(1<<(size*8-1)) else value)&0xffffffff
+    return ('sign_extend' if signed else 'zero_extend',size,value)
+
+PARTIAL={name:(full,size,shift) for full,names in [('eax',['al','ah','ax']),('ebx',['bl','bh','bx']),('ecx',['cl','ch','cx']),('edx',['dl','dh','dx'])] for name,size,shift in zip(names,[8,8,16],[0,8,0])}
+PARTIAL.update({short:(full,16,0) for short,full in [('si','esi'),('di','edi'),('bp','ebp'),('sp','esp')]})
+
 class Prefix:
     def __init__(self,engine):
         self.e=engine;self.imports={i.address:i.name.decode() for d in engine.pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
         self.reg={r:('entry',r) for r in ['eax','ebx','ecx','edx','esi','edi','ebp']};self.reg['esp']=('stack',0)
         self.mem={};self.pops={};self.events=[]
     def register(self,name):
+        if name in PARTIAL:
+            full,bits,shift=PARTIAL[name];return low(self.reg[full],bits,shift)
         if name not in self.reg:raise Unsupported('partial/unknown register '+name)
         return self.reg[name]
     def addr(self,i,o):
@@ -86,8 +105,8 @@ class Prefix:
             if m=='push':self.push(self.read(i,op[0]))
             elif m=='pop':
                 self.write(i,op[0],self.load(self.reg['esp']));self.reg['esp']=add(self.reg['esp'],4)
-            elif m in ('mov','movzx'):
-                value=self.read(i,op[1]);self.write(i,op[0],('zero_extend',op[1].size,value) if m=='movzx' else value)
+            elif m in ('mov','movzx','movsx'):
+                value=self.read(i,op[1]);self.write(i,op[0],extend(value,op[1].size,m=='movsx') if m in ('movzx','movsx') else value)
             elif m=='lea':self.write(i,op[0],self.addr(i,op[1]))
             elif m in ('add','sub') and op[1].type==X86_OP_IMM:
                 delta=op[1].imm*(1 if m=='add' else -1);self.write(i,op[0],add(self.read(i,op[0]),delta))

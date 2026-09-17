@@ -8,7 +8,7 @@ from test_cpp_core import ROOT
 class GameTraceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.engine=pefile.PE(str(ROOT/'build/interlude-engine.dll'),fast_load=True)
+        cls.engine=pefile.PE(data=(ROOT/'build/interlude-engine.dll').read_bytes(),fast_load=True)
     def setUp(self):
         self.h=harness.LoginHooksTests(methodName='runTest');self.h.setUp();h=self.h
         self.events=[];self.state=h.sock+0x50c0
@@ -60,6 +60,16 @@ class GameTraceTests(unittest.TestCase):
         h=self.h;src,want=packets(9,2);frame=struct.pack('<H',len(src)+2)+src;h.u.mem_write(h.buf,frame);h.w32(h.sock+0x50bc,0)
         h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
         self.assertEqual(h.frames,[struct.pack('<H',len(want)+2)+want]);self.assertEqual(h.r32(h.sock+0x50bc),0)
+    def test_character_conversion_before_native_ui_queue(self):
+        from test_character_codec import character
+        h=self.h
+        for user in [False,True]:
+            for modern in [False,True]:
+                src=character(user,modern);want=character(user,True)
+                frame=struct.pack('<H',len(src)+2)+src
+                h.u.mem_write(h.buf,frame);h.w32(h.sock+0x50bc,0)
+                h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
+                self.assertEqual(h.frames[-1],struct.pack('<H',len(want)+2)+want)
     def test_send_filter_runs_before_native_encryption_and_send(self):
         h=self.h;h.w32(h.symbol('game_trace::serialize_original'),h.engine+0x68b6);h.w32(h.symbol('game_trace::send_original'),h.engine+0x1029b0)
         sent=[]
