@@ -18,7 +18,7 @@ A base vem primeiro e o patch por último. Aplicar a base depois do patch desfaz
 
 O erro de ponto de entrada `?GL2ShowCMViewer@@3HA` é compatível com mistura de versões: o executável do porte importa esse símbolo da `Core.dll`, presente na base fornecida. Não misture DLLs de outra system.
 
-Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 71 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
+Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 79 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
 
 ## Fonte e compilação
 
@@ -35,7 +35,9 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-12-clan-members`: 41 conversores S2C, 6 C2S e adaptação contextual de permissões de clã, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 111 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
+Build `protocol-hooks-13-status-content`: restaura a atualização de experiência C4 em `StatusUpdate`, corrige templates de mensagens/quests/eventos e liga as ações de pets aos IDs C4. São 17 DATs migrados e 126 testes automatizados aprovados; dez comandos de summons exclusivos do Interlude são bloqueados antes do envio.
+
+O catálogo inclui os 213 pontos de envio C4 (204 métodos), todos com uma classificação de evidência, além dos 304 slots de recepção. Enumeração completa não é prova de todos os comportamentos em jogo. Veja [mudanças e evidências da build 13](research/client-port/reports/status-content-build13.md), [cobertura dos protocolos](research/client-port/reports/coverage.md) e [destino dos 33 DATs e assets indisponíveis](research/client-port/reports/content-disposition.json).
 
 O usuário confirmou login, entrada no mundo, movimento, uso de skills, chat, informações de clã e warehouse funcionando. A entrada no mundo usa o caminho preservado de CharacterSelected; ausência de conversão desse pacote não significa falha de entrada. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
 

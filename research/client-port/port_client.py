@@ -5,6 +5,7 @@ import argparse,csv,hashlib,json,re,shutil,subprocess,sys
 from collections import Counter,defaultdict
 from datetime import datetime,timezone
 from pathlib import Path
+from sender_coverage import enrich
 ROOT=Path(__file__).resolve().parent
 PLEDGE_REQUESTS={'RequestPledgePower','RequestPledgePowerGradeList','RequestPledgeMemberPowerInfo'}
 
@@ -69,6 +70,26 @@ def report(validation=None,trace=None):
                 item['implementation']='native_same_serializer_contract';item['test_coverage']='binary argument dataflow; native parameter-stack helper checks; caller/UI semantics outside this proof'
         if item['direction']=='S2C' and (item['table'],item['opcode']) in ignored:
             item['implementation']='native_handlers_ignore_payload';item['test_coverage']='both exact engine bodies return without reading payload'
+    status_bridge=read('reports/native-status-update.json')
+    if status_bridge['status']!='passed' or any(status_bridge['hashes'][side]!=policy[side+'_sha256'] for side in ('source','target')):
+        raise ValueError('Stale native StatusUpdate evidence')
+    for item in items:
+        if item['direction']=='S2C' and item['table']=='primary' and item['opcode']=='0x0E':
+            item['implementation']='native_C4_status_experience_bridge'
+            item['test_coverage']='183 native differential vectors, all legacy tags, exact count validator; installer failure paths tested'
+        elif item['direction']=='S2C' and item['static_status']=='target_only_slot':
+            item['implementation']='Interlude_only_receiver_not_required_by_C4'
+            item['test_coverage']='no corresponding registered C4 receiver; native target path retained'
+    native_extra=enrich(items,policy)
+    common=read('reports/native-common-decoders.json')
+    if common['status']!='passed' or any(common['hashes'][s]!=policy[s+'_sha256'] for s in ('source','target')):
+        raise ValueError('Stale common native decoder evidence')
+    common_keys={(r['table'],r['opcode']) for r in common['packets']}
+    for item in items:
+        if item['direction']=='S2C' and (item['table'],item['opcode']) in common_keys:
+            item['native_decoder_evidence']={'file':'native-common-decoders.json','scope':common['scope'],'limits':common['limits']}
+    shared_names={r['name'] for r in comparison['outbound'] if r['source'] and r['target']}
+    shared=[i for i in items if i['direction']=='C2S' and i['name'] in shared_names]
     out={'profile':'L2Killer-C4_to_Interlude-508974c7','generated_utc':datetime.now(timezone.utc).isoformat(),
          'source_sha256':policy['source_sha256'],'target_sha256':policy['target_sha256'],
          'validation':validation or {'status':'not run by this invocation'},
@@ -85,6 +106,15 @@ def report(validation=None,trace=None):
          'handler_audit':audit,
          'wire_equivalence_summary':{k:wire.get(k,{}) for k in ('summary','inbound_summary')},
          'native_movement_validation':native_movement,
+         'native_status_validation':status_bridge,
+         'additional_native_sender_validation':native_extra,
+         'common_native_decoder_validation':{k:common[k] for k in ('unique_formats','vector_pairs','scope','limits')},
+         'blocked_action_ids':policy.get('denied_action_ids',{}),
+         'c4_sender_catalogue':{'methods':len(shared),'source_send_calls':sum(len(r['source']) for r in comparison['outbound']),
+             'missing_target_methods':[r['name'] for r in comparison['outbound'] if r['source'] and not r['target']],
+             'unclassified_methods':[i['name'] for i in shared if i['test_coverage']=='not validated per packet'],
+             'dispositions':dict(Counter(i['implementation'] for i in shared)),
+             'limits':'Complete enumeration and evidence classification does not certify all inputs or live server behavior.'},
          'native_list_validation':{k:native_lists.get(k) for k in ('status','method_count','vector_pairs','scope','limits')},
          'runtime_installation':read('build/current-runtime.json') if (ROOT/'build/current-runtime.json').exists() else {'status':'not inspected'},
          'member_permissions_bridge':{'requests':sorted(PLEDGE_REQUESTS),'response':'0x30 C4 32-byte bitset','evidence':'pledge-members-build12.md','rank_semantics':'local per-member editor; no fabricated C4 ranks'},
@@ -98,6 +128,8 @@ def report(validation=None,trace=None):
            f"Unidades inventariadas: {len(items)} (métodos de envio + slots de recepção; não é contagem de schemas únicos).",'',
            '## Regras implementadas','',
            '- Login C4 integrado; já validado em jogo na build anterior.',
+           '- StatusUpdate 0x0E: experiência C4 de 32 bits encaminhada à função nativa Interlude de 64 bits; demais tags preservadas; contagem validada.',
+           '- Dez comandos de summons exclusivos do Interlude (RequestActionUse, IDs 1031–1040) bloqueados. Elegibilidade das ações do C4 restaurada no actionname-e.dat.',
            '- Recepção 0x53, 0x54 e 0x55: listas/membros de clã C4 convertidos ao layout Interlude.',
            '- Pacotes de clã que já têm o layout Interlude são preservados.',
            f"- {len(out['blocked_features'])} solicitações exclusivas do Interlude bloqueadas antes da cifra/envio; outras duas são atendidas pela interface local de permissões por membro.",
@@ -108,6 +140,8 @@ def report(validation=None,trace=None):
            '- Demais pacotes continuam no caminho original. Nenhuma conversão baseada apenas no tamanho.',
            f"- Auditoria dos argumentos C2S: {wire.get('summary',{}).get('same_serializer_argument_contract',0)} métodos equivalentes no serializador; não precisam de conversão nesse limite.",
            f"- Listas C2S: {native_lists.get('method_count',0)} métodos comparados nos dois binários em {native_lists.get('vector_pairs',0)} pares de vetores; bytes iguais nos casos testados, sem nova conversão. Evidência: native-list-requests.json.",
+           f"- Catálogo C4: {len(shared)} métodos, {out['c4_sender_catalogue']['source_send_calls']} pontos de envio; sem par no destino: {len(out['c4_sender_catalogue']['missing_target_methods'])}; sem classificação de evidência: {len(out['c4_sender_catalogue']['unclassified_methods'])}.",
+           f"- Ramos adicionais: {native_extra['branch_methods']} métodos/{native_extra['branch_vector_pairs']} pares; macros: {native_extra['macro_vector_pairs']}; movimento/barcos: {native_extra['vehicle_vector_pairs']}. Três peculiaridades de varargs herdadas documentadas separadamente, sem afirmar equivalência semântica.",
            '- Evidências completas em wire-equivalence.json. Mesmos decoders S2C não provam condições, repetições ou semântica iguais.',
            '- Contagem de conversores descreve o código candidato; consulte runtime_installation para a DLL realmente instalada.','',
            '## Categorias da extração estática (não são contagens de falhas)','', '| Categoria estática | Quantidade |','|---|---|']
@@ -135,8 +169,8 @@ def main():
     if args.action=='package':
         build_hash=hashlib.sha256((ROOT/'build/L2KProtocolCore.dll').read_bytes()).hexdigest();dest=ROOT/'dist'/('L2Killer-ProtocolPatch-'+build_hash[:8]);dest.mkdir(parents=True,exist_ok=True)
         for src,name in [(ROOT/'build/L2KProtocolCore.dll','L2KProtocolCore.dll'),(ROOT/'reports/coverage.json','coverage.json'),(ROOT/'reports/coverage.md','coverage.md'),(ROOT/'outbound-policy.json','outbound-policy.json'),(ROOT/'schema-inbound.json','schema-inbound.json'),(ROOT/'structured-inbound.json','structured-inbound.json'),(ROOT/'outbound-schemas.json','outbound-schemas.json')]:shutil.copyfile(src,dest/name)
-        write(dest/'manifest.json',{'build':'protocol-hooks-12-clan-members','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
-        (dest/'LEIA-ME.txt').write_text('Atualizacao para a system LoginTest ja instalada.\nA DLL inclui conversores S2C/C2S e validacao de parametros de mensagens; bloqueia 26 pedidos exclusivos do Interlude e atende duas consultas de permissao pela interface local de membros. Consulte os catalogos incluidos para estruturas, condicoes e limitacoes.\nCifra do jogo preservada. Limite: academias/subunidades e demais recursos novos nao passam a existir no servidor C4.\nO gerador ainda nao adapta todos os pacotes. Consulte coverage.json.\nO trace L2KGameTrace-<PID>-<tick>.tsv permite classificar o trafego sem gravar payloads/credenciais/chat.\nA instalacao atomica pelo install_protocol_update.py preserva a DLL anterior; vale na proxima abertura.\n')
+        write(dest/'manifest.json',{'build':'protocol-hooks-13-status-content','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
+        (dest/'LEIA-ME.txt').write_text('Atualizacao para a system LoginTest ja instalada.\nA DLL inclui conversores S2C/C2S e validacao de parametros de mensagens; bloqueia 26 pedidos exclusivos do Interlude e atende duas consultas de permissao pela interface local de membros. Consulte os catalogos incluidos para estruturas, condicoes e limitacoes.\nCifra do jogo preservada. Limite: academias/subunidades e demais recursos novos nao passam a existir no servidor C4.\nTodos os metodos de envio C4 possuem classificacao de evidencia. Vetores finitos nao certificam todas as telas; consulte coverage.json e reports/content-disposition.json para os assets indisponiveis.\nO trace L2KGameTrace-<PID>-<tick>.tsv permite classificar o trafego sem gravar payloads/credenciais/chat.\nA instalacao atomica pelo install_protocol_update.py preserva a DLL anterior; vale na proxima abertura.\n')
         archive=shutil.make_archive(str(dest),'zip',dest.parent,dest.name);print('PACKAGE '+archive)
     print('REPORT '+str(ROOT/'reports/coverage.md'))
 if __name__=='__main__':main()

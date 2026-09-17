@@ -416,6 +416,14 @@
       "evidence": "test_native_quest_channel.py; reports/quest-channel-build11.md",
       "validation": "Native C4 UI no-op and original decoders/senders; bounded synthetic fixtures; receive hook with single decryption; gameplay pending",
       "recognition": "Complete bounded source or target layout; reject malformed variants"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0E",
+      "name": "StatusUpdate",
+      "kind": "validator",
+      "layout": "d object_id, d count, count * (d tag, d value)",
+      "condition": "Exact 9 + 8*count bytes including opcode; bounded count. Native case 2 bridge widens experience to 64 bits without changing the wire packet."
     }
   ],
   "limits": "Structural translation is implemented for these variants, not proof of complete semantic compatibility. All other packets remain pending or unchanged."

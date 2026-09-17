@@ -8,6 +8,13 @@ const Rule denied[]={
 }
 L2K_API int l2k_outbound_blocked(const uint8_t* p,uint32_t n){
     if(!p||!n)return L2K_INVALID;
+    if(p[0]==0x45){
+        if(n!=10)return L2K_INVALID;
+        const uint32_t action=uint32_t(p[1])|uint32_t(p[2])<<8|uint32_t(p[3])<<16|uint32_t(p[4])<<24;
+        // Exact actionname-e catalogues: these ten summon commands exist
+        // only in Interlude. Ordinary C4 and unknown custom IDs keep their route.
+        return action>=1031 && action<=1040 ? 1:0;
+    }
     if(p[0]!=0xd0)return 0;
     if(n<3)return L2K_INVALID;
     uint16_t sub=p[1]|uint16_t(p[2])<<8;
@@ -21,7 +28,8 @@ L2K_API int l2k_outbound_convert(uint8_t* p,uint32_t n){
         // C4 RequestPledgePower 103fb950: actions 1/2 use cdd;
         // other actions use cddb with exactly 32 raw bytes.
         // Interlude action 2 emits cddd (13 bytes), which is NOT a
-        // valid C4 action-2 request. Block until UI semantics are mapped.
+        // valid C4 action-2 request. The contextual member bridge runs first;
+        // this fallback never forwards an unadapted rank operation.
         if(n<9)return L2K_INVALID;
         uint32_t action=uint32_t(p[5])|(uint32_t(p[6])<<8)|
             (uint32_t(p[7])<<16)|(uint32_t(p[8])<<24);

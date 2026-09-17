@@ -1,0 +1,117 @@
+{
+  "tables": [
+    {
+      "table": "systemmsg-e",
+      "keys": [
+        "id"
+      ],
+      "source_rows": 1689,
+      "target_rows": 2083,
+      "merged_rows": 2083,
+      "source_keys_added": 0,
+      "sha256": "0d07d2042074348fae3986d54f209fc68613768f3330fd06c011f74961ca0d49",
+      "source_tsv_sha256": "d9ffbc3e0c748e0a63afdacc0de567aab5a68e8878a2e10783bdcc898db97c74",
+      "target_tsv_sha256": "74acacb3f9ee26848a671d58b3f6e5a124fb185629bce5a07b0f22899ea55c8a",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    },
+    {
+      "table": "questname-e",
+      "keys": [
+        "quest_id",
+        "quest_prog"
+      ],
+      "source_rows": 1816,
+      "target_rows": 2050,
+      "merged_rows": 2050,
+      "source_keys_added": 0,
+      "sha256": "f95e4366a8bb26a1b8bd4942e1a61785bac47d5d0da1cc1bf65583b51555bbbf",
+      "source_tsv_sha256": "b65837515e65e540f2f751bd900990c2af5b10b0a870d96494030b87f68b6e14",
+      "target_tsv_sha256": "f7f3d2d401742e3c81ea6538c0b8ea0ea4e55d08c26ae9cad37c3c50c45cfe71",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    },
+    {
+      "table": "entereventgrp",
+      "keys": [
+        "id"
+      ],
+      "source_rows": 1120,
+      "target_rows": 1152,
+      "merged_rows": 2263,
+      "source_keys_added": 1111,
+      "sha256": "9cad03f414fad0ff300d894f425b0b553eb663ccc67eb2182fbdd1a8ea825b4e",
+      "source_tsv_sha256": "72e55788a77c18dfd0d442af45e34b1408cdabd81aaa490c208a0fad6cb1da09",
+      "target_tsv_sha256": "37bd960a6fccc3a38cfa3eee12bd9563da0a469b3c677668f7510224042ffe85",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    },
+    {
+      "table": "staticobject-e",
+      "keys": [
+        "id"
+      ],
+      "source_rows": 261,
+      "target_rows": 577,
+      "merged_rows": 577,
+      "source_keys_added": 0,
+      "sha256": "e3232fd443acea5045f52256fb6c3aeff043eb815dcc16ca30e2376aa343b1d4",
+      "source_tsv_sha256": "ce8aaab1ad91939819e4ad1affb430b8d4b894ea93ac23281abb872059e433a1",
+      "target_tsv_sha256": "70c78b2325c5f9e277dc97d1966d51ce0de0eabfa4849fb7676cdd6451a7ee9b",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    },
+    {
+      "table": "servername-e",
+      "keys": [
+        "server_id"
+      ],
+      "source_rows": 127,
+      "target_rows": 127,
+      "merged_rows": 127,
+      "source_keys_added": 0,
+      "sha256": "b6afd0b7b66efac7e8ad170aa497df138dd1cfe75086b665b720b93f8f82f350",
+      "source_tsv_sha256": "ec776890f5bd3d3176bbf7d0de36d34aff64ae5fdd14d5606432b37e59d9d4a0",
+      "target_tsv_sha256": "7ad35c31dc5952853310d2589ad8b56e3a2956ade039b046e1ad3168e5eeb59b",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    },
+    {
+      "table": "castlename-e",
+      "keys": [
+        "tag",
+        "id"
+      ],
+      "source_rows": 38,
+      "target_rows": 53,
+      "merged_rows": 53,
+      "source_keys_added": 0,
+      "sha256": "ca25552abcacd92c838370ccaafd621aa5961e6ee61a4ab3f8e0048dcd337de2",
+      "source_tsv_sha256": "34ff2ae3e6b5a3e8d27043a72b67b157813d556dc27462ae6b2495b142d3ebc6",
+      "target_tsv_sha256": "c2fea3061aeb3fb09cd104535115ef4b42813b18dc4ed24a63be30d9dca6fd1c",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    },
+    {
+      "table": "actionname-e",
+      "keys": [
+        "id"
+      ],
+      "source_rows": 88,
+      "target_rows": 102,
+      "merged_rows": 102,
+      "source_keys_added": 0,
+      "sha256": "ac4a7b2f2530b55dd364b4a8c708b31f7b623e4021d2023ed758b43e84d69cd1",
+      "source_tsv_sha256": "ac7a39414dc18b8635c1711e16493811cb3380683dd3156a1b090d52d230a1e8",
+      "target_tsv_sha256": "2391e7e2878c544e1782b8fdd488916d600dea9fa378e760f0c1aa623705b31c",
+      "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+    }
+  ],
+  "scope": "C4 server message templates, quest steps/NPC references, NPC entry events, static object/castle/server names and pet/summon action eligibility. Native Interlude window layout, character geometry and world-map configuration retained.",
+  "quest_field_mapping": {
+    "UNK_npc1_?": "lvl_min",
+    "UNK_npc2_?": "lvl_max",
+    "UNK_npc3_?": "quest_type",
+    "UNK_0": "get_item_in_quest",
+    "UNK_3": "contact_npc_id",
+    "entity_x_?": "contact_npc_x",
+    "entity_y_?": "contact_npc_y",
+    "entity_z_?": "contact_npc_z",
+    "race_restricion": "restricions"
+  },
+  "system_message_mapping": "RGB + signed alpha to RGBA; SystemMsg_e./SystemMsg_k. references to numeric Interlude form; retain compatible modern presentation metadata."
+}

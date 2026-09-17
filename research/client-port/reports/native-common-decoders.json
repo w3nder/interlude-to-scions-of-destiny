@@ -1,0 +1,1628 @@
+{
+  "status": "passed",
+  "hashes": {
+    "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+    "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+  },
+  "unique_formats": 90,
+  "vector_pairs": 270,
+  "packets": [
+    {
+      "table": "extended",
+      "opcode": "0x01",
+      "formats": [
+        "dddf"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x02",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x03",
+      "formats": [
+        "dccSSddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x04",
+      "formats": [
+        "cS"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x05",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x06",
+      "formats": [
+        "dcd",
+        "dSdddddddddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x07",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x08",
+      "formats": [
+        "dSdddddddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x09",
+      "formats": [
+        "ddddddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0A",
+      "formats": [
+        "ddd",
+        "dhd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0B",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0C",
+      "formats": [
+        "dc"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0D",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0E",
+      "formats": [
+        "dd",
+        "dSdddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0F",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x10",
+      "formats": [
+        "ddSdddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x12",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x14",
+      "formats": [
+        "dc"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x19",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x1A",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x1B",
+      "formats": [
+        "d",
+        "dS"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x1C",
+      "formats": [
+        "cddd",
+        "dddddc",
+        "d",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x1D",
+      "formats": [
+        "cddd",
+        "ddddcdc",
+        "d",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x1E",
+      "formats": [
+        "cd",
+        "ddddc",
+        "d",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x1F",
+      "formats": [
+        "dd",
+        "ddc",
+        "d",
+        "c",
+        "d",
+        "dddddddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x20",
+      "formats": [
+        "dd",
+        "ddc",
+        "d",
+        "c",
+        "d",
+        "ddddddcddc"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x21",
+      "formats": [
+        "dd",
+        "dddc",
+        "d",
+        "c",
+        "d",
+        "dddcd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x22",
+      "formats": [
+        "dd",
+        "dddc"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x23",
+      "formats": [
+        "d",
+        "SdSdSdd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x24",
+      "formats": [
+        "Sdddddd",
+        "c",
+        "Sddddddd",
+        "Sdddd",
+        "ddd",
+        "ddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x25",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x26",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x28",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x29",
+      "formats": [
+        "cdSddddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2A",
+      "formats": [
+        "dd",
+        "dhd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2B",
+      "formats": [
+        "c"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2C",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2D",
+      "formats": []
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2E",
+      "formats": [
+        "ddddddd"
+      ]
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2F",
+      "formats": [
+        "dccScScd",
+        "ccdSdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x01",
+      "formats": [
+        "ddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x02",
+      "formats": [
+        "dddS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x05",
+      "formats": [
+        "dddcdddh",
+        "ddc"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x06",
+      "formats": [
+        "ddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x07",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x08",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x09",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0A",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0B",
+      "formats": [
+        "dddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0C",
+      "formats": [
+        "ddddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0D",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0F",
+      "formats": [
+        "dSd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x10",
+      "formats": [
+        "ddh",
+        "h",
+        "dddhhdhhhd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x11",
+      "formats": [
+        "ddh",
+        "h",
+        "dddhhdhhhd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x12",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x17",
+      "formats": [
+        "d",
+        "dddddddddddddddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x1A",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x1E",
+      "formats": [
+        "d",
+        "h",
+        "h",
+        "dddhhdhhh"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x20",
+      "formats": [
+        "h",
+        "h",
+        "dddhhdhhh"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x21",
+      "formats": [
+        "h",
+        "h",
+        "dddhhdhhh"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x22",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x24",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x28",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x2B",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x2C",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x2D",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x2E",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x2F",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x31",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x33",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x34",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x35",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x36",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x37",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x38",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x39",
+      "formats": [
+        "Sd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3A",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3B",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3C",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3D",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3E",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3F",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x40",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x43",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x46",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x47",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x48",
+      "formats": [
+        "dddddddddh",
+        "h",
+        "h",
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x49",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x4A",
+      "formats": [
+        "dd",
+        "dd",
+        "SS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x4B",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x4D",
+      "formats": [
+        "ddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x4E",
+      "formats": [
+        "ddd",
+        "dSdddddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x4F",
+      "formats": [
+        "dddSdddddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x50",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x51",
+      "formats": [
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x52",
+      "formats": [
+        "dSdddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x56",
+      "formats": [
+        "S"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x59",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x5A",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x5B",
+      "formats": [
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x5C",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x5D",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x5E",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x5F",
+      "formats": [
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x60",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x61",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x62",
+      "formats": [
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x63",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x6C",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x6D",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x6E",
+      "formats": [
+        "c",
+        "SSSSSSSSS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x6F",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x71",
+      "formats": [
+        "dddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x72",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x73",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x74",
+      "formats": [
+        "h",
+        "hh",
+        "dddhhdhhh"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x76",
+      "formats": [
+        "dddd",
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x77",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7D",
+      "formats": [
+        "S"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7E",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7F",
+      "formats": [
+        "h",
+        "dhd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x81",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x83",
+      "formats": [
+        "dSS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x84",
+      "formats": [
+        "SddSddddddddSd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x88",
+      "formats": [
+        "ddddddddddSdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x89",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8A",
+      "formats": [
+        "dd",
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8B",
+      "formats": [
+        "dddd",
+        "d",
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8D",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8E",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0x92",
+      "formats": [
+        "Sd",
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x93",
+      "formats": [
+        "Sh",
+        "dd",
+        "h",
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x96",
+      "formats": [
+        "dd",
+        "dSdddddS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x97",
+      "formats": [
+        "ddddddS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x98",
+      "formats": [
+        "dSdddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x99",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9A",
+      "formats": [
+        "dddd",
+        "ddddhhhdd",
+        "d",
+        "ddddhhhddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9B",
+      "formats": [
+        "dddd",
+        "ddddhhhddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9C",
+      "formats": [
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9D",
+      "formats": [
+        "dc"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9E",
+      "formats": []
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA0",
+      "formats": [
+        "S"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA1",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA2",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA4",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA5",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA7",
+      "formats": [
+        "d",
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA8",
+      "formats": [
+        "dSSS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA9",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xAA",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xAB",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xAC",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xAE",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB0",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB2",
+      "formats": [
+        "h",
+        "h",
+        "dddhhhdhh"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB3",
+      "formats": [
+        "h",
+        "hh",
+        "dddhhhdhh"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB6",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB7",
+      "formats": [
+        "ddd",
+        "dhddhdh",
+        "d",
+        "dhddhdhdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB8",
+      "formats": [
+        "ddd",
+        "ddhddhdhdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB9",
+      "formats": [
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xBA",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xBB",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xBC",
+      "formats": [
+        "SS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xBE",
+      "formats": [
+        "SS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC1",
+      "formats": [
+        "d",
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC2",
+      "formats": [
+        "d",
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC3",
+      "formats": [
+        "ddd",
+        "h",
+        "dddhhdhhhd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC4",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC9",
+      "formats": [
+        "dddSSdSdd",
+        "d",
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xCA",
+      "formats": [
+        "dddddd",
+        "dSSdddSSd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xCB",
+      "formats": [
+        "dddddd",
+        "dSSddddSSd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xCC",
+      "formats": [
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xCE",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xCF",
+      "formats": [
+        "dc"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD1",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD2",
+      "formats": [
+        "ddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD3",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD4",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD5",
+      "formats": [
+        "dSddSS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD6",
+      "formats": [
+        "ddd",
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD7",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD8",
+      "formats": [
+        "dddd",
+        "dd",
+        "d",
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xD9",
+      "formats": [
+        "ddddd",
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xDA",
+      "formats": [
+        "dddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xDB",
+      "formats": [
+        "dS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xDC",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xDD",
+      "formats": [
+        "dd",
+        "d",
+        "ddddddddffd",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xDE",
+      "formats": [
+        "Sdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xDF",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE0",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE1",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE2",
+      "formats": [
+        "ddd",
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE3",
+      "formats": [
+        "dddddddcdcdcdcdcdc"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE4",
+      "formats": [
+        "ccccccdd",
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE5",
+      "formats": [
+        "ddd",
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE6",
+      "formats": [
+        "dddddddcdcdcdcdcdc"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE7",
+      "formats": [
+        "c",
+        "d",
+        "c",
+        "c",
+        "dSSScc",
+        "ccdcS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE8",
+      "formats": [
+        "ddh",
+        "h",
+        "dddhh",
+        "dhhh",
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xE9",
+      "formats": [
+        "ddh",
+        "h",
+        "dddhh",
+        "dhhh",
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xEA",
+      "formats": [
+        "ccccccdd",
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xEB",
+      "formats": [
+        "ddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xEC",
+      "formats": [
+        "dd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xEE",
+      "formats": [
+        "ddd",
+        "dhd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xEF",
+      "formats": [
+        "dddh",
+        "dhhd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF0",
+      "formats": [
+        "dddddddddddddddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF1",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF2",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF4",
+      "formats": [
+        "ddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF5",
+      "formats": [
+        "c",
+        "c",
+        "dddccdddddcdddc",
+        "c",
+        "cc",
+        "cddc",
+        "S",
+        "dc",
+        "S",
+        "ccc",
+        "cccc",
+        "cc",
+        "ccd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF7",
+      "formats": [
+        "d"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF8",
+      "formats": [
+        "cc"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF9",
+      "formats": [
+        "dddd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xFA",
+      "formats": [
+        "d",
+        "dSdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xFB",
+      "formats": [
+        "ddSdd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xFC",
+      "formats": [
+        "dSd"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0xFD",
+      "formats": [
+        "dSSS"
+      ]
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8C",
+      "formats": [
+        "ddSdddddffffdddd"
+      ]
+    }
+  ],
+  "scope": "Native decoder field contents, primitive widths, UTF-16 strings, signed/unsigned bit patterns, double precision and end cursor for every shared reachable format.",
+  "limits": "Full handler branch conditions, row counts, raw reads and UI callbacks are not exercised by this format-level test."
+}

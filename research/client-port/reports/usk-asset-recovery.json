@@ -1,0 +1,18 @@
+{
+  "relative": "animations/viRUS_Share_Skill2.usk",
+  "sha256": "1ef0c0d562d43a0cfa03d52e01fe19d762d430813dc27a74b84428c145449942",
+  "bytes": 4649823,
+  "verified_export": "virus_icon.l2_11023_skill_i00",
+  "skill_id": 10615,
+  "container": "Lineage2Ver121; unchanged source bytes",
+  "dependencies": [
+    "Core",
+    "Engine",
+    "LineageEffectMeshes"
+  ],
+  "loader_path": "../Animations/*.usk",
+  "inherited_missing_imports": [
+    "LineageEffectMeshes.warpPointlineUP"
+  ],
+  "limits": "Requested icon export exists. An unrelated mesh import is absent in both original C4 and target Interlude packages; effect objects/rendering are not certified by icon lookup."
+}

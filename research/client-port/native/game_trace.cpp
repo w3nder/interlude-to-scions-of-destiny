@@ -191,5 +191,5 @@ bool l2k_install_game_trace(){
     encrypt_original=reinterpret_cast<Cipher>(base+0x101fd0);decrypt_original=reinterpret_cast<Cipher>(base+0x102070);
     for(auto& p:patches)InterlockedExchangePointer(reinterpret_cast<void* volatile*>(base+p.slot),p.observer);
     while(prepared){--prepared;DWORD ignored;VirtualProtect(reinterpret_cast<void*>(base+patches[prepared].slot),4,old[prepared],&ignored);}
-    l2k_log("game_adapter=active; original game cipher; clan and schema converters; 28 unsupported Interlude requests blocked; metadata trace");return true;
+    l2k_log("game_adapter=active; original game cipher; clan and schema converters; 26 unsupported Interlude requests and 10 summon action IDs blocked; local clan permissions; metadata trace");return true;
 }

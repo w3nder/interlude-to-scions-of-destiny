@@ -1,0 +1,74 @@
+{
+  "manifest_url": "http://www.l2killer.org/patch/files.lst.bz2",
+  "files": [
+    {
+      "path": "animations\\L2Killer_Assassin_light.ukx",
+      "url": "http://www.l2killer.org/patch/animations/L2Killer_Assassin_light.ukx.bz2",
+      "download_bytes": 12688356,
+      "decoded_bytes": 17100239,
+      "md5_compressed": "6a04800215364708f8208cc1bd4b20f1",
+      "md5_decoded": "b91d5fca54bbe622ad5c65ec2295975a",
+      "manifest_md5": "b91d5fca54bbe622ad5c65ec2295975a",
+      "manifest_size": 12688356,
+      "header": "cafef00d6f0057de2ec675abe8532524fb91e871c303689ce0be93a0",
+      "local_md5": "b91d5fca54bbe622ad5c65ec2295975a",
+      "matches_local": true
+    },
+    {
+      "path": "animations\\L2killer_HeadGear.ukx",
+      "url": "http://www.l2killer.org/patch/animations/L2killer_HeadGear.ukx.bz2",
+      "download_bytes": 4818789,
+      "decoded_bytes": 6507381,
+      "md5_compressed": "1334971ece6c7be72e17ff9e95157513",
+      "md5_decoded": "8da7643b9926f7f0a105acb0c2cf32ba",
+      "manifest_md5": "8da7643b9926f7f0a105acb0c2cf32ba",
+      "manifest_size": 4818789,
+      "header": "cafef00d6f00ec8b52b6a276530659542c4c5324bf73bf415bebefd0",
+      "local_md5": "8da7643b9926f7f0a105acb0c2cf32ba",
+      "matches_local": true
+    },
+    {
+      "path": "systextures\\epicicon.utx",
+      "url": "http://www.l2killer.org/patch/systextures/epicicon.utx.bz2",
+      "download_bytes": 9174,
+      "decoded_bytes": 13599,
+      "md5_compressed": "29e965f9bdf4a0f0f6d94bd16f764e3b",
+      "md5_decoded": "e9ae57d3933b208e4b652e1dd19f4db1",
+      "manifest_md5": "e9ae57d3933b208e4b652e1dd19f4db1",
+      "manifest_size": 9174,
+      "header": "4c0069006e0065006100670065003200560065007200310032003100",
+      "local_md5": "e9ae57d3933b208e4b652e1dd19f4db1",
+      "matches_local": true
+    },
+    {
+      "path": "animations\\viRUS_Share_Skill2.usk",
+      "url": "http://www.l2killer.org/patch/animations/viRUS_Share_Skill2.usk.bz2",
+      "download_bytes": 1202368,
+      "decoded_bytes": 4649823,
+      "md5_compressed": "2a2ca0530bd2219390c62e5fc87569f7",
+      "md5_decoded": "b25f6edf5d7ce24ef90bae8c36eb9dbf",
+      "manifest_md5": "b25f6edf5d7ce24ef90bae8c36eb9dbf",
+      "manifest_size": 1202368,
+      "header": "4c0069006e0065006100670065003200560065007200310032003100",
+      "local_md5": "b25f6edf5d7ce24ef90bae8c36eb9dbf",
+      "matches_local": true
+    }
+  ],
+  "network_failures": [
+    {
+      "url": "http://update.l2killer.org/updates/files.lst.bz2",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "url": "https://update.l2killer.org/updates/files.lst.bz2",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "url": "http://www.l2killer.org/patch/files.lst.bz2",
+      "status": 200,
+      "bytes": 37943,
+      "type": "application/x-bzip",
+      "bz2": true
+    }
+  ]
+}

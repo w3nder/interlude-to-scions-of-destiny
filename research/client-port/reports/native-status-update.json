@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "hashes": {
+    "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+    "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+  },
+  "vector_pairs": 183,
+  "opcode": "0x0E",
+  "source_handler": "0x10414f80",
+  "target_handler": "0x104261f0",
+  "target_switch_slot": "0x10426560",
+  "target_original_destination": "0x10426523",
+  "change": "Restore C4 tag 2 via native OnExpUpdate(User*, int64); zero-extend unsigned 32-bit experience.",
+  "scope": "Actual native decoder, count loop, every C4 status tag, dispatch and native experience setters. Object lookup is pre-established; other UI callbacks observed at their ABI boundary."
+}

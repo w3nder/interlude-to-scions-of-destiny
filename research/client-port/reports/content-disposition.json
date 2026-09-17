@@ -1,0 +1,5160 @@
+{
+  "tables": [
+    {
+      "table": "actionname-e",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "armorgrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "castlename-e",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "chargrp",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "classinfo-e",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "commandname-e",
+      "disposition": "all_source_rows_already_present",
+      "source_rows": 110,
+      "key": "id"
+    },
+    {
+      "table": "creditgrp-e",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "entereventgrp",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "etcitemgrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "eula-e",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "hairaccessarygrp",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue.",
+      "limit": "No DDF available; fixed-record source keys were present in target; target native geometry configuration retained."
+    },
+    {
+      "table": "hairaccessorylocgrp",
+      "disposition": "all_source_rows_already_present",
+      "source_rows": 63,
+      "key": "name"
+    },
+    {
+      "table": "hairgrp",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "helmetgrp",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue.",
+      "limit": "No DDF available; fixed-record source keys were present in target; target native geometry configuration retained."
+    },
+    {
+      "table": "hennagrp-e",
+      "disposition": "all_source_rows_already_present",
+      "source_rows": 180,
+      "key": "id"
+    },
+    {
+      "table": "itemname-e",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "logongrp",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "mobskillanimgrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "musicinfo",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "npcgrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "npcname-e",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "questname-e",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "recipe-c",
+      "disposition": "all_source_rows_already_present",
+      "source_rows": 782,
+      "key": "id_mk"
+    },
+    {
+      "table": "servername-e",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "skillgrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "skillname-e",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "skillsoundgrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "staticobject-e",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "symbolname-e",
+      "disposition": "all_source_rows_already_present",
+      "source_rows": 11,
+      "key": "id"
+    },
+    {
+      "table": "sysstring-e",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    },
+    {
+      "table": "systemmsg-e",
+      "disposition": "migrated_server_content_and_pet_actions"
+    },
+    {
+      "table": "weapongrp",
+      "disposition": "previously_migrated_items_npcs_skills"
+    },
+    {
+      "table": "zonename-e",
+      "disposition": "native_Interlude_configuration_retained",
+      "reason": "Native UI, geometry, camera, map or regional music configuration; not a server object-ID catalogue."
+    }
+  ],
+  "counts": {
+    "migrated_server_content_and_pet_actions": 7,
+    "previously_migrated_items_npcs_skills": 10,
+    "native_Interlude_configuration_retained": 11,
+    "all_source_rows_already_present": 5
+  },
+  "converted_content": {
+    "tables": [
+      {
+        "table": "systemmsg-e",
+        "keys": [
+          "id"
+        ],
+        "source_rows": 1689,
+        "target_rows": 2083,
+        "merged_rows": 2083,
+        "source_keys_added": 0,
+        "sha256": "0d07d2042074348fae3986d54f209fc68613768f3330fd06c011f74961ca0d49",
+        "source_tsv_sha256": "d9ffbc3e0c748e0a63afdacc0de567aab5a68e8878a2e10783bdcc898db97c74",
+        "target_tsv_sha256": "74acacb3f9ee26848a671d58b3f6e5a124fb185629bce5a07b0f22899ea55c8a",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      },
+      {
+        "table": "questname-e",
+        "keys": [
+          "quest_id",
+          "quest_prog"
+        ],
+        "source_rows": 1816,
+        "target_rows": 2050,
+        "merged_rows": 2050,
+        "source_keys_added": 0,
+        "sha256": "f95e4366a8bb26a1b8bd4942e1a61785bac47d5d0da1cc1bf65583b51555bbbf",
+        "source_tsv_sha256": "b65837515e65e540f2f751bd900990c2af5b10b0a870d96494030b87f68b6e14",
+        "target_tsv_sha256": "f7f3d2d401742e3c81ea6538c0b8ea0ea4e55d08c26ae9cad37c3c50c45cfe71",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      },
+      {
+        "table": "entereventgrp",
+        "keys": [
+          "id"
+        ],
+        "source_rows": 1120,
+        "target_rows": 1152,
+        "merged_rows": 2263,
+        "source_keys_added": 1111,
+        "sha256": "9cad03f414fad0ff300d894f425b0b553eb663ccc67eb2182fbdd1a8ea825b4e",
+        "source_tsv_sha256": "72e55788a77c18dfd0d442af45e34b1408cdabd81aaa490c208a0fad6cb1da09",
+        "target_tsv_sha256": "37bd960a6fccc3a38cfa3eee12bd9563da0a469b3c677668f7510224042ffe85",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      },
+      {
+        "table": "staticobject-e",
+        "keys": [
+          "id"
+        ],
+        "source_rows": 261,
+        "target_rows": 577,
+        "merged_rows": 577,
+        "source_keys_added": 0,
+        "sha256": "e3232fd443acea5045f52256fb6c3aeff043eb815dcc16ca30e2376aa343b1d4",
+        "source_tsv_sha256": "ce8aaab1ad91939819e4ad1affb430b8d4b894ea93ac23281abb872059e433a1",
+        "target_tsv_sha256": "70c78b2325c5f9e277dc97d1966d51ce0de0eabfa4849fb7676cdd6451a7ee9b",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      },
+      {
+        "table": "servername-e",
+        "keys": [
+          "server_id"
+        ],
+        "source_rows": 127,
+        "target_rows": 127,
+        "merged_rows": 127,
+        "source_keys_added": 0,
+        "sha256": "b6afd0b7b66efac7e8ad170aa497df138dd1cfe75086b665b720b93f8f82f350",
+        "source_tsv_sha256": "ec776890f5bd3d3176bbf7d0de36d34aff64ae5fdd14d5606432b37e59d9d4a0",
+        "target_tsv_sha256": "7ad35c31dc5952853310d2589ad8b56e3a2956ade039b046e1ad3168e5eeb59b",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      },
+      {
+        "table": "castlename-e",
+        "keys": [
+          "tag",
+          "id"
+        ],
+        "source_rows": 38,
+        "target_rows": 53,
+        "merged_rows": 53,
+        "source_keys_added": 0,
+        "sha256": "ca25552abcacd92c838370ccaafd621aa5961e6ee61a4ab3f8e0048dcd337de2",
+        "source_tsv_sha256": "34ff2ae3e6b5a3e8d27043a72b67b157813d556dc27462ae6b2495b142d3ebc6",
+        "target_tsv_sha256": "c2fea3061aeb3fb09cd104535115ef4b42813b18dc4ed24a63be30d9dca6fd1c",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      },
+      {
+        "table": "actionname-e",
+        "keys": [
+          "id"
+        ],
+        "source_rows": 88,
+        "target_rows": 102,
+        "merged_rows": 102,
+        "source_keys_added": 0,
+        "sha256": "ac4a7b2f2530b55dd364b4a8c708b31f7b623e4021d2023ed758b43e84d69cd1",
+        "source_tsv_sha256": "ac7a39414dc18b8635c1711e16493811cb3380683dd3156a1b090d52d230a1e8",
+        "target_tsv_sha256": "2391e7e2878c544e1782b8fdd488916d600dea9fa378e760f0c1aa623705b31c",
+        "validation": "all target columns/rows and RSA413 roundtrip match; source IDs retained"
+      }
+    ],
+    "scope": "C4 server message templates, quest steps/NPC references, NPC entry events, static object/castle/server names and pet/summon action eligibility. Native Interlude window layout, character geometry and world-map configuration retained.",
+    "quest_field_mapping": {
+      "UNK_npc1_?": "lvl_min",
+      "UNK_npc2_?": "lvl_max",
+      "UNK_npc3_?": "quest_type",
+      "UNK_0": "get_item_in_quest",
+      "UNK_3": "contact_npc_id",
+      "entity_x_?": "contact_npc_x",
+      "entity_y_?": "contact_npc_y",
+      "entity_z_?": "contact_npc_z",
+      "race_restricion": "restricions"
+    },
+    "system_message_mapping": "RGB + signed alpha to RGBA; SystemMsg_e./SystemMsg_k. references to numeric Interlude form; retain compatible modern presentation metadata."
+  },
+  "unreadable_source_containers": [
+    {
+      "path": "animations/L2Killer_Assassin_light.ukx",
+      "bytes": 17100239,
+      "sha256": "e45a81f5e17bbea3b37e4fa5d32c789c83d3b79268003cf20308133329752eb4",
+      "header": "cafef00d6f00",
+      "dependent_references": 79
+    },
+    {
+      "path": "animations/L2killer_HeadGear.ukx",
+      "bytes": 6507381,
+      "sha256": "81f6a070faca8bdc2cba17955db9e831b21629ebcdcdf3e7bdcc1f623c51c281",
+      "header": "cafef00d6f00",
+      "dependent_references": 36
+    }
+  ],
+  "remaining_asset_references": [
+    {
+      "reference": "morc.morc_m008_t2000_l",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "6408",
+          "field": "m_OrcFigh_t[1]",
+          "reference": "MOrc.MOrc_m008_t2000_l"
+        }
+      ]
+    },
+    {
+      "reference": "lineageeffect.p_u000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "7837",
+          "field": "att_eff",
+          "reference": "LineageEffect.p_u000_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "7839",
+          "field": "att_eff",
+          "reference": "LineageEffect.p_u000_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "7837",
+          "field": "att_eff",
+          "reference": "LineageEffect.p_u000_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "7839",
+          "field": "att_eff",
+          "reference": "LineageEffect.p_u000_a"
+        }
+      ]
+    },
+    {
+      "reference": "purple.mmagic_m004_t68_u",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8051",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "Purple.MMagic_m004_t68_u"
+        }
+      ]
+    },
+    {
+      "reference": "purple.fmagic_m005_t68_u",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8051",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "Purple.FMagic_m005_t68_u"
+        }
+      ]
+    },
+    {
+      "reference": "purple.forc_m005_t68_u",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8051",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "Purple.FOrc_m005_t68_u"
+        }
+      ]
+    },
+    {
+      "reference": "purple.mmagic_m004_t68_g",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8053",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "Purple.MMagic_m004_t68_g"
+        }
+      ]
+    },
+    {
+      "reference": "purple.fmagic_m005_t68_g",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8053",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "Purple.FMagic_m005_t68_g"
+        }
+      ]
+    },
+    {
+      "reference": "purple.forc_m005_t68_g",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8053",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "Purple.FOrc_m005_t68_g"
+        }
+      ]
+    },
+    {
+      "reference": "purple.mmagic_m004_t68_b",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8054",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "Purple.MMagic_m004_t68_b"
+        }
+      ]
+    },
+    {
+      "reference": "purple.fmagic_m005_t68_b",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8054",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "Purple.FMagic_m005_t68_b"
+        }
+      ]
+    },
+    {
+      "reference": "purple.forc_m005_t68_b",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "8054",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "Purple.FOrc_m005_t68_b"
+        }
+      ]
+    },
+    {
+      "reference": "purple.mmagic_m004_t68_l",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "9915",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "Purple.MMagic_m004_t68_l"
+        }
+      ]
+    },
+    {
+      "reference": "purple.fmagic_m005_t68_l",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "9915",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "Purple.FMagic_m005_t68_l"
+        }
+      ]
+    },
+    {
+      "reference": "purple.forc_m005_t68_l",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "9915",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "Purple.FOrc_m005_t68_l"
+        }
+      ]
+    },
+    {
+      "reference": "c5fmagic.fmagic_m003_t1006_b",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "7911",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "c5FMagic.FMagic_m003_t1006_b"
+        },
+        {
+          "table": "armorgrp",
+          "id": "8052",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "c5FMagic.FMagic_m003_t1006_b"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_drop_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_icon.virus_asn2_g_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_g_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_g_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_g_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mf_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ff_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_md_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fd_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mw_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fw_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_me_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fe_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mm_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fm_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mo_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fo_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ms_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fs_asn_g_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13048",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13053",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_g_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13058",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_g_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_drop_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_icon.virus_asn2_b_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_b_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_b_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_b_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mf_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ff_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_md_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fd_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mw_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fw_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_me_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fe_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mm_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fm_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mo_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fo_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ms_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fs_asn_b_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13049",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13054",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_b_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13059",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_b_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_drop_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_icon.virus_asn2_u_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_u_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_u_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_u_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mf_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ff_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_md_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fd_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mw_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fw_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_me_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fe_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mm_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fm_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mo_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fo_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ms_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fs_asn_u_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13050",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13055",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_u_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13060",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_u_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_drop_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_Drop_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_icon.virus_asn2_l_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_l_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_l_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_l_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mf_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MF_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ff_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FF_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_md_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MD_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fd_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FD_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mw_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MW_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fw_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FW_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_me_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_ME_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fe_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FE_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mm_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MM_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fm_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FM_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mo_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MO_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fo_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FO_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ms_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MS_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fs_asn_l_m00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13051",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13056",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_l_m00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13061",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FS_asn_l_m00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mfh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "drop_mesh1",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MFH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_icon.virus_asn2_h_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_h_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_h_i00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "icon[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_icon.viRUS_asn2_h_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_ffh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FFH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FFH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mdh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MDH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MDH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MDH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fdh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FDH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FDH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FDH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mwh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MWH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MWH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MWH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fwh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FWH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FWH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FWH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_meh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MEH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MEH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MEH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_feh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FEH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FEH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_Elf_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FEH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_mmh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MMH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MMH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MMH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fmh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FMH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FMH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FMH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_moh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MOH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MOH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MOH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_foh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FOH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FOH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FOH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_msh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MSH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MSH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_MSH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_assassin_light.virus_fsh_asn_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13052",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FSH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13057",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FSH_asn_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13062",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2Killer_Assassin_light.viRUS_FSH_asn_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_mf_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "drop_mesh1",
+          "reference": "L2killer_HeadGear.viRUS_MF_Wings_I_lvl_m000_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MF_Wings_I_lvl_m000_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MF_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_wings.virus_wings_i_lvl_t00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "drop_tex1",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_Elf_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_Elf_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "ACC_MT_t[0]",
+          "reference": "L2killer_HeadGear.viRUS_Wings.viRUS_Wings_I_lvl_t00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_icon.virus_wings_i_lvl_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "icon[0]",
+          "reference": "L2killer_HeadGear.viRUS_icon.viRUS_Wings_I_lvl_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_ff_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FF_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_md_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MD_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_fd_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FD_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_mw_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MW_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_fw_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FW_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_me_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_Elf_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_ME_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_fe_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_Elf_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FE_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_mm_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MM_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_fm_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FM_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_mo_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MO_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_fo_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FO_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_ms_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_MS_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_fs_wings_i_lvl_m000_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13063",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.viRUS_FS_Wings_I_lvl_m000_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.mf_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "drop_mesh1",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "drop_mesh1",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "drop_mesh1",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "ACC_MT_m[0]",
+          "reference": "L2killer_HeadGear.MF_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.headgear_bra.virus_headgear_bra_t00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "drop_tex1",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_Elf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_Elf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "ACC_MT_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_BRA.viRUS_HeadGear_BRA_t00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_icon.virus_beret_bra_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "icon[0]",
+          "reference": "L2killer_HeadGear.viRUS_icon.viRUS_Beret_BRA_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.ff_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.FF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.FF_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_HumnFigh_m[0]",
+          "reference": "L2killer_HeadGear.FF_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.md_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.MD_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.MD_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.MD_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.fd_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.FD_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.FD_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_DarkElf_m[0]",
+          "reference": "L2killer_HeadGear.FD_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.mw_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.MW_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.MW_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.MW_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.fw_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.FW_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.FW_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_Dorf_m[0]",
+          "reference": "L2killer_HeadGear.FW_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.me_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_Elf_m[0]",
+          "reference": "L2killer_HeadGear.ME_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_Elf_m[0]",
+          "reference": "L2killer_HeadGear.ME_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_Elf_m[0]",
+          "reference": "L2killer_HeadGear.ME_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.fe_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_Elf_m[0]",
+          "reference": "L2killer_HeadGear.FE_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_Elf_m[0]",
+          "reference": "L2killer_HeadGear.FE_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_Elf_m[0]",
+          "reference": "L2killer_HeadGear.FE_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.mm_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.MM_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.MM_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.MM_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.fm_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.FM_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.FM_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_HumnMyst_m[0]",
+          "reference": "L2killer_HeadGear.FM_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.mo_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.MO_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.MO_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.MO_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.fo_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.FO_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.FO_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_OrcFigh_m[0]",
+          "reference": "L2killer_HeadGear.FO_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.ms_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.MS_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.MS_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.MS_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.fs_virus_beret_m002_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13064",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.FS_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.FS_viRUS_Beret_m002_a"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_OrcMage_m[0]",
+          "reference": "L2killer_HeadGear.FS_viRUS_Beret_m002_a"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.headgear_ven.virus_headgear_ven_t00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "drop_tex1",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_Elf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_Elf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "m_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "f_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "ACC_MT_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_VEN.viRUS_HeadGear_VEN_t00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_icon.virus_beret_ven_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13065",
+          "field": "icon[0]",
+          "reference": "L2killer_HeadGear.viRUS_icon.viRUS_Beret_VEN_i00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.headgear_eur.virus_headgear_eua_t00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "drop_tex1",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_HumnFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_DarkElf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_Dorf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_Elf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_Elf_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_HumnMyst_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_OrcFigh_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "m_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "f_OrcMage_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        },
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "ACC_MT_t[0]",
+          "reference": "L2killer_HeadGear.HeadGear_EUR.viRUS_HeadGear_EUA_t00"
+        }
+      ]
+    },
+    {
+      "reference": "l2killer_headgear.virus_icon.virus_beret_eua_i00",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "armorgrp",
+          "id": "13066",
+          "field": "icon[0]",
+          "reference": "L2killer_HeadGear.viRUS_icon.viRUS_Beret_EUA_i00"
+        }
+      ]
+    },
+    {
+      "reference": "itemsound.itemequip_jewelbox",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "etcitemgrp",
+          "id": "938",
+          "field": "equip_sound",
+          "reference": "ItemSound.itemequip_jewelbox"
+        }
+      ]
+    },
+    {
+      "reference": "itemsound.itemequip_etc_swordbody",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "etcitemgrp",
+          "id": "1664",
+          "field": "item_sound",
+          "reference": "ItemSound.itemequip_etc_swordbody"
+        }
+      ]
+    },
+    {
+      "reference": "itemsound.itemequip_bone",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "etcitemgrp",
+          "id": "2508",
+          "field": "equip_sound",
+          "reference": "ItemSound.itemequip_bone"
+        }
+      ]
+    },
+    {
+      "reference": "monsound.z_lizard_scout_dmg_1",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "npcgrp",
+          "id": "301",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "578",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "642",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "766",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "5125",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10011",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10171",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10186",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10212",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10243",
+          "field": "snd3[0]",
+          "reference": "MonSound.z_lizard_scout_dmg_1"
+        }
+      ]
+    },
+    {
+      "reference": "monsound.z_lizard_scout_dmg_2",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "npcgrp",
+          "id": "301",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "578",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "642",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "766",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "5125",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10011",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10171",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10186",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10212",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10243",
+          "field": "snd3[1]",
+          "reference": "MonSound.z_lizard_scout_dmg_2"
+        }
+      ]
+    },
+    {
+      "reference": "monsound.z_lizard_scout_dmg_3",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "npcgrp",
+          "id": "301",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "578",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "642",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "766",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "5125",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10011",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10171",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10186",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10212",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10243",
+          "field": "snd3[2]",
+          "reference": "MonSound.z_lizard_scout_dmg_3"
+        }
+      ]
+    },
+    {
+      "reference": "monsound2.oel_w_dmg_1",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "npcgrp",
+          "id": "575",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "576",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "646",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "726",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "866",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "890",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "965",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "1021",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "1058",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "1164",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "1259",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "1506",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "1507",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "5135",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "7941",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10067",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10122",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10125",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10144",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10173",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10205",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10226",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10227",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10228",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10240",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10434",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10436",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10463",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12539",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12540",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12541",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12542",
+          "field": "snd3[0]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12787",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12788",
+          "field": "snd3[2]",
+          "reference": "MonSound2.oel_w_dmg_1"
+        }
+      ]
+    },
+    {
+      "reference": "monsound2.oel_w_dmg_2",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "npcgrp",
+          "id": "575",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "576",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "866",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "5135",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10067",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10122",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10144",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10226",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10227",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10228",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10434",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "10436",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12539",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12540",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12541",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        },
+        {
+          "table": "npcgrp",
+          "id": "12542",
+          "field": "snd3[1]",
+          "reference": "MonSound2.oel_w_dmg_2"
+        }
+      ]
+    },
+    {
+      "reference": "lineageeffect.p_u110_a",
+      "resolution": "not_found_in_source_or_target",
+      "uses": [
+        {
+          "table": "npcgrp",
+          "id": "7835",
+          "field": "effect",
+          "reference": "LineageEffect.p_u110_a"
+        }
+      ]
+    },
+    {
+      "reference": "icon.skill4408",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4408",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4409",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4409",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4410",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4410",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4411",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4411",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4412",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4412",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4413",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4413",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4414",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4414",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4415",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4415",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4416",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4416",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4417",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4417",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4418",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4418",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4419",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4419",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4420",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4420",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4421",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4421",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4422",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4422",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4423",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4423",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4438",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4438",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4439",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4439",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4463",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4463",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4464",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4464",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4465",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4465",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4466",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4466",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4467",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4467",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4468",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4468",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4469",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4469",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4470",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4470",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4471",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4471",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4472",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4472",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4473",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4473",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4474",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4474",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4475",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4475",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4476",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4476",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4477",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4477",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4478",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4478",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4479",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4479",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4480",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4480",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4481",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4481",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4482",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4482",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4483",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4483",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4484",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4484",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4485",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4485",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4486",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4486",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4487",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4487",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4488",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4488",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4489",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4489",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4490",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4490",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4491",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4491",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4492",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4492",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4493",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4493",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4712",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "1",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "2",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "3",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "4",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "5",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "6",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "7",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "8",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "9",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "10",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "11",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4712",
+          "level": "12",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4713",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "1",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "2",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "3",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "4",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "5",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "6",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "7",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "8",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "9",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "10",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "11",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4713",
+          "level": "12",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4717",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "1",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "2",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "3",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "4",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "5",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "6",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "7",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "8",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "9",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "10",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "11",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4717",
+          "level": "12",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4718",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "1",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "2",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "3",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "4",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "5",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "6",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "7",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "8",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "9",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "10",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "11",
+          "field": "icon_name"
+        },
+        {
+          "table": "skillgrp",
+          "id": "4718",
+          "level": "12",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4409_x10",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4409",
+          "level": "18",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4409_x11",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4409",
+          "level": "19",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4409_x12",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4409",
+          "level": "20",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "icon.skill4412_new",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "4412",
+          "level": "22",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "epicicon.epicshield_01",
+      "uses": [
+        {
+          "table": "skillgrp",
+          "id": "9954",
+          "level": "1",
+          "field": "icon_name"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "skillsound2.antaras_creak",
+      "uses": [
+        {
+          "table": "skillsoundgrp",
+          "id": "4110",
+          "level": "1",
+          "field": "spelleffect_sound_2"
+        },
+        {
+          "table": "skillsoundgrp",
+          "id": "4110",
+          "level": "1",
+          "field": "shoteffect_sound_2"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "skillsound4.doublewind_explotion",
+      "uses": [
+        {
+          "table": "skillsoundgrp",
+          "id": "4141",
+          "level": "1",
+          "field": "spelleffect_sound_3"
+        },
+        {
+          "table": "skillsoundgrp",
+          "id": "4142",
+          "level": "1",
+          "field": "spelleffect_sound_3"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "skillsound.fiend_wind_explotion",
+      "uses": [
+        {
+          "table": "skillsoundgrp",
+          "id": "4155",
+          "level": "1",
+          "field": "spelleffect_sound_3"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    },
+    {
+      "reference": "monsound3.antars_ground_wave",
+      "uses": [
+        {
+          "table": "skillsoundgrp",
+          "id": "4606",
+          "level": "1",
+          "field": "shoteffect_sound_2"
+        }
+      ],
+      "source_file": null,
+      "target_same_package_exists": true
+    }
+  ],
+  "remaining_reference_count": 201,
+  "limits": "References are not counts of broken inventory items. Several original NPC skills intentionally or historically reference unavailable icons; exact custom visuals cannot be reconstructed from IDs alone.",
+  "required_input_for_exact_missing_visuals": "Readable original packages/exports, or the compatible decoder and key for the two CAFEF00D containers. Supplied executable file-loader evidence is in evidence/file-loader.",
+  "validation": "All source DATs have an explicit disposition; shared catalogue rows compared by key; migrated DATs roundtrip and cross-catalogue tests are separate."
+}

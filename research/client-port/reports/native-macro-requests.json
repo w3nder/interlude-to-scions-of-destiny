@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "hashes": {
+    "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+    "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+  },
+  "method": "RequestMakeMacro",
+  "cases": [
+    {
+      "lines": 0,
+      "bytes": 33,
+      "sha256": "f8709daf5949112b5281b7dd0ad14aed1f9f44c9379df71b4ac2f8f025ccfd4d"
+    },
+    {
+      "lines": 0,
+      "bytes": 43,
+      "sha256": "78b0d996c92a5cdac5833ef74813b41700c556ed7358e65269960a65397df4a3"
+    },
+    {
+      "lines": 0,
+      "bytes": 47,
+      "sha256": "778e09caf054d875ce28f50b8ed9a567f555496ff0ff8ab3d528455a6f36fdf1"
+    },
+    {
+      "lines": 1,
+      "bytes": 66,
+      "sha256": "ff6c165f87609b9dff3586419e62b9a3e6c4166fe4f0c0ac29e623109b0428fb"
+    },
+    {
+      "lines": 1,
+      "bytes": 76,
+      "sha256": "1970ac6d62aa4f45518710202c9df2ee70778f2121d937b246ac215623d90380"
+    },
+    {
+      "lines": 1,
+      "bytes": 80,
+      "sha256": "9dca74857fad734d0ab4c492025a70962f50b7dec2e974b66fec11704986c3b8"
+    },
+    {
+      "lines": 12,
+      "bytes": 433,
+      "sha256": "10995dad738e780db48d2b8f48ebc50e54bf01b84cb478341c4b417b2012c0c9"
+    },
+    {
+      "lines": 12,
+      "bytes": 443,
+      "sha256": "73ca5b4597616097bef3eed347a53df944fc5d72d7a086bc90c9123c1fd49645"
+    },
+    {
+      "lines": 12,
+      "bytes": 447,
+      "sha256": "8a53809131ee8970b17e0b2d6572aab8f3d27c3a4fbc6db5745703ea0b1924f6"
+    }
+  ],
+  "scope": "Exact native macro row construction and serialization; finite strings and 0/1/12 lines."
+}

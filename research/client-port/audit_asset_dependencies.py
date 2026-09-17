@@ -5,7 +5,7 @@ from collections import defaultdict
 from unreal_package_index import Package
 from extract_asset_tables import ROOT,OUT
 FOLDERS=['system','systextures','textures','animations','staticmeshes','sounds']
-EXTS={'.utx','.ukx','.u','.usx','.uax'}
+EXTS={'.utx','.ukx','.usk','.u','.usx','.uax'}
 TARGET=Path('/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client')
 def index(base):
  out={}

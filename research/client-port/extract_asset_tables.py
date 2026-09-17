@@ -8,8 +8,11 @@ NAMES=['itemname-e','weapongrp','armorgrp','etcitemgrp','npcgrp','npcname-e']
 WINE=ROOT/'build/wine-runtime/Wine Stable.app/Contents/Resources/wine/bin/wine'
 def win(p):return 'Z:'+str(p.resolve()).replace('/','\\')
 def run_tool(tool,args,log):
- env=os.environ.copy();env.update(WINEPREFIX=str(ROOT/'build/dat-wine-prefix'),WINEDEBUG='-all',MVK_CONFIG_LOG_LEVEL='0')
- r=subprocess.run([str(WINE),str(REF/(tool+'.exe')),*args],env=env,capture_output=True,timeout=60)
+ env=os.environ.copy();env.update(WINEPREFIX=os.environ.get('L2K_DAT_WINEPREFIX',str(ROOT/'build/dat-wine-prefix')),WINEDEBUG='-all',MVK_CONFIG_LOG_LEVEL='0',WINEDLLOVERRIDES='winemenubuilder.exe=d')
+ try:r=subprocess.run([str(WINE),str(REF/(tool+'.exe')),*args],env=env,capture_output=True,timeout=60)
+ except subprocess.TimeoutExpired as error:
+  log.write_bytes((error.stdout or b'')+b'\nSTDERR\n'+(error.stderr or b'')+b'\nDAT tool timed out\n')
+  raise
  log.write_bytes(r.stdout+b'\nSTDERR\n'+r.stderr)
  return r.returncode
 

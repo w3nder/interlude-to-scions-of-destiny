@@ -16,6 +16,15 @@ import capstone as cs
 import pefile
 from capstone.x86 import X86_OP_IMM
 
+# Names recovered from the original source catalogue and paired native sender
+# execution. Never infer the name of an unexported method from its opcode alone.
+NETWORK_PROFILES = {
+    '17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b':
+        (0x107c7330,303,{71:('ValidatePosition',0x103f4ee0),268:('VoteSociality',0x103fb9f0)}),
+    '508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d':
+        (0x108b2224,336,{74:('ValidatePosition',0x104040f0),75:('StartRotating',0x10404150),282:('VoteSociality',0x10409ab0)}),
+}
+
 
 class Extractor:
     def __init__(self, path):
@@ -30,6 +39,35 @@ class Extractor:
             if e.name:
                 self.exports[e.name.decode(errors='replace')] = self.resolve(self.base + e.address)
         self.starts = sorted(set(self.exports.values()))
+
+    def network_vtable(self):
+        profile = NETWORK_PROFILES.get(hashlib.sha256(self.raw).hexdigest())
+        if profile is None:
+            return []
+        table, count, private = profile
+        constructor = self.exports['??0UNetworkHandler@@QAE@XZ']
+        if not any(i.mnemonic=='mov' and i.op_str==f'dword ptr [esi], {hex(table)}' for i in self.body(constructor)):
+            raise ValueError('Network constructor no longer installs the expected vtable')
+        rows = []
+        for slot in range(count+1):
+            pointer = struct.unpack('<I',self.data(table+4*slot,4))[0]
+            section = self.pe.get_section_by_rva(pointer-self.base)
+            executable = section is not None and bool(section.Characteristics & 0x20000000)
+            if slot == count:
+                if executable:
+                    raise ValueError('Network vtable boundary changed')
+                break
+            if not executable:
+                raise ValueError('Non-executable network vtable entry')
+            address = self.resolve(pointer)
+            if slot in private:
+                name, expected = private[slot]
+                if address != expected:
+                    raise ValueError('Private sender address changed')
+            else:
+                name = None
+            rows.append(dict(slot=slot,method_va=address,name=name,vtable_va=table))
+        return rows
 
     def data(self, va, size=256):
         if not self.base <= va < self.base + self.pe.OPTIONAL_HEADER.SizeOfImage:
@@ -84,7 +122,11 @@ class Extractor:
 
     def outbound(self):
         result = []
-        for name, va in self.exports.items():
+        candidates = [(name,va,None) for name,va in self.exports.items()]
+        for row in self.network_vtable():
+            if row['name']:
+                candidates.append((f'?{row["name"]}@UNetworkHandler@@vtable',row['method_va'],row))
+        for name, va, recovered in candidates:
             if '@UNetworkHandler@@' not in name or not name.startswith('?'):
                 continue
             ins = self.body(va)
@@ -97,9 +139,11 @@ class Extractor:
                 if previous is None or previous.mnemonic != 'push' or op is None or op > 255:
                     continue
                 result.append(dict(direction='C -> S', name=name.split('@')[0][1:],
-                    export=name, method_va=hex(va), call_va=hex(call.address),
+                    export=name if recovered is None else None, method_va=hex(va), call_va=hex(call.address),
                     opcode=f'0x{op:02X}', format=fmt, call_target=call.op_str,
                     confidence='static immediate opcode and format; session phase and field semantics unresolved'))
+                if recovered is not None:
+                    result[-1]['recovery']={'kind':'constructor_installed_vtable','table_va':hex(recovered['vtable_va']),'slot':recovered['slot']}
         return sorted(result, key=lambda r: int(r['call_va'], 16))
 
     def inbound(self):

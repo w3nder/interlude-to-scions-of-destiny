@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "side": "source",
+      "sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+      "server_list_vectors": 3,
+      "server_login_vectors": 9,
+      "auth_challenge_vectors": 1,
+      "world_signal_send_suffix": "8e57a2bcfa362aa0b8d32273e49dccdbf08b641205e91efc67e9ffe8797e82b3"
+    },
+    {
+      "side": "target",
+      "sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+      "server_list_vectors": 3,
+      "server_login_vectors": 9,
+      "auth_challenge_vectors": 1,
+      "world_signal_send_suffix": "8e57a2bcfa362aa0b8d32273e49dccdbf08b641205e91efc67e9ffe8797e82b3"
+    }
+  ],
+  "scope": "Original sender fields and serializers with synthetic session/challenge values. EnterWorld fixed send suffix only; no login/world path rewrite and no network connection."
+}

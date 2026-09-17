@@ -187,6 +187,11 @@ int rows(const uint8_t* p,uint32_t n,uint8_t* out,uint32_t cap,uint32_t head,uin
 L2K_API int l2k_structured_convert(const uint8_t* p,uint32_t n,uint8_t* out,uint32_t cap){
     if(!p||!out||p==out||!n||n>MAX)return L2K_INVALID;
     switch(p[0]){
+    case 0x0e:{
+        if(n<9)return L2K_INVALID;
+        const uint32_t count=le(p+5,4);
+        return count<=(MAX-9)/8 && n==9+count*8 ? 0:L2K_INVALID;
+    }
     case 0x13:return parsed(p,n,out,cap,character_selection);
     case 0x15:return 0; // Preserve the previously working native world-entry path.
     case 0x80:return quests(p,n,out,cap);

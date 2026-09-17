@@ -1176,51 +1176,7 @@
       "same_selector": true
     }
   ],
-  "outbound_aliases": [
-    {
-      "source": "Attack",
-      "target_candidates": [
-        "Atk"
-      ],
-      "status": "wire_signature_candidate"
-    },
-    {
-      "source": "EnterWorld",
-      "target_candidates": [
-        "EW"
-      ],
-      "status": "wire_signature_candidate"
-    },
-    {
-      "source": "MoveToLocation",
-      "target_candidates": [
-        "MTL"
-      ],
-      "status": "wire_signature_candidate"
-    },
-    {
-      "source": "SendAppearingPacket",
-      "target_candidates": [
-        "SAP"
-      ],
-      "status": "wire_signature_candidate"
-    },
-    {
-      "source": "StartRotating",
-      "target_candidates": [],
-      "status": "unresolved"
-    },
-    {
-      "source": "ValidatePosition",
-      "target_candidates": [],
-      "status": "unresolved"
-    },
-    {
-      "source": "VoteSociality",
-      "target_candidates": [],
-      "status": "unresolved"
-    }
-  ],
+  "outbound_aliases": [],
   "summary": {
     "pending": 35,
     "both_handlers_ignore_payload": 25

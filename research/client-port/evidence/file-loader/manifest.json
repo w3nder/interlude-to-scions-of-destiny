@@ -1,0 +1,11 @@
+{
+  "binary": "system/l2.exe",
+  "sha256": "b28b6a735be4dbcaf20c9148a52b91952598a3d17870f8e6c10001b8b4bdfb0a",
+  "functions": {
+    "0x10908080": "CreateFileReader",
+    "0x10908430": "FL2FileDecryptArchive constructor",
+    "0x10909000": "Serialize"
+  },
+  "finding": "Supplied executable checks UTF-16 Lineage2Ver; unrecognized headers use version 0 and raw read. CAFEF00D packages do not match this wrapper. No decryptor for this container has been identified in the supplied client.",
+  "limits": "Decompiler evidence for the executable file manager only; does not prove absence of every possible external runtime hook."
+}

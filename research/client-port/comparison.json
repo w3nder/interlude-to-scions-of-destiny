@@ -1,81 +1,16 @@
 {
-  "scope": "Static comparison; no row establishes wire compatibility. Matching names, opcodes or type strings do not prove field semantics. No binaries patched and no live session tested.",
+  "scope": "Static comparison; no row establishes wire compatibility. Matching names, opcodes or type strings do not prove field semantics. This extraction does not describe installed runtime status.",
+  "target_export_aliases": {
+    "Atk": "Attack",
+    "SAP": "SendAppearingPacket",
+    "MTL": "MoveToLocation",
+    "EW": "EnterWorld"
+  },
   "validation": {
     "source_hash_matches": true,
-    "outbound_reproduced": 211,
+    "outbound_reproduced": 213,
     "outbound_catalog_total": 213,
-    "outbound_not_recovered_by_export_scan": [
-      {
-        "direction": "C -> S",
-        "opcode": "0x48",
-        "name": "ValidatePosition",
-        "format": "cddddd",
-        "call_va": "0x103f4f17",
-        "method_va": "0x103f4ee0",
-        "confidence": "static call site; field semantics mostly unknown",
-        "fields": [
-          {
-            "name": "opcode",
-            "format": "c",
-            "bytes": 1,
-            "type": "8-bit value"
-          },
-          {
-            "name": "unknown_1",
-            "format": "d",
-            "bytes": 4,
-            "type": "32-bit value LE"
-          },
-          {
-            "name": "unknown_2",
-            "format": "d",
-            "bytes": 4,
-            "type": "32-bit value LE"
-          },
-          {
-            "name": "unknown_3",
-            "format": "d",
-            "bytes": 4,
-            "type": "32-bit value LE"
-          },
-          {
-            "name": "unknown_4",
-            "format": "d",
-            "bytes": 4,
-            "type": "32-bit value LE"
-          },
-          {
-            "name": "unknown_5",
-            "format": "d",
-            "bytes": 4,
-            "type": "32-bit value LE"
-          }
-        ]
-      },
-      {
-        "direction": "C -> S",
-        "opcode": "0xB9",
-        "name": "VoteSociality",
-        "format": "cd",
-        "call_va": "0x103fba05",
-        "method_va": "0x103fb9f0",
-        "confidence": "static call site; field semantics mostly unknown",
-        "fields": [
-          {
-            "name": "opcode",
-            "format": "c",
-            "bytes": 1,
-            "type": "8-bit value"
-          },
-          {
-            "name": "unknown_1",
-            "format": "d",
-            "bytes": 4,
-            "type": "32-bit value LE"
-          }
-        ]
-      }
-    ],
+    "outbound_not_recovered_by_export_scan": [],
     "inbound_registration_matches": 304,
     "decoder_segment_disagreements": [
       {
@@ -3898,9 +3833,8 @@
     ]
   },
   "outbound_summary": {
-    "same_observed_opcode_and_format": 172,
-    "target_only_in_extraction": 32,
-    "source_only_in_extraction": 7,
+    "same_observed_opcode_and_format": 179,
+    "target_only_in_extraction": 28,
     "different_observed_opcode_or_format": 6,
     "extended_subopcode_unresolved": 19
   },
@@ -4039,26 +3973,8 @@
       ]
     },
     {
-      "name": "Atk",
-      "status": "target_only_in_extraction",
-      "source": [],
-      "target": [
-        {
-          "direction": "C -> S",
-          "name": "Atk",
-          "export": "?Atk@UNetworkHandler@@UAEXHVFVector@@H@Z",
-          "method_va": "0x10403da0",
-          "call_va": "0x10403df0",
-          "opcode": "0x0A",
-          "format": "cddddc",
-          "call_target": "eax",
-          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
-        }
-      ]
-    },
-    {
       "name": "Attack",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -4108,7 +4024,19 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "Atk",
+          "export": "?Atk@UNetworkHandler@@UAEXHVFVector@@H@Z",
+          "method_va": "0x10403da0",
+          "call_va": "0x10403df0",
+          "opcode": "0x0A",
+          "format": "cddddc",
+          "call_target": "eax",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+        }
+      ]
     },
     {
       "name": "BypassUserCmd",
@@ -4403,26 +4331,8 @@
       ]
     },
     {
-      "name": "EW",
-      "status": "target_only_in_extraction",
-      "source": [],
-      "target": [
-        {
-          "direction": "C -> S",
-          "name": "EW",
-          "export": "?EW@UNetworkHandler@@UAEXH@Z",
-          "method_va": "0x10432630",
-          "call_va": "0x10432780",
-          "opcode": "0x03",
-          "format": "cS",
-          "call_target": "eax",
-          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
-        }
-      ]
-    },
-    {
       "name": "EnterWorld",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -4448,7 +4358,19 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "EW",
+          "export": "?EW@UNetworkHandler@@UAEXH@Z",
+          "method_va": "0x10432630",
+          "call_va": "0x10432780",
+          "opcode": "0x03",
+          "format": "cS",
+          "call_target": "eax",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+        }
+      ]
     },
     {
       "name": "FinishRotating",
@@ -4661,35 +4583,6 @@
       ]
     },
     {
-      "name": "MTL",
-      "status": "target_only_in_extraction",
-      "source": [],
-      "target": [
-        {
-          "direction": "C -> S",
-          "name": "MTL",
-          "export": "?MTL@UNetworkHandler@@UAEXPAVAActor@@VFVector@@10H@Z",
-          "method_va": "0x104220f0",
-          "call_va": "0x1042217a",
-          "opcode": "0x01",
-          "format": "cddddddd",
-          "call_target": "edx",
-          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
-        },
-        {
-          "direction": "C -> S",
-          "name": "MTL",
-          "export": "?MTL@UNetworkHandler@@UAEXPAVAActor@@VFVector@@10H@Z",
-          "method_va": "0x104220f0",
-          "call_va": "0x10422321",
-          "opcode": "0x5C",
-          "format": "cddddddd",
-          "call_target": "ecx",
-          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
-        }
-      ]
-    },
-    {
       "name": "MoveBackwardToLocation",
       "status": "same_observed_opcode_and_format",
       "source": [
@@ -4763,7 +4656,7 @@
     },
     {
       "name": "MoveToLocation",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -4884,7 +4777,30 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "MTL",
+          "export": "?MTL@UNetworkHandler@@UAEXPAVAActor@@VFVector@@10H@Z",
+          "method_va": "0x104220f0",
+          "call_va": "0x1042217a",
+          "opcode": "0x01",
+          "format": "cddddddd",
+          "call_target": "edx",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+        },
+        {
+          "direction": "C -> S",
+          "name": "MTL",
+          "export": "?MTL@UNetworkHandler@@UAEXPAVAActor@@VFVector@@10H@Z",
+          "method_va": "0x104220f0",
+          "call_va": "0x10422321",
+          "opcode": "0x5C",
+          "format": "cddddddd",
+          "call_target": "ecx",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+        }
+      ]
     },
     {
       "name": "MoveWithDelta",
@@ -13337,24 +13253,6 @@
       ]
     },
     {
-      "name": "SAP",
-      "status": "target_only_in_extraction",
-      "source": [],
-      "target": [
-        {
-          "direction": "C -> S",
-          "name": "SAP",
-          "export": "?SAP@UNetworkHandler@@UAEXXZ",
-          "method_va": "0x10403f50",
-          "call_va": "0x10403f60",
-          "opcode": "0x30",
-          "format": "c",
-          "call_target": "edx",
-          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
-        }
-      ]
-    },
-    {
       "name": "Say",
       "status": "same_observed_opcode_and_format",
       "source": [
@@ -13492,7 +13390,7 @@
     },
     {
       "name": "SendAppearingPacket",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -13512,7 +13410,19 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "SAP",
+          "export": "?SAP@UNetworkHandler@@UAEXXZ",
+          "method_va": "0x10403f50",
+          "call_va": "0x10403f60",
+          "opcode": "0x30",
+          "format": "c",
+          "call_target": "edx",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+        }
+      ]
     },
     {
       "name": "SendBypassBuildCmd",
@@ -14314,7 +14224,7 @@
     },
     {
       "name": "StartRotating",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -14346,11 +14256,28 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "StartRotating",
+          "export": null,
+          "method_va": "0x10404150",
+          "call_va": "0x1040416c",
+          "opcode": "0x4A",
+          "format": "cdd",
+          "call_target": "edx",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved",
+          "recovery": {
+            "kind": "constructor_installed_vtable",
+            "table_va": "0x108b2224",
+            "slot": 75
+          }
+        }
+      ]
     },
     {
       "name": "ValidatePosition",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -14400,11 +14327,28 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "ValidatePosition",
+          "export": null,
+          "method_va": "0x104040f0",
+          "call_va": "0x1040412a",
+          "opcode": "0x48",
+          "format": "cddddd",
+          "call_target": "edx",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved",
+          "recovery": {
+            "kind": "constructor_installed_vtable",
+            "table_va": "0x108b2224",
+            "slot": 74
+          }
+        }
+      ]
     },
     {
       "name": "VoteSociality",
-      "status": "source_only_in_extraction",
+      "status": "same_observed_opcode_and_format",
       "source": [
         {
           "direction": "C -> S",
@@ -14430,7 +14374,24 @@
           ]
         }
       ],
-      "target": []
+      "target": [
+        {
+          "direction": "C -> S",
+          "name": "VoteSociality",
+          "export": null,
+          "method_va": "0x10409ab0",
+          "call_va": "0x10409ac8",
+          "opcode": "0xB9",
+          "format": "cd",
+          "call_target": "eax",
+          "confidence": "static immediate opcode and format; session phase and field semantics unresolved",
+          "recovery": {
+            "kind": "constructor_installed_vtable",
+            "table_va": "0x108b2224",
+            "slot": 282
+          }
+        }
+      ]
     }
   ],
   "inbound": [

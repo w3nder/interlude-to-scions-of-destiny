@@ -1594,6 +1594,20 @@
       "call_va": "0x104040b6"
     },
     {
+      "name": "ValidatePosition",
+      "opcode": 72,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x1040412a"
+    },
+    {
+      "name": "StartRotating",
+      "opcode": 74,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040416c"
+    },
+    {
       "name": "FinishRotating",
       "opcode": 75,
       "extended": null,
@@ -2952,6 +2966,13 @@
       "call_va": "0x10409a4e"
     },
     {
+      "name": "VoteSociality",
+      "opcode": 185,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10409ac8"
+    },
+    {
       "name": "ConfirmDlg",
       "opcode": 197,
       "extended": null,
@@ -3353,5 +3374,22 @@
       "call_va": "0x1040abed"
     }
   ],
-  "unknown_policy": "pass through and observe; absence from extraction does not prove incompatibility"
+  "unknown_policy": "pass through and observe; absence from extraction does not prove incompatibility",
+  "denied_action_ids": {
+    "opcode": "0x45",
+    "ids": [
+      1031,
+      1032,
+      1033,
+      1034,
+      1035,
+      1036,
+      1037,
+      1038,
+      1039,
+      1040
+    ],
+    "evidence": "Exact source/target actionname-e DAT comparison; test_action_catalogue_blocks_only_interlude_summon_commands",
+    "scope": "Interlude-only summon commands; source action IDs and unknown custom IDs retain their route. Local find-store and duel UI commands use their own native paths."
+  }
 }

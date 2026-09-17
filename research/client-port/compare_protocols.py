@@ -4,6 +4,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+TARGET_ALIASES = {'Atk':'Attack','SAP':'SendAppearingPacket','MTL':'MoveToLocation','EW':'EnterWorld'}
 
 
 def read(name):
@@ -46,7 +47,9 @@ def main():
         # Export spelling is stable across engines; retain the old display name.
         src_groups[new_out.get(r['call_va'],r)['name']].append(r)
     for r in target['outbound_call_sites']:
-        dst_groups[r['name']].append(r)
+        # Same native API signatures and reviewed bodies. Grouping aliases is
+        # identification, not a declaration of field or runtime equivalence.
+        dst_groups[TARGET_ALIASES.get(r['name'],r['name'])].append(r)
     outgoing=[]
     for name in sorted(src_groups.keys() | dst_groups.keys()):
         a,b=src_groups[name],dst_groups[name]
@@ -66,7 +69,7 @@ def main():
         elif segments(a)==segments(b): status='same_observed_decode_segments'
         else: status='different_observed_decode_segments'
         incoming.append(dict(table=k[0],opcode=k[1],status=status,source=a,target=b))
-    report=dict(scope='Static comparison; no row establishes wire compatibility. Matching names, opcodes or type strings do not prove field semantics. No binaries patched and no live session tested.',
+    report=dict(scope='Static comparison; no row establishes wire compatibility. Matching names, opcodes or type strings do not prove field semantics. This extraction does not describe installed runtime status.',target_export_aliases=TARGET_ALIASES,
         validation=validation, outbound_summary=dict(Counter(r['status'] for r in outgoing)),
         inbound_summary=dict(Counter(r['status'] for r in incoming)),outbound=outgoing,inbound=incoming)
     (ROOT/'comparison.json').write_text(json.dumps(report,indent=2)+'\n')
@@ -76,8 +79,7 @@ def main():
         'Este relatório descreve somente a extração estática, não o estado do patch. Login e entrada no mundo já foram confirmados pelo usuário; consulte o README e reports/coverage.md para implementação e evidências atuais.','',
         '## Cobertura e conferência','',
         f'- Origem: SHA-256 confirmado; {len(old_out)} pontos de envio no catálogo original.',
-        f'- Reextração: {len(new_out)} envios reproduzidos com opcode/formato idênticos; '
-        'ValidatePosition e VoteSociality não foram recuperados pelo percurso dos exports.',
+        f'- Reextração: {len(new_out)} envios reproduzidos com opcode/formato idênticos; métodos privados recuperados pela vtable instalada no construtor UNetworkHandler.',
         f'- Os {len(src_in)} registros de recepção do catálogo foram reproduzidos, com os mesmos nomes e slots.',
         f'- Destino: {len(target["outbound_call_sites"])} pontos de envio e {len(dst_in)} registros de recepção ('
         f'{sum(k[0]=="primary" for k in dst_in)} primários, {sum(k[0]=="extended" for k in dst_in)} estendidos).',
@@ -94,13 +96,13 @@ def main():
         '## Envios prioritários','',
         '| Método | Killer (opcode: formato) | system-1 (opcode: formato) |',
         '|---|---|---|']
-    for name in ['RequestServerList','RequestServerLogin','RequestGameStart','RequestEnterWorldPacket','MoveBackwardToLocation','Action','Atk','RequestUseItem','Say2','ValidatePosition']:
+    for name in ['RequestServerList','RequestServerLogin','RequestGameStart','RequestEnterWorldPacket','MoveBackwardToLocation','Action','Attack','RequestUseItem','Say2','ValidatePosition']:
         r=next((r for r in outgoing if r['name']==name),None)
         if r:
             describe=lambda rows: '<br>'.join(f'{op}: `{fmt}`' for op,fmt in signature(rows)) or 'não recuperado'
             lines.append(f'| {name} | {describe(r["source"])} | {describe(r["target"])} |')
     lines += ['', 'Igualdade de opcode e formato é um candidato a reutilização; ainda faltam fase da sessão e significado dos campos.', '',
-        'Dos métodos agrupados por nome de export: 172 têm o mesmo opcode/formato observado; 6 têm diferenças; 19 envolvem subopcode estendido ainda não resolvido. Há 32 nomes só na extração do destino e 7 só na origem, o que não prova ausência real de funcionalidade.', '',
+        'Métodos agrupados por nome e aliases nativos revisados: '+', '.join(f'{key}={value}' for key,value in report['outbound_summary'].items())+'. Esses números descrevem a extração, não funcionalidades quebradas.', '',
         'Os seis métodos com formatos diferentes são ConfirmDlg, RequestEnterWorldPacket, RequestJoinPartyRoom, RequestJoinPledge, RequestMultiSellChoose e RequestPledgePower.', '',
         '## Recepção prioritária','', '| Slot primário | Origem → destino | Formatos observados |','|---|---|---|']
     for op in ['0x01','0x03','0x04','0x13','0x15','0x16','0x1B','0x21','0x27']:

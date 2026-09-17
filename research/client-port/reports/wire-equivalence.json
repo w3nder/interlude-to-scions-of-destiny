@@ -16,8 +16,8 @@
   },
   "scope": "Exact serializer argument expressions for supported straight-line prefixes. No semantic claim for callers/UI, unmodeled helpers, variable buffers or control flow. No runtime transformations are enabled by this report.",
   "summary": {
-    "requires_deeper_analysis": 50,
-    "same_serializer_argument_contract": 142,
+    "requires_deeper_analysis": 54,
+    "same_serializer_argument_contract": 145,
     "different_serializer_argument_contract": 5
   },
   "inbound_summary": {
@@ -114,6 +114,25 @@
         }
       ],
       "resolution": "same_serializer_argument_contract"
+    },
+    {
+      "name": "Attack",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x103f4a7d",
+          "method_va": "0x103f4a30",
+          "pending_reason": "control flow/instruction requires review: test"
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x10403df0",
+          "method_va": "0x10403da0",
+          "pending_reason": "control flow/instruction requires review: test"
+        }
+      ],
+      "resolution": "requires_deeper_analysis"
     },
     {
       "name": "BypassUserCmd",
@@ -419,6 +438,25 @@
       "resolution": "different_serializer_argument_contract"
     },
     {
+      "name": "EnterWorld",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x10420d7d",
+          "method_va": "0x10420c70",
+          "pending_reason": "unmodeled helper call dword ptr [edx]"
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x10432780",
+          "method_va": "0x10432630",
+          "pending_reason": "segment memory"
+        }
+      ],
+      "resolution": "requires_deeper_analysis"
+    },
+    {
       "name": "FinishRotating",
       "static_status": "same_observed_opcode_and_format",
       "source": [
@@ -561,6 +599,35 @@
           "call_va": "0x10403c8d",
           "method_va": "0x10403c20",
           "pending_reason": "control flow/instruction requires review: fld"
+        }
+      ],
+      "resolution": "requires_deeper_analysis"
+    },
+    {
+      "name": "MoveToLocation",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x10410e27",
+          "method_va": "0x10410da0",
+          "pending_reason": "control flow/instruction requires review: test"
+        },
+        {
+          "call_va": "0x10410fc6",
+          "method_va": "0x10410da0",
+          "pending_reason": "control flow/instruction requires review: test"
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x1042217a",
+          "method_va": "0x104220f0",
+          "pending_reason": "control flow/instruction requires review: test"
+        },
+        {
+          "call_va": "0x10422321",
+          "method_va": "0x104220f0",
+          "pending_reason": "control flow/instruction requires review: test"
         }
       ],
       "resolution": "requires_deeper_analysis"
@@ -10326,6 +10393,37 @@
       "resolution": "requires_deeper_analysis"
     },
     {
+      "name": "SendAppearingPacket",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x103f4cdd",
+          "method_va": "0x103f4cd0",
+          "contract": {
+            "format": "c",
+            "arguments": [
+              48
+            ],
+            "parameter_stack_reads": []
+          }
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x10403f60",
+          "method_va": "0x10403f50",
+          "contract": {
+            "format": "c",
+            "arguments": [
+              48
+            ],
+            "parameter_stack_reads": []
+          }
+        }
+      ],
+      "resolution": "same_serializer_argument_contract"
+    },
+    {
       "name": "SendBypassBuildCmd",
       "static_status": "same_observed_opcode_and_format",
       "source": [
@@ -11044,6 +11142,117 @@
             "format": "cd",
             "arguments": [
               27,
+              [
+                "argument",
+                4,
+                4
+              ]
+            ],
+            "parameter_stack_reads": []
+          }
+        }
+      ],
+      "resolution": "same_serializer_argument_contract"
+    },
+    {
+      "name": "StartRotating",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x103f4f69",
+          "method_va": "0x103f4f50",
+          "contract": {
+            "format": "cdd",
+            "arguments": [
+              74,
+              [
+                "argument",
+                4,
+                4
+              ],
+              [
+                "argument",
+                8,
+                4
+              ]
+            ],
+            "parameter_stack_reads": []
+          }
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x1040416c",
+          "method_va": "0x10404150",
+          "contract": {
+            "format": "cdd",
+            "arguments": [
+              74,
+              [
+                "argument",
+                4,
+                4
+              ],
+              [
+                "argument",
+                8,
+                4
+              ]
+            ],
+            "parameter_stack_reads": []
+          }
+        }
+      ],
+      "resolution": "same_serializer_argument_contract"
+    },
+    {
+      "name": "ValidatePosition",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x103f4f17",
+          "method_va": "0x103f4ee0",
+          "pending_reason": "control flow/instruction requires review: fld"
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x1040412a",
+          "method_va": "0x104040f0",
+          "pending_reason": "control flow/instruction requires review: fld"
+        }
+      ],
+      "resolution": "requires_deeper_analysis"
+    },
+    {
+      "name": "VoteSociality",
+      "static_status": "same_observed_opcode_and_format",
+      "source": [
+        {
+          "call_va": "0x103fba05",
+          "method_va": "0x103fb9f0",
+          "contract": {
+            "format": "cd",
+            "arguments": [
+              185,
+              [
+                "argument",
+                4,
+                4
+              ]
+            ],
+            "parameter_stack_reads": []
+          }
+        }
+      ],
+      "target": [
+        {
+          "call_va": "0x10409ac8",
+          "method_va": "0x10409ab0",
+          "contract": {
+            "format": "cd",
+            "arguments": [
+              185,
               [
                 "argument",
                 4,

@@ -160,6 +160,22 @@
     },
     {
       "direction": "C -> S",
+      "name": "ValidatePosition",
+      "export": null,
+      "method_va": "0x103f4ee0",
+      "call_va": "0x103f4f17",
+      "opcode": "0x48",
+      "format": "cddddd",
+      "call_target": "dword ptr [edi + 0x64]",
+      "confidence": "static immediate opcode and format; session phase and field semantics unresolved",
+      "recovery": {
+        "kind": "constructor_installed_vtable",
+        "table_va": "0x107c7330",
+        "slot": 71
+      }
+    },
+    {
+      "direction": "C -> S",
       "name": "StartRotating",
       "export": "?StartRotating@UNetworkHandler@@UAEXHH@Z",
       "method_va": "0x103f4f50",
@@ -2181,6 +2197,22 @@
       "format": "cdd",
       "call_target": "dword ptr [edx + 0x64]",
       "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+    },
+    {
+      "direction": "C -> S",
+      "name": "VoteSociality",
+      "export": null,
+      "method_va": "0x103fb9f0",
+      "call_va": "0x103fba05",
+      "opcode": "0xB9",
+      "format": "cd",
+      "call_target": "dword ptr [ecx + 0x64]",
+      "confidence": "static immediate opcode and format; session phase and field semantics unresolved",
+      "recovery": {
+        "kind": "constructor_installed_vtable",
+        "table_va": "0x107c7330",
+        "slot": 268
+      }
     },
     {
       "direction": "C -> S",

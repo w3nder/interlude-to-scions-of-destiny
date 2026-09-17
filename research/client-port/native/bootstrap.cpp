@@ -1,6 +1,7 @@
 #include "protocol_core.h"
 #include "login_hooks.h"
 #include "game_trace.h"
+#include "status_codec.h"
 #include <windows.h>
 #include <stdio.h>
 #include <string.h>
@@ -19,12 +20,13 @@ void l2k_log(const char* message) {
 // Called after Windows initializes imported DLLs, before the original entrypoint.
 L2K_API void l2k_bootstrap() {
     const DWORD saved=GetLastError();
-    l2k_log("DLL loaded; build=protocol-hooks-12-clan-members; ABI=1");
+    l2k_log("DLL loaded; build=protocol-hooks-13-status-content; ABI=1");
     if(!l2k_install_login_hooks()) {
         l2k_log("FATAL: hooks not installed; client startup stopped");
         MessageBoxW(nullptr,L"L2K: engine incompatível ou falha ao instalar hooks. Consulte L2KProtocol.log.",L"L2K Protocol",MB_OK|MB_ICONERROR);
         ExitProcess(1);
     }
     if(!l2k_install_game_trace())l2k_log("game_trace=unavailable; login remains active");
+    if(!l2k_install_status_bridge())l2k_log("status_adapter=unavailable; original StatusUpdate retained");
     SetLastError(saved);
 }

@@ -14,8 +14,7 @@ compila a DLL, executa toda a suíte, produz cobertura por pacote e empacota uma
 atualização. Qualquer divergência de hash, seletor não resolvido ou teste falho
 interrompe o pacote. Os testes x86 exigem execução fora do sandbox macOS.
 
-O relatório `reports/coverage.json` enumera 577 unidades (métodos de envio e
-slots de recepção), sem confundir inventário com schemas completos ou cobertura
+O relatório `reports/coverage.json` enumera métodos de envio e slots de recepção, sem confundir inventário com schemas completos ou cobertura
 semântica. `coverage.md` resume as categorias e o que já está implementado.
 
 ## Clã
@@ -94,3 +93,12 @@ compatibilidade semântica completa são classificações diferentes.
 Pipeline: `extract_asset_tables.py` → `audit_asset_dependencies.py` → `migrate_asset_tables.py` → `install_assets_update.py <pacote DLL>`. Saída em `build/assets-interlude`, com hashes, referências pendentes e seis DATs Interlude recompilados e validados por roundtrip. Instalação verifica engine/base, mantém backup e recusa substituir pacotes nativos diferentes.
 
 `inspect_asset_audit.py` relaciona o log da próxima sessão com as tabelas migradas. Diagnóstico é somente leitura: layout desconhecido não bloqueia pacote. Registra IDs de catálogo e campos de itens, nunca payload bruto, chat, credenciais ou nomes de personagens. Build 6 passou em 69 testes; detalhes e limites em `reports/assets-validation.md`.
+
+
+## Build 13: conteúdo e status
+
+`audit_content_tables.py` extrai as tabelas adicionais com os DDFs versionados. Use `L2K_DAT_WINEPREFIX=/caminho/do/prefixo` para isolar o Wine das ferramentas do cliente aberto. `migrate_content_tables.py` reconstrói sete DATs, valida cada linha/coluna e a codificação RSA413; `install_content_update.py` confere a baseline e instala com backup. `report_content_disposition.py` cobre os 33 DATs e lista os recursos ausentes.
+
+`install_usk_update.py` instala somente o pacote verificado da skill 10615. Não substitui pacotes nativos. A DLL da build 13 restaura o campo de experiência de StatusUpdate e bloqueia IDs de ações de summons exclusivos do Interlude. `reports/status-content-build13.md` documenta endereços, testes e limites.
+
+O catálogo tem 213 pontos de envio C4, 204 métodos compartilhados e nenhuma função de envio sem classificação de evidência. Igualdade de bytes nos casos testados não certifica todas as telas ou qualquer build de servidor. Os resultados instalados ficam em `build/current-runtime.json`; a versão distribuída e os hashes ficam em `patch/manifest.json`.

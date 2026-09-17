@@ -109,7 +109,20 @@ class NativeEmitter:
     def put(self, address, value):
         self.u.mem_write(address, struct.pack('<I', value & 0xffffffff))
 
-    def run(self, entry, values, blobs=None, *, direct_arguments=None):
+    def bind_core_import(self, name):
+        """Bind an actual, fingerprinted Core export; never emulate its result."""
+        if self.side == 'source' and not any(p.OPTIONAL_HEADER.ImageBase == 0x10100000 for p in self.images):
+            raw = (ROOT.parent.parent/'system/Core.dll').read_bytes()
+            if hashlib.sha256(raw).hexdigest() != 'b3b367b7b8fea00641d789b8d7acfb9e520ef9f88bd46ea834736e0017c4643f':
+                raise ValueError('Unverified C4 Core dependency')
+            self.images.append(pefile.PE(data=raw))
+        core = next(p for p in self.images if p.OPTIONAL_HEADER.ImageBase == 0x10100000)
+        entry = next(s for s in core.DIRECTORY_ENTRY_EXPORT.symbols if s.name == name)
+        slot = next(i.address for d in self.pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name == name)
+        self._map_image(self.u, 0, slot, 4, 0, None)
+        self.put(slot, core.OPTIONAL_HEADER.ImageBase + entry.address)
+
+    def run(self, entry, values, blobs=None, *, direct_arguments=None, object_fields=None):
         if len(values) > 1024:
             raise ValueError('Synthetic parameter stack exceeds reserved region')
         u = self.u
@@ -123,7 +136,12 @@ class NativeEmitter:
         obj, socket, vtable, params, array = [self.DATA + k for k in [0, 0x1000, 0x2000, 0x3000, 0x4000]]
         self.put(obj + 0x48, socket)
         self.put(socket, vtable)
+        self.put(socket + 0x38, 1)  # Synthetic connected handle; no OS socket exists.
         self.put(vtable + self.profile['slot'], self.SEND)
+        for offset, value in (object_fields or {}).items():
+            if not 0x4c <= offset <= 0xffc:
+                raise ValueError('Synthetic field overlaps sender ABI or another object')
+            self.put(obj + offset, value)
         if self.side == 'source':
             # Original C4 list builders print each row via GL2Console. No UI is run.
             self._map_image(u, 0, 0x10b36bbc, 4, 0, None)

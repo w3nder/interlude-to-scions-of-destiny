@@ -1,0 +1,24 @@
+{
+  "hashes": {
+    "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+    "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+  },
+  "functions": {
+    "StatusUpdate": {
+      "source": "0x10414f80",
+      "target": "0x104261f0",
+      "finding": "Legacy tag 2 is ignored by target switch; restored by status bridge. Remaining legacy tag callback positions shift by 0xC0 with same argument layout."
+    },
+    "SystemMessage": {
+      "source": "0x10404cd0",
+      "target": "0x104156d0",
+      "finding": "C4 tags 0..5 retain string/dword/skill fields. Target-only tags 6..8 have extra layouts already accepted by structured validator."
+    },
+    "ServerObjectInfo": {
+      "source": "0x1041e260",
+      "target": "0x1042f8d0",
+      "finding": "One ddSdddddffffdddd decode in both; state switch maps 0,1,2,3 to 3,1,2,0 in both. Double precision collision sizes and object identity retained."
+    }
+  },
+  "limits": "Decompiler local-variable names and inferred calling conventions are imperfect; runtime evidence supplements StatusUpdate and field decoder comparisons."
+}

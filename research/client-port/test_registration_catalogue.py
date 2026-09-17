@@ -8,6 +8,15 @@ from native_emitter_audit import PROFILES
 
 
 class RegistrationCatalogueTests(unittest.TestCase):
+    def test_constructor_vtables_recover_unexported_senders(self):
+        expected = {'source':{'ValidatePosition':('0x48','cddddd'),'VoteSociality':('0xB9','cd')},
+                    'target':{'ValidatePosition':('0x48','cddddd'),'StartRotating':('0x4A','cdd'),'VoteSociality':('0xB9','cd')}}
+        for side, profile in PROFILES.items():
+            extractor = Extractor(profile['path'])
+            self.assertEqual(len(extractor.network_vtable()),303 if side=='source' else 336)
+            recovered = {r['name']:(r['opcode'],r['format']) for r in extractor.outbound() if r.get('recovery')}
+            self.assertEqual(recovered,expected[side])
+
     def test_every_table_handler_assignment_has_a_catalogue_entry(self):
         for side, profile in PROFILES.items():
             with self.subTest(side=side):

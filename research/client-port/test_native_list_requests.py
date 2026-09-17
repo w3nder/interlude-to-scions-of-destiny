@@ -88,6 +88,7 @@ class NativeListRequestsTests(unittest.TestCase):
 
     def test_macro_strings_and_lines_match_native_c4(self):
         methods = self.methods['RequestMakeMacro']
+        cases=[]
         for count in [0, 1, 12]:
             for label in ['', 'Teste', 'Ação 🎯']:
                 with self.subTest(count=count, label=label):
@@ -110,6 +111,10 @@ class NativeListRequestsTests(unittest.TestCase):
                         adapted = C.create_string_buffer(result['wire'])
                         self.assertEqual(self.convert(adapted, len(expected)), 0)
                         self.assertEqual(bytes(adapted)[:len(expected)], expected)
+                    cases.append({'lines':count,'bytes':len(expected),'sha256':hashlib.sha256(expected).hexdigest()})
+        (ROOT/'reports/native-macro-requests.json').write_text(json.dumps({'status':'passed',
+            'hashes':{s:p['sha256'] for s,p in PROFILES.items()},'method':'RequestMakeMacro','cases':cases,
+            'scope':'Exact native macro row construction and serialization; finite strings and 0/1/12 lines.'},indent=2)+'\n')
 
     def test_repeated_execution_does_not_reuse_previous_list(self):
         for side, engine in self.engines.items():

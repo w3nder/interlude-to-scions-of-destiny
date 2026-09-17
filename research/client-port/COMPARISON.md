@@ -6,9 +6,9 @@ Este relatório descreve somente a extração estática, não o estado do patch.
 ## Cobertura e conferência
 
 - Origem: SHA-256 confirmado; 213 pontos de envio no catálogo original.
-- Reextração: 211 envios reproduzidos com opcode/formato idênticos; ValidatePosition e VoteSociality não foram recuperados pelo percurso dos exports.
+- Reextração: 213 envios reproduzidos com opcode/formato idênticos; métodos privados recuperados pela vtable instalada no construtor UNetworkHandler.
 - Os 304 registros de recepção do catálogo foram reproduzidos, com os mesmos nomes e slots.
-- Destino: 237 pontos de envio e 348 registros de recepção (255 primários, 93 estendidos).
+- Destino: 240 pontos de envio e 348 registros de recepção (255 primários, 93 estendidos).
 - 31 handlers da origem têm divergências de segmentos em relação ao catálogo antigo; evidência detalhada em comparison.json.
 - Exemplo confirmado: o segmento antigo de MoveToLocation em 0x104132ba fica numa rotina posterior, iniciada em 0x10413280 e separada por padding INT3. Não deve ser concatenado ao handler 0x10413120.
 - Os limites de função são heurísticos (exports e padding); helpers e formatos construídos dinamicamente podem ficar fora da extração.
@@ -32,14 +32,14 @@ Inventário detalhado: interlude-reference-inventory.json. Nenhuma das duas past
 | RequestEnterWorldPacket | 0x03: `cbdddd` | 0x03: `cbddddbdcccccccccccccccccccc` |
 | MoveBackwardToLocation | 0x01: `cdddddd` | 0x01: `cdddddd` |
 | Action | 0x04: `cddddc` | 0x04: `cddddc` |
-| Atk | não recuperado | 0x0A: `cddddc` |
+| Attack | 0x0A: `cddddc` | 0x0A: `cddddc` |
 | RequestUseItem | 0x14: `cdd` | 0x14: `cdd` |
 | Say2 | 0x38: `cSd`<br>0x38: `cSdS` | 0x38: `cSd`<br>0x38: `cSdS` |
-| ValidatePosition | 0x48: `cddddd` | não recuperado |
+| ValidatePosition | 0x48: `cddddd` | 0x48: `cddddd` |
 
 Igualdade de opcode e formato é um candidato a reutilização; ainda faltam fase da sessão e significado dos campos.
 
-Dos métodos agrupados por nome de export: 172 têm o mesmo opcode/formato observado; 6 têm diferenças; 19 envolvem subopcode estendido ainda não resolvido. Há 32 nomes só na extração do destino e 7 só na origem, o que não prova ausência real de funcionalidade.
+Métodos agrupados por nome e aliases nativos revisados: same_observed_opcode_and_format=179, target_only_in_extraction=28, different_observed_opcode_or_format=6, extended_subopcode_unresolved=19. Esses números descrevem a extração, não funcionalidades quebradas.
 
 Os seis métodos com formatos diferentes são ConfirmDlg, RequestEnterWorldPacket, RequestJoinPartyRoom, RequestJoinPledge, RequestMultiSellChoose e RequestPledgePower.
 

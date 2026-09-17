@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-12-clan-members",
+  "build": "protocol-hooks-13-status-content",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 346906,
-      "sha256": "ec355d32587c3b516d228011d76ead08a0592e0a018e46aedf63c03dd6a079d0"
+      "bytes": 349796,
+      "sha256": "dec548b422f90a05c8e2279155e27fc72ee23682fa3307ec2d1e55eb8cc73c3d"
     },
     {
       "path": "system/skillname-e.dat",
@@ -356,8 +356,60 @@
       "path": "systextures/kaaliv2.utx",
       "bytes": 9771649,
       "sha256": "833c6520c0477701df73efc5c8090d7133314e7fa29e76665da9a1b89a42eb39"
+    },
+    {
+      "path": "system/systemmsg-e.dat",
+      "bytes": 47536,
+      "sha256": "0d07d2042074348fae3986d54f209fc68613768f3330fd06c011f74961ca0d49"
+    },
+    {
+      "path": "system/questname-e.dat",
+      "bytes": 192816,
+      "sha256": "f95e4366a8bb26a1b8bd4942e1a61785bac47d5d0da1cc1bf65583b51555bbbf"
+    },
+    {
+      "path": "system/entereventgrp.dat",
+      "bytes": 7344,
+      "sha256": "9cad03f414fad0ff300d894f425b0b553eb663ccc67eb2182fbdd1a8ea825b4e"
+    },
+    {
+      "path": "system/staticobject-e.dat",
+      "bytes": 2480,
+      "sha256": "e3232fd443acea5045f52256fb6c3aeff043eb815dcc16ca30e2376aa343b1d4"
+    },
+    {
+      "path": "system/servername-e.dat",
+      "bytes": 1072,
+      "sha256": "b6afd0b7b66efac7e8ad170aa497df138dd1cfe75086b665b720b93f8f82f350"
+    },
+    {
+      "path": "system/castlename-e.dat",
+      "bytes": 1072,
+      "sha256": "ca25552abcacd92c838370ccaafd621aa5961e6ee61a4ab3f8e0048dcd337de2"
+    },
+    {
+      "path": "system/actionname-e.dat",
+      "bytes": 6576,
+      "sha256": "ac4a7b2f2530b55dd364b4a8c708b31f7b623e4021d2023ed758b43e84d69cd1"
+    },
+    {
+      "path": "animations/viRUS_Share_Skill2.usk",
+      "bytes": 4649823,
+      "sha256": "1ef0c0d562d43a0cfa03d52e01fe19d762d430813dc27a74b84428c145449942"
     }
   ],
-  "validation": "98 automated tests passed; native quest/channel/pet/movement evidence; gameplay pending; port incomplete",
-  "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending."
+  "validation": "126 automated tests passed; native status/decoder/sender comparisons, seven additional DAT roundtrips and cross-catalogue references; no exhaustive live UI certification.",
+  "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending.",
+  "content_update": {
+    "tables": [
+      "systemmsg-e",
+      "questname-e",
+      "entereventgrp",
+      "staticobject-e",
+      "servername-e",
+      "castlename-e",
+      "actionname-e"
+    ],
+    "report": "research/client-port/reports/content-disposition.json"
+  }
 }

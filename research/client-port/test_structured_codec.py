@@ -74,6 +74,14 @@ class StructuredCodecTests(unittest.TestCase):
         for op,size,extra in [(0x86,17,12),(0x29,21,4),(0x2a,17,4),(0xa6,7,4),(0x4c,9,4),(0xc5,29,4),(0xc7,41,4),(0xcd,25,4),(0xf3,21,8)]:
             p=bytes([op])+bytes(range(size-1));self.pair(p,p+b'\0'*extra)
             for n in range(1,len(p)):self.assertLess(self.convert(p[:n])[0],0)
+    def test_status_count_matches_complete_pairs_before_native_dispatch(self):
+        for count in [0,1,35,8190]:
+            p=b'\x0e'+d(777,count)+b''.join(d(i%35,i*123) for i in range(count))
+            self.assertEqual(self.convert(p)[0],0)
+            if count:self.assertLess(self.convert(p[:-1])[0],0)
+            self.assertLess(self.convert(p+b'\0')[0],0)
+        for p in [b'\x0e',b'\x0e'+d(777),b'\x0e'+d(777,0xffffffff)]:
+            self.assertLess(self.convert(p)[0],0)
     def test_character_selection_equipment_and_experience(self):
         comparison=json.loads((ROOT/'comparison.json').read_text())
         row=next(r for r in comparison['inbound'] if r['table']=='primary' and r['opcode']=='0x13')
