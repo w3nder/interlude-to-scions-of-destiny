@@ -396,6 +396,11 @@
       "path": "animations/viRUS_Share_Skill2.usk",
       "bytes": 4649823,
       "sha256": "1ef0c0d562d43a0cfa03d52e01fe19d762d430813dc27a74b84428c145449942"
+    },
+    {
+      "path": "system/NWindow.dll",
+      "bytes": 3850260,
+      "sha256": "c4be7ace2ab15652d919c7f1dac99e223d963c2528aa6638c8aaa2629f66f678"
     }
   ],
   "validation": "126 automated tests passed; native status/decoder/sender comparisons, seven additional DAT roundtrips and cross-catalogue references; no exhaustive live UI certification.",
@@ -411,5 +416,6 @@
       "actionname-e"
     ],
     "report": "research/client-port/reports/content-disposition.json"
-  }
+  },
+  "inventory_ui_build": "inventory-slot-1"
 }

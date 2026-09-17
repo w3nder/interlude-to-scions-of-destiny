@@ -1,0 +1,16 @@
+{
+  "build": "inventory-slot-1",
+  "original_sha256": "cb85f7a5de375f1e9156ec6559aae2a0a809b3abac4150142aafb14bbf02b47b",
+  "patched_sha256": "c4be7ace2ab15652d919c7f1dac99e223d963c2528aa6638c8aaa2629f66f678",
+  "changed_bytes": 1,
+  "branch_rva": "0x14e6b6",
+  "mask": 8192,
+  "original_visual_slot": 19,
+  "patched_visual_slot": 2,
+  "regular_tattoo_visual_slot": 3,
+  "wire_changes": false,
+  "scope": "C4 equipment; Interlude-only second-hair items are not supported by this slot reservation",
+  "activation": "next client process; running process is preserved",
+  "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/NWindow.before-inventory-20260917-182318.dll",
+  "installed": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/NWindow.dll"
+}

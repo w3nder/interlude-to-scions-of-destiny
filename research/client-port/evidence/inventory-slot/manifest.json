@@ -1,0 +1,15 @@
+{
+  "source_nwindow_sha256": "1fdcf9b455ef7ff93dfedeb9667e61a9874e31fe125982437d98c4d0adea3cce",
+  "target_nwindow_sha256": "cb85f7a5de375f1e9156ec6559aae2a0a809b3abac4150142aafb14bbf02b47b",
+  "tool": "Ghidra / PyGhidra offline decompilation; no saved project modifications",
+  "files": [
+    "source-10093d50.c",
+    "source-10094100.c",
+    "target-1014e550.c",
+    "target-10175bc0.c",
+    "target-10176880.c",
+    "target-10176ac0.c",
+    "target-10177ec0.c"
+  ],
+  "limits": "Decompiler stack types are approximate. Slot mapper and mouse geometry executed directly in native x86 tests; full live rendering not exercised."
+}
