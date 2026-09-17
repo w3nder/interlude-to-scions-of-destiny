@@ -127,7 +127,9 @@ class GameTraceTests(unittest.TestCase):
         def send():
             sock,fmt,n,data=h.args(4);sent.append(bytes(h.u.mem_read(data,n)));h.ret()
         h.callbacks[h.engine+0x68b6]=serialize;h.callbacks[h.engine+0x1029b0]=send
-        cases=[(b'\x24'+d(123,0),b'\x24'+d(123)),(b'\x24'+d(123,100),None),
+        cases=[(b'\xc0'+d(77,2,255),None),
+               (b'\xc0'+d(77,1),b'\xc0'+d(77,1)),
+               (b'\x24'+d(123,0),b'\x24'+d(123)),(b'\x24'+d(123,100),None),
                (b'\xa7'+d(100,200,3,0,0),b'\xa7'+d(100,200,3)),
                (b'\xa7'+d(100,200,3,1,0),None),
                (b'\xc5'+d(12,1,999),b'\xc5'+d(12,1)),(b'\xc5\0',None),

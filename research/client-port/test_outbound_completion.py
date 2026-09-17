@@ -26,3 +26,12 @@ class OutboundCompletionTests(unittest.TestCase):
    self.assertEqual(self.format(fmt,data,len(data)),b'cbdddd')
   for fmt2,op in [(b'cbdddd',3),(fmt,4),(fmt+b'd',3),(b'cbddddb',3)]:
    self.assertIsNone(self.format(fmt2,bytes([op])+bytes(104),105))
+
+ def test_pledge_actions_require_complete_c4_layout(self):
+  for action in [0,1,2,3,0xffffffff]:
+   expected=9 if action in [1,2] else 41
+   for n in range(1,46):
+    packet=(b'\xc0'+struct.pack('<II',77,action)+bytes(50))[:n]
+    buf=C.create_string_buffer(packet)
+    self.assertEqual(self.convert(buf,n)<0,n!=expected,(action,n))
+    self.assertEqual(buf.raw[:n],packet)

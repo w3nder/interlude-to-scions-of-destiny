@@ -35,7 +35,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-8-characters`: 37 conversores S2C e 6 C2S, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 82 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
+Build `protocol-hooks-9-pledge-guard`: 37 conversores S2C e 6 C2S, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 84 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
 
 CharacterSelected permanece sem conversão após uma regressão corrigida. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
 
@@ -50,3 +50,7 @@ Corrigidos EnterWorld, RequestJoinPartyRoom e RequestExAcceptJoinMPCC. A atualiz
 ## Personagens — build 8
 
 Conversão dos layouts C4 completos de CharInfo e UserInfo, incluindo equipamentos, experiência e os quatro indicadores legados de permissão. Pacotes já Interlude e variantes desconhecidas são preservados. A equivalência dos indicadores foi testada nas funções x86 originais para cada um dos 256 bits C4. Isso não conclui a adaptação das operações de alteração de privilégios de clã. Consulte [evidências e pendências](research/client-port/reports/characters-build8.md).
+
+## Proteção de privilégios — build 9
+
+RequestPledgePower C0 agora recusa tamanhos incompatíveis com a ação C4 antes de cifrar/enviar. O pedido Interlude de alteração por rank (13 bytes) fica bloqueado; não foi convertido em uma operação C4 diferente. [Evidência nos emissores originais e limites](research/client-port/reports/pledge-guard-build9.md).

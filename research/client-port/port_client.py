@@ -27,6 +27,8 @@ def report(validation=None,trace=None):
     converted_keys={(r['table'],r['opcode']) for r in schemas if r.get('kind','converter')=='converter'}|{('primary',op) for op in ('0x53','0x54','0x55')}
     validated_keys={(r['table'],r['opcode']) for r in structured if r['kind']=='validator'}
     outbound_names={r['name'] for r in outbound}
+    outbound_validators=read('outbound-schemas.json').get('validators',[])
+    validator_names={r['name'] for r in outbound_validators}
     audit=read('reports/handler-audit.json') if (ROOT/'reports/handler-audit.json').exists() else {}
     wire=read('reports/wire-equivalence.json') if (ROOT/'reports/wire-equivalence.json').exists() else {}
     wire_out={r['name']:r for r in wire.get('outbound',[])}
@@ -34,7 +36,7 @@ def report(validation=None,trace=None):
     ignored={(r['table'],r['opcode']) for r in audit.get('empty_layout_audit',[]) if r['resolution']=='both_handlers_ignore_payload'}
     for r in comparison['outbound']:
         blocked=[p for p in policy['denied'] if p['name']==r['name']]
-        items.append(dict(direction='C2S',name=r['name'],static_status=r['status'],implementation='blocked_by_profile' if blocked else 'Interlude_to_C4_converter' if r['name'] in outbound_names else 'passthrough',test_coverage='selector policy tested' if blocked else 'native send hook fixtures' if r['name'] in outbound_names else 'not validated per packet'))
+        items.append(dict(direction='C2S',name=r['name'],static_status=r['status'],implementation='blocked_by_profile' if blocked else 'Interlude_to_C4_converter' if r['name'] in outbound_names else 'bounded_outbound_validator' if r['name'] in validator_names else 'passthrough',test_coverage='selector policy tested' if blocked else 'native send hook fixtures' if r['name'] in outbound_names else 'exact native sender action contracts and pre-send rejection tests' if r['name'] in validator_names else 'not validated per packet'))
     for r in comparison['inbound']:
         source=r.get('source') or {};target=r.get('target') or {};converted=(r['table'],r['opcode']) in converted_keys;validated=(r['table'],r['opcode']) in validated_keys
         items.append(dict(direction='S2C',table=r['table'],opcode=r['opcode'],name=target.get('name',source.get('name','unknown')),static_status=r['status'],implementation='strict_C4_to_Interlude_converter' if converted else 'bounded_layout_validator' if validated else 'passthrough',test_coverage='synthetic structure/bounds fixtures; representative native hook integration; gameplay pending' if converted or validated else 'not validated per packet'))
@@ -54,6 +56,7 @@ def report(validation=None,trace=None):
          'user_observed_failure':[],
          'schema_converters':schemas,
          'outbound_schema_converters':outbound,
+         'outbound_structural_validators':outbound_validators,
          'catalogue_contract':'Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.',
          'counts':dict(Counter(i['implementation'] for i in items)),
          'release_complete':False,
@@ -75,6 +78,7 @@ def report(validation=None,trace=None):
            f"- {len(policy['denied'])} solicitações exclusivas do Interlude bloqueadas antes da cifra/envio.",
            f"- {len(converted_keys)} conversores S2C, {len(outbound)} conversores C2S e {len(validated_keys)} validador estrutural. Detalhes e variantes em schema-inbound.json, structured-inbound.json e outbound-schemas.json.",
            '- Testes estruturais não validam por si só significado de campos nem comportamento de todas as telas.',
+           '- RequestPledgePower C0: tamanhos incompatíveis com a ação C4 são bloqueados antes do envio; alteração de privilégios por rank continua sem adaptação.',
            '- Cifra nativa de game preservada; trace registra apenas opcode, tamanho e decisão.',
            '- Demais pacotes continuam no caminho original. Nenhuma conversão baseada apenas no tamanho.',
            f"- Auditoria dos argumentos C2S: {wire.get('summary',{}).get('same_serializer_argument_contract',0)} métodos equivalentes no serializador; não precisam de conversão nesse limite.",
@@ -105,7 +109,7 @@ def main():
     if args.action=='package':
         build_hash=hashlib.sha256((ROOT/'build/L2KProtocolCore.dll').read_bytes()).hexdigest();dest=ROOT/'dist'/('L2Killer-ProtocolPatch-'+build_hash[:8]);dest.mkdir(parents=True,exist_ok=True)
         for src,name in [(ROOT/'build/L2KProtocolCore.dll','L2KProtocolCore.dll'),(ROOT/'reports/coverage.json','coverage.json'),(ROOT/'reports/coverage.md','coverage.md'),(ROOT/'outbound-policy.json','outbound-policy.json'),(ROOT/'schema-inbound.json','schema-inbound.json'),(ROOT/'structured-inbound.json','structured-inbound.json'),(ROOT/'outbound-schemas.json','outbound-schemas.json')]:shutil.copyfile(src,dest/name)
-        write(dest/'manifest.json',{'build':'protocol-hooks-8-characters','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
+        write(dest/'manifest.json',{'build':'protocol-hooks-9-pledge-guard','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
         (dest/'LEIA-ME.txt').write_text('Atualizacao para a system LoginTest ja instalada.\nA DLL inclui conversores S2C/C2S e validacao de parametros de mensagens; bloqueia 28 pedidos exclusivos do Interlude. Consulte os catalogos incluidos para estruturas, condicoes e limitacoes.\nCifra do jogo preservada. Limite: academias/subunidades e demais recursos novos nao passam a existir no servidor C4.\nO gerador ainda nao adapta todos os pacotes. Consulte coverage.json.\nO trace L2KGameTrace-<PID>-<tick>.tsv permite classificar o trafego sem gravar payloads/credenciais/chat.\nA instalacao atomica pelo install_protocol_update.py preserva a DLL anterior; vale na proxima abertura.\n')
         archive=shutil.make_archive(str(dest),'zip',dest.parent,dest.name);print('PACKAGE '+archive)
     print('REPORT '+str(ROOT/'reports/coverage.md'))

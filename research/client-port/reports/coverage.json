@@ -1,11 +1,11 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T11:05:00.366379+00:00",
+  "generated_utc": "2026-09-17T11:13:04.344361+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 82,
+    "unittest_cases": 84,
     "results": "build/test-results.txt"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
@@ -537,18 +537,32 @@
       "conversion": "Re-serialize original arguments with exact C4 format before encryption, retaining variable first blob and four dwords. Validate removed extension is exactly 88 bytes; no size-only wire slicing."
     }
   ],
+  "outbound_structural_validators": [
+    {
+      "name": "RequestPledgePower",
+      "opcode": "0xC0",
+      "source_handler": "0x103fb950",
+      "target_handler": "0x10409980",
+      "source_layout": "cdd for actions 1/2; cddb with 32 raw bytes for other actions",
+      "target_layout": "cdd for action 1; cddd for action 2",
+      "behavior": "Reject lengths incompatible with the C4 action before native encryption/send. The 13-byte Interlude action-2 rank update is blocked, not translated.",
+      "limitation": "Does not establish rank/member equivalence or implement privilege modification. Nine-byte action-1 queries retain the existing route.",
+      "evidence": "test_native_pledge_requests.py executes both original sender functions up to the virtual send; tests verify emitted format, opcode, ID, action and raw buffer length."
+    }
+  ],
   "catalogue_contract": "Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.",
   "counts": {
-    "passthrough": 338,
+    "passthrough": 337,
     "blocked_by_profile": 28,
     "native_same_serializer_contract": 142,
     "Interlude_to_C4_converter": 6,
+    "bounded_outbound_validator": 1,
     "native_handlers_ignore_payload": 25,
     "strict_C4_to_Interlude_converter": 37,
     "bounded_layout_validator": 1
   },
   "release_complete": false,
-  "pending_semantic_validation": 338,
+  "pending_semantic_validation": 337,
   "handler_audit": {
     "hashes": {
       "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
@@ -1799,8 +1813,8 @@
     }
   },
   "runtime_installation": {
-    "build": "protocol-hooks-8-characters",
-    "dll_sha256": "3fcef81e7f3d07f97f94a7f02b9fc29f558339f8df0e1f27c5ccd8097a30b706",
+    "build": "protocol-hooks-9-pledge-guard",
+    "dll_sha256": "41f8f3308f86009c06209c2f4f582612e48f6a6f72cbe62d0ba65db2710a47ac",
     "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-assets-20260917-052113",
     "tables_installed": [
       {
@@ -1891,8 +1905,9 @@
     "c2s_converters": 6,
     "unsupported_extended_requests_blocked": 28,
     "candidate_source_is_not_installed": false,
-    "status": "installed; 82 tests passed; character conversion gameplay pending",
-    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-080333.dll"
+    "status": "installed; 84 tests passed; build 9 gameplay pending",
+    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-081233.dll",
+    "outbound_validators": 1
   },
   "blocked_features": [
     {
@@ -3174,8 +3189,8 @@
       "direction": "C2S",
       "name": "RequestPledgePower",
       "static_status": "different_observed_opcode_or_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "bounded_outbound_validator",
+      "test_coverage": "exact native sender action contracts and pre-send rejection tests",
       "wire_audit": "requires_deeper_analysis"
     },
     {

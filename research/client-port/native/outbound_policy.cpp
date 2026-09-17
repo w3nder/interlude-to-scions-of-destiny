@@ -17,6 +17,16 @@ L2K_API int l2k_outbound_blocked(const uint8_t* p,uint32_t n){
 L2K_API int l2k_outbound_convert(uint8_t* p,uint32_t n){
     if(!p||!n)return L2K_INVALID;
     switch(p[0]){
+    case 0xc0: {
+        // C4 RequestPledgePower 103fb950: actions 1/2 use cdd;
+        // other actions use cddb with exactly 32 raw bytes.
+        // Interlude action 2 emits cddd (13 bytes), which is NOT a
+        // valid C4 action-2 request. Block until UI semantics are mapped.
+        if(n<9)return L2K_INVALID;
+        uint32_t action=uint32_t(p[5])|(uint32_t(p[6])<<8)|
+            (uint32_t(p[7])<<16)|(uint32_t(p[8])<<24);
+        return n==((action==1||action==2)?9u:41u)?0:L2K_INVALID;
+    }
     case 0xd0:
         if(n<3)return L2K_INVALID;
         if(p[1]!=0x0e||p[2]!=0)return 0;

@@ -45,5 +45,18 @@
     }
   ],
   "evidence": "decompiled/outbound source and target exact methods; primary clientpackets references; native send hook tests",
-  "limits": "RequestPledgePower still requires action/privilege semantic mapping. Unknown EnterWorld serializer formats remain unchanged. Caller/UI semantics require live validation; native serialization boundary tests do not prove all features."
+  "limits": "RequestPledgePower still requires action/privilege semantic mapping. Unknown EnterWorld serializer formats remain unchanged. Caller/UI semantics require live validation; native serialization boundary tests do not prove all features.",
+  "validators": [
+    {
+      "name": "RequestPledgePower",
+      "opcode": "0xC0",
+      "source_handler": "0x103fb950",
+      "target_handler": "0x10409980",
+      "source_layout": "cdd for actions 1/2; cddb with 32 raw bytes for other actions",
+      "target_layout": "cdd for action 1; cddd for action 2",
+      "behavior": "Reject lengths incompatible with the C4 action before native encryption/send. The 13-byte Interlude action-2 rank update is blocked, not translated.",
+      "limitation": "Does not establish rank/member equivalence or implement privilege modification. Nine-byte action-1 queries retain the existing route.",
+      "evidence": "test_native_pledge_requests.py executes both original sender functions up to the virtual send; tests verify emitted format, opcode, ID, action and raw buffer length."
+    }
+  ]
 }
