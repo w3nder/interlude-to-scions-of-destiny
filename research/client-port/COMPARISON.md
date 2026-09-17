@@ -8,8 +8,8 @@ Nenhuma alteração de binário ou validação de conexão foi realizada.
 - Origem: SHA-256 confirmado; 213 pontos de envio no catálogo original.
 - Reextração: 211 envios reproduzidos com opcode/formato idênticos; ValidatePosition e VoteSociality não foram recuperados pelo percurso dos exports.
 - Os 304 registros de recepção do catálogo foram reproduzidos, com os mesmos nomes e slots.
-- Destino: 237 pontos de envio e 341 registros de recepção (255 primários, 86 estendidos).
-- 7 handlers da origem têm divergências de segmentos em relação ao catálogo antigo; evidência detalhada em comparison.json.
+- Destino: 237 pontos de envio e 348 registros de recepção (255 primários, 86 estendidos).
+- 31 handlers da origem têm divergências de segmentos em relação ao catálogo antigo; evidência detalhada em comparison.json.
 - Exemplo confirmado: o segmento antigo de MoveToLocation em 0x104132ba fica numa rotina posterior, iniciada em 0x10413280 e separada por padding INT3. Não deve ser concatenado ao handler 0x10413120.
 - Os limites de função são heurísticos (exports e padding); helpers e formatos construídos dinamicamente podem ficar fora da extração.
 - Q lê 8 bytes no decoder do destino: caso 0x1040279b, duas cópias de dword e avanço do cursor por 8. Evidência em decoder-Q-evidence.txt; o significado do campo ainda precisa ser resolvido.

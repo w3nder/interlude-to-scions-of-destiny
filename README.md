@@ -35,7 +35,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-9-pledge-guard`: 37 conversores S2C e 6 C2S, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 84 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
+Build `protocol-hooks-11-quest-channel`: 41 conversores S2C e 6 C2S, dez DATs migrados e 58 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 98 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
 
 CharacterSelected permanece sem conversão após uma regressão corrigida. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
 
@@ -54,3 +54,9 @@ Conversão dos layouts C4 completos de CharInfo e UserInfo, incluindo equipament
 ## Proteção de privilégios — build 9
 
 RequestPledgePower C0 agora recusa tamanhos incompatíveis com a ação C4 antes de cifrar/enviar. O pedido Interlude de alteração por rank (13 bytes) fica bloqueado; não foi convertido em uma operação C4 diferente. [Evidência nos emissores originais e limites](research/client-port/reports/pledge-guard-build9.md).
+
+## Quests, grupos de comando e catálogo — build 11
+
+QuestList 80 e command channel FE30 convertidos com evidências nos binários originais e testes dos hooks. A extração cobre os 304 slots registrados do C4 e 348 do Interlude, incluindo sete registros que o filtro por nome omitia. Nove métodos de movimento/descarte e o inventário do pet receberam comparações nativas; os casos equivalentes preservam os bytes. [Evidências e limites](research/client-port/reports/quest-channel-build11.md).
+
+O porte continua incompleto: permissões de clã por membro/cargo, variantes de CharacterSelected, contratos ainda sem validação semântica e assets ausentes/protegidos permanecem documentados. Passar nos testes automatizados não comprova funcionamento de todas as telas em jogo.

@@ -17,6 +17,38 @@ struct Writer {
     void zero(uint32_t n){if(n>MAX-pos){ok=false;return;}if(p)memset(p+pos,0,n);pos+=n;}
 };
 using Parser=bool(*)(Reader&,Writer&,bool);
+int quests(const uint8_t* p,uint32_t n,uint8_t* out,uint32_t cap){
+    Reader r{p,n};uint32_t count;
+    if(!r.num(count,2)||count>32767||count>(n-r.pos)/8||!r.take(count*8))return L2K_INVALID;
+    const uint32_t end=r.pos;
+    if(n-end==128)return 0; // Complete Interlude completion bitmap.
+    if(r.pos!=n){
+        uint32_t items;
+        if(!r.num(items,2)||items>32767||items>(n-r.pos)/16||!r.take(items*16)||r.pos!=n)return L2K_INVALID;
+    }
+    // The pinned C4 NConsoleWnd::AddQuestItem callback is a ret 4 no-op.
+    // C4 has no completion bitmap; never reinterpret its item bytes as bits.
+    if(end+128>MAX||end+128>cap)return L2K_CAPACITY;
+    memcpy(out,p,end);memset(out+end,0,128);return int(end+128);
+}
+bool command_channel(Reader& r,Writer& w,bool modern){
+    // C4 addresses invite/kick operations by leader name. Interlude's new
+    // member-details request requires an object ID and is blocked by policy.
+    r.pos=3;uint32_t begin=r.pos;
+    if(!r.str())return false;
+    w.raw(r.p,r.pos);
+    if(modern){if(!r.take(4))return false;w.raw(r.p+r.pos-4,4);}else w.zero(4);
+    begin=r.pos;uint32_t count;
+    if(!r.take(4)||!r.num(count)||count>(r.n-r.pos)/(modern?10u:6u))return false;
+    w.raw(r.p+begin,8);
+    for(uint32_t i=0;i<count;++i){
+        begin=r.pos;if(!r.str())return false;w.raw(r.p+begin,r.pos-begin);
+        if(modern){if(!r.take(4))return false;w.raw(r.p+r.pos-4,4);}else w.zero(4);
+        if(!r.take(4))return false;
+        w.raw(r.p+r.pos-4,4);
+    }
+    return r.pos==r.n;
+}
 bool shortcut(Reader& r,Writer& w,bool modern){
     uint32_t count=1;if(r.p[0]==0x45){if(!r.num(count)||count>(r.n-r.pos)/16)return false;w.raw(r.p,r.pos);}else w.raw(r.p,1);
     for(uint32_t i=0;i<count;++i){uint32_t start=r.pos,type;if(!r.num(type)||type<1||type>5||!r.take(4))return false;
@@ -157,6 +189,7 @@ L2K_API int l2k_structured_convert(const uint8_t* p,uint32_t n,uint8_t* out,uint
     switch(p[0]){
     case 0x13:return parsed(p,n,out,cap,character_selection);
     case 0x15:return 0; // Preserve the previously working native world-entry path.
+    case 0x80:return quests(p,n,out,cap);
     // RiderEnter/RiderEnd interpret a zero FVector as the actor's current location.
     case 0x86:return padded(p,n,out,cap,17,12);
     case 0x29:return padded(p,n,out,cap,21,4);
@@ -189,7 +222,7 @@ L2K_API int l2k_structured_convert(const uint8_t* p,uint32_t n,uint8_t* out,uint
         if(n+12>cap||n+12>MAX)return L2K_CAPACITY;
         memcpy(out,p,at);
         for(unsigned i=0;i<3;++i){memcpy(out+at+i*8,p+at+i*4,4);memset(out+at+i*8+4,0,4);}memcpy(out+at+24,p+at+12,n-at-12);return int(n+12);}
-    case 0xfe:{if(n<3)return L2K_INVALID;if(le(p+1,2)!=0x27)return 0;Reader r{p,n,3};if(!r.str())return L2K_INVALID;return padded(p,n,out,cap,r.pos,4);}
+    case 0xfe:{if(n<3)return L2K_INVALID;if(le(p+1,2)==0x30)return parsed(p,n,out,cap,command_channel);if(le(p+1,2)!=0x27)return 0;Reader r{p,n,3};if(!r.str())return L2K_INVALID;return padded(p,n,out,cap,r.pos,4);}
     default:return 0;
     }
 }

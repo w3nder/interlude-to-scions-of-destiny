@@ -1,7 +1,7 @@
 # Pesquisa de compatibilidade C4 → Interlude
 
 Leia `CONTEXT.md` para o escopo confirmado e `COMPARISON.md` para os resultados.
-Os binários de entrada são lidos, não executados nem modificados.
+A extração lê os binários; os testes nativos executam funções x86 isoladas no Unicorn, sem conexão ao servidor. O patch distribuído fica em `../../patch/`.
 
 ## Reproduzir no diretório L2Killer
 
@@ -25,7 +25,7 @@ linear; igualdade de formatos não estabelece igualdade dos campos.
 `ghidra/` contém o projeto de análise; `decompiled/` contém a saída dos dois
 handlers de personagem. Tipos e assinaturas da saída ainda são inferências.
 
-Não há patch instalável nesta etapa.
+O histórico abaixo descreve as etapas iniciais. Para o estado atual, consulte `reports/coverage.md` e o README da raiz.
 
 ## Evidência de autenticação e primeiro conversor
 

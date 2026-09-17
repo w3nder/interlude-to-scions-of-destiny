@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-10-gm-ride",
+  "build": "protocol-hooks-11-quest-channel",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 328241,
-      "sha256": "d7e10bcc6392f0d0a0d9586c3f6ab9f31f790458403bdcb14302194d95f5a52e"
+      "bytes": 329876,
+      "sha256": "055de034de5d394040f50866ea5c5d544922dd41d37c4360c011fe3947b71f02"
     },
     {
       "path": "system/skillname-e.dat",
@@ -358,6 +358,6 @@
       "sha256": "833c6520c0477701df73efc5c8090d7133314e7fa29e76665da9a1b89a42eb39"
     }
   ],
-  "validation": "90 automated tests passed; GM/Ride native evidence; gameplay pending; port incomplete",
+  "validation": "98 automated tests passed; native quest/channel/pet/movement evidence; gameplay pending; port incomplete",
   "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending."
 }

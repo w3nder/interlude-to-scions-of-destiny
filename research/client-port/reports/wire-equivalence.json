@@ -21,10 +21,10 @@
     "different_serializer_argument_contract": 5
   },
   "inbound_summary": {
-    "control_flow_or_handler_unresolved": 8,
+    "neither_entry_retrieves_packet_argument": 41,
     "same_reachable_decoder_sites_not_semantic_proof": 216,
-    "neither_entry_retrieves_packet_argument": 40,
-    "different_reachable_decoder_sites": 40
+    "different_reachable_decoder_sites": 41,
+    "control_flow_or_handler_unresolved": 6
   },
   "outbound": [
     {
@@ -11064,12 +11064,24 @@
       "name": "ExDummyPacket",
       "static_status": "decode_layout_unresolved",
       "source": {
-        "pending_reason": "handler address unresolved"
+        "handler_va": "0x103f1d20",
+        "reachable_instructions": 14,
+        "control_flow_errors": [],
+        "reachable_decoder_calls": [],
+        "discarded_unreachable_catalogue_calls": [],
+        "entry_packet_argument_not_retrieved": true,
+        "limits": "No direct stack/frame argument access is a triage fact, not proof of callback behavior. Decoder calls alone omit raw reads/helpers."
       },
       "target": {
-        "pending_reason": "handler address unresolved"
+        "handler_va": "0x10401170",
+        "reachable_instructions": 8,
+        "control_flow_errors": [],
+        "reachable_decoder_calls": [],
+        "discarded_unreachable_catalogue_calls": [],
+        "entry_packet_argument_not_retrieved": true,
+        "limits": "No direct stack/frame argument access is a triage fact, not proof of callback behavior. Decoder calls alone omit raw reads/helpers."
       },
-      "resolution": "control_flow_or_handler_unresolved"
+      "resolution": "neither_entry_retrieves_packet_argument"
     },
     {
       "table": "extended",
@@ -13349,14 +13361,40 @@
       "table": "primary",
       "opcode": "0x00",
       "name": "VersionCheckPacket",
-      "static_status": "decode_layout_unresolved",
+      "static_status": "different_observed_decode_segments",
       "source": {
-        "pending_reason": "handler address unresolved"
+        "handler_va": "0x103fdfe0",
+        "reachable_instructions": 111,
+        "control_flow_errors": [],
+        "reachable_decoder_calls": [
+          {
+            "call_va": "0x103fe02f",
+            "format": "cddd",
+            "catalogue_format": "cddd",
+            "recovered_missing_format": false
+          }
+        ],
+        "discarded_unreachable_catalogue_calls": [],
+        "entry_packet_argument_not_retrieved": false,
+        "limits": "No direct stack/frame argument access is a triage fact, not proof of callback behavior. Decoder calls alone omit raw reads/helpers."
       },
       "target": {
-        "pending_reason": "handler address unresolved"
+        "handler_va": "0x1040d000",
+        "reachable_instructions": 139,
+        "control_flow_errors": [],
+        "reachable_decoder_calls": [
+          {
+            "call_va": "0x1040d05b",
+            "format": "cQdd",
+            "catalogue_format": "cQdd",
+            "recovered_missing_format": false
+          }
+        ],
+        "discarded_unreachable_catalogue_calls": [],
+        "entry_packet_argument_not_retrieved": false,
+        "limits": "No direct stack/frame argument access is a triage fact, not proof of callback behavior. Decoder calls alone omit raw reads/helpers."
       },
-      "resolution": "control_flow_or_handler_unresolved"
+      "resolution": "different_reachable_decoder_sites"
     },
     {
       "table": "primary",
@@ -13561,8 +13599,8 @@
           {
             "call_va": "0x10436b83",
             "format": "d",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "d",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10436bb7",
@@ -13744,8 +13782,8 @@
           {
             "call_va": "0x104349a8",
             "format": "d",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "d",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x104349bf",
@@ -14212,8 +14250,8 @@
           {
             "call_va": "0x103ff0fd",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x103ff13e",
@@ -14240,8 +14278,8 @@
           {
             "call_va": "0x1040f1c9",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040f20a",
@@ -14275,8 +14313,8 @@
           {
             "call_va": "0x103ff2cd",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x103ff30e",
@@ -14303,8 +14341,8 @@
           {
             "call_va": "0x1040f389",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040f3ca",
@@ -14761,8 +14799,8 @@
           {
             "call_va": "0x104016db",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040170e",
@@ -14880,8 +14918,8 @@
           {
             "call_va": "0x1040190f",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040194b",
@@ -14914,8 +14952,8 @@
           {
             "call_va": "0x10411b39",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10411b75",
@@ -14974,8 +15012,8 @@
           {
             "call_va": "0x10401aaf",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10401aeb",
@@ -15002,8 +15040,8 @@
           {
             "call_va": "0x10411cc9",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10411d05",
@@ -15037,8 +15075,8 @@
           {
             "call_va": "0x10401c3f",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10401c7b",
@@ -15065,8 +15103,8 @@
           {
             "call_va": "0x10411e49",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10411e85",
@@ -15253,8 +15291,8 @@
           {
             "call_va": "0x10402502",
             "format": "hh",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "hh",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10402535",
@@ -16241,8 +16279,8 @@
           {
             "call_va": "0x104034dd",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040351e",
@@ -16269,8 +16307,8 @@
           {
             "call_va": "0x10413f09",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10413f54",
@@ -16304,8 +16342,8 @@
           {
             "call_va": "0x1040369d",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x104036de",
@@ -16332,8 +16370,8 @@
           {
             "call_va": "0x104140b9",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10414104",
@@ -18365,8 +18403,8 @@
           {
             "call_va": "0x10401dd6",
             "format": "hh",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "hh",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10401e12",
@@ -18393,8 +18431,8 @@
           {
             "call_va": "0x10411fd3",
             "format": "hh",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "hh",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1041200f",
@@ -18795,8 +18833,8 @@
           {
             "call_va": "0x104021af",
             "format": "dddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "dddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -19610,8 +19648,8 @@
           {
             "call_va": "0x10400f80",
             "format": "dddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "dddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -19644,8 +19682,8 @@
           {
             "call_va": "0x1041119f",
             "format": "dddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "dddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -19673,8 +19711,8 @@
           {
             "call_va": "0x1040111d",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10401159",
@@ -19701,8 +19739,8 @@
           {
             "call_va": "0x1041133e",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x104113ad",
@@ -19736,8 +19774,8 @@
           {
             "call_va": "0x104012cb",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x104012f3",
@@ -19776,8 +19814,8 @@
           {
             "call_va": "0x10411541",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10411569",
@@ -20917,8 +20955,8 @@
           {
             "call_va": "0x103fe92d",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x103fe969",
@@ -20945,8 +20983,8 @@
           {
             "call_va": "0x1040eaa9",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040eae5",
@@ -20965,7 +21003,7 @@
       "table": "primary",
       "opcode": "0xB3",
       "name": "PetInventoryUpdatePacket",
-      "static_status": "different_observed_decode_segments",
+      "static_status": "same_observed_decode_segments",
       "source": {
         "handler_va": "0x103fea40",
         "reachable_instructions": 124,
@@ -20980,8 +21018,8 @@
           {
             "call_va": "0x103feae2",
             "format": "hh",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "hh",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x103feb15",
@@ -21644,8 +21682,8 @@
           {
             "call_va": "0x104073ff",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10407440",
@@ -21672,8 +21710,8 @@
           {
             "call_va": "0x10417ee9",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10417f2a",
@@ -23041,8 +23079,8 @@
           {
             "call_va": "0x10408a5e",
             "format": "ddddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ddddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -23063,8 +23101,8 @@
           {
             "call_va": "0x1041931e",
             "format": "ddddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ddddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -23125,8 +23163,8 @@
           {
             "call_va": "0x10408d3e",
             "format": "ccccccdd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ccccccdd",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10408dce",
@@ -23147,8 +23185,8 @@
           {
             "call_va": "0x104195ae",
             "format": "ccccccdd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ccccccdd",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1041963b",
@@ -23182,8 +23220,8 @@
           {
             "call_va": "0x1040914e",
             "format": "ddddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ddddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -23204,8 +23242,8 @@
           {
             "call_va": "0x1041997e",
             "format": "ddddd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ddddd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -23371,8 +23409,8 @@
           {
             "call_va": "0x103ff49d",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x103ff4c5",
@@ -23411,8 +23449,8 @@
           {
             "call_va": "0x1040f547",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040f56f",
@@ -23458,8 +23496,8 @@
           {
             "call_va": "0x103ff6bd",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x103ff6e5",
@@ -23498,8 +23536,8 @@
           {
             "call_va": "0x1040f747",
             "format": "h",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "h",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x1040f76f",
@@ -23539,8 +23577,8 @@
           {
             "call_va": "0x10408f1e",
             "format": "ccccccdd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ccccccdd",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x10408fae",
@@ -23561,8 +23599,8 @@
           {
             "call_va": "0x1041976e",
             "format": "ccccccdd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "ccccccdd",
+            "recovered_missing_format": false
           },
           {
             "call_va": "0x104197fb",
@@ -23808,8 +23846,8 @@
           {
             "call_va": "0x10409d3f",
             "format": "dhhd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "dhhd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],
@@ -23830,8 +23868,8 @@
           {
             "call_va": "0x1041a655",
             "format": "dhhd",
-            "catalogue_format": null,
-            "recovered_missing_format": true
+            "catalogue_format": "dhhd",
+            "recovered_missing_format": false
           }
         ],
         "discarded_unreachable_catalogue_calls": [],

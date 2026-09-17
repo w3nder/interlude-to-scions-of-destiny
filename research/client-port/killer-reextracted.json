@@ -1,5 +1,5 @@
 {
-  "binary": "system/engine.dll",
+  "binary": "/Users/wenderteixeira/Documents/L2Killer/system/engine.dll",
   "engine_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "image_base": "0x10300000",
   "scope": "Static evidence only. Session phases, semantic field mapping, extended outbound subopcodes and runtime compatibility are not established. Decode segments may be conditional or repeated; matching formats do not establish matching semantics.",
@@ -2335,8 +2335,9 @@
       "registration_va": "0x107739f8",
       "name_storage_va": "0x1093568c",
       "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10304b7e",
+      "handler_va": "0x103f1d20",
       "decode_segments": [],
-      "handler_resolution": "missing or ambiguous static assignment",
       "decoder_target": "0x10305079"
     },
     {
@@ -3508,8 +3509,16 @@
       "registration_va": "0x10771548",
       "name_storage_va": "0x1092538c",
       "table_name_base_va": "0x1092538c",
-      "decode_segments": [],
-      "handler_resolution": "missing or ambiguous static assignment",
+      "thunk_va": "0x1030a56f",
+      "handler_va": "0x103fdfe0",
+      "decode_segments": [
+        {
+          "call_va": "0x103fe02f",
+          "format": "cddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
       "decoder_target": "0x10305079"
     },
     {
@@ -3923,6 +3932,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x103ff0fd",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x103ff13e",
           "format": "dddhhdhhhd",
           "call_target": "0x10305079",
@@ -3945,6 +3960,12 @@
         {
           "call_va": "0x103ff246",
           "format": "ddh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103ff2cd",
+          "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -4182,6 +4203,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x104016db",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x1040170e",
           "format": "dddhhhdhh",
           "call_target": "0x10305079",
@@ -4240,6 +4267,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x1040190f",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x1040194b",
           "format": "dddhhdhhh",
           "call_target": "0x10305079",
@@ -4279,6 +4312,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x10401aaf",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x10401aeb",
           "format": "dddhhdhhh",
           "call_target": "0x10305079",
@@ -4300,6 +4339,12 @@
       "decode_segments": [
         {
           "call_va": "0x10401bce",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10401c3f",
           "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
@@ -4406,6 +4451,12 @@
         {
           "call_va": "0x1040249d",
           "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10402502",
+          "format": "hh",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -4908,6 +4959,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x104034dd",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x1040351e",
           "format": "dddhhdhhhd",
           "call_target": "0x10305079",
@@ -4930,6 +4987,12 @@
         {
           "call_va": "0x10403618",
           "format": "hdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040369d",
+          "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -6044,6 +6107,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x10401dd6",
+          "format": "hh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x10401e12",
           "format": "dddhhdhhh",
           "call_target": "0x10305079",
@@ -6261,6 +6330,12 @@
         {
           "call_va": "0x10402140",
           "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104021af",
+          "format": "dddd",
           "call_target": "0x10305079",
           "layout_complete": false
         }
@@ -6675,6 +6750,12 @@
           "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
+        },
+        {
+          "call_va": "0x10400f80",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
         }
       ],
       "decoder_target": "0x10305079"
@@ -6693,6 +6774,12 @@
         {
           "call_va": "0x1040109b",
           "format": "Sdhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040111d",
+          "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -6719,6 +6806,12 @@
         {
           "call_va": "0x1040124c",
           "format": "Sdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104012cb",
+          "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -7322,6 +7415,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x103fe92d",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x103fe969",
           "format": "dddhhhdhh",
           "call_target": "0x10305079",
@@ -7344,6 +7443,12 @@
         {
           "call_va": "0x103fea7d",
           "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103feae2",
+          "format": "hh",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -7678,6 +7783,12 @@
         {
           "call_va": "0x10407398",
           "format": "ddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104073ff",
+          "format": "h",
           "call_target": "0x10305079",
           "layout_complete": false
         },
@@ -8388,6 +8499,12 @@
           "format": "ddd",
           "call_target": "0x10305079",
           "layout_complete": false
+        },
+        {
+          "call_va": "0x10408a5e",
+          "format": "ddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
         }
       ],
       "decoder_target": "0x10305079"
@@ -8424,6 +8541,12 @@
       "handler_va": "0x10408cc0",
       "decode_segments": [
         {
+          "call_va": "0x10408d3e",
+          "format": "ccccccdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x10408dce",
           "format": "dd",
           "call_target": "0x10305079",
@@ -8446,6 +8569,12 @@
         {
           "call_va": "0x104090a8",
           "format": "ddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040914e",
+          "format": "ddddd",
           "call_target": "0x10305079",
           "layout_complete": false
         }
@@ -8540,6 +8669,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x103ff49d",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x103ff4c5",
           "format": "dddhh",
           "call_target": "0x10305079",
@@ -8578,6 +8713,12 @@
           "layout_complete": false
         },
         {
+          "call_va": "0x103ff6bd",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
           "call_va": "0x103ff6e5",
           "format": "dddhh",
           "call_target": "0x10305079",
@@ -8609,6 +8750,12 @@
       "thunk_va": "0x1031113a",
       "handler_va": "0x10408ea0",
       "decode_segments": [
+        {
+          "call_va": "0x10408f1e",
+          "format": "ccccccdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
         {
           "call_va": "0x10408fae",
           "format": "dd",
@@ -8748,6 +8895,12 @@
         {
           "call_va": "0x10409caf",
           "format": "dddh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10409d3f",
+          "format": "dhhd",
           "call_target": "0x10305079",
           "layout_complete": false
         }

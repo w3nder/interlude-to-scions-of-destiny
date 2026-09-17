@@ -35,6 +35,10 @@ def report(validation=None,trace=None):
     if native_lists and (native_lists.get('status')!='passed' or any(native_lists.get('hashes',{}).get(side)!=policy[side+'_sha256'] for side in ('source','target'))):
         raise ValueError('Native list evidence is stale or failed; rerun test_native_list_requests.py')
     native_list_methods={r['name']:r for r in native_lists.get('methods',[])}
+    native_movement=read('reports/native-movement-requests.json') if (ROOT/'reports/native-movement-requests.json').exists() else {}
+    if native_movement and (native_movement.get('status')!='passed' or any(native_movement.get('hashes',{}).get(side)!=policy[side+'_sha256'] for side in ('source','target'))):
+        raise ValueError('Native movement evidence is stale or failed; rerun test_native_movement_requests.py')
+
     wire_out={r['name']:r for r in wire.get('outbound',[])}
     wire_in={(r['table'],r['opcode']):r for r in wire.get('inbound',[])}
     ignored={(r['table'],r['opcode']) for r in audit.get('empty_layout_audit',[]) if r['resolution']=='both_handlers_ignore_payload'}
@@ -45,6 +49,10 @@ def report(validation=None,trace=None):
         source=r.get('source') or {};target=r.get('target') or {};converted=(r['table'],r['opcode']) in converted_keys;validated=(r['table'],r['opcode']) in validated_keys
         items.append(dict(direction='S2C',table=r['table'],opcode=r['opcode'],name=target.get('name',source.get('name','unknown')),static_status=r['status'],implementation='strict_C4_to_Interlude_converter' if converted else 'bounded_layout_validator' if validated else 'passthrough',test_coverage='synthetic structure/bounds fixtures; representative native hook integration; gameplay pending' if converted or validated else 'not validated per packet'))
     for item in items:
+        if item['direction']=='C2S' and item['name'] in native_movement.get('methods',{}):
+            item['native_movement_audit']={'vector_pairs':native_movement['methods'][item['name']], 'evidence':'native-movement-requests.json','limits':native_movement['limits']}
+            if item['implementation']=='passthrough':
+                item['test_coverage']='matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json'
         if item['direction']=='C2S' and item['name'] in native_list_methods:
             native=native_list_methods[item['name']]
             item['native_vector_audit']={'resolution':native['resolution'],'vector_pairs':len(native['cases']),'row_format':native['row_format'],'evidence':'native-list-requests.json'}
@@ -72,6 +80,7 @@ def report(validation=None,trace=None):
          'pending_semantic_validation':sum(i['implementation']=='passthrough' for i in items),
          'handler_audit':audit,
          'wire_equivalence_summary':{k:wire.get(k,{}) for k in ('summary','inbound_summary')},
+         'native_movement_validation':native_movement,
          'native_list_validation':{k:native_lists.get(k) for k in ('status','method_count','vector_pairs','scope','limits')},
          'runtime_installation':read('build/current-runtime.json') if (ROOT/'build/current-runtime.json').exists() else {'status':'not inspected'},
          'blocked_features':policy['denied'],'packets':items}
@@ -113,14 +122,14 @@ def main():
         output=test.stdout+test.stderr;(ROOT/'build/test-results.txt').write_text(output);print(output,flush=True)
         if test.returncode:raise SystemExit(test.returncode)
         match=re.search(r'Ran (\d+) tests',output);validation={'status':'passed','unittest_cases':int(match[1]) if match else None,'results':'build/test-results.txt'}
-        run([sys.executable,ROOT/'audit_wire_equivalence.py'])
+        run([sys.executable,ROOT/'audit_handlers.py']);run([sys.executable,ROOT/'audit_wire_equivalence.py'])
     coverage=report(validation,args.trace)
     if args.require_complete and not coverage['release_complete']:
         raise SystemExit('Complete release refused: unresolved packet semantics remain; see coverage.json')
     if args.action=='package':
         build_hash=hashlib.sha256((ROOT/'build/L2KProtocolCore.dll').read_bytes()).hexdigest();dest=ROOT/'dist'/('L2Killer-ProtocolPatch-'+build_hash[:8]);dest.mkdir(parents=True,exist_ok=True)
         for src,name in [(ROOT/'build/L2KProtocolCore.dll','L2KProtocolCore.dll'),(ROOT/'reports/coverage.json','coverage.json'),(ROOT/'reports/coverage.md','coverage.md'),(ROOT/'outbound-policy.json','outbound-policy.json'),(ROOT/'schema-inbound.json','schema-inbound.json'),(ROOT/'structured-inbound.json','structured-inbound.json'),(ROOT/'outbound-schemas.json','outbound-schemas.json')]:shutil.copyfile(src,dest/name)
-        write(dest/'manifest.json',{'build':'protocol-hooks-10-gm-ride','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
+        write(dest/'manifest.json',{'build':'protocol-hooks-11-quest-channel','dll_sha256':build_hash,'required_engine_sha256':coverage['target_sha256'],'requires':'existing l2.exe autoload bootstrap from LoginTest build','validation':validation})
         (dest/'LEIA-ME.txt').write_text('Atualizacao para a system LoginTest ja instalada.\nA DLL inclui conversores S2C/C2S e validacao de parametros de mensagens; bloqueia 28 pedidos exclusivos do Interlude. Consulte os catalogos incluidos para estruturas, condicoes e limitacoes.\nCifra do jogo preservada. Limite: academias/subunidades e demais recursos novos nao passam a existir no servidor C4.\nO gerador ainda nao adapta todos os pacotes. Consulte coverage.json.\nO trace L2KGameTrace-<PID>-<tick>.tsv permite classificar o trafego sem gravar payloads/credenciais/chat.\nA instalacao atomica pelo install_protocol_update.py preserva a DLL anterior; vale na proxima abertura.\n')
         archive=shutil.make_archive(str(dest),'zip',dest.parent,dest.name);print('PACKAGE '+archive)
     print('REPORT '+str(ROOT/'reports/coverage.md'))

@@ -88,7 +88,7 @@ class NativeEmitter:
                 for page in range(address & ~4095, (address + size + 4095) & ~4095, 4096):
                     if page not in self.mapped:
                         u.mem_map(page, 4096)
-                        u.mem_write(page, pe.get_data(page - base, 4096))
+                        u.mem_write(page, bytes(pe.get_data(page - base, 4096)))
                         self.mapped.add(page)
                 return True
         return False
@@ -109,7 +109,7 @@ class NativeEmitter:
     def put(self, address, value):
         self.u.mem_write(address, struct.pack('<I', value & 0xffffffff))
 
-    def run(self, entry, values, blobs=None):
+    def run(self, entry, values, blobs=None, *, direct_arguments=None):
         if len(values) > 1024:
             raise ValueError('Synthetic parameter stack exceeds reserved region')
         u = self.u
@@ -142,7 +142,13 @@ class NativeEmitter:
             u.mem_write(self.DATA + offset, data)
         stack = self.STACK + 0x30000
         self.put(stack, self.STOP)
-        self.put(stack + 4, params)
+        if direct_arguments is None:
+            self.put(stack + 4, params)
+        else:
+            if len(direct_arguments) > 1024:
+                raise ValueError('Direct argument limit')
+            for i, value in enumerate(direct_arguments):
+                self.put(stack + 4 + i * 4, value)
         u.reg_write(UC_X86_REG_ESP, stack)
         u.reg_write(UC_X86_REG_ECX, obj)
         self.top_calls = 0

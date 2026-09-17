@@ -42,6 +42,34 @@ class StructuredCodecTests(unittest.TestCase):
                 self.assertEqual(self.convert(old[:size])[0],0)
             self.assertEqual(self.convert(old+b'\x99')[0],0)
 
+    def test_command_channel_names_and_counts_with_unavailable_member_ids(self):
+        for count in [0,1,2,20]:
+            old=b'\xfe\x30\0'+s('Líder')+d(count*9,count)
+            modern=b'\xfe\x30\0'+s('Líder')+d(0,count*9,count)
+            for i in range(count):
+                old+=s(f'Grupo{i}')+d(i+1)
+                modern+=s(f'Grupo{i}')+d(0,i+1)
+            self.pair(old,modern)
+            for size in range(3,len(old)):
+                self.assertLess(self.convert(old[:size])[0],0)
+        # Existing Interlude IDs/loot policy must survive unchanged.
+        packet=b'\xfe\x30\0'+s('Leader')+d(2,9,1)+s('Party')+d(12345,9)
+        self.assertEqual(self.convert(packet)[0],0)
+
+    def test_quest_list_preserves_states_without_fabricating_completion_bits(self):
+        for count in [0,1,25]:
+            head=b'\x80'+h(count)+b''.join(d(100+i,0x80000000+i) for i in range(count))
+            modern=head+bytes(128)
+            self.pair(head,modern)
+            for items in [0,1,8,100]:
+                old=head+h(items)+b''.join(d(500+i,1000+i,3+i,0) for i in range(items))
+                self.pair(old,modern)
+                if items:
+                    self.assertLess(self.convert(old[:-1])[0],0)
+            self.assertEqual(self.convert(head+bytes(range(128)))[0],0)
+        for bad in [b'\x80',b'\x80\x01',b'\x80'+h(0x8000),b'\x80'+h(2)+d(1,2),b'\x80'+h(0)+b'\0']:
+            self.assertLess(self.convert(bad)[0],0)
+
     def test_fixed_extensions(self):
         for op,size,extra in [(0x86,17,12),(0x29,21,4),(0x2a,17,4),(0xa6,7,4),(0x4c,9,4),(0xc5,29,4),(0xc7,41,4),(0xcd,25,4),(0xf3,21,8)]:
             p=bytes([op])+bytes(range(size-1));self.pair(p,p+b'\0'*extra)

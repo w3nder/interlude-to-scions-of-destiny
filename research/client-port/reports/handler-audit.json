@@ -9,10 +9,14 @@
       "opcode": "0x00",
       "name": "ExDummyPacket",
       "source": {
-        "kind": "unresolved_address"
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a144792d148b086888cb7b1051ff1580",
+        "rva": "0xf1d20"
       },
       "target": {
-        "kind": "unresolved_address"
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1b8dad8118b0868b0ed871051ff15e4",
+        "rva": "0x101170"
       },
       "resolution": "pending"
     },
@@ -157,18 +161,6 @@
         "kind": "requires_control_flow_review",
         "entry_bytes": "558bec6aff68e0e5801064a100000000",
         "rva": "0x1018c0"
-      },
-      "resolution": "pending"
-    },
-    {
-      "table": "primary",
-      "opcode": "0x00",
-      "name": "VersionCheckPacket",
-      "source": {
-        "kind": "unresolved_address"
-      },
-      "target": {
-        "kind": "unresolved_address"
       },
       "resolution": "pending"
     },
@@ -1230,7 +1222,7 @@
     }
   ],
   "summary": {
-    "pending": 36,
+    "pending": 35,
     "both_handlers_ignore_payload": 25
   }
 }

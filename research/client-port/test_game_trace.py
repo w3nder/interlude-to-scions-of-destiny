@@ -100,7 +100,14 @@ class GameTraceTests(unittest.TestCase):
         def decrypt():
             decrypted.append(h.args(3)[2]);h.ret(12)
         h.callbacks[h.engine+0x102070]=decrypt;h.w32(h.sock+0x50bc,1)
-        cases=[(b'\x86'+d(123,1,1,12526),b'\x86'+d(123,1,1,12526,0,0,0)),
+        cases=[(b'\x80'+word(1)+d(10,0x80000001)+word(1)+d(20,30,40,50),
+                b'\x80'+word(1)+d(10,0x80000001)+bytes(128)),
+               (b'\x80'+word(1)+d(10,3)+bytes(128),b'\x80'+word(1)+d(10,3)+bytes(128)),
+               (b'\x80'+word(1)+d(10),None),
+               (b'\xfe\x30\0'+s('Leader')+d(5,1)+s('Party')+d(5),
+                b'\xfe\x30\0'+s('Leader')+d(0,5,1)+s('Party')+d(0,5)),
+               (b'\xfe\x30\0'+s('Leader')+d(5,1)+s('Party'),None),
+               (b'\x86'+d(123,1,1,12526),b'\x86'+d(123,1,1,12526,0,0,0)),
                (b'\x29'+d(1,2,3,4,5),b'\x29'+d(1,2,3,4,5,0)),
                (b'\x44'+d(2,3,100,8,1),b'\x44'+d(2,3,100,8)+b'\0'+d(1)),
                (b'\x32'+d(99)+s('Clan'),b'\x32'+d(99)+s('Clan')+d(0)),

@@ -388,6 +388,34 @@
       "evidence": "reports/gm-ride-build10.md",
       "validation": "Synthetic bounds, original x86 functions/decoders, receive-hook integration; gameplay pending",
       "recognition": "Exact complete source/target layouts; unknown GM variants preserved"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x80",
+      "name": "QuestListPacket",
+      "kind": "converter",
+      "source_layout": "h + count*dd + optional(h + itemCount*dddd)",
+      "target_layout": "h + count*dd + raw[128]",
+      "conversion": "Preserve quest IDs and states; replace legacy quest-item records (the pinned C4 UI callback is a no-op) with an empty completion bitmap. Preserve complete Interlude bitmaps.",
+      "source_handler": "0x104020a0",
+      "target_handler": "0x10438c20",
+      "evidence": "test_native_quest_channel.py; reports/quest-channel-build11.md",
+      "validation": "Native C4 UI no-op and original decoders/senders; bounded synthetic fixtures; receive hook with single decryption; gameplay pending",
+      "recognition": "Complete bounded source or target layout; reject malformed variants"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x30",
+      "name": "ExMultiPartyCommandChannelInfoPacket",
+      "kind": "converter",
+      "source_layout": "Sdd + partyCount*Sd",
+      "target_layout": "Sddd + partyCount*Sdd",
+      "conversion": "Preserve leader names, member totals and party counts; default loot mode and unavailable leader object IDs to zero. Invite/kick use names in both clients; unsupported member-details requests remain blocked.",
+      "source_handler": "0x1040ef80",
+      "target_handler": "0x1041f570",
+      "evidence": "test_native_quest_channel.py; reports/quest-channel-build11.md",
+      "validation": "Native C4 UI no-op and original decoders/senders; bounded synthetic fixtures; receive hook with single decryption; gameplay pending",
+      "recognition": "Complete bounded source or target layout; reject malformed variants"
     }
   ],
   "limits": "Structural translation is implemented for these variants, not proof of complete semantic compatibility. All other packets remain pending or unchanged."

@@ -72,7 +72,10 @@ class Extractor:
             fmt = self.fmt(v)
             if not fmt:
                 continue
-            for call in ins[j+1:j+12]:
+            # Compilers can initialize locals between pushing a format and
+            # calling the decoder (C4 PetInventoryUpdate does this). Stop at
+            # control flow, not an arbitrary eleven-instruction window.
+            for call in ins[j+1:]:
                 if call.mnemonic in ('ret', 'jmp') or call.mnemonic.startswith('j'):
                     break
                 if call.mnemonic == 'call':
@@ -101,24 +104,36 @@ class Extractor:
 
     def inbound(self):
         candidates = []
+        names = {}
         for m in re.finditer(rb'(?:[A-Za-z0-9_]\x00){3,80}', self.raw):
             name = m.group().decode('utf-16le')
-            if not ('Packet' in name or name.startswith(('Friend', 'PrivateStore', 'Magic', 'Ex'))):
+            # Names are diagnostic labels, not a protocol classifier. Several
+            # real registrations (e.g. PledgeReceivePowerInfo) have neither a
+            # Packet suffix nor an Ex prefix. Table address/stride below is
+            # the structural filter; do not discard them by spelling.
+            rva = self.pe.get_rva_from_offset(m.start())
+            if rva is not None:
+                names[self.base + rva] = name
+        # Index push immediates once, including overlapping matches. Searching
+        # the complete image separately for every label was quadratic.
+        for ref in re.finditer(rb'(?=\x68(.{4}))', self.raw, re.DOTALL):
+            name = names.get(struct.unpack('<I', ref.group(1))[0])
+            if name is None:
                 continue
-            va = self.base + self.pe.get_rva_from_offset(m.start())
-            pattern = b'\x68' + struct.pack('<I', va)
-            for ref in re.finditer(re.escape(pattern), self.raw):
-                addr = self.base + self.pe.get_rva_from_offset(ref.start())
-                ins = list(self.md.disasm(self.data(addr, 48), addr))
-                dest = None
-                for i in ins[1:5]:
-                    if i.mnemonic == 'call':
-                        break
-                    if i.mnemonic == 'push' and self.immediate(i) is not None:
-                        dest = self.immediate(i)
-                        break
-                if dest is not None and self.base <= dest < self.base + self.pe.OPTIONAL_HEADER.SizeOfImage:
-                    candidates.append(dict(name=name, registration_va=hex(addr), name_storage_va=dest))
+            rva = self.pe.get_rva_from_offset(ref.start())
+            if rva is None:
+                continue
+            addr = self.base + rva
+            ins = list(self.md.disasm(self.data(addr, 48), addr))
+            dest = None
+            for i in ins[1:5]:
+                if i.mnemonic == 'call':
+                    break
+                if i.mnemonic == 'push' and self.immediate(i) is not None:
+                    dest = self.immediate(i)
+                    break
+            if dest is not None and self.base <= dest < self.base + self.pe.OPTIONAL_HEADER.SizeOfImage:
+                candidates.append(dict(name=name, registration_va=hex(addr), name_storage_va=dest))
         # Native descriptor layout: handler pointer, 256-byte name storage.
         # Anchor by explicit names, then require exact stride and bounded slot.
         anchors = [(r['name_storage_va'], 'primary') for r in candidates if r['name'] == 'VersionCheckPacket']
@@ -140,6 +155,12 @@ class Extractor:
                 thunk = struct.unpack_from('<I', self.raw, store.start()+6)[0]
                 if self.base <= thunk < self.base + self.pe.OPTIONAL_HEADER.SizeOfImage:
                     handlers.add(thunk)
+            # Slot zero is initialized in PE data rather than by the runtime
+            # C7 05 stores used for subsequent registrations.
+            if not handlers:
+                initial = struct.unpack('<I', self.data(slot-4, 4))[0]
+                if self.base <= initial < self.base + self.pe.OPTIONAL_HEADER.SizeOfImage:
+                    handlers.add(initial)
             if len(handlers) == 1:
                 thunk = handlers.pop()
                 handler = self.resolve(thunk)

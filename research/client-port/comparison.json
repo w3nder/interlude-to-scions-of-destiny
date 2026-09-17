@@ -1392,6 +1392,1031 @@
       },
       {
         "table": "primary",
+        "opcode": "0x10",
+        "name": "SellListPacket",
+        "original": [
+          {
+            "call_va": "0x103ff076",
+            "format": "ddh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff13e",
+            "format": "dddhhdhhhd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_9",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x103ff076",
+            "format": "ddh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff0fd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff13e",
+            "format": "dddhhdhhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x11",
+        "name": "BuyListPacket",
+        "original": [
+          {
+            "call_va": "0x103ff246",
+            "format": "ddh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff30e",
+            "format": "dddhhdhhhd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_9",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x103ff246",
+            "format": "ddh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff2cd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff30e",
+            "format": "dddhhdhhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x1B",
+        "name": "ItemListPacket",
+        "original": [
+          {
+            "call_va": "0x10401664",
+            "format": "hh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_1",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040170e",
+            "format": "dddhhhdhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_6",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10401664",
+            "format": "hh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104016db",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040170e",
+            "format": "dddhhhdhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x1E",
+        "name": "TradeStartPacket",
+        "original": [
+          {
+            "call_va": "0x1040186e",
+            "format": "d",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040189c",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040194b",
+            "format": "dddhhdhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x1040186e",
+            "format": "d",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040189c",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040190f",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040194b",
+            "format": "dddhhdhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x20",
+        "name": "TradeOwnAddPacket",
+        "original": [
+          {
+            "call_va": "0x10401a3e",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401aeb",
+            "format": "dddhhdhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10401a3e",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401aaf",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401aeb",
+            "format": "dddhhdhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x21",
+        "name": "TradeOtherAddPacket",
+        "original": [
+          {
+            "call_va": "0x10401bce",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401c7b",
+            "format": "dddhhdhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10401bce",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401c3f",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401c7b",
+            "format": "dddhhdhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x27",
+        "name": "InventoryUpdatePacket",
+        "original": [
+          {
+            "call_va": "0x1040249d",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402535",
+            "format": "dddhhhdhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_6",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x1040249d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402502",
+            "format": "hh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402535",
+            "format": "dddhhhdhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x41",
+        "name": "WareHouseDepositListPacket",
+        "original": [
+          {
+            "call_va": "0x10403458",
+            "format": "hdh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040351e",
+            "format": "dddhhdhhhd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_9",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10403458",
+            "format": "hdh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104034dd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040351e",
+            "format": "dddhhdhhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x42",
+        "name": "WareHouseWithdrawListPacket",
+        "original": [
+          {
+            "call_va": "0x10403618",
+            "format": "hdh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104036de",
+            "format": "dddhhdhhhd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_9",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10403618",
+            "format": "hdh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040369d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104036de",
+            "format": "dddhhdhhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
         "opcode": "0x47",
         "name": "StopMovePacket",
         "original": [
@@ -1474,6 +2499,1401 @@
             "layout_complete": false
           }
         ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x74",
+        "name": "TradeUpdatePacket",
+        "original": [
+          {
+            "call_va": "0x10401d64",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401e12",
+            "format": "dddhhdhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10401d64",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401dd6",
+            "format": "hh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401e12",
+            "format": "dddhhdhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x80",
+        "name": "QuestListPacket",
+        "original": [
+          {
+            "call_va": "0x104020d4",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402103",
+            "format": "dd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402140",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x104020d4",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402103",
+            "format": "dd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402140",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104021af",
+            "format": "dddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x93",
+        "name": "GMViewQuestInfoPacket",
+        "original": [
+          {
+            "call_va": "0x10400e9e",
+            "format": "Sh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "S",
+                "type": "UTF-16LE terminado em 0000",
+                "bytes": null
+              },
+              {
+                "name": "unknown_1",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10400ed0",
+            "format": "dd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10400f11",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10400e9e",
+            "format": "Sh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10400ed0",
+            "format": "dd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10400f11",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10400f80",
+            "format": "dddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x94",
+        "name": "GMViewItemListPacket",
+        "original": [
+          {
+            "call_va": "0x1040109b",
+            "format": "Sdhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "S",
+                "type": "UTF-16LE terminado em 0000",
+                "bytes": null
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401159",
+            "format": "dddhhhdhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_6",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x1040109b",
+            "format": "Sdhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040111d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401159",
+            "format": "dddhhhdhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0x95",
+        "name": "GMViewWarehouseWithdrawListPacket",
+        "original": [
+          {
+            "call_va": "0x1040124c",
+            "format": "Sdh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "S",
+                "type": "UTF-16LE terminado em 0000",
+                "bytes": null
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104012f3",
+            "format": "dddhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401327",
+            "format": "dhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040133e",
+            "format": "d",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x1040124c",
+            "format": "Sdh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104012cb",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104012f3",
+            "format": "dddhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10401327",
+            "format": "dhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040133e",
+            "format": "d",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xB2",
+        "name": "PetItemListPacket",
+        "original": [
+          {
+            "call_va": "0x103fe8b4",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103fe969",
+            "format": "dddhhhdhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_6",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x103fe8b4",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103fe92d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103fe969",
+            "format": "dddhhhdhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xB3",
+        "name": "PetInventoryUpdatePacket",
+        "original": [
+          {
+            "call_va": "0x103fea7d",
+            "format": "h",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103feb15",
+            "format": "dddhhhdhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_6",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x103fea7d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103feae2",
+            "format": "hh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103feb15",
+            "format": "dddhhhdhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xC3",
+        "name": "PackageSendableListPacket",
+        "original": [
+          {
+            "call_va": "0x10407398",
+            "format": "ddd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10407440",
+            "format": "dddhhdhhhd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_5",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_6",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_7",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_8",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_9",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10407398",
+            "format": "ddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104073ff",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10407440",
+            "format": "dddhhdhhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xE2",
+        "name": "HennaEquipListPacket",
+        "original": [
+          {
+            "call_va": "0x104089b8",
+            "format": "ddd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x104089b8",
+            "format": "ddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10408a5e",
+            "format": "ddddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xE4",
+        "name": "HennaInfoPacket",
+        "original": [
+          {
+            "call_va": "0x10408dce",
+            "format": "dd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10408d3e",
+            "format": "ccccccdd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10408dce",
+            "format": "dd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xE5",
+        "name": "HennaUnequipListPacket",
+        "original": [
+          {
+            "call_va": "0x104090a8",
+            "format": "ddd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x104090a8",
+            "format": "ddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040914e",
+            "format": "ddddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xE8",
+        "name": "BuyListSeedPacket",
+        "original": [
+          {
+            "call_va": "0x103ff416",
+            "format": "ddh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff4c5",
+            "format": "dddhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff4fc",
+            "format": "dhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff513",
+            "format": "d",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x103ff416",
+            "format": "ddh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff49d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff4c5",
+            "format": "dddhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff4fc",
+            "format": "dhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff513",
+            "format": "d",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xE9",
+        "name": "SellListProcurePacket",
+        "original": [
+          {
+            "call_va": "0x103ff636",
+            "format": "ddh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff6e5",
+            "format": "dddhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_4",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff71c",
+            "format": "dhhh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_2",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff733",
+            "format": "d",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x103ff636",
+            "format": "ddh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff6bd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff6e5",
+            "format": "dddhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff71c",
+            "format": "dhhh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103ff733",
+            "format": "d",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xEA",
+        "name": "GMHennaInfoPacket",
+        "original": [
+          {
+            "call_va": "0x10408fae",
+            "format": "dd",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10408f1e",
+            "format": "ccccccdd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10408fae",
+            "format": "dd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
+      },
+      {
+        "table": "primary",
+        "opcode": "0xEF",
+        "name": "ShopPreviewListPacket",
+        "original": [
+          {
+            "call_va": "0x10409caf",
+            "format": "dddh",
+            "note": "Static segment, may be conditional or repeated. Not a flattened wire layout.",
+            "fields": [
+              {
+                "name": "unknown_0",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_1",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_2",
+                "format": "d",
+                "type": "valor de 32 bits LE",
+                "bytes": 4
+              },
+              {
+                "name": "unknown_3",
+                "format": "h",
+                "type": "valor de 16 bits LE",
+                "bytes": 2
+              }
+            ],
+            "layout_complete": false
+          }
+        ],
+        "reextracted": [
+          {
+            "call_va": "0x10409caf",
+            "format": "dddh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10409d3f",
+            "format": "dhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ]
       }
     ]
   },
@@ -1485,10 +3905,10 @@
     "extended_subopcode_unresolved": 19
   },
   "inbound_summary": {
-    "decode_layout_unresolved": 61,
-    "same_observed_decode_segments": 196,
+    "decode_layout_unresolved": 60,
+    "same_observed_decode_segments": 197,
     "different_observed_decode_segments": 43,
-    "target_only_slot": 37,
+    "target_only_slot": 44,
     "renamed_slot_requires_review": 4
   },
   "outbound": [
@@ -12026,8 +14446,9 @@
         "registration_va": "0x107739f8",
         "name_storage_va": "0x1093568c",
         "table_name_base_va": "0x1093568c",
+        "thunk_va": "0x10304b7e",
+        "handler_va": "0x103f1d20",
         "decode_segments": [],
-        "handler_resolution": "missing or ambiguous static assignment",
         "decoder_target": "0x10305079"
       },
       "target": {
@@ -12038,8 +14459,9 @@
         "registration_va": "0x10838df8",
         "name_storage_va": "0x10a67614",
         "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x10314425",
+        "handler_va": "0x10401170",
         "decode_segments": [],
-        "handler_resolution": "missing or ambiguous static assignment",
         "decoder_target": "0x103034e5"
       }
     },
@@ -14884,6 +17306,148 @@
     },
     {
       "table": "extended",
+      "opcode": "0x3B",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x3B",
+        "name": "PledgePowerGradeList",
+        "registration_va": "0x108394ad",
+        "name_storage_va": "0x10a6b200",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x1030d337",
+        "handler_va": "0x104127d0",
+        "decode_segments": [
+          {
+            "call_va": "0x10412803",
+            "format": "d",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10412854",
+            "format": "dd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
+      "opcode": "0x3C",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x3C",
+        "name": "PledgeReceivePowerInfo",
+        "registration_va": "0x108394ca",
+        "name_storage_va": "0x10a6b304",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x1030e1ec",
+        "handler_va": "0x10412920",
+        "decode_segments": [
+          {
+            "call_va": "0x10412965",
+            "format": "dSd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
+      "opcode": "0x3D",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x3D",
+        "name": "PledgeReceiveMemberInfo",
+        "registration_va": "0x108394e7",
+        "name_storage_va": "0x10a6b408",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x10307801",
+        "handler_va": "0x10412a70",
+        "decode_segments": [
+          {
+            "call_va": "0x10412ad0",
+            "format": "dSSdSS",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
+      "opcode": "0x3E",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x3E",
+        "name": "PledgeReceiveWarList",
+        "registration_va": "0x10839504",
+        "name_storage_va": "0x10a6b50c",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x1030b523",
+        "handler_va": "0x10412be0",
+        "decode_segments": [
+          {
+            "call_va": "0x10412c23",
+            "format": "ddd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10412c9b",
+            "format": "Sdd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
+      "opcode": "0x3F",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x3F",
+        "name": "PledgeReceiveSubPledgeCreated",
+        "registration_va": "0x10839521",
+        "name_storage_va": "0x10a6b610",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x1030e1b5",
+        "handler_va": "0x10412ea0",
+        "decode_segments": [
+          {
+            "call_va": "0x10412ee9",
+            "format": "ddSS",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
       "opcode": "0x40",
       "status": "target_only_slot",
       "source": null,
@@ -14900,6 +17464,32 @@
         "decode_segments": [
           {
             "call_va": "0x1042013c",
+            "format": "d",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
+      "opcode": "0x41",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x41",
+        "name": "PledgeReceiveUpdatePower",
+        "registration_va": "0x1083955e",
+        "name_storage_va": "0x10a6b818",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x1030fb64",
+        "handler_va": "0x10412fd0",
+        "decode_segments": [
+          {
+            "call_va": "0x10412fff",
             "format": "d",
             "call_target": "0x103034e5",
             "layout_complete": false
@@ -14931,6 +17521,25 @@
             "layout_complete": false
           }
         ],
+        "decoder_target": "0x103034e5"
+      }
+    },
+    {
+      "table": "extended",
+      "opcode": "0x43",
+      "status": "target_only_slot",
+      "source": null,
+      "target": {
+        "direction": "S -> C",
+        "table": "extended",
+        "opcode": "0x43",
+        "name": "ShowPCCafeCouponShowUI",
+        "registration_va": "0x10839598",
+        "name_storage_va": "0x10a6ba20",
+        "table_name_base_va": "0x10a67614",
+        "thunk_va": "0x10309b38",
+        "handler_va": "0x10401220",
+        "decode_segments": [],
         "decoder_target": "0x103034e5"
       }
     },
@@ -15570,7 +18179,7 @@
     {
       "table": "primary",
       "opcode": "0x00",
-      "status": "decode_layout_unresolved",
+      "status": "different_observed_decode_segments",
       "source": {
         "direction": "S -> C",
         "table": "primary",
@@ -15579,8 +18188,16 @@
         "registration_va": "0x10771548",
         "name_storage_va": "0x1092538c",
         "table_name_base_va": "0x1092538c",
-        "decode_segments": [],
-        "handler_resolution": "missing or ambiguous static assignment",
+        "thunk_va": "0x1030a56f",
+        "handler_va": "0x103fdfe0",
+        "decode_segments": [
+          {
+            "call_va": "0x103fe02f",
+            "format": "cddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          }
+        ],
         "decoder_target": "0x10305079"
       },
       "target": {
@@ -15591,8 +18208,16 @@
         "registration_va": "0x10836958",
         "name_storage_va": "0x10a57314",
         "table_name_base_va": "0x10a57314",
-        "decode_segments": [],
-        "handler_resolution": "missing or ambiguous static assignment",
+        "thunk_va": "0x10307f59",
+        "handler_va": "0x1040d000",
+        "decode_segments": [
+          {
+            "call_va": "0x1040d05b",
+            "format": "cQdd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          }
+        ],
         "decoder_target": "0x103034e5"
       }
     },
@@ -15818,6 +18443,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x10436b83",
+            "format": "d",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10436bb7",
             "format": "d",
             "call_target": "0x103034e5",
@@ -15997,6 +18628,12 @@
           {
             "call_va": "0x1043494a",
             "format": "cddd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104349a8",
+            "format": "d",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -16527,6 +19164,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x103ff0fd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x103ff13e",
             "format": "dddhhdhhhd",
             "call_target": "0x10305079",
@@ -16549,6 +19192,12 @@
           {
             "call_va": "0x1040f136",
             "format": "ddh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040f1c9",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -16584,6 +19233,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x103ff2cd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x103ff30e",
             "format": "dddhhdhhhd",
             "call_target": "0x10305079",
@@ -16606,6 +19261,12 @@
           {
             "call_va": "0x1040f2f6",
             "format": "ddh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040f389",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -17118,6 +19779,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x104016db",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x1040170e",
             "format": "dddhhhdhh",
             "call_target": "0x10305079",
@@ -17249,6 +19916,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x1040190f",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x1040194b",
             "format": "dddhhdhhh",
             "call_target": "0x10305079",
@@ -17276,6 +19949,12 @@
           },
           {
             "call_va": "0x10411abe",
+            "format": "h",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10411b39",
             "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
@@ -17343,6 +20022,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x10401aaf",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10401aeb",
             "format": "dddhhdhhh",
             "call_target": "0x10305079",
@@ -17364,6 +20049,12 @@
         "decode_segments": [
           {
             "call_va": "0x10411c4e",
+            "format": "h",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10411cc9",
             "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
@@ -17400,6 +20091,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x10401c3f",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10401c7b",
             "format": "dddhhdhhh",
             "call_target": "0x10305079",
@@ -17421,6 +20118,12 @@
         "decode_segments": [
           {
             "call_va": "0x10411dce",
+            "format": "h",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10411e49",
             "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
@@ -17636,6 +20339,12 @@
           {
             "call_va": "0x1040249d",
             "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10402502",
+            "format": "hh",
             "call_target": "0x10305079",
             "layout_complete": false
           },
@@ -18778,6 +21487,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x104034dd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x1040351e",
             "format": "dddhhdhhhd",
             "call_target": "0x10305079",
@@ -18800,6 +21515,12 @@
           {
             "call_va": "0x10413e78",
             "format": "hdh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10413f09",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -18835,6 +21556,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x1040369d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x104036de",
             "format": "dddhhdhhhd",
             "call_target": "0x10305079",
@@ -18857,6 +21584,12 @@
           {
             "call_va": "0x10414028",
             "format": "hdh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104140b9",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -21311,6 +24044,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x10401dd6",
+            "format": "hh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10401e12",
             "format": "dddhhdhhh",
             "call_target": "0x10305079",
@@ -21333,6 +24072,12 @@
           {
             "call_va": "0x10411f53",
             "format": "h",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10411fd3",
+            "format": "hh",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -21797,6 +24542,12 @@
           {
             "call_va": "0x10402140",
             "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104021af",
+            "format": "dddd",
             "call_target": "0x10305079",
             "layout_complete": false
           }
@@ -22718,6 +25469,12 @@
             "format": "h",
             "call_target": "0x10305079",
             "layout_complete": false
+          },
+          {
+            "call_va": "0x10400f80",
+            "format": "dddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
           }
         ],
         "decoder_target": "0x10305079"
@@ -22750,6 +25507,12 @@
             "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
+          },
+          {
+            "call_va": "0x1041119f",
+            "format": "dddd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
           }
         ],
         "decoder_target": "0x103034e5"
@@ -22777,6 +25540,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x1040111d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10401159",
             "format": "dddhhhdhh",
             "call_target": "0x10305079",
@@ -22799,6 +25568,12 @@
           {
             "call_va": "0x1041129b",
             "format": "Sdhh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1041133e",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -22830,6 +25605,12 @@
           {
             "call_va": "0x1040124c",
             "format": "Sdh",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x104012cb",
+            "format": "h",
             "call_target": "0x10305079",
             "layout_complete": false
           },
@@ -22868,6 +25649,12 @@
           {
             "call_va": "0x1041149f",
             "format": "Sdh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10411541",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -24177,6 +26964,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x103fe92d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x103fe969",
             "format": "dddhhhdhh",
             "call_target": "0x10305079",
@@ -24203,6 +26996,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x1040eaa9",
+            "format": "h",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x1040eae5",
             "format": "dddhhhdhh",
             "call_target": "0x103034e5",
@@ -24215,7 +27014,7 @@
     {
       "table": "primary",
       "opcode": "0xB3",
-      "status": "different_observed_decode_segments",
+      "status": "same_observed_decode_segments",
       "source": {
         "direction": "S -> C",
         "table": "primary",
@@ -24230,6 +27029,12 @@
           {
             "call_va": "0x103fea7d",
             "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x103feae2",
+            "format": "hh",
             "call_target": "0x10305079",
             "layout_complete": false
           },
@@ -24988,6 +27793,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x104073ff",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10407440",
             "format": "dddhhdhhhd",
             "call_target": "0x10305079",
@@ -25010,6 +27821,12 @@
           {
             "call_va": "0x10417e78",
             "format": "ddd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x10417ee9",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -26557,6 +29374,12 @@
             "format": "ddd",
             "call_target": "0x10305079",
             "layout_complete": false
+          },
+          {
+            "call_va": "0x10408a5e",
+            "format": "ddddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
           }
         ],
         "decoder_target": "0x10305079"
@@ -26575,6 +29398,12 @@
           {
             "call_va": "0x10419278",
             "format": "ddd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1041931e",
+            "format": "ddddd",
             "call_target": "0x103034e5",
             "layout_complete": false
           }
@@ -26643,6 +29472,12 @@
         "handler_va": "0x10408cc0",
         "decode_segments": [
           {
+            "call_va": "0x10408d3e",
+            "format": "ccccccdd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10408dce",
             "format": "dd",
             "call_target": "0x10305079",
@@ -26662,6 +29497,12 @@
         "thunk_va": "0x10302874",
         "handler_va": "0x10419530",
         "decode_segments": [
+          {
+            "call_va": "0x104195ae",
+            "format": "ccccccdd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
           {
             "call_va": "0x1041963b",
             "format": "dd",
@@ -26692,6 +29533,12 @@
             "format": "ddd",
             "call_target": "0x10305079",
             "layout_complete": false
+          },
+          {
+            "call_va": "0x1040914e",
+            "format": "ddddd",
+            "call_target": "0x10305079",
+            "layout_complete": false
           }
         ],
         "decoder_target": "0x10305079"
@@ -26710,6 +29557,12 @@
           {
             "call_va": "0x104198d8",
             "format": "ddd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1041997e",
+            "format": "ddddd",
             "call_target": "0x103034e5",
             "layout_complete": false
           }
@@ -26889,6 +29742,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x103ff49d",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x103ff4c5",
             "format": "dddhh",
             "call_target": "0x10305079",
@@ -26923,6 +29782,12 @@
           {
             "call_va": "0x1040f4b5",
             "format": "ddh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040f547",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -26970,6 +29835,12 @@
             "layout_complete": false
           },
           {
+            "call_va": "0x103ff6bd",
+            "format": "h",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x103ff6e5",
             "format": "dddhh",
             "call_target": "0x10305079",
@@ -27004,6 +29875,12 @@
           {
             "call_va": "0x1040f6b5",
             "format": "ddh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1040f747",
+            "format": "h",
             "call_target": "0x103034e5",
             "layout_complete": false
           },
@@ -27045,6 +29922,12 @@
         "handler_va": "0x10408ea0",
         "decode_segments": [
           {
+            "call_va": "0x10408f1e",
+            "format": "ccccccdd",
+            "call_target": "0x10305079",
+            "layout_complete": false
+          },
+          {
             "call_va": "0x10408fae",
             "format": "dd",
             "call_target": "0x10305079",
@@ -27064,6 +29947,12 @@
         "thunk_va": "0x1030efd4",
         "handler_va": "0x104196f0",
         "decode_segments": [
+          {
+            "call_va": "0x1041976e",
+            "format": "ccccccdd",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
           {
             "call_va": "0x104197fb",
             "format": "dd",
@@ -27364,6 +30253,12 @@
             "format": "dddh",
             "call_target": "0x10305079",
             "layout_complete": false
+          },
+          {
+            "call_va": "0x10409d3f",
+            "format": "dhhd",
+            "call_target": "0x10305079",
+            "layout_complete": false
           }
         ],
         "decoder_target": "0x10305079"
@@ -27382,6 +30277,12 @@
           {
             "call_va": "0x1041a5ae",
             "format": "dddh",
+            "call_target": "0x103034e5",
+            "layout_complete": false
+          },
+          {
+            "call_va": "0x1041a655",
+            "format": "dhhd",
             "call_target": "0x103034e5",
             "layout_complete": false
           }

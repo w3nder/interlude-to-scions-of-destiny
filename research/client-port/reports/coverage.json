@@ -1,11 +1,11 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T13:53:06.399449+00:00",
+  "generated_utc": "2026-09-17T14:46:49.018763+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 90,
+    "unittest_cases": 98,
     "results": "build/test-results.txt"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
@@ -514,6 +514,34 @@
       "evidence": "reports/gm-ride-build10.md",
       "validation": "Synthetic bounds, original x86 functions/decoders, receive-hook integration; gameplay pending",
       "recognition": "Exact complete source/target layouts; unknown GM variants preserved"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x80",
+      "name": "QuestListPacket",
+      "kind": "converter",
+      "source_layout": "h + count*dd + optional(h + itemCount*dddd)",
+      "target_layout": "h + count*dd + raw[128]",
+      "conversion": "Preserve quest IDs and states; replace legacy quest-item records (the pinned C4 UI callback is a no-op) with an empty completion bitmap. Preserve complete Interlude bitmaps.",
+      "source_handler": "0x104020a0",
+      "target_handler": "0x10438c20",
+      "evidence": "test_native_quest_channel.py; reports/quest-channel-build11.md",
+      "validation": "Native C4 UI no-op and original decoders/senders; bounded synthetic fixtures; receive hook with single decryption; gameplay pending",
+      "recognition": "Complete bounded source or target layout; reject malformed variants"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x30",
+      "name": "ExMultiPartyCommandChannelInfoPacket",
+      "kind": "converter",
+      "source_layout": "Sdd + partyCount*Sd",
+      "target_layout": "Sddd + partyCount*Sdd",
+      "conversion": "Preserve leader names, member totals and party counts; default loot mode and unavailable leader object IDs to zero. Invite/kick use names in both clients; unsupported member-details requests remain blocked.",
+      "source_handler": "0x1040ef80",
+      "target_handler": "0x1041f570",
+      "evidence": "test_native_quest_channel.py; reports/quest-channel-build11.md",
+      "validation": "Native C4 UI no-op and original decoders/senders; bounded synthetic fixtures; receive hook with single decryption; gameplay pending",
+      "recognition": "Complete bounded source or target layout; reject malformed variants"
     }
   ],
   "outbound_schema_converters": [
@@ -576,17 +604,17 @@
   ],
   "catalogue_contract": "Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.",
   "counts": {
-    "passthrough": 335,
+    "passthrough": 340,
     "blocked_by_profile": 28,
     "native_same_serializer_contract": 142,
     "Interlude_to_C4_converter": 6,
     "bounded_outbound_validator": 1,
     "native_handlers_ignore_payload": 25,
-    "strict_C4_to_Interlude_converter": 39,
+    "strict_C4_to_Interlude_converter": 41,
     "bounded_layout_validator": 1
   },
   "release_complete": false,
-  "pending_semantic_validation": 335,
+  "pending_semantic_validation": 340,
   "handler_audit": {
     "hashes": {
       "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
@@ -598,10 +626,14 @@
         "opcode": "0x00",
         "name": "ExDummyPacket",
         "source": {
-          "kind": "unresolved_address"
+          "kind": "requires_control_flow_review",
+          "entry_bytes": "a144792d148b086888cb7b1051ff1580",
+          "rva": "0xf1d20"
         },
         "target": {
-          "kind": "unresolved_address"
+          "kind": "requires_control_flow_review",
+          "entry_bytes": "a1b8dad8118b0868b0ed871051ff15e4",
+          "rva": "0x101170"
         },
         "resolution": "pending"
       },
@@ -746,18 +778,6 @@
           "kind": "requires_control_flow_review",
           "entry_bytes": "558bec6aff68e0e5801064a100000000",
           "rva": "0x1018c0"
-        },
-        "resolution": "pending"
-      },
-      {
-        "table": "primary",
-        "opcode": "0x00",
-        "name": "VersionCheckPacket",
-        "source": {
-          "kind": "unresolved_address"
-        },
-        "target": {
-          "kind": "unresolved_address"
         },
         "resolution": "pending"
       },
@@ -1819,7 +1839,7 @@
       }
     ],
     "summary": {
-      "pending": 36,
+      "pending": 35,
       "both_handlers_ignore_payload": 25
     }
   },
@@ -1830,11 +1850,32 @@
       "different_serializer_argument_contract": 5
     },
     "inbound_summary": {
-      "control_flow_or_handler_unresolved": 8,
+      "neither_entry_retrieves_packet_argument": 41,
       "same_reachable_decoder_sites_not_semantic_proof": 216,
-      "neither_entry_retrieves_packet_argument": 40,
-      "different_reachable_decoder_sites": 40
+      "different_reachable_decoder_sites": 41,
+      "control_flow_or_handler_unresolved": 6
     }
+  },
+  "native_movement_validation": {
+    "status": "passed",
+    "hashes": {
+      "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+      "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+    },
+    "methods": {
+      "Action": 5,
+      "RequestAttack": 5,
+      "GetOnVehicle": 5,
+      "GetOffVehicle": 5,
+      "MoveWithDelta": 5,
+      "MoveBackwardToLocation": 5,
+      "CanNotMoveAnymore": 5,
+      "RequestDropItem": 5,
+      "RequestDropItemFromPet": 5
+    },
+    "vector_pairs": 45,
+    "scope": "Real x86 senders, float-to-integer helpers and serializers; ItemInfo ABI differences represented explicitly.",
+    "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
   },
   "native_list_validation": {
     "status": "passed",
@@ -1844,8 +1885,8 @@
     "limits": "Finite differential tests are not a proof for every input, UI/caller semantics or live server acceptance. No runtime conversion is enabled. Invalid counts and native buffer overflow behavior are not certified."
   },
   "runtime_installation": {
-    "build": "protocol-hooks-10-gm-ride",
-    "dll_sha256": "d7e10bcc6392f0d0a0d9586c3f6ab9f31f790458403bdcb14302194d95f5a52e",
+    "build": "protocol-hooks-11-quest-channel",
+    "dll_sha256": "055de034de5d394040f50866ea5c5d544922dd41d37c4360c011fe3947b71f02",
     "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-assets-20260917-052113",
     "tables_installed": [
       {
@@ -1932,12 +1973,12 @@
     ],
     "asset_manifest": "/Users/wenderteixeira/Documents/L2Killer/research/client-port/build/assets-interlude/assets-manifest.json",
     "activation": "next client start; running client not interrupted",
-    "s2c_converters": 39,
+    "s2c_converters": 41,
     "c2s_converters": 6,
     "unsupported_extended_requests_blocked": 28,
     "candidate_source_is_not_installed": false,
-    "status": "installed; 90 tests passed; build 10 gameplay pending",
-    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-105151.dll",
+    "status": "installed; 98 tests passed; build 11 gameplay pending",
+    "protocol_backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system/L2KProtocolCore.before-protocol-20260917-114605.dll",
     "outbound_validators": 1
   },
   "blocked_features": [
@@ -2144,7 +2185,12 @@
       "name": "Action",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2189,7 +2235,12 @@
       "name": "CanNotMoveAnymore",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2251,7 +2302,12 @@
       "name": "GetOffVehicle",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2259,7 +2315,12 @@
       "name": "GetOnVehicle",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2274,7 +2335,12 @@
       "name": "MoveBackwardToLocation",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2289,7 +2355,12 @@
       "name": "MoveWithDelta",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2400,7 +2471,12 @@
       "name": "RequestAttack",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2646,7 +2722,12 @@
       "name": "RequestDropItem",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2654,7 +2735,12 @@
       "name": "RequestDropItemFromPet",
       "static_status": "same_observed_opcode_and_format",
       "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "test_coverage": "matching native C4/Interlude bytes on finite movement and item-drop vectors; branch limits in native-movement-requests.json",
+      "native_movement_audit": {
+        "vector_pairs": 5,
+        "evidence": "native-movement-requests.json",
+        "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+      },
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -4074,7 +4160,7 @@
       "static_status": "decode_layout_unresolved",
       "implementation": "passthrough",
       "test_coverage": "not validated per packet",
-      "wire_audit": "control_flow_or_handler_unresolved"
+      "wire_audit": "neither_entry_retrieves_packet_argument"
     },
     {
       "direction": "S2C",
@@ -4552,8 +4638,8 @@
       "opcode": "0x30",
       "name": "ExMultiPartyCommandChannelInfoPacket",
       "static_status": "different_observed_decode_segments",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "strict_C4_to_Interlude_converter",
+      "test_coverage": "synthetic structure/bounds fixtures; representative native hook integration; gameplay pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {
@@ -4649,6 +4735,51 @@
     {
       "direction": "S2C",
       "table": "extended",
+      "opcode": "0x3B",
+      "name": "PledgePowerGradeList",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
+      "opcode": "0x3C",
+      "name": "PledgeReceivePowerInfo",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
+      "opcode": "0x3D",
+      "name": "PledgeReceiveMemberInfo",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
+      "opcode": "0x3E",
+      "name": "PledgeReceiveWarList",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
+      "opcode": "0x3F",
+      "name": "PledgeReceiveSubPledgeCreated",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
       "opcode": "0x40",
       "name": "ExRedSkyPacket",
       "static_status": "target_only_slot",
@@ -4658,8 +4789,26 @@
     {
       "direction": "S2C",
       "table": "extended",
+      "opcode": "0x41",
+      "name": "PledgeReceiveUpdatePower",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
       "opcode": "0x42",
       "name": "FlySelfDestinationPacket",
+      "static_status": "target_only_slot",
+      "implementation": "passthrough",
+      "test_coverage": "not validated per packet"
+    },
+    {
+      "direction": "S2C",
+      "table": "extended",
+      "opcode": "0x43",
+      "name": "ShowPCCafeCouponShowUI",
       "static_status": "target_only_slot",
       "implementation": "passthrough",
       "test_coverage": "not validated per packet"
@@ -4894,10 +5043,10 @@
       "table": "primary",
       "opcode": "0x00",
       "name": "VersionCheckPacket",
-      "static_status": "decode_layout_unresolved",
+      "static_status": "different_observed_decode_segments",
       "implementation": "passthrough",
       "test_coverage": "not validated per packet",
-      "wire_audit": "control_flow_or_handler_unresolved"
+      "wire_audit": "different_reachable_decoder_sites"
     },
     {
       "direction": "S2C",
@@ -6175,8 +6324,8 @@
       "opcode": "0x80",
       "name": "QuestListPacket",
       "static_status": "different_observed_decode_segments",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "strict_C4_to_Interlude_converter",
+      "test_coverage": "synthetic structure/bounds fixtures; representative native hook integration; gameplay pending",
       "wire_audit": "different_reachable_decoder_sites"
     },
     {
@@ -6684,7 +6833,7 @@
       "table": "primary",
       "opcode": "0xB3",
       "name": "PetInventoryUpdatePacket",
-      "static_status": "different_observed_decode_segments",
+      "static_status": "same_observed_decode_segments",
       "implementation": "passthrough",
       "test_coverage": "not validated per packet",
       "wire_audit": "same_reachable_decoder_sites_not_semantic_proof"

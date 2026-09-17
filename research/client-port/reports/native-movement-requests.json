@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "hashes": {
+    "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+    "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+  },
+  "methods": {
+    "Action": 5,
+    "RequestAttack": 5,
+    "GetOnVehicle": 5,
+    "GetOffVehicle": 5,
+    "MoveWithDelta": 5,
+    "MoveBackwardToLocation": 5,
+    "CanNotMoveAnymore": 5,
+    "RequestDropItem": 5,
+    "RequestDropItemFromPet": 5
+  },
+  "vector_pairs": 45,
+  "scope": "Real x86 senders, float-to-integer helpers and serializers; ItemInfo ABI differences represented explicitly.",
+  "limits": "Synthetic finite inputs; CanNotMoveAnymore covers the non-vehicle branch only; no socket send or gameplay claim."
+}
