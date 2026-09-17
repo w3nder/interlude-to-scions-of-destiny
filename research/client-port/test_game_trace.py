@@ -63,6 +63,40 @@ class GameTraceTests(unittest.TestCase):
         h=self.h;src,want=packets(9,2);frame=struct.pack('<H',len(src)+2)+src;h.u.mem_write(h.buf,frame);h.w32(h.sock+0x50bc,0)
         h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
         self.assertEqual(h.frames,[struct.pack('<H',len(want)+2)+want]);self.assertEqual(h.r32(h.sock+0x50bc),0)
+    def test_c4_self_member_is_queued_after_userinfo_with_cipher_preserved(self):
+        from test_clan_self import identity,info,member
+        from test_pledge_bridge import roster
+        h=self.h
+        modern=roster([('Friend',200)])
+        # Remove Interlude main/type fields and per-member sponsor field.
+        legacy=b'\x53'+modern[5:9]+modern[13:-4]
+        def receive(payload):
+            frame=struct.pack('<H',len(payload)+2)+payload
+            h.u.mem_write(h.buf,frame);h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
+        h.w32(h.sock+0x50bc,1)
+        decrypted=[]
+        h.callbacks[h.engine+0x102070]=lambda:(decrypted.append(1),h.ret(12))
+        receive(identity());receive(legacy);receive(info())
+        payloads=[f[2:] for f in h.frames]
+        self.assertEqual(payloads,[identity(),modern,info(),member()])
+        self.assertEqual(len(decrypted),3)
+        self.assertEqual(h.r32(h.sock+0x50bc),1)
+        self.assertEqual(self.events[-1][1],b'local_C4_clan_self')
+        receive(info());self.assertEqual(len(h.frames),5)
+        receive(info(level=81));self.assertEqual(h.frames[-1][2:],member(0x54,81))
+        # Generated row also reaches the volatile permissions roster.
+        from test_structured_codec import d,s
+        h.w32(h.symbol('game_trace::serialize_original'),h.engine+0x68b6)
+        h.w32(h.symbol('game_trace::send_original'),h.engine+0x1029b0)
+        sent=[];request=b'\x55'+s('Self')+s('New title')
+        def serialize():
+            dst,cap,fmt,args=h.args(4);h.u.mem_write(dst,request);h.ret(value=len(request))
+        def send():
+            sock,fmt,n,data=h.args(4);sent.append(bytes(h.u.mem_read(data,n)));h.ret()
+        h.callbacks[h.engine+0x68b6]=serialize;h.callbacks[h.engine+0x1029b0]=send
+        h.call('game_trace::send_adapter',[h.sock,h.buf])
+        self.assertEqual(sent,[request])
+
     def test_character_conversion_before_native_ui_queue(self):
         from test_character_codec import character
         h=self.h

@@ -35,6 +35,8 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
+Build `protocol-hooks-14-clan-self`: completa a lista C4 com o próprio personagem quando omitido, usando o prefixo de UserInfo após confirmar a identidade da sessão. Evita duplicação, respeita remoção/saída e preserva o pedido nativo de alteração de título. Veja [correção e testes](research/client-port/reports/clan-self-build14.md). Validação visual e alteração real de título ainda dependem de teste no jogo.
+
 Ajuste adicional `inventory-script-2`: corrige `InventoryWnd.EquipItemUpdate` em `Interface.u`, separando Left Tattoo (terceiro slot da primeira linha) e AIO Tattoo (quarto slot). O ajuste nativo anterior foi retirado e `NWindow.dll` restaurado. Seis testes reproduzem a sobreposição original e verificam a correção no bytecode e no layout; a confirmação visual em jogo ainda está pendente. Requer o `interface.xdat` original da base Win10Supported. Veja [evidência e reprodução](research/client-port/reports/inventory-script.md).
 
 Build `protocol-hooks-13-status-content`: restaura a atualização de experiência C4 em `StatusUpdate`, corrige templates de mensagens/quests/eventos e liga as ações de pets aos IDs C4. São 17 DATs migrados e 126 testes automatizados aprovados; dez comandos de summons exclusivos do Interlude são bloqueados antes do envio.

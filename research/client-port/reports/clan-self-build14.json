@@ -1,0 +1,19 @@
+{
+  "build": "protocol-hooks-14-clan-self",
+  "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+  "dll_sha256": "2770548a58ef604351b086ab22fcf5dd64777b20264c4e8a9330b40f7de1f034",
+  "validation": {
+    "status": "passed",
+    "tests": 40,
+    "modules": [
+      "test_clan_self",
+      "test_clan_codec",
+      "test_pledge_bridge",
+      "test_game_trace",
+      "test_character_codec",
+      "test_outbound_policy"
+    ],
+    "live": "pending"
+  },
+  "scope": "C4 omitted self member; local queue only; native title request preserved"
+}

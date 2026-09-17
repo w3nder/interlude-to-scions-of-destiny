@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-13-status-content",
+  "build": "protocol-hooks-14-clan-self",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 349796,
-      "sha256": "dec548b422f90a05c8e2279155e27fc72ee23682fa3307ec2d1e55eb8cc73c3d"
+      "bytes": 353271,
+      "sha256": "2770548a58ef604351b086ab22fcf5dd64777b20264c4e8a9330b40f7de1f034"
     },
     {
       "path": "system/skillname-e.dat",
@@ -408,7 +408,7 @@
       "sha256": "899fbff8edd38b1496b9d4382d31cbc251a7ad64342e99a9db5a89df61428922"
     }
   ],
-  "validation": "126 automated tests passed; native status/decoder/sender comparisons, seven additional DAT roundtrips and cross-catalogue references; no exhaustive live UI certification.",
+  "validation": "40 targeted tests passed on build 14: clan self roster, clan codec, member permissions, emulated Windows hooks/title send, character codecs and outbound policy. Build 13 historical full-suite result: 126 tests. Live clan self/title validation pending.",
   "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending.",
   "content_update": {
     "tables": [
@@ -423,5 +423,21 @@
     "report": "research/client-port/reports/content-disposition.json"
   },
   "inventory_ui_build": "inventory-script-2",
-  "required_interface_xdat_sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55"
+  "required_interface_xdat_sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55",
+  "clan_self_update": {
+    "report": "research/client-port/reports/clan-self-build14.md",
+    "validation": {
+      "status": "passed",
+      "tests": 40,
+      "modules": [
+        "test_clan_self",
+        "test_clan_codec",
+        "test_pledge_bridge",
+        "test_game_trace",
+        "test_character_codec",
+        "test_outbound_policy"
+      ],
+      "live": "pending"
+    }
+  }
 }

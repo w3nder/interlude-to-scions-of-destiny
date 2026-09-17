@@ -1,5 +1,6 @@
 #include "game_trace.h"
 #include "clan_codec.h"
+#include "clan_self.h"
 #include "schema_codec.h"
 #include "structured_codec.h"
 #include "asset_codec.h"
@@ -27,6 +28,7 @@ bool asset_unknown[256]={};
 CRITICAL_SECTION trace_lock;
 CRITICAL_SECTION pledge_lock;
 L2KPledgeState pledge_state{};
+L2KClanSelf clan_self{};
 void* pledge_socket=nullptr;
 uint32_t pledge_socket_id=0;
 uint32_t sequence=0;
@@ -83,7 +85,7 @@ Send send_original;
 Serialize serialize_original;
 void pledge_session(void* socket){
     uint32_t id;memcpy(&id,static_cast<uint8_t*>(socket)+0x38,4);
-    if(socket!=pledge_socket||id!=pledge_socket_id){l2k_pledge_reset(&pledge_state);pledge_socket=socket;pledge_socket_id=id;}
+    if(socket!=pledge_socket||id!=pledge_socket_id){l2k_pledge_reset(&pledge_state);l2k_clan_self_reset(&clan_self);pledge_socket=socket;pledge_socket_id=id;}
 }
 bool pledge_outgoing(void* socket,const uint8_t* p,uint32_t n){
     L2KPledgeResult result{};
@@ -98,10 +100,12 @@ bool pledge_outgoing(void* socket,const uint8_t* p,uint32_t n){
     }else record(socket,"C2S","local_C4_pledge",p,n);
     return true;
 }
-bool pledge_incoming(void* socket,const uint8_t* p,uint32_t n){
+bool pledge_incoming(void* socket,const uint8_t* p,uint32_t n,bool legacy,uint8_t* member,int& member_size){
     L2KPledgeResult result{};
     EnterCriticalSection(&pledge_lock);pledge_session(socket);
     int handled=l2k_pledge_receive(&pledge_state,p,n,GetTickCount(),&result);
+    member_size=l2k_clan_self_receive(&clan_self,p,n,legacy,member,160);
+    if(member_size>0){L2KPledgeResult ignored{};l2k_pledge_receive(&pledge_state,member,member_size,GetTickCount(),&ignored);}
     if(result.display_size&&!l2k_queue_local_html(result.display,result.display_size))l2k_log("local clan UI could not be queued");
     LeaveCriticalSection(&pledge_lock);
     if(handled>0)record(socket,"S2C","local_C4_pledge",p,n);
@@ -148,9 +152,16 @@ void __fastcall receive_observer(void* socket,void*,uint8_t* frame,uint32_t leng
     if(n<0){record(socket,"S2C",clan?"rejected_clan_layout":"rejected_schema_layout",frame+2,length-2);return;}
     uint8_t* current=frame;uint32_t current_size=length;
     if(n>0){current_size=(uint32_t)n+2;converted[0]=(uint8_t)current_size;converted[1]=(uint8_t)(current_size>>8);current=converted;record(socket,"S2C",clan?"converted_C4_clan":"converted_C4_schema",converted+2,n);}
-    if(pledge_incoming(socket,current+2,current_size-2))return;
+    uint8_t member[162];int member_size=0;
+    if(pledge_incoming(socket,current+2,current_size-2,clan&&n>0&&frame[2]==0x53,member+2,member_size))return;
     // Native receive copies the selected plaintext into the normal UI queue.
-    *enabled=0;receive_original(socket,current,current_size);*enabled=saved;
+    *enabled=0;receive_original(socket,current,current_size);
+    if(member_size>0){
+        unsigned total=unsigned(member_size)+2;member[0]=uint8_t(total);member[1]=uint8_t(total>>8);
+        record(socket,"S2C","local_C4_clan_self",member+2,member_size);
+        receive_original(socket,member,total);
+    }
+    *enabled=saved;
 }
 struct Patch {uintptr_t slot,expected;void* observer;};
 }
