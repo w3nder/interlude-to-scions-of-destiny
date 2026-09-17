@@ -1,0 +1,31 @@
+# Interlude → Scions of Destiny (L2Killer)
+
+Porte experimental do cliente Interlude para o protocolo C4 do L2Killer. Inclui hooks de autenticação e pacotes, conversores de estruturas, auditorias e migração de catálogos de itens/NPCs.
+
+- `research/client-port/`: código C++/Python, testes, catálogos, evidências e ferramentas de migração.
+- `patch/`: somente os arquivos adicionados ou modificados pelo porte, com estrutura de pastas pronta para o cliente Interlude. Não contém o cliente completo.
+
+## Instalar o patch
+
+Feche o jogo e faça backup dos arquivos correspondentes no seu cliente. Copie o conteúdo de `patch/` (pastas `system`, `systextures` e `animations`) para a raiz do cliente Interlude. Abra `system/l2.exe`: o executável carrega `L2KProtocolCore.dll` automaticamente. O `l2.ini` aponta para `server.l2killer.org`.
+
+Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 64 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
+
+## Fonte e compilação
+
+Requer Python 3, Clang e MinGW-w64 i686. No macOS, a compilação gera uma biblioteca nativa para testes e a DLL Windows x86.
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r research/client-port/requirements.txt
+python research/client-port/native/build.py
+```
+
+As ferramentas de extração, auditoria binária, DAT e Wine dependem dos clientes originais e de ferramentas externas; scripts históricos ainda contêm caminhos absolutos do ambiente de desenvolvimento. Consulte `research/client-port/AUTOMATION.md`, `native/README.md` e `reports/assets-validation.md` antes de executar a pipeline completa. Clientes originais, Wine, ambientes virtuais, caches, backups e logs de sessões não estão versionados.
+
+## Estado
+
+Build `protocol-hooks-6-assets-audit`: 35 conversores S2C e 3 C2S, seis DATs migrados e 55 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 69 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
+
+CharacterSelected permanece sem conversão após uma regressão corrigida. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.

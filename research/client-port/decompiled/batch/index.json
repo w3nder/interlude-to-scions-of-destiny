@@ -1,0 +1,4219 @@
+[
+  {
+    "table": "extended",
+    "opcode": "0x00",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x00",
+      "name": "ExDummyPacket",
+      "registration_va": "0x107739f8",
+      "name_storage_va": "0x1093568c",
+      "table_name_base_va": "0x1093568c",
+      "decode_segments": [],
+      "handler_resolution": "missing or ambiguous static assignment",
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x00",
+      "name": "ExDummyPacket",
+      "registration_va": "0x10838df8",
+      "name_storage_va": "0x10a67614",
+      "table_name_base_va": "0x10a67614",
+      "decode_segments": [],
+      "handler_resolution": "missing or ambiguous static assignment",
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x02",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x02",
+      "name": "ExEventMatchListPacket",
+      "registration_va": "0x10773a23",
+      "name_storage_va": "0x10935894",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10313c9b",
+      "handler_va": "0x103f1f40",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x02",
+      "name": "ExEventMatchListPacket",
+      "registration_va": "0x10838e23",
+      "name_storage_va": "0x10a6781c",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10311cfc",
+      "handler_va": "0x10401350",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x0D",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x0D",
+      "name": "ExEventMatchGMTestPacket",
+      "registration_va": "0x10773b65",
+      "name_storage_va": "0x109363c0",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x103117ac",
+      "handler_va": "0x103f1f60",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x0D",
+      "name": "ExEventMatchGMTestPacket",
+      "registration_va": "0x10838f65",
+      "name_storage_va": "0x10a68348",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1030f669",
+      "handler_va": "0x104013e0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x0F",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x0F",
+      "name": "ExClosePartyRoomPacket",
+      "registration_va": "0x10773bb0",
+      "name_storage_va": "0x109365c8",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x1030ef1b",
+      "handler_va": "0x103f2000",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x0F",
+      "name": "ExClosePartyRoomPacket",
+      "registration_va": "0x10838fb0",
+      "name_storage_va": "0x10a68550",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1030cbad",
+      "handler_va": "0x10401480",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x13",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x13",
+      "name": "ExFishingStartPacket",
+      "registration_va": "0x10773c16",
+      "name_storage_va": "0x109369d8",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x1030362f",
+      "handler_va": "0x10419b40",
+      "decode_segments": [
+        {
+          "call_va": "0x10419b8c",
+          "format": "ddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x13",
+      "name": "ExFishingStartPacket",
+      "registration_va": "0x10839016",
+      "name_storage_va": "0x10a68960",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x103138f4",
+      "handler_va": "0x1042aa20",
+      "decode_segments": [
+        {
+          "call_va": "0x1042aa75",
+          "format": "dddddcc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x15",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x15",
+      "name": "ExFishingStartCombatPacket",
+      "registration_va": "0x10773c50",
+      "name_storage_va": "0x10936be0",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10312288",
+      "handler_va": "0x10419e90",
+      "decode_segments": [
+        {
+          "call_va": "0x10419edc",
+          "format": "dddcc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x15",
+      "name": "ExFishingStartCombatPacket",
+      "registration_va": "0x10839050",
+      "name_storage_va": "0x10a68b68",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x103101db",
+      "handler_va": "0x1042ad50",
+      "decode_segments": [
+        {
+          "call_va": "0x1042ada0",
+          "format": "dddccc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x16",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x16",
+      "name": "ExFishingHpRegenPacket",
+      "registration_va": "0x10773c6d",
+      "name_storage_va": "0x10936ce4",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x1030ed54",
+      "handler_va": "0x1041a0a0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041a0f4",
+          "format": "dddcccd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x16",
+      "name": "ExFishingHpRegenPacket",
+      "registration_va": "0x1083906d",
+      "name_storage_va": "0x10a68c6c",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1030c9dc",
+      "handler_va": "0x1042af40",
+      "decode_segments": [
+        {
+          "call_va": "0x1042af98",
+          "format": "dddcccdc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x17",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x17",
+      "name": "ExEnchantSkillListPacket",
+      "registration_va": "0x10773c8a",
+      "name_storage_va": "0x10936de8",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10302c20",
+      "handler_va": "0x1040c0c0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040c0fd",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040c152",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x17",
+      "name": "ExEnchantSkillListPacket",
+      "registration_va": "0x1083908a",
+      "name_storage_va": "0x10a68d70",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10302284",
+      "handler_va": "0x1041c700",
+      "decode_segments": [
+        {
+          "call_va": "0x1041c73d",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041c7b8",
+          "format": "dddQ",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x18",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x18",
+      "name": "ExEnchantSkillInfoPacket",
+      "registration_va": "0x10773caa",
+      "name_storage_va": "0x10936eec",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x1031203f",
+      "handler_va": "0x1040c2a0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040c2fe",
+          "format": "ddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040c371",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040c3d2",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x18",
+      "name": "ExEnchantSkillInfoPacket",
+      "registration_va": "0x108390aa",
+      "name_storage_va": "0x10a68e74",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1030ff5b",
+      "handler_va": "0x1041c900",
+      "decode_segments": [
+        {
+          "call_va": "0x1041c961",
+          "format": "dddQd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041c9d3",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041ca35",
+          "format": "dddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x19",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x19",
+      "name": "ExShowQuestInfoPacket",
+      "registration_va": "0x10773cc7",
+      "name_storage_va": "0x10936ff0",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x1030bfe6",
+      "handler_va": "0x103f2130",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x19",
+      "name": "ExShowQuestInfoPacket",
+      "registration_va": "0x108390c7",
+      "name_storage_va": "0x10a68f78",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10309a98",
+      "handler_va": "0x10401580",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x25",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x25",
+      "name": "ExOpenMPCCPacket",
+      "registration_va": "0x10773e26",
+      "name_storage_va": "0x10937c20",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10313935",
+      "handler_va": "0x103f2280",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x25",
+      "name": "ExOpenMPCCPacket",
+      "registration_va": "0x10839226",
+      "name_storage_va": "0x10a69ba8",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1031197d",
+      "handler_va": "0x10401720",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x26",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x26",
+      "name": "ExCloseMPCCPacket",
+      "registration_va": "0x10773e43",
+      "name_storage_va": "0x10937d24",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x1030e0a2",
+      "handler_va": "0x103f2310",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x26",
+      "name": "ExCloseMPCCPacket",
+      "registration_va": "0x10839243",
+      "name_storage_va": "0x10a69cac",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1030bcb2",
+      "handler_va": "0x104017a0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x27",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x27",
+      "name": "ExAskJoinMPCCPacket",
+      "registration_va": "0x10773e60",
+      "name_storage_va": "0x10937e28",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10313b2e",
+      "handler_va": "0x1040e480",
+      "decode_segments": [
+        {
+          "call_va": "0x1040e4d3",
+          "format": "S",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x27",
+      "name": "ExAskJoinMPCCPacket",
+      "registration_va": "0x10839260",
+      "name_storage_va": "0x10a69db0",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10311b8a",
+      "handler_va": "0x1041eab0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041eb0a",
+          "format": "Sd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x2C",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x2C",
+      "name": "ExOlympiadMatchEndPacket",
+      "registration_va": "0x10773ef4",
+      "name_storage_va": "0x1093833c",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10307487",
+      "handler_va": "0x103f23a0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x2C",
+      "name": "ExOlympiadMatchEndPacket",
+      "registration_va": "0x108392f4",
+      "name_storage_va": "0x10a6a2c4",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10304c91",
+      "handler_va": "0x10401820",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x2D",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x2D",
+      "name": "ExMailArrivedPacket",
+      "registration_va": "0x10773f11",
+      "name_storage_va": "0x10938440",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10301d75",
+      "handler_va": "0x103f2440",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x2D",
+      "name": "ExMailArrivedPacket",
+      "registration_va": "0x10839311",
+      "name_storage_va": "0x10a6a3c8",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10301abe",
+      "handler_va": "0x104018c0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x30",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x30",
+      "name": "ExMultiPartyCommandChannelInfoPacket",
+      "registration_va": "0x10773f6b",
+      "name_storage_va": "0x1093874c",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x10310c21",
+      "handler_va": "0x1040ef80",
+      "decode_segments": [
+        {
+          "call_va": "0x1040efcd",
+          "format": "Sdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040f040",
+          "format": "Sd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x30",
+      "name": "ExMultiPartyCommandChannelInfoPacket",
+      "registration_va": "0x1083936b",
+      "name_storage_va": "0x10a6a6d4",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x1030ea4d",
+      "handler_va": "0x1041f570",
+      "decode_segments": [
+        {
+          "call_va": "0x1041f5c3",
+          "format": "Sddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041f65a",
+          "format": "Sdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x00",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x00",
+      "name": "VersionCheckPacket",
+      "registration_va": "0x10771548",
+      "name_storage_va": "0x1092538c",
+      "table_name_base_va": "0x1092538c",
+      "decode_segments": [],
+      "handler_resolution": "missing or ambiguous static assignment",
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x00",
+      "name": "VersionCheckPacket",
+      "registration_va": "0x10836958",
+      "name_storage_va": "0x10a57314",
+      "table_name_base_va": "0x10a57314",
+      "decode_segments": [],
+      "handler_resolution": "missing or ambiguous static assignment",
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x01",
+    "status": "renamed_slot_requires_review",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x01",
+      "name": "MoveToLocationPacket",
+      "registration_va": "0x10771554",
+      "name_storage_va": "0x10925490",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10304d81",
+      "handler_va": "0x10413120",
+      "decode_segments": [
+        {
+          "call_va": "0x1041315a",
+          "format": "ddddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x01",
+      "name": "MTLPacket",
+      "registration_va": "0x10836964",
+      "name_storage_va": "0x10a57418",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309674",
+      "handler_va": "0x104245f0",
+      "decode_segments": [
+        {
+          "call_va": "0x1042462a",
+          "format": "ddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x02",
+    "status": "renamed_slot_requires_review",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x02",
+      "name": "NpcSayPacket",
+      "registration_va": "0x10771573",
+      "name_storage_va": "0x10925594",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10304999",
+      "handler_va": "0x103fe1f0",
+      "decode_segments": [
+        {
+          "call_va": "0x103fe23c",
+          "format": "dddS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x02",
+      "name": "NSPacket",
+      "registration_va": "0x10836983",
+      "name_storage_va": "0x10a5751c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10310555",
+      "handler_va": "0x1040d250",
+      "decode_segments": [
+        {
+          "call_va": "0x1040d29d",
+          "format": "dddS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x03",
+    "status": "renamed_slot_requires_review",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x03",
+      "name": "CharInfoPacket",
+      "registration_va": "0x10771590",
+      "name_storage_va": "0x10925698",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10306a7d",
+      "handler_va": "0x10422390",
+      "decode_segments": [
+        {
+          "call_va": "0x104225b5",
+          "format": "dddddSddddddddddddddddddddddddddddffffdddSdddddccccccch",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10422612",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1042263c",
+          "format": "c",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10422681",
+          "format": "dchd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104226a7",
+          "format": "ddc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104226bd",
+          "format": "c",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104226e1",
+          "format": "dcc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10422786",
+          "format": "cddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104227c6",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x03",
+      "name": "CIPacket",
+      "registration_va": "0x108369a0",
+      "name_storage_va": "0x10a57620",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103063d4",
+      "handler_va": "0x104366f0",
+      "decode_segments": [
+        {
+          "call_va": "0x104369be",
+          "format": "dddddSdddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddffffdddSdddddccccccch",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436a25",
+          "format": "h",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436a4a",
+          "format": "c",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436a8f",
+          "format": "dchd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436ab5",
+          "format": "ddc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436acb",
+          "format": "c",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436aef",
+          "format": "dcc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436b25",
+          "format": "cddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436bb7",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436bd4",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436bed",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436c20",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10436c37",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x04",
+    "status": "renamed_slot_requires_review",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x04",
+      "name": "UserInfoPacket",
+      "registration_va": "0x107715ad",
+      "name_storage_va": "0x1092579c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030beba",
+      "handler_va": "0x10423a00",
+      "decode_segments": [
+        {
+          "call_va": "0x10423d17",
+          "format": "dddddSdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddffffddddSdddddcccddh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423d7c",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423da6",
+          "format": "c",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423dd3",
+          "format": "dc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423e62",
+          "format": "hhdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423e93",
+          "format": "ddddc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423ea9",
+          "format": "c",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423ed0",
+          "format": "dcc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423f0a",
+          "format": "cddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10423f4a",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x04",
+      "name": "UIPacket",
+      "registration_va": "0x108369bd",
+      "name_storage_va": "0x10a57724",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103024c8",
+      "handler_va": "0x104342f0",
+      "decode_segments": [
+        {
+          "call_va": "0x10434739",
+          "format": "dddddSddddQddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddddffffddddSdddddcccddh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104347a5",
+          "format": "h",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104347ca",
+          "format": "c",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104347f7",
+          "format": "dc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1043480e",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104348a2",
+          "format": "hhdh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104348d3",
+          "format": "ddddc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104348e9",
+          "format": "c",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10434910",
+          "format": "dcc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1043494a",
+          "format": "cddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104349bf",
+          "format": "c",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104349dc",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104349f2",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10434a25",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x08",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x08",
+      "name": "AttackOutofRangePacket",
+      "registration_va": "0x10771624",
+      "name_storage_va": "0x10925bac",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10304e4e",
+      "handler_va": "0x10414820",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x08",
+      "name": "AttackOutofRangePacket",
+      "registration_va": "0x10836a34",
+      "name_storage_va": "0x10a57b34",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103145e2",
+      "handler_va": "0x10425b80",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x09",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x09",
+      "name": "AttackinCoolTimePacket",
+      "registration_va": "0x10771641",
+      "name_storage_va": "0x10925cb0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10312355",
+      "handler_va": "0x104148f0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x09",
+      "name": "AttackinCoolTimePacket",
+      "registration_va": "0x10836a51",
+      "name_storage_va": "0x10a57c38",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103102a3",
+      "handler_va": "0x10425c30",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x0A",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x0A",
+      "name": "AttackDeadTargetPacket",
+      "registration_va": "0x1077165e",
+      "name_storage_va": "0x10925db4",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10308864",
+      "handler_va": "0x104149c0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x0A",
+      "name": "AttackDeadTargetPacket",
+      "registration_va": "0x10836a6e",
+      "name_storage_va": "0x10a57d3c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10306186",
+      "handler_va": "0x10425ce0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x13",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x13",
+      "name": "CharacterSelectionInfoPacket",
+      "registration_va": "0x10771766",
+      "name_storage_va": "0x109266d8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10313804",
+      "handler_va": "0x103ff820",
+      "decode_segments": [
+        {
+          "call_va": "0x103ff86c",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103ffa66",
+          "format": "SdSddddddddddffddddddddddddddddddddddddddddddddddddddddddddddddffdddc",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x13",
+      "name": "CharacterSelectionInfoPacket",
+      "registration_va": "0x10836b76",
+      "name_storage_va": "0x10a58660",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1031184c",
+      "handler_va": "0x1040f880",
+      "decode_segments": [
+        {
+          "call_va": "0x1040f8d3",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040fab4",
+          "format": "SdSddddddddddffdQddddddddddddddddddddddddddddddddddddddddddddddddffdddchh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x15",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x15",
+      "name": "CharacterSelectedPacket",
+      "registration_va": "0x107717a0",
+      "name_storage_va": "0x109268e0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030b785",
+      "handler_va": "0x103ffcc0",
+      "decode_segments": [
+        {
+          "call_va": "0x103ffee0",
+          "format": "SdSddddddddddffddddddddddddddddddddddddddddddddddddddddddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103fff0b",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103fff43",
+          "format": "b",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103fff97",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103fffc5",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103fffe8",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x15",
+      "name": "CharacterSelectedPacket",
+      "registration_va": "0x10836bb0",
+      "name_storage_va": "0x10a58868",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309219",
+      "handler_va": "0x1040fde0",
+      "decode_segments": [
+        {
+          "call_va": "0x10410081",
+          "format": "SdSddddddddddffdQddddddddddddddddddddddddddddddddddddddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104100a7",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104100df",
+          "format": "b",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041012d",
+          "format": "dddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041015f",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410182",
+          "format": "dddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410199",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104101b0",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104101cc",
+          "format": "b",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x16",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x16",
+      "name": "NpcInfoPacket",
+      "registration_va": "0x107717bd",
+      "name_storage_va": "0x109269e4",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030647e",
+      "handler_va": "0x10426340",
+      "decode_segments": [
+        {
+          "call_va": "0x104264f5",
+          "format": "ddddddddddddddddddffffdddcccccSSddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10426554",
+          "format": "dddddccffd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x16",
+      "name": "NpcInfoPacket",
+      "registration_va": "0x10836bcd",
+      "name_storage_va": "0x10a5896c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103150ff",
+      "handler_va": "0x1043a470",
+      "decode_segments": [
+        {
+          "call_va": "0x1043a61d",
+          "format": "ddddddddddddddddddffffdddcccccSSddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1043a684",
+          "format": "dddddccffdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x18",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x18",
+      "name": "NewCharacterFailPacket",
+      "registration_va": "0x107717fa",
+      "name_storage_va": "0x10926bec",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030baf0",
+      "handler_va": "0x103f15e0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x18",
+      "name": "NewCharacterFailPacket",
+      "registration_va": "0x10836c0a",
+      "name_storage_va": "0x10a58b74",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309589",
+      "handler_va": "0x10400c30",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x19",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x19",
+      "name": "CharacterCreateSuccessPacket",
+      "registration_va": "0x10771817",
+      "name_storage_va": "0x10926cf0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103115cc",
+      "handler_va": "0x103f1610",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x19",
+      "name": "CharacterCreateSuccessPacket",
+      "registration_va": "0x10836c27",
+      "name_storage_va": "0x10a58c78",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f475",
+      "handler_va": "0x10400c50",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x1B",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x1B",
+      "name": "ItemListPacket",
+      "registration_va": "0x10771851",
+      "name_storage_va": "0x10926ef8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030bd57",
+      "handler_va": "0x10401620",
+      "decode_segments": [
+        {
+          "call_va": "0x10401664",
+          "format": "hh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040170e",
+          "format": "dddhhhdhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x1B",
+      "name": "ItemListPacket",
+      "registration_va": "0x10836c61",
+      "name_storage_va": "0x10a58e80",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030982c",
+      "handler_va": "0x10411870",
+      "decode_segments": [
+        {
+          "call_va": "0x104118b4",
+          "format": "hh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041190d",
+          "format": "h",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041194c",
+          "format": "dddhhhdhhhhd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x1C",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x1C",
+      "name": "SunRisePacket",
+      "registration_va": "0x1077186e",
+      "name_storage_va": "0x10926ffc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030db07",
+      "handler_va": "0x103f1640",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x1C",
+      "name": "SunRisePacket",
+      "registration_va": "0x10836c7e",
+      "name_storage_va": "0x10a58f84",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030b6b3",
+      "handler_va": "0x10400c70",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x1D",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x1D",
+      "name": "SunSetPacket",
+      "registration_va": "0x1077188b",
+      "name_storage_va": "0x10927100",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103124c7",
+      "handler_va": "0x103f1670",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x1D",
+      "name": "SunSetPacket",
+      "registration_va": "0x10836c9b",
+      "name_storage_va": "0x10a59088",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10310442",
+      "handler_va": "0x10400c90",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x23",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x23",
+      "name": "CharacterDeleteSuccessPacket",
+      "registration_va": "0x1077193c",
+      "name_storage_va": "0x10927718",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10311414",
+      "handler_va": "0x103f1780",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x23",
+      "name": "CharacterDeleteSuccessPacket",
+      "registration_va": "0x10836d4c",
+      "name_storage_va": "0x10a596a0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f2b3",
+      "handler_va": "0x10400d30",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x25",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x25",
+      "name": "ActionFailPacket",
+      "registration_va": "0x10771976",
+      "name_storage_va": "0x10927920",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030d549",
+      "handler_va": "0x103f17d0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x25",
+      "name": "ActionFailPacket",
+      "registration_va": "0x10836d86",
+      "name_storage_va": "0x10a598a8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030b0c3",
+      "handler_va": "0x10400d70",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x26",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x26",
+      "name": "SeverClosePacket",
+      "registration_va": "0x10771993",
+      "name_storage_va": "0x10927a24",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10312738",
+      "handler_va": "0x103f1820",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x26",
+      "name": "SeverClosePacket",
+      "registration_va": "0x10836da3",
+      "name_storage_va": "0x10a599ac",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103106f4",
+      "handler_va": "0x10400db0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x27",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x27",
+      "name": "InventoryUpdatePacket",
+      "registration_va": "0x107719b0",
+      "name_storage_va": "0x10927b28",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f547",
+      "handler_va": "0x10402460",
+      "decode_segments": [
+        {
+          "call_va": "0x1040249d",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10402535",
+          "format": "dddhhhdhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x27",
+      "name": "InventoryUpdatePacket",
+      "registration_va": "0x10836dc0",
+      "name_storage_va": "0x10a59ab0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030d1de",
+      "handler_va": "0x104123c0",
+      "decode_segments": [
+        {
+          "call_va": "0x104123fd",
+          "format": "h",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10412444",
+          "format": "hh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10412483",
+          "format": "dddhhhdhhhhd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x29",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x29",
+      "name": "TargetSelectedPacket",
+      "registration_va": "0x107719ed",
+      "name_storage_va": "0x10927d30",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10302617",
+      "handler_va": "0x10416060",
+      "decode_segments": [
+        {
+          "call_va": "0x10416092",
+          "format": "ddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x29",
+      "name": "TargetSelectedPacket",
+      "registration_va": "0x10836dfd",
+      "name_storage_va": "0x10a59cb8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10301f2d",
+      "handler_va": "0x10427310",
+      "decode_segments": [
+        {
+          "call_va": "0x10427347",
+          "format": "dddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x2A",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x2A",
+      "name": "TargetUnselectedPacket",
+      "registration_va": "0x10771a0a",
+      "name_storage_va": "0x10927e34",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10303ebd",
+      "handler_va": "0x104164e0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041650b",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x2A",
+      "name": "TargetUnselectedPacket",
+      "registration_va": "0x10836e1a",
+      "name_storage_va": "0x10a59dbc",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10302c43",
+      "handler_va": "0x10427750",
+      "decode_segments": [
+        {
+          "call_va": "0x10427780",
+          "format": "ddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x30",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x30",
+      "name": "ManagePledgePowerPacket",
+      "registration_va": "0x10771abb",
+      "name_storage_va": "0x1092844c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10305e34",
+      "handler_va": "0x10409680",
+      "decode_segments": [
+        {
+          "call_va": "0x1040969f",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x30",
+      "name": "ManagePledgePowerPacket",
+      "registration_va": "0x10836ecb",
+      "name_storage_va": "0x10a5a3d4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10314da8",
+      "handler_va": "0x10419e40",
+      "decode_segments": [
+        {
+          "call_va": "0x10419e7d",
+          "format": "ddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x32",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x32",
+      "name": "AskJoinPledgePacket",
+      "registration_va": "0x10771af5",
+      "name_storage_va": "0x10928654",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f6b9",
+      "handler_va": "0x10402760",
+      "decode_segments": [
+        {
+          "call_va": "0x10402796",
+          "format": "dS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x32",
+      "name": "AskJoinPledgePacket",
+      "registration_va": "0x10836f05",
+      "name_storage_va": "0x10a5a5dc",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030d350",
+      "handler_va": "0x10413090",
+      "decode_segments": [
+        {
+          "call_va": "0x104130d4",
+          "format": "dSd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10413134",
+          "format": "S",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x36",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x36",
+      "name": "SetOustPledgeMemberPacket",
+      "registration_va": "0x10771b69",
+      "name_storage_va": "0x10928a64",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030cb30",
+      "handler_va": "0x103f1890",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x36",
+      "name": "SetOustPledgeMemberPacket",
+      "registration_va": "0x10836f79",
+      "name_storage_va": "0x10a5a9ec",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a61e",
+      "handler_va": "0x10400e00",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x38",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x38",
+      "name": "SetDismissPledgePacket",
+      "registration_va": "0x10771ba6",
+      "name_storage_va": "0x10928c6c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103117b1",
+      "handler_va": "0x103f1950",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x38",
+      "name": "SetDismissPledgePacket",
+      "registration_va": "0x10836fb6",
+      "name_storage_va": "0x10a5abf4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f66e",
+      "handler_va": "0x10400ea0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x3D",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x3D",
+      "name": "SetOustPartyMemberPacket",
+      "registration_va": "0x10771c37",
+      "name_storage_va": "0x10929180",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103018e8",
+      "handler_va": "0x103f1b10",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x3D",
+      "name": "SetOustPartyMemberPacket",
+      "registration_va": "0x10837047",
+      "name_storage_va": "0x10a5b108",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10312981",
+      "handler_va": "0x10400fc0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x3F",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x3F",
+      "name": "SetDismissPartyPacket",
+      "registration_va": "0x10771c71",
+      "name_storage_va": "0x10929388",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10303364",
+      "handler_va": "0x103f1bd0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x3F",
+      "name": "SetDismissPartyPacket",
+      "registration_va": "0x10837081",
+      "name_storage_va": "0x10a5b310",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10313764",
+      "handler_va": "0x10401060",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x41",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x41",
+      "name": "WareHouseDepositListPacket",
+      "registration_va": "0x10771cae",
+      "name_storage_va": "0x10929590",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f13c",
+      "handler_va": "0x10403430",
+      "decode_segments": [
+        {
+          "call_va": "0x10403458",
+          "format": "hdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040351e",
+          "format": "dddhhdhhhd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x41",
+      "name": "WareHouseDepositListPacket",
+      "registration_va": "0x108370be",
+      "name_storage_va": "0x10a5b518",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030cdd8",
+      "handler_va": "0x10413e50",
+      "decode_segments": [
+        {
+          "call_va": "0x10413e78",
+          "format": "hdh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10413f54",
+          "format": "dddhhdhhhddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x42",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x42",
+      "name": "WareHouseWithdrawListPacket",
+      "registration_va": "0x10771ccb",
+      "name_storage_va": "0x10929694",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10303125",
+      "handler_va": "0x104035f0",
+      "decode_segments": [
+        {
+          "call_va": "0x10403618",
+          "format": "hdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104036de",
+          "format": "dddhhdhhhd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x42",
+      "name": "WareHouseWithdrawListPacket",
+      "registration_va": "0x108370db",
+      "name_storage_va": "0x10a5b61c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030252c",
+      "handler_va": "0x10414000",
+      "decode_segments": [
+        {
+          "call_va": "0x10414028",
+          "format": "hdh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10414104",
+          "format": "dddhhdhhhddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x44",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x44",
+      "name": "ShortCutRegisterPacket",
+      "registration_va": "0x10771d05",
+      "name_storage_va": "0x1092989c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103090b6",
+      "handler_va": "0x104038a0",
+      "decode_segments": [
+        {
+          "call_va": "0x104038e9",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403917",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040395b",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104039a7",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104039e3",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403a1f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403a62",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x44",
+      "name": "ShortCutRegisterPacket",
+      "registration_va": "0x10837115",
+      "name_storage_va": "0x10a5b824",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10306a55",
+      "handler_va": "0x10414290",
+      "decode_segments": [
+        {
+          "call_va": "0x104142d9",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10414325",
+          "format": "dddddhh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104143b5",
+          "format": "ddcd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10414419",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041445a",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104144a4",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x45",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x45",
+      "name": "ShortCutInitPacket",
+      "registration_va": "0x10771d22",
+      "name_storage_va": "0x109299a0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103022fc",
+      "handler_va": "0x10403ba0",
+      "decode_segments": [
+        {
+          "call_va": "0x10403bea",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403c2b",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403c57",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403c94",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403cd8",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403d0e",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403d44",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10403d80",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x45",
+      "name": "ShortCutInitPacket",
+      "registration_va": "0x10837132",
+      "name_storage_va": "0x10a5b928",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10312ee0",
+      "handler_va": "0x10414600",
+      "decode_segments": [
+        {
+          "call_va": "0x1041464c",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041468f",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104146d8",
+          "format": "dddddhh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10414752",
+          "format": "ddcd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041479e",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104147de",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041481e",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x4C",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x4C",
+      "name": "DoorInfoPacket",
+      "registration_va": "0x10771df0",
+      "name_storage_va": "0x1092a0bc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030689d",
+      "handler_va": "0x1041e880",
+      "decode_segments": [
+        {
+          "call_va": "0x1041e8b6",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x4C",
+      "name": "DoorInfoPacket",
+      "registration_va": "0x10837200",
+      "name_storage_va": "0x10a5c044",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103152d5",
+      "handler_va": "0x1042fea0",
+      "decode_segments": [
+        {
+          "call_va": "0x1042fedb",
+          "format": "ddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x50",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x50",
+      "name": "PartySmallWindowDeleteAllPacket",
+      "registration_va": "0x10771e67",
+      "name_storage_va": "0x1092a4cc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030b24e",
+      "handler_va": "0x10427fd0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x50",
+      "name": "PartySmallWindowDeleteAllPacket",
+      "registration_va": "0x10837277",
+      "name_storage_va": "0x10a5c454",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10308cb5",
+      "handler_va": "0x10439a10",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x53",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x53",
+      "name": "PledgeShowMemberListAllPacket",
+      "registration_va": "0x10771ebe",
+      "name_storage_va": "0x1092a7d8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309a57",
+      "handler_va": "0x10427530",
+      "decode_segments": [
+        {
+          "call_va": "0x10427582",
+          "format": "dSS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1042760e",
+          "format": "dddddddddSdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1042769e",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104276e3",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x53",
+      "name": "PledgeShowMemberListAllPacket",
+      "registration_va": "0x108372ce",
+      "name_storage_va": "0x10a5c760",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10307423",
+      "handler_va": "0x10438df0",
+      "decode_segments": [
+        {
+          "call_va": "0x10438e4a",
+          "format": "dddSS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10438ed8",
+          "format": "dddddddddSdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10439051",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104390c1",
+          "format": "Sdddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x54",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x54",
+      "name": "PledgeShowMemberListUpdatePacket",
+      "registration_va": "0x10771edb",
+      "name_storage_va": "0x1092a8dc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103065ff",
+      "handler_va": "0x104043e0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040442a",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x54",
+      "name": "PledgeShowMemberListUpdatePacket",
+      "registration_va": "0x108372eb",
+      "name_storage_va": "0x10a5c864",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103151c2",
+      "handler_va": "0x10414dc0",
+      "decode_segments": [
+        {
+          "call_va": "0x10414e1e",
+          "format": "Sddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x55",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x55",
+      "name": "PledgeShowMemberListAddPacket",
+      "registration_va": "0x10771ef8",
+      "name_storage_va": "0x1092a9e0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10311739",
+      "handler_va": "0x10404510",
+      "decode_segments": [
+        {
+          "call_va": "0x1040455a",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x55",
+      "name": "PledgeShowMemberListAddPacket",
+      "registration_va": "0x10837308",
+      "name_storage_va": "0x10a5c968",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f5f1",
+      "handler_va": "0x10414f40",
+      "decode_segments": [
+        {
+          "call_va": "0x10414f96",
+          "format": "Sdddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x58",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x58",
+      "name": "SkillListPacket",
+      "registration_va": "0x10771f52",
+      "name_storage_va": "0x1092acec",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030c89c",
+      "handler_va": "0x10404a00",
+      "decode_segments": [
+        {
+          "call_va": "0x10404a31",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10404ac5",
+          "format": "ddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x58",
+      "name": "SkillListPacket",
+      "registration_va": "0x10837362",
+      "name_storage_va": "0x10a5cc74",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a399",
+      "handler_va": "0x10415450",
+      "decode_segments": [
+        {
+          "call_va": "0x10415481",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10415503",
+          "format": "dddc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x64",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x64",
+      "name": "SystemMessagePacket",
+      "registration_va": "0x107720b1",
+      "name_storage_va": "0x1092b91c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309958",
+      "handler_va": "0x10404cd0",
+      "decode_segments": [
+        {
+          "call_va": "0x10404d0d",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10404d20",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10404d85",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10404dc4",
+          "format": "S",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10404de5",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10404e07",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x64",
+      "name": "SystemMessagePacket",
+      "registration_va": "0x108374c1",
+      "name_storage_va": "0x10a5d8a4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030731f",
+      "handler_va": "0x104156d0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041570e",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10415724",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041577b",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104157ba",
+          "format": "S",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104157e0",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041580b",
+          "format": "dhh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10415847",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10415870",
+          "format": "Q",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10415898",
+          "format": "ddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x70",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x70",
+      "name": "DummyPacket",
+      "registration_va": "0x10772213",
+      "name_storage_va": "0x1092c54c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309e67",
+      "handler_va": "0x103f1ce0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x70",
+      "name": "DummyPacket",
+      "registration_va": "0x10837623",
+      "name_storage_va": "0x10a5e4d4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030785b",
+      "handler_va": "0x10401150",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x7C",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x7C",
+      "name": "TradePressOtherOkPacket",
+      "registration_va": "0x10772372",
+      "name_storage_va": "0x1092d17c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030bf5a",
+      "handler_va": "0x103f1740",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x7C",
+      "name": "TradePressOtherOkPacket",
+      "registration_va": "0x10837782",
+      "name_storage_va": "0x10a5f104",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309a1b",
+      "handler_va": "0x10400d00",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x7E",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x7E",
+      "name": "LogOutOkPacket",
+      "registration_va": "0x107723b3",
+      "name_storage_va": "0x1092d384",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103072e8",
+      "handler_va": "0x10415e10",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x7E",
+      "name": "LogOutOkPacket",
+      "registration_va": "0x108377c3",
+      "name_storage_va": "0x10a5f30c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10304ae8",
+      "handler_va": "0x10427110",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x80",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x80",
+      "name": "QuestListPacket",
+      "registration_va": "0x107723e9",
+      "name_storage_va": "0x1092d58c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10313dfe",
+      "handler_va": "0x104020a0",
+      "decode_segments": [
+        {
+          "call_va": "0x104020d4",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10402103",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10402140",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x80",
+      "name": "QuestListPacket",
+      "registration_va": "0x108377f9",
+      "name_storage_va": "0x10a5f514",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10311e64",
+      "handler_va": "0x10438c20",
+      "decode_segments": [
+        {
+          "call_va": "0x10438c44",
+          "format": "h",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10438cad",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10438d15",
+          "format": "b",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x82",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x82",
+      "name": "PledgeShowMemberListDeleteAllPacket",
+      "registration_va": "0x10772423",
+      "name_storage_va": "0x1092d794",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030ef5c",
+      "handler_va": "0x103f1c90",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x82",
+      "name": "PledgeShowMemberListDeleteAllPacket",
+      "registration_va": "0x10837833",
+      "name_storage_va": "0x10a5f71c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030cbee",
+      "handler_va": "0x10401100",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x86",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x86",
+      "name": "RidePacket",
+      "registration_va": "0x10772497",
+      "name_storage_va": "0x1092dba4",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030c5f9",
+      "handler_va": "0x104145f0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041461b",
+          "format": "dddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x86",
+      "name": "RidePacket",
+      "registration_va": "0x108378a7",
+      "name_storage_va": "0x10a5fb2c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a0e7",
+      "handler_va": "0x10425930",
+      "decode_segments": [
+        {
+          "call_va": "0x10425982",
+          "format": "ddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x87",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x87",
+      "name": "DummyPacket",
+      "registration_va": "0x107724b4",
+      "name_storage_va": "0x1092dca8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309e67",
+      "handler_va": "0x103f1ce0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x87",
+      "name": "DummyPacket",
+      "registration_va": "0x108378c4",
+      "name_storage_va": "0x10a5fc30",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030785b",
+      "handler_va": "0x10401150",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x8E",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x8E",
+      "name": "AcquireSkillDonePacket",
+      "registration_va": "0x10772582",
+      "name_storage_va": "0x1092e3c4",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10311b21",
+      "handler_va": "0x103f1590",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x8E",
+      "name": "AcquireSkillDonePacket",
+      "registration_va": "0x10837992",
+      "name_storage_va": "0x10a6034c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f9e3",
+      "handler_va": "0x10400b70",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x8F",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x8F",
+      "name": "GMViewCharacterInfoPacket",
+      "registration_va": "0x1077259f",
+      "name_storage_va": "0x1092e4c8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10308c42",
+      "handler_va": "0x10415800",
+      "decode_segments": [
+        {
+          "call_va": "0x10415b39",
+          "format": "dddddSdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddffffddddSdddcccddhhddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x8F",
+      "name": "GMViewCharacterInfoPacket",
+      "registration_va": "0x108379af",
+      "name_storage_va": "0x10a60450",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103065af",
+      "handler_va": "0x10426930",
+      "decode_segments": [
+        {
+          "call_va": "0x10426dc3",
+          "format": "dddddSddddQddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddddffffddddSdddcccddhhddddccdccdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x90",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x90",
+      "name": "GMViewPledgeInfoPacket",
+      "registration_va": "0x107725bf",
+      "name_storage_va": "0x1092e5cc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10312904",
+      "handler_va": "0x10400880",
+      "decode_segments": [
+        {
+          "call_va": "0x104008dc",
+          "format": "SdSS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10400962",
+          "format": "dddddddddSdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104009a2",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104009ed",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x90",
+      "name": "GMViewPledgeInfoPacket",
+      "registration_va": "0x108379cf",
+      "name_storage_va": "0x10a60554",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103108e8",
+      "handler_va": "0x10410a70",
+      "decode_segments": [
+        {
+          "call_va": "0x10410ad7",
+          "format": "dSddSS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410b5c",
+          "format": "dddddddddSdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410ba5",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410bf3",
+          "format": "Sdddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x91",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x91",
+      "name": "GMViewSkillInfoPacket",
+      "registration_va": "0x107725dc",
+      "name_storage_va": "0x1092e6d0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103069ba",
+      "handler_va": "0x10400b50",
+      "decode_segments": [
+        {
+          "call_va": "0x10400b88",
+          "format": "Sd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10400c10",
+          "format": "ddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x91",
+      "name": "GMViewSkillInfoPacket",
+      "registration_va": "0x108379ec",
+      "name_storage_va": "0x10a60658",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10315389",
+      "handler_va": "0x10410d50",
+      "decode_segments": [
+        {
+          "call_va": "0x10410d88",
+          "format": "Sd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410e04",
+          "format": "dddc",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x94",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x94",
+      "name": "GMViewItemListPacket",
+      "registration_va": "0x10772633",
+      "name_storage_va": "0x1092e9dc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103121e3",
+      "handler_va": "0x10401060",
+      "decode_segments": [
+        {
+          "call_va": "0x1040109b",
+          "format": "Sdhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10401159",
+          "format": "dddhhhdhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x94",
+      "name": "GMViewItemListPacket",
+      "registration_va": "0x10837a43",
+      "name_storage_va": "0x10a60964",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1031011d",
+      "handler_va": "0x10411260",
+      "decode_segments": [
+        {
+          "call_va": "0x1041129b",
+          "format": "Sdhh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104113ad",
+          "format": "dddhhhdhhhhd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x95",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x95",
+      "name": "GMViewWarehouseWithdrawListPacket",
+      "registration_va": "0x10772650",
+      "name_storage_va": "0x1092eae0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030130c",
+      "handler_va": "0x10401220",
+      "decode_segments": [
+        {
+          "call_va": "0x1040124c",
+          "format": "Sdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104012f3",
+          "format": "dddhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10401327",
+          "format": "dhhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040133e",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x95",
+      "name": "GMViewWarehouseWithdrawListPacket",
+      "registration_va": "0x10837a60",
+      "name_storage_va": "0x10a60a68",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030132a",
+      "handler_va": "0x10411470",
+      "decode_segments": [
+        {
+          "call_va": "0x1041149f",
+          "format": "Sdh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10411569",
+          "format": "dddhh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104115ac",
+          "format": "dhhhdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104115c3",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x9E",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x9E",
+      "name": "ReviveRequestPacket",
+      "registration_va": "0x10772758",
+      "name_storage_va": "0x1092f404",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030bb40",
+      "handler_va": "0x103f14a0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x9E",
+      "name": "ReviveRequestPacket",
+      "registration_va": "0x10837b68",
+      "name_storage_va": "0x10a6138c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103095f2",
+      "handler_va": "0x10400a70",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xA3",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA3",
+      "name": "TutorialCloseHtmlPacket",
+      "registration_va": "0x107727ec",
+      "name_storage_va": "0x1092f918",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030e395",
+      "handler_va": "0x103f1520",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA3",
+      "name": "TutorialCloseHtmlPacket",
+      "registration_va": "0x10837bfc",
+      "name_storage_va": "0x10a618a0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030bfb9",
+      "handler_va": "0x10400b30",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xA6",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA6",
+      "name": "MyTargetSelectedPacket",
+      "registration_va": "0x10772843",
+      "name_storage_va": "0x1092fc24",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030ba8c",
+      "handler_va": "0x10416310",
+      "decode_segments": [
+        {
+          "call_va": "0x10416331",
+          "format": "dh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA6",
+      "name": "MyTargetSelectedPacket",
+      "registration_va": "0x10837c53",
+      "name_storage_va": "0x10a61bac",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030951b",
+      "handler_va": "0x10427590",
+      "decode_segments": [
+        {
+          "call_va": "0x104275b8",
+          "format": "dhd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xB1",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB1",
+      "name": "PetInfoPacket",
+      "registration_va": "0x10772988",
+      "name_storage_va": "0x10930750",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103102b7",
+      "handler_va": "0x1041cc70",
+      "decode_segments": [
+        {
+          "call_va": "0x1041ceeb",
+          "format": "dddddddddddddddddddffffdddcccccSSddddddddddddddddddddddddddddccdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB1",
+      "name": "PetInfoPacket",
+      "registration_va": "0x10837d98",
+      "name_storage_va": "0x10a626d8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030e025",
+      "handler_va": "0x1042e430",
+      "decode_segments": [
+        {
+          "call_va": "0x1042e69f",
+          "format": "dddddddddddddddddddffffdddcccccSSdddddddddddQQQddddddddddddddccdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xB3",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB3",
+      "name": "PetInventoryUpdatePacket",
+      "registration_va": "0x107729c2",
+      "name_storage_va": "0x10930958",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10312c10",
+      "handler_va": "0x103fea40",
+      "decode_segments": [
+        {
+          "call_va": "0x103fea7d",
+          "format": "h",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x103feb15",
+          "format": "dddhhhdhh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB3",
+      "name": "PetInventoryUpdatePacket",
+      "registration_va": "0x10837dd2",
+      "name_storage_va": "0x10a628e0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10310c21",
+      "handler_va": "0x1040eb90",
+      "decode_segments": [
+        {
+          "call_va": "0x1040ebcd",
+          "format": "h",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040ec14",
+          "format": "hh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1040ec47",
+          "format": "dddhhhdhh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xB5",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB5",
+      "name": "PetStatusUpdatePacket",
+      "registration_va": "0x107729fc",
+      "name_storage_va": "0x10930b60",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10313476",
+      "handler_va": "0x103fec50",
+      "decode_segments": [
+        {
+          "call_va": "0x103fecd0",
+          "format": "dddddSdddddddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB5",
+      "name": "PetStatusUpdatePacket",
+      "registration_va": "0x10837e0c",
+      "name_storage_va": "0x10a62ae8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103114be",
+      "handler_va": "0x1040ed50",
+      "decode_segments": [
+        {
+          "call_va": "0x1040edd0",
+          "format": "dddddSdddddddQQQ",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xC5",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC5",
+      "name": "FlyToLoactionPacket",
+      "registration_va": "0x10772bd2",
+      "name_storage_va": "0x10931ba0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103087e7",
+      "handler_va": "0x10418e60",
+      "decode_segments": [
+        {
+          "call_va": "0x10418e9a",
+          "format": "ddddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC5",
+      "name": "FlyToLoactionPacket",
+      "registration_va": "0x10837fe2",
+      "name_storage_va": "0x10a63b28",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030610e",
+      "handler_va": "0x10429d40",
+      "decode_segments": [
+        {
+          "call_va": "0x10429d7f",
+          "format": "dddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xC7",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC7",
+      "name": "SpecialCameraPacket",
+      "registration_va": "0x10772c0c",
+      "name_storage_va": "0x10931da8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030c7cf",
+      "handler_va": "0x10419280",
+      "decode_segments": [
+        {
+          "call_va": "0x104192cb",
+          "format": "dddddddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC7",
+      "name": "SpecialCameraPacket",
+      "registration_va": "0x1083801c",
+      "name_storage_va": "0x10a63d30",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a2cc",
+      "handler_va": "0x1042a1f0",
+      "decode_segments": [
+        {
+          "call_va": "0x1042a240",
+          "format": "ddddddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xC8",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC8",
+      "name": "NormalCameraPacket",
+      "registration_va": "0x10772c2c",
+      "name_storage_va": "0x10931eac",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103091fb",
+      "handler_va": "0x103f1ea0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC8",
+      "name": "NormalCameraPacket",
+      "registration_va": "0x1083803c",
+      "name_storage_va": "0x10a63e34",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10306bb8",
+      "handler_va": "0x104012d0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xCD",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xCD",
+      "name": "PledgeStatusChangedPacket",
+      "registration_va": "0x10772cc4",
+      "name_storage_va": "0x109323c0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10306e74",
+      "handler_va": "0x10428950",
+      "decode_segments": [
+        {
+          "call_va": "0x10428985",
+          "format": "dddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xCD",
+      "name": "PledgeStatusChangedPacket",
+      "registration_va": "0x108380d4",
+      "name_storage_va": "0x10a64348",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030467e",
+      "handler_va": "0x1043a2d0",
+      "decode_segments": [
+        {
+          "call_va": "0x1043a309",
+          "format": "ddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xD0",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xD0",
+      "name": "MultiSellListPacket",
+      "registration_va": "0x10772d17",
+      "name_storage_va": "0x109326cc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10305c8b",
+      "handler_va": "0x10407960",
+      "decode_segments": [
+        {
+          "call_va": "0x10407991",
+          "format": "ddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104079ee",
+          "format": "dchh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10407a24",
+          "format": "hdhdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10407a9e",
+          "format": "hhdh",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xD0",
+      "name": "MultiSellListPacket",
+      "registration_va": "0x10838127",
+      "name_storage_va": "0x10a64654",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10303b61",
+      "handler_va": "0x104183a0",
+      "decode_segments": [
+        {
+          "call_va": "0x104183d0",
+          "format": "ddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10418438",
+          "format": "dddchh",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041847d",
+          "format": "hdhdhdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10418518",
+          "format": "hhdhdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xED",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xED",
+      "name": "ConfirmDlgPacket",
+      "registration_va": "0x10773069",
+      "name_storage_va": "0x10934440",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10313dc2",
+      "handler_va": "0x10409860",
+      "decode_segments": [
+        {
+          "call_va": "0x1040989d",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104098b0",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10409915",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10409954",
+          "format": "S",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10409975",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10409997",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xED",
+      "name": "ConfirmDlgPacket",
+      "registration_va": "0x10838479",
+      "name_storage_va": "0x10a663c8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10311e2d",
+      "handler_va": "0x1041a090",
+      "decode_segments": [
+        {
+          "call_va": "0x1041a0ce",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a0e4",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a13b",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a17a",
+          "format": "S",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a1a1",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a1c9",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a1f2",
+          "format": "Q",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a21a",
+          "format": "ddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1041a29e",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xF3",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xF3",
+      "name": "EtcStatusUpdatePacket",
+      "registration_va": "0x1077311a",
+      "name_storage_va": "0x10934a58",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030ba78",
+      "handler_va": "0x10409fa0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040a00b",
+          "format": "ddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xF3",
+      "name": "EtcStatusUpdatePacket",
+      "registration_va": "0x1083852a",
+      "name_storage_va": "0x10a669e0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309507",
+      "handler_va": "0x1041a880",
+      "decode_segments": [
+        {
+          "call_va": "0x1041a8ff",
+          "format": "ddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xF6",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xF6",
+      "name": "PetitionVotePacket",
+      "registration_va": "0x10773171",
+      "name_storage_va": "0x10934d64",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103138f9",
+      "handler_va": "0x103f1ef0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xF6",
+      "name": "PetitionVotePacket",
+      "registration_va": "0x10838581",
+      "name_storage_va": "0x10a66cec",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10311946",
+      "handler_va": "0x10401310",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xFE",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xFE",
+      "name": "DummyPacket",
+      "registration_va": "0x1077325c",
+      "name_storage_va": "0x10935584",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309e67",
+      "handler_va": "0x103f1ce0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xFE",
+      "name": "DummyPacket",
+      "registration_va": "0x1083866c",
+      "name_storage_va": "0x10a6750c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030785b",
+      "handler_va": "0x10401150",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  }
+]

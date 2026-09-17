@@ -1,0 +1,74 @@
+[
+  {
+    "client": "killer",
+    "marker": "(Send)Send Protocol Version:%d",
+    "ref_va": "0x103f29dd",
+    "candidate_method_va": "0x103f2880",
+    "instructions": 156,
+    "dump": "killer-103f2880.asm"
+  },
+  {
+    "client": "killer",
+    "marker": "(Send)Send Protocol Version:%d",
+    "ref_va": "0x103f29f5",
+    "candidate_method_va": "0x103f2880",
+    "instructions": 156,
+    "dump": "killer-103f2880.asm"
+  },
+  {
+    "client": "killer",
+    "marker": "(Receive)VersionCheck",
+    "ref_va": "0x103fe0cd",
+    "candidate_method_va": "0x103fdfe0",
+    "instructions": 121,
+    "dump": "killer-103fdfe0.asm"
+  },
+  {
+    "client": "killer",
+    "marker": "(Receive)VersionCheck",
+    "ref_va": "0x103fe0dc",
+    "candidate_method_va": "0x103fdfe0",
+    "instructions": 121,
+    "dump": "killer-103fdfe0.asm"
+  },
+  {
+    "client": "killer",
+    "marker": "(Receive)AuthLoginSuccess ",
+    "ref_va": "0x103f14c8",
+    "candidate_method_va": "0x103f14c0",
+    "instructions": 16,
+    "dump": "killer-103f14c0.asm"
+  },
+  {
+    "client": "killer",
+    "marker": "(Receive)AuthLoginSuccess ",
+    "ref_va": "0x103f14db",
+    "candidate_method_va": "0x103f14c0",
+    "instructions": 16,
+    "dump": "killer-103f14c0.asm"
+  },
+  {
+    "client": "interlude",
+    "marker": "(Send)Send Protocol Version:%d",
+    "ref_va": "0x10401f2d",
+    "candidate_method_va": "0x10401dc0",
+    "instructions": 124,
+    "dump": "interlude-10401dc0.asm"
+  },
+  {
+    "client": "interlude",
+    "marker": "(Receive)VersionCheck",
+    "ref_va": "0x1040d157",
+    "candidate_method_va": "0x1040d000",
+    "instructions": 139,
+    "dump": "interlude-1040d000.asm"
+  },
+  {
+    "client": "interlude",
+    "marker": "(Receive)AuthLoginSuccess ",
+    "ref_va": "0x10400b08",
+    "candidate_method_va": "0x10400b00",
+    "instructions": 17,
+    "dump": "interlude-10400b00.asm"
+  }
+]

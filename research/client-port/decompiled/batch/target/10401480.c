@@ -1,0 +1,30 @@
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint packet_10401480(void)
+
+{
+  uint uVar1;
+  undefined4 *unaff_FS_OFFSET;
+  undefined1 auStack_2c [24];
+  undefined1 *puStack_14;
+  undefined4 uStack_10;
+  undefined4 uStack_c;
+  int iStack_8;
+  
+  uStack_c = 0x1080e519;
+  uStack_10 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_10;
+  puStack_14 = &stack0xffffffc8;
+  iStack_8 = 0;
+  __0L2ParamStack__QAE_H_Z(10);
+  iStack_8._0_1_ = 1;
+  (**(code **)(**(int **)(_DAT_10b1f538 + 0x54) + 0x708))(auStack_2c);
+  _Logf_FOutputDevice__QAAXPBGZZ(*(undefined4 *)_GNetworkLog__3PAVFOutputDevice__A_exref,0x1087ef38)
+  ;
+  iStack_8 = (uint)iStack_8._1_3_ << 8;
+  uVar1 = __1L2ParamStack__QAE_XZ();
+  *unaff_FS_OFFSET = uStack_10;
+  return uVar1 & 0xffffff00;
+}
+

@@ -1,0 +1,20 @@
+# The workspace also contains the original full game; publish only the port.
+/*
+!/.gitignore
+!/README.md
+!/research/
+!/patch/
+/research/*
+!/research/client-port/
+/research/client-port/build/
+/research/client-port/dist/
+/research/client-port/venv/
+/research/client-port/ghidra/
+**/__pycache__/
+**/.DS_Store
+*.pyc
+*.log
+/research/client-port/*l2.ini.decoded
+/research/client-port/reports/live-assets.json
+
+/research/client-port/reports/live-*.json

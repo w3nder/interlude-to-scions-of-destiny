@@ -1,0 +1,1804 @@
+[
+  {
+    "table": "extended",
+    "opcode": "0x28",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x28",
+      "name": "ExPledgeCrestLargePacket",
+      "registration_va": "0x10773e80",
+      "name_storage_va": "0x10937f2c",
+      "table_name_base_va": "0x1093568c",
+      "thunk_va": "0x103123b9",
+      "handler_va": "0x1040e560",
+      "decode_segments": [
+        {
+          "call_va": "0x1040e5a7",
+          "format": "ddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x28",
+      "name": "ExPledgeCrestLargePacket",
+      "registration_va": "0x10839280",
+      "name_storage_va": "0x10a69eb4",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10310316",
+      "handler_va": "0x1041ebb0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041ebf7",
+          "format": "ddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x39",
+    "status": "target_only_slot",
+    "source": null,
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x39",
+      "name": "PledgeSkillListPacket",
+      "registration_va": "0x10839473",
+      "name_storage_va": "0x10a6aff8",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10313eb2",
+      "handler_va": "0x10412590",
+      "decode_segments": [
+        {
+          "call_va": "0x104125c3",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10412614",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "extended",
+    "opcode": "0x3A",
+    "status": "target_only_slot",
+    "source": null,
+    "target": {
+      "direction": "S -> C",
+      "table": "extended",
+      "opcode": "0x3A",
+      "name": "PledgeSkillListAddPacket",
+      "registration_va": "0x10839490",
+      "name_storage_va": "0x10a6b0fc",
+      "table_name_base_va": "0x10a67614",
+      "thunk_va": "0x10315384",
+      "handler_va": "0x104126e0",
+      "decode_segments": [
+        {
+          "call_va": "0x10412715",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x30",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x30",
+      "name": "ManagePledgePowerPacket",
+      "registration_va": "0x10771abb",
+      "name_storage_va": "0x1092844c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10305e34",
+      "handler_va": "0x10409680",
+      "decode_segments": [
+        {
+          "call_va": "0x1040969f",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x30",
+      "name": "ManagePledgePowerPacket",
+      "registration_va": "0x10836ecb",
+      "name_storage_va": "0x10a5a3d4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10314da8",
+      "handler_va": "0x10419e40",
+      "decode_segments": [
+        {
+          "call_va": "0x10419e7d",
+          "format": "ddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x31",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x31",
+      "name": "CreatePledgePacket",
+      "registration_va": "0x10771ad8",
+      "name_storage_va": "0x10928550",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f07e",
+      "handler_va": "0x10402670",
+      "decode_segments": [
+        {
+          "call_va": "0x1040269f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x31",
+      "name": "CreatePledgePacket",
+      "registration_va": "0x10836ee8",
+      "name_storage_va": "0x10a5a4d8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030cd1f",
+      "handler_va": "0x10412dc0",
+      "decode_segments": [
+        {
+          "call_va": "0x10412def",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x32",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x32",
+      "name": "AskJoinPledgePacket",
+      "registration_va": "0x10771af5",
+      "name_storage_va": "0x10928654",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f6b9",
+      "handler_va": "0x10402760",
+      "decode_segments": [
+        {
+          "call_va": "0x10402796",
+          "format": "dS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x32",
+      "name": "AskJoinPledgePacket",
+      "registration_va": "0x10836f05",
+      "name_storage_va": "0x10a5a5dc",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030d350",
+      "handler_va": "0x10413090",
+      "decode_segments": [
+        {
+          "call_va": "0x104130d4",
+          "format": "dSd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10413134",
+          "format": "S",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x33",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x33",
+      "name": "JoinPledgePacket",
+      "registration_va": "0x10771b12",
+      "name_storage_va": "0x10928758",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10305b69",
+      "handler_va": "0x10402880",
+      "decode_segments": [
+        {
+          "call_va": "0x104028af",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x33",
+      "name": "JoinPledgePacket",
+      "registration_va": "0x10836f22",
+      "name_storage_va": "0x10a5a6e0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10303aa3",
+      "handler_va": "0x104131f0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041321f",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x34",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x34",
+      "name": "WithdrawalPledgePacket",
+      "registration_va": "0x10771b2f",
+      "name_storage_va": "0x1092885c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10314727",
+      "handler_va": "0x10402970",
+      "decode_segments": [
+        {
+          "call_va": "0x1040299f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x34",
+      "name": "WithdrawalPledgePacket",
+      "registration_va": "0x10836f3f",
+      "name_storage_va": "0x10a5a7e4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10312814",
+      "handler_va": "0x104132d0",
+      "decode_segments": [
+        {
+          "call_va": "0x104132ff",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x35",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x35",
+      "name": "OustPledgeMemberPacket",
+      "registration_va": "0x10771b4c",
+      "name_storage_va": "0x10928960",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10306ec4",
+      "handler_va": "0x10402a60",
+      "decode_segments": [
+        {
+          "call_va": "0x10402a8f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x35",
+      "name": "OustPledgeMemberPacket",
+      "registration_va": "0x10836f5c",
+      "name_storage_va": "0x10a5a8e8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103046dd",
+      "handler_va": "0x104133b0",
+      "decode_segments": [
+        {
+          "call_va": "0x104133df",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x36",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x36",
+      "name": "SetOustPledgeMemberPacket",
+      "registration_va": "0x10771b69",
+      "name_storage_va": "0x10928a64",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030cb30",
+      "handler_va": "0x103f1890",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x36",
+      "name": "SetOustPledgeMemberPacket",
+      "registration_va": "0x10836f79",
+      "name_storage_va": "0x10a5a9ec",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a61e",
+      "handler_va": "0x10400e00",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x37",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x37",
+      "name": "DismissPledgePacket",
+      "registration_va": "0x10771b86",
+      "name_storage_va": "0x10928b68",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030630c",
+      "handler_va": "0x10402b50",
+      "decode_segments": [
+        {
+          "call_va": "0x10402b7f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x37",
+      "name": "DismissPledgePacket",
+      "registration_va": "0x10836f96",
+      "name_storage_va": "0x10a5aaf0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10303e90",
+      "handler_va": "0x10413490",
+      "decode_segments": [
+        {
+          "call_va": "0x104134bf",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x38",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x38",
+      "name": "SetDismissPledgePacket",
+      "registration_va": "0x10771ba6",
+      "name_storage_va": "0x10928c6c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103117b1",
+      "handler_va": "0x103f1950",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x38",
+      "name": "SetDismissPledgePacket",
+      "registration_va": "0x10836fb6",
+      "name_storage_va": "0x10a5abf4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f66e",
+      "handler_va": "0x10400ea0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x53",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x53",
+      "name": "PledgeShowMemberListAllPacket",
+      "registration_va": "0x10771ebe",
+      "name_storage_va": "0x1092a7d8",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309a57",
+      "handler_va": "0x10427530",
+      "decode_segments": [
+        {
+          "call_va": "0x10427582",
+          "format": "dSS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1042760e",
+          "format": "dddddddddSdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x1042769e",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104276e3",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x53",
+      "name": "PledgeShowMemberListAllPacket",
+      "registration_va": "0x108372ce",
+      "name_storage_va": "0x10a5c760",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10307423",
+      "handler_va": "0x10438df0",
+      "decode_segments": [
+        {
+          "call_va": "0x10438e4a",
+          "format": "dddSS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10438ed8",
+          "format": "dddddddddSdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10439051",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104390c1",
+          "format": "Sdddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x54",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x54",
+      "name": "PledgeShowMemberListUpdatePacket",
+      "registration_va": "0x10771edb",
+      "name_storage_va": "0x1092a8dc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103065ff",
+      "handler_va": "0x104043e0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040442a",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x54",
+      "name": "PledgeShowMemberListUpdatePacket",
+      "registration_va": "0x108372eb",
+      "name_storage_va": "0x10a5c864",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103151c2",
+      "handler_va": "0x10414dc0",
+      "decode_segments": [
+        {
+          "call_va": "0x10414e1e",
+          "format": "Sddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x55",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x55",
+      "name": "PledgeShowMemberListAddPacket",
+      "registration_va": "0x10771ef8",
+      "name_storage_va": "0x1092a9e0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10311739",
+      "handler_va": "0x10404510",
+      "decode_segments": [
+        {
+          "call_va": "0x1040455a",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x55",
+      "name": "PledgeShowMemberListAddPacket",
+      "registration_va": "0x10837308",
+      "name_storage_va": "0x10a5c968",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030f5f1",
+      "handler_va": "0x10414f40",
+      "decode_segments": [
+        {
+          "call_va": "0x10414f96",
+          "format": "Sdddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x56",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x56",
+      "name": "PledgeShowMemberListDeletePacket",
+      "registration_va": "0x10771f15",
+      "name_storage_va": "0x1092aae4",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10314330",
+      "handler_va": "0x10404640",
+      "decode_segments": [
+        {
+          "call_va": "0x1040465c",
+          "format": "S",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x56",
+      "name": "PledgeShowMemberListDeletePacket",
+      "registration_va": "0x10837325",
+      "name_storage_va": "0x10a5ca6c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10312404",
+      "handler_va": "0x104150a0",
+      "decode_segments": [
+        {
+          "call_va": "0x104150bb",
+          "format": "S",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x65",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x65",
+      "name": "StartPledgeWarPacket",
+      "registration_va": "0x107720ce",
+      "name_storage_va": "0x1092ba20",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030438b",
+      "handler_va": "0x103f1a10",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x65",
+      "name": "StartPledgeWarPacket",
+      "registration_va": "0x108374de",
+      "name_storage_va": "0x10a5d9a8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1031400b",
+      "handler_va": "0x10400f40",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x66",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x66",
+      "name": "ReplyStartPledgeWarPacket",
+      "registration_va": "0x107720eb",
+      "name_storage_va": "0x1092bb24",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030c4c8",
+      "handler_va": "0x103f1a30",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x66",
+      "name": "ReplyStartPledgeWarPacket",
+      "registration_va": "0x108374fb",
+      "name_storage_va": "0x10a5daac",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309f9d",
+      "handler_va": "0x10400f50",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x67",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x67",
+      "name": "StopPledgeWarPacket",
+      "registration_va": "0x10772108",
+      "name_storage_va": "0x1092bc28",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030ce0a",
+      "handler_va": "0x103f1a50",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x67",
+      "name": "StopPledgeWarPacket",
+      "registration_va": "0x10837518",
+      "name_storage_va": "0x10a5dbb0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a943",
+      "handler_va": "0x10400f60",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x68",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x68",
+      "name": "ReplyStopPledgeWarPacket",
+      "registration_va": "0x10772128",
+      "name_storage_va": "0x1092bd2c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030c0f9",
+      "handler_va": "0x103f1a70",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x68",
+      "name": "ReplyStopPledgeWarPacket",
+      "registration_va": "0x10837538",
+      "name_storage_va": "0x10a5dcb4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309bab",
+      "handler_va": "0x10400f70",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x69",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x69",
+      "name": "SurrenderPledgeWarPacket",
+      "registration_va": "0x10772145",
+      "name_storage_va": "0x1092be30",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1031396c",
+      "handler_va": "0x103f1a90",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x69",
+      "name": "SurrenderPledgeWarPacket",
+      "registration_va": "0x10837555",
+      "name_storage_va": "0x10a5ddb8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103119be",
+      "handler_va": "0x10400f80",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x6A",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x6A",
+      "name": "ReplySurrenderPledgeWarPacket",
+      "registration_va": "0x10772162",
+      "name_storage_va": "0x1092bf34",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103073dd",
+      "handler_va": "0x103f1ab0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x6A",
+      "name": "ReplySurrenderPledgeWarPacket",
+      "registration_va": "0x10837572",
+      "name_storage_va": "0x10a5debc",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10304be7",
+      "handler_va": "0x10400f90",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x6B",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x6B",
+      "name": "SetPledgeCrestPacket",
+      "registration_va": "0x1077217f",
+      "name_storage_va": "0x1092c038",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10308e36",
+      "handler_va": "0x103f1af0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x6B",
+      "name": "SetPledgeCrestPacket",
+      "registration_va": "0x1083758f",
+      "name_storage_va": "0x10a5dfc0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103067a8",
+      "handler_va": "0x10400fb0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x6C",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x6C",
+      "name": "PledgeCrestPacket",
+      "registration_va": "0x1077219c",
+      "name_storage_va": "0x1092c13c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10302739",
+      "handler_va": "0x10402c40",
+      "decode_segments": [
+        {
+          "call_va": "0x10402c83",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x6C",
+      "name": "PledgeCrestPacket",
+      "registration_va": "0x108375ac",
+      "name_storage_va": "0x10a5e0c4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10301fb9",
+      "handler_va": "0x10413570",
+      "decode_segments": [
+        {
+          "call_va": "0x104135b3",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x82",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x82",
+      "name": "PledgeShowMemberListDeleteAllPacket",
+      "registration_va": "0x10772423",
+      "name_storage_va": "0x1092d794",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030ef5c",
+      "handler_va": "0x103f1c90",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x82",
+      "name": "PledgeShowMemberListDeleteAllPacket",
+      "registration_va": "0x10837833",
+      "name_storage_va": "0x10a5f71c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030cbee",
+      "handler_va": "0x10401100",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x83",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x83",
+      "name": "PledgeInfoPacket",
+      "registration_va": "0x10772440",
+      "name_storage_va": "0x1092d898",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030a10a",
+      "handler_va": "0x10404690",
+      "decode_segments": [
+        {
+          "call_va": "0x104046b9",
+          "format": "dSS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x83",
+      "name": "PledgeInfoPacket",
+      "registration_va": "0x10837850",
+      "name_storage_va": "0x10a5f820",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10307aef",
+      "handler_va": "0x10415110",
+      "decode_segments": [
+        {
+          "call_va": "0x10415138",
+          "format": "dSS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x84",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x84",
+      "name": "PledgeExtendedInfoPacket",
+      "registration_va": "0x1077245d",
+      "name_storage_va": "0x1092d99c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030bf9b",
+      "handler_va": "0x10404730",
+      "decode_segments": [
+        {
+          "call_va": "0x104047c4",
+          "format": "SddSddddddddSd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x84",
+      "name": "PledgeExtendedInfoPacket",
+      "registration_va": "0x1083786d",
+      "name_storage_va": "0x10a5f924",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10309a4d",
+      "handler_va": "0x104151c0",
+      "decode_segments": [
+        {
+          "call_va": "0x10415253",
+          "format": "SddSddddddddSd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x85",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x85",
+      "name": "SurrenderPersonallyPacket",
+      "registration_va": "0x1077247a",
+      "name_storage_va": "0x1092daa0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030c608",
+      "handler_va": "0x103f1ad0",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x85",
+      "name": "SurrenderPersonallyPacket",
+      "registration_va": "0x1083788a",
+      "name_storage_va": "0x10a5fa28",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030a0f1",
+      "handler_va": "0x10400fa0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x88",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x88",
+      "name": "PledgeShowInfoUpdatePacket",
+      "registration_va": "0x107724d4",
+      "name_storage_va": "0x1092ddac",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10312b7f",
+      "handler_va": "0x10427850",
+      "decode_segments": [
+        {
+          "call_va": "0x104278e7",
+          "format": "ddddddddddSdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x88",
+      "name": "PledgeShowInfoUpdatePacket",
+      "registration_va": "0x108378e4",
+      "name_storage_va": "0x10a5fd34",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10310b81",
+      "handler_va": "0x10439280",
+      "decode_segments": [
+        {
+          "call_va": "0x10439317",
+          "format": "ddddddddddSdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0x90",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x90",
+      "name": "GMViewPledgeInfoPacket",
+      "registration_va": "0x107725bf",
+      "name_storage_va": "0x1092e5cc",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10312904",
+      "handler_va": "0x10400880",
+      "decode_segments": [
+        {
+          "call_va": "0x104008dc",
+          "format": "SdSS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10400962",
+          "format": "dddddddddSdd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104009a2",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x104009ed",
+          "format": "Sddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0x90",
+      "name": "GMViewPledgeInfoPacket",
+      "registration_va": "0x108379cf",
+      "name_storage_va": "0x10a60554",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103108e8",
+      "handler_va": "0x10410a70",
+      "decode_segments": [
+        {
+          "call_va": "0x10410ad7",
+          "format": "dSddSS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410b5c",
+          "format": "dddddddddSdd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410ba5",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        },
+        {
+          "call_va": "0x10410bf3",
+          "format": "Sdddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xA8",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA8",
+      "name": "AskJoinAlliancePacket",
+      "registration_va": "0x10772880",
+      "name_storage_va": "0x1092fe2c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103123ff",
+      "handler_va": "0x104064b0",
+      "decode_segments": [
+        {
+          "call_va": "0x104064fd",
+          "format": "dSSS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA8",
+      "name": "AskJoinAlliancePacket",
+      "registration_va": "0x10837c90",
+      "name_storage_va": "0x10a61db4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1031036b",
+      "handler_va": "0x10417010",
+      "decode_segments": [
+        {
+          "call_va": "0x1041705e",
+          "format": "dSSS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xA9",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA9",
+      "name": "JoinAlliancePacket",
+      "registration_va": "0x1077289d",
+      "name_storage_va": "0x1092ff30",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10310271",
+      "handler_va": "0x10406610",
+      "decode_segments": [
+        {
+          "call_va": "0x1040663f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xA9",
+      "name": "JoinAlliancePacket",
+      "registration_va": "0x10837cad",
+      "name_storage_va": "0x10a61eb8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030dfee",
+      "handler_va": "0x10417150",
+      "decode_segments": [
+        {
+          "call_va": "0x1041717f",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xAA",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAA",
+      "name": "WithdrawAlliancePacket",
+      "registration_va": "0x107728ba",
+      "name_storage_va": "0x10930034",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10306393",
+      "handler_va": "0x10406700",
+      "decode_segments": [
+        {
+          "call_va": "0x1040672f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAA",
+      "name": "WithdrawAlliancePacket",
+      "registration_va": "0x10837cca",
+      "name_storage_va": "0x10a61fbc",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10315096",
+      "handler_va": "0x10417230",
+      "decode_segments": [
+        {
+          "call_va": "0x1041725f",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xAB",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAB",
+      "name": "OustAllianceMemberPledgePacket",
+      "registration_va": "0x107728d7",
+      "name_storage_va": "0x10930138",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030aa1f",
+      "handler_va": "0x104067f0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040681f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAB",
+      "name": "OustAllianceMemberPledgePacket",
+      "registration_va": "0x10837ce7",
+      "name_storage_va": "0x10a620c0",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030845e",
+      "handler_va": "0x10417310",
+      "decode_segments": [
+        {
+          "call_va": "0x1041733f",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xAC",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAC",
+      "name": "DismissAlliancePacket",
+      "registration_va": "0x107728f4",
+      "name_storage_va": "0x1093023c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f7f9",
+      "handler_va": "0x104068e0",
+      "decode_segments": [
+        {
+          "call_va": "0x1040690f",
+          "format": "d",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAC",
+      "name": "DismissAlliancePacket",
+      "registration_va": "0x10837d04",
+      "name_storage_va": "0x10a621c4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030d4ae",
+      "handler_va": "0x104173f0",
+      "decode_segments": [
+        {
+          "call_va": "0x1041741f",
+          "format": "d",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xAD",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAD",
+      "name": "SetAllianceCrestPacket",
+      "registration_va": "0x10772922",
+      "name_storage_va": "0x10930340",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030f3ee",
+      "handler_va": "0x103f1d60",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAD",
+      "name": "SetAllianceCrestPacket",
+      "registration_va": "0x10837d32",
+      "name_storage_va": "0x10a622c8",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030d07b",
+      "handler_va": "0x10401190",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xAE",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAE",
+      "name": "AllianceCrestPacket",
+      "registration_va": "0x1077292e",
+      "name_storage_va": "0x10930444",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103034f4",
+      "handler_va": "0x104069d0",
+      "decode_segments": [
+        {
+          "call_va": "0x104069f6",
+          "format": "dd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xAE",
+      "name": "AllianceCrestPacket",
+      "registration_va": "0x10837d3e",
+      "name_storage_va": "0x10a623cc",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10313836",
+      "handler_va": "0x104174d0",
+      "decode_segments": [
+        {
+          "call_va": "0x104174f6",
+          "format": "dd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xB4",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB4",
+      "name": "AllianceInfoPacket",
+      "registration_va": "0x107729df",
+      "name_storage_va": "0x10930a5c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x1030268a",
+      "handler_va": "0x103f1d80",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xB4",
+      "name": "AllianceInfoPacket",
+      "registration_va": "0x10837def",
+      "name_storage_va": "0x10a629e4",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103130c0",
+      "handler_va": "0x104011a0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xBC",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBC",
+      "name": "StartAllianceWarPacket",
+      "registration_va": "0x10772aca",
+      "name_storage_va": "0x1093127c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10306451",
+      "handler_va": "0x10407050",
+      "decode_segments": [
+        {
+          "call_va": "0x1040708e",
+          "format": "SS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBC",
+      "name": "StartAllianceWarPacket",
+      "registration_va": "0x10837eda",
+      "name_storage_va": "0x10a63204",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x103150f0",
+      "handler_va": "0x10417b40",
+      "decode_segments": [
+        {
+          "call_va": "0x10417b7f",
+          "format": "SS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xBD",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBD",
+      "name": "ReplyStartAllianceWarPacket",
+      "registration_va": "0x10772af8",
+      "name_storage_va": "0x10931380",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10305772",
+      "handler_va": "0x103f1e20",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBD",
+      "name": "ReplyStartAllianceWarPacket",
+      "registration_va": "0x10837f08",
+      "name_storage_va": "0x10a63308",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10314a88",
+      "handler_va": "0x104011f0",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xBE",
+    "status": "same_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBE",
+      "name": "StopAllianceWarPacket",
+      "registration_va": "0x10772b04",
+      "name_storage_va": "0x10931484",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x103123e1",
+      "handler_va": "0x10407130",
+      "decode_segments": [
+        {
+          "call_va": "0x1040716e",
+          "format": "SS",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBE",
+      "name": "StopAllianceWarPacket",
+      "registration_va": "0x10837f14",
+      "name_storage_va": "0x10a6340c",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1031033e",
+      "handler_va": "0x10417c20",
+      "decode_segments": [
+        {
+          "call_va": "0x10417c5f",
+          "format": "SS",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xBF",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBF",
+      "name": "ReplyStopAllianceWarPacket",
+      "registration_va": "0x10772b21",
+      "name_storage_va": "0x10931588",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10309674",
+      "handler_va": "0x103f1e40",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xBF",
+      "name": "ReplyStopAllianceWarPacket",
+      "registration_va": "0x10837f31",
+      "name_storage_va": "0x10a63510",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10307031",
+      "handler_va": "0x10401200",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xC0",
+    "status": "decode_layout_unresolved",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC0",
+      "name": "SurrenderAllianceWarPacket",
+      "registration_va": "0x10772b41",
+      "name_storage_va": "0x1093168c",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10301c58",
+      "handler_va": "0x103f1e60",
+      "decode_segments": [],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xC0",
+      "name": "SurrenderAllianceWarPacket",
+      "registration_va": "0x10837f51",
+      "name_storage_va": "0x10a63614",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x10312b3e",
+      "handler_va": "0x10401210",
+      "decode_segments": [],
+      "decoder_target": "0x103034e5"
+    }
+  },
+  {
+    "table": "primary",
+    "opcode": "0xCD",
+    "status": "different_observed_decode_segments",
+    "source": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xCD",
+      "name": "PledgeStatusChangedPacket",
+      "registration_va": "0x10772cc4",
+      "name_storage_va": "0x109323c0",
+      "table_name_base_va": "0x1092538c",
+      "thunk_va": "0x10306e74",
+      "handler_va": "0x10428950",
+      "decode_segments": [
+        {
+          "call_va": "0x10428985",
+          "format": "dddddd",
+          "call_target": "0x10305079",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x10305079"
+    },
+    "target": {
+      "direction": "S -> C",
+      "table": "primary",
+      "opcode": "0xCD",
+      "name": "PledgeStatusChangedPacket",
+      "registration_va": "0x108380d4",
+      "name_storage_va": "0x10a64348",
+      "table_name_base_va": "0x10a57314",
+      "thunk_va": "0x1030467e",
+      "handler_va": "0x1043a2d0",
+      "decode_segments": [
+        {
+          "call_va": "0x1043a309",
+          "format": "ddddddd",
+          "call_target": "0x103034e5",
+          "layout_complete": false
+        }
+      ],
+      "decoder_target": "0x103034e5"
+    }
+  }
+]

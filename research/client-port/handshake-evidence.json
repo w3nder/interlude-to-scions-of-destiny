@@ -1,0 +1,36 @@
+{
+  "backend": "/Users/wenderteixeira/l2g-client/l2g-backend",
+  "scope": "Offline static evidence, no login attempted",
+  "builds": {
+    "killer": {
+      "binary": "/Users/wenderteixeira/Documents/L2Killer/system/engine.dll",
+      "sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+      "revision": "#Revision: 656 $",
+      "version_format": "cdb",
+      "key_response_format": "cddd",
+      "game_auth_format": "cSddddd",
+      "block_sha256": "df28882658a7f6fedc9b8b8e70b41e8b02eae264fae0970b15def91cbfc3cd79",
+      "block_matches_backend": true,
+      "login_static_key_found_va": "0x1092531c"
+    },
+    "interlude": {
+      "binary": "/Users/wenderteixeira/Desktop/system-1/engine.dll",
+      "sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+      "revision": "#Revision: 746 $",
+      "version_format": "cdbd",
+      "key_response_format": "cQdd",
+      "game_auth_format": "cSddddd",
+      "block_sha256": "df28882658a7f6fedc9b8b8e70b41e8b02eae264fae0970b15def91cbfc3cd79",
+      "block_matches_backend": true,
+      "login_static_key_found_va": "0x10a572a8"
+    }
+  },
+  "backend_source_sha256": {
+    "internal/protocol/packets/client/protocolversion.go": "0dc1f6fb98a97bd0202d2ca2e48544f13a4d7ba2bb5f39311701750acea260e6",
+    "internal/login/client.go": "a8c6e241872c3d0012f22bae6888fbad4448e04ee79f1b50b4c4677868f352a1",
+    "internal/login/packets.go": "30fe6550f12b61c18e712c6cfab4186341db1a66979f458800f21e05a89e17c9",
+    "internal/netio/crypt.go": "d4b8a77ecfa60e299b14891fda3a25d54014c46541a01a7a01ff7162d99cd42f",
+    "internal/netio/blowfish.go": "a77bc94289fb5cfa765cf59bb05e2ee4be9a77aeaa89e6b526ba063a38a9da31",
+    "internal/session/session.go": "22adc25946720dda8c6187a7d6c587f6cc2886087ff7a028c35a6d90599c68d1"
+  }
+}

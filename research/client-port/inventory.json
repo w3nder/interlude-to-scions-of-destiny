@@ -1,0 +1,54 @@
+{
+  "source": "/Users/wenderteixeira/Documents/L2Killer/system",
+  "target": "/Users/wenderteixeira/Desktop/system-1",
+  "extraction_scope": "Static extraction; not a complete protocol specification. Native names retained, no live packets captured. Outbound session phase and extended outbound subopcodes not resolved.",
+  "catalog_counts": {
+    "outbound_call_sites": 213,
+    "inbound_registrations": 304
+  },
+  "binaries": [
+    {
+      "path": "/Users/wenderteixeira/Documents/L2Killer/system/engine.dll",
+      "size": 7786516,
+      "sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+      "machine": "0x14c",
+      "pe_timestamp": 1136337172
+    },
+    {
+      "path": "/Users/wenderteixeira/Documents/L2Killer/system/nwindow.dll",
+      "size": 3125268,
+      "sha256": "1fdcf9b455ef7ff93dfedeb9667e61a9874e31fe125982437d98c4d0adea3cce",
+      "machine": "0x14c",
+      "pe_timestamp": 1140423726
+    },
+    {
+      "path": "/Users/wenderteixeira/Documents/L2Killer/system/l2.exe",
+      "size": 253972,
+      "sha256": "b28b6a735be4dbcaf20c9148a52b91952598a3d17870f8e6c10001b8b4bdfb0a",
+      "machine": "0x14c",
+      "pe_timestamp": 1136337187
+    },
+    {
+      "path": "/Users/wenderteixeira/Desktop/system-1/engine.dll",
+      "size": 30704468,
+      "sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+      "machine": "0x14c",
+      "pe_timestamp": 1188817289
+    },
+    {
+      "path": "/Users/wenderteixeira/Desktop/system-1/nwindow.dll",
+      "size": 3850260,
+      "sha256": "711f568b99665f3a2e999b042cdf0d0841df861f70f84b41570e10be5c774032",
+      "machine": "0x14c",
+      "pe_timestamp": 1182227411
+    },
+    {
+      "path": "/Users/wenderteixeira/Desktop/system-1/l2.exe",
+      "size": 491540,
+      "sha256": "790d9068796714389d82a400d14d26dcb9e6ecdfc6c2b5eba92ebd1a441b10ee",
+      "machine": "0x14c",
+      "pe_timestamp": 1188817354
+    }
+  ],
+  "source_matches_catalog": true
+}

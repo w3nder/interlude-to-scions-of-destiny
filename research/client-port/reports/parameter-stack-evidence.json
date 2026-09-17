@@ -1,0 +1,11 @@
+{
+  "source_engine_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+  "target_core_sha256": "d83449b1cdf0ac717a98be9289caab03cb507324a696ef449e31369e28416639",
+  "target_top_va": "0x1015b5c0",
+  "tested_counts": [
+    0,
+    1,
+    7
+  ],
+  "status": "passed native x86 sequence/cursor/empty checks"
+}

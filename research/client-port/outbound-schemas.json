@@ -1,0 +1,27 @@
+{
+  "rules": [
+    {
+      "name": "RequestJoinPledge",
+      "opcode": "0x24",
+      "source_layout": "cd",
+      "target_layout": "cdd",
+      "conversion": "Only pledgeType=0; remove type field; block nonzero subunits"
+    },
+    {
+      "name": "RequestMultiSellChoose",
+      "opcode": "0xA7",
+      "source_layout": "cddd",
+      "target_layout": "cddddd",
+      "conversion": "Preserve list ID, entry ID and amount; drop two zero extension fields; block nonzero extensions"
+    },
+    {
+      "name": "ConfirmDlg",
+      "opcode": "0xC5",
+      "source_layout": "cdd",
+      "target_layout": "cddd",
+      "conversion": "Preserve message ID and answer; drop target-only requestor ID"
+    }
+  ],
+  "evidence": "decompiled/outbound source and target exact methods; primary clientpackets references; native send hook tests",
+  "limits": "RequestEnterWorldPacket, RequestJoinPartyRoom and RequestPledgePower differences remain pending; existing passthrough retained."
+}

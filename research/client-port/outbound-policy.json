@@ -1,0 +1,3357 @@
+{
+  "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+  "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+  "source_selectors": [
+    {
+      "name": "ResponseAuthGameGuard",
+      "opcode": 7,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x103f4230"
+    },
+    {
+      "name": "RequestServerList",
+      "opcode": 5,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x103f4684"
+    },
+    {
+      "name": "RequestServerLogin",
+      "opcode": 2,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x103f4738"
+    },
+    {
+      "name": "MoveBackwardToLocation",
+      "opcode": 1,
+      "extended": null,
+      "format": "cdddddd",
+      "call_va": "0x103f48ca"
+    },
+    {
+      "name": "Action",
+      "opcode": 4,
+      "extended": null,
+      "format": "cddddc",
+      "call_va": "0x103f49bd"
+    },
+    {
+      "name": "Attack",
+      "opcode": 10,
+      "extended": null,
+      "format": "cddddc",
+      "call_va": "0x103f4a7d"
+    },
+    {
+      "name": "Say",
+      "opcode": 2,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f4b23"
+    },
+    {
+      "name": "SocialAction",
+      "opcode": 27,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f4b93"
+    },
+    {
+      "name": "ChangeMoveType",
+      "opcode": 28,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f4c03"
+    },
+    {
+      "name": "ChangeWaitType",
+      "opcode": 29,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f4c73"
+    },
+    {
+      "name": "SendAppearingPacket",
+      "opcode": 48,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f4cdd"
+    },
+    {
+      "name": "MoveWithDelta",
+      "opcode": 65,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103f4d57"
+    },
+    {
+      "name": "GetOnVehicle",
+      "opcode": 66,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x103f4df3"
+    },
+    {
+      "name": "GetOffVehicle",
+      "opcode": 67,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x103f4e83"
+    },
+    {
+      "name": "ValidatePosition",
+      "opcode": 72,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x103f4f17"
+    },
+    {
+      "name": "StartRotating",
+      "opcode": 74,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f4f69"
+    },
+    {
+      "name": "FinishRotating",
+      "opcode": 75,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f4fe3"
+    },
+    {
+      "name": "RequestGameStart",
+      "opcode": 13,
+      "extended": null,
+      "format": "cdhddd",
+      "call_va": "0x103f5067"
+    },
+    {
+      "name": "RequestCharacterDelete",
+      "opcode": 12,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f50d2"
+    },
+    {
+      "name": "RequestCharacterRestore",
+      "opcode": 98,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f5142"
+    },
+    {
+      "name": "RequestNewCharacter",
+      "opcode": 14,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f51ad"
+    },
+    {
+      "name": "RequestCharacterCreate",
+      "opcode": 11,
+      "extended": null,
+      "format": "cSdddddddddddd",
+      "call_va": "0x103f525e"
+    },
+    {
+      "name": "ReviveReply",
+      "opcode": 122,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f5303"
+    },
+    {
+      "name": "RequestItemList",
+      "opcode": 15,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f535d"
+    },
+    {
+      "name": "RequestTrade",
+      "opcode": 21,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f53d3"
+    },
+    {
+      "name": "RequestAddTradeItem",
+      "opcode": 22,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103f5449"
+    },
+    {
+      "name": "RequestTradeDone",
+      "opcode": 23,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f54b2"
+    },
+    {
+      "name": "RequestEnterWorldPacket",
+      "opcode": 3,
+      "extended": null,
+      "format": "cbdddd",
+      "call_va": "0x103f553e"
+    },
+    {
+      "name": "RequestUseItem",
+      "opcode": 20,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f55c8"
+    },
+    {
+      "name": "RequestDropItem",
+      "opcode": 18,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x103f5667"
+    },
+    {
+      "name": "RequestSellItem",
+      "opcode": 30,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103f578e"
+    },
+    {
+      "name": "RequestBuyItem",
+      "opcode": 31,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103f5893"
+    },
+    {
+      "name": "RequestPreviewItem",
+      "opcode": 198,
+      "extended": null,
+      "format": "cdddb",
+      "call_va": "0x103f59b4"
+    },
+    {
+      "name": "RequestProcureCrop",
+      "opcode": 195,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103f5b11"
+    },
+    {
+      "name": "RequestBuySeed",
+      "opcode": 196,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103f5c16"
+    },
+    {
+      "name": "RequestTeleport",
+      "opcode": 26,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x103f5cc7"
+    },
+    {
+      "name": "RequestTeleport",
+      "opcode": 26,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x103f5cf7"
+    },
+    {
+      "name": "RequestLinkHtml",
+      "opcode": 32,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f5d7a"
+    },
+    {
+      "name": "RequestTutorialLinkHtml",
+      "opcode": 123,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f5dfa"
+    },
+    {
+      "name": "RequestTutorialQuestionMarkPressed",
+      "opcode": 125,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f5e72"
+    },
+    {
+      "name": "RequestTutorialClientEvent",
+      "opcode": 126,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f5ee2"
+    },
+    {
+      "name": "RequestBBSWrite",
+      "opcode": 34,
+      "extended": null,
+      "format": "cSSSSSS",
+      "call_va": "0x103f5fa6"
+    },
+    {
+      "name": "RequestBypassToServer",
+      "opcode": 33,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f603a"
+    },
+    {
+      "name": "RequestTutorialPassCmdToServer",
+      "opcode": 124,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f60ba"
+    },
+    {
+      "name": "RequestSetPledgeCrest",
+      "opcode": 83,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f6136"
+    },
+    {
+      "name": "RequestSetPledgeCrest",
+      "opcode": 83,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x103f614e"
+    },
+    {
+      "name": "RequestPledgeCrest",
+      "opcode": 104,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f61c2"
+    },
+    {
+      "name": "RequestExSetPledgeCrestLarge",
+      "opcode": 208,
+      "extended": 17,
+      "format": "chd",
+      "call_va": "0x103f623b"
+    },
+    {
+      "name": "RequestExSetPledgeCrestLarge",
+      "opcode": 208,
+      "extended": 17,
+      "format": "chdb",
+      "call_va": "0x103f6258"
+    },
+    {
+      "name": "RequestExPledgeCrestLarge",
+      "opcode": 208,
+      "extended": 16,
+      "format": "chd",
+      "call_va": "0x103f62d7"
+    },
+    {
+      "name": "RequestPledgeExtendedInfo",
+      "opcode": 103,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f634a"
+    },
+    {
+      "name": "RequestPledgeMemberList",
+      "opcode": 60,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f63bd"
+    },
+    {
+      "name": "RequestCreatePledge",
+      "opcode": 35,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f643a"
+    },
+    {
+      "name": "RequestAnswerJoinPledge",
+      "opcode": 37,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f64ba"
+    },
+    {
+      "name": "RequestOustPledgeMember",
+      "opcode": 39,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f653a"
+    },
+    {
+      "name": "RequestDismissPledge",
+      "opcode": 40,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f65ad"
+    },
+    {
+      "name": "RequestJoinPledge",
+      "opcode": 36,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f662a"
+    },
+    {
+      "name": "RequestWithDrawalPledge",
+      "opcode": 38,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f669d"
+    },
+    {
+      "name": "RequestStartPledgeWar",
+      "opcode": 77,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f671a"
+    },
+    {
+      "name": "RequestStopPledgeWar",
+      "opcode": 79,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f67ba"
+    },
+    {
+      "name": "RequestGiveNickName",
+      "opcode": 85,
+      "extended": null,
+      "format": "cSS",
+      "call_va": "0x103f68c8"
+    },
+    {
+      "name": "RequestJoinAlly",
+      "opcode": 130,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f694d"
+    },
+    {
+      "name": "RequestAnswerJoinAlly",
+      "opcode": 131,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f69cd"
+    },
+    {
+      "name": "RequestOustAlly",
+      "opcode": 133,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f6a4d"
+    },
+    {
+      "name": "RequestAllyInfo",
+      "opcode": 142,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f6ac0"
+    },
+    {
+      "name": "RequestWithdrawAlly",
+      "opcode": 132,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f6b30"
+    },
+    {
+      "name": "RequestDismissAlly",
+      "opcode": 134,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f6ba0"
+    },
+    {
+      "name": "RequestSetAllyCrest",
+      "opcode": 135,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x103f6c1b"
+    },
+    {
+      "name": "RequestAllyCrest",
+      "opcode": 136,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f6c95"
+    },
+    {
+      "name": "RequestFriendInvite",
+      "opcode": 94,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f6d0a"
+    },
+    {
+      "name": "RequestFriendDel",
+      "opcode": 97,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f6d8a"
+    },
+    {
+      "name": "RequestFriendList",
+      "opcode": 96,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f6dfd"
+    },
+    {
+      "name": "RequestFriendAddReply",
+      "opcode": 95,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f6e7a"
+    },
+    {
+      "name": "RequestBlock",
+      "opcode": 160,
+      "extended": null,
+      "format": "cdS",
+      "call_va": "0x103f6f15"
+    },
+    {
+      "name": "RequestBlock",
+      "opcode": 160,
+      "extended": null,
+      "format": "cdS",
+      "call_va": "0x103f6f37"
+    },
+    {
+      "name": "RequestBlock",
+      "opcode": 160,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f6f50"
+    },
+    {
+      "name": "RequestJoinParty",
+      "opcode": 41,
+      "extended": null,
+      "format": "cSd",
+      "call_va": "0x103f6ff8"
+    },
+    {
+      "name": "RequestAnswerJoinParty",
+      "opcode": 42,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f707a"
+    },
+    {
+      "name": "RequestWithDrawalParty",
+      "opcode": 43,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f70ed"
+    },
+    {
+      "name": "RequestOustPartyMember",
+      "opcode": 44,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f716a"
+    },
+    {
+      "name": "RequestDismissParty",
+      "opcode": 45,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f71dd"
+    },
+    {
+      "name": "RequestListPartyWating",
+      "opcode": 111,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103f7273"
+    },
+    {
+      "name": "RequestManagePartyRoom",
+      "opcode": 112,
+      "extended": null,
+      "format": "cdddddS",
+      "call_va": "0x103f7336"
+    },
+    {
+      "name": "RequestJoinPartyRoom",
+      "opcode": 113,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f73c8"
+    },
+    {
+      "name": "RequestHandOverPartyMaster",
+      "opcode": 208,
+      "extended": 4,
+      "format": "chS",
+      "call_va": "0x103f743f"
+    },
+    {
+      "name": "RequestManorList",
+      "opcode": 208,
+      "extended": 8,
+      "format": "ch",
+      "call_va": "0x103f74da"
+    },
+    {
+      "name": "RequestProcureCropList",
+      "opcode": 208,
+      "extended": 9,
+      "format": "chdb",
+      "call_va": "0x103f7654"
+    },
+    {
+      "name": "RequestSetSeed",
+      "opcode": 208,
+      "extended": 10,
+      "format": "chddb",
+      "call_va": "0x103f77e6"
+    },
+    {
+      "name": "RequestSetCrop",
+      "opcode": 208,
+      "extended": 11,
+      "format": "chddb",
+      "call_va": "0x103f7987"
+    },
+    {
+      "name": "RequestWriteHeroWords",
+      "opcode": 208,
+      "extended": 12,
+      "format": "chS",
+      "call_va": "0x103f7aaa"
+    },
+    {
+      "name": "RequestOlympiadObserverEnd",
+      "opcode": 208,
+      "extended": 18,
+      "format": "ch",
+      "call_va": "0x103f7bba"
+    },
+    {
+      "name": "RequestOlympiadMatchList",
+      "opcode": 208,
+      "extended": 19,
+      "format": "ch",
+      "call_va": "0x103f7caa"
+    },
+    {
+      "name": "RequestOustFromPartyRoom",
+      "opcode": 208,
+      "extended": 1,
+      "format": "chd",
+      "call_va": "0x103f7d7f"
+    },
+    {
+      "name": "RequestDismissPartyRoom",
+      "opcode": 208,
+      "extended": 2,
+      "format": "chdd",
+      "call_va": "0x103f7dff"
+    },
+    {
+      "name": "RequestWithdrawPartyRoom",
+      "opcode": 208,
+      "extended": 3,
+      "format": "chdd",
+      "call_va": "0x103f7e7f"
+    },
+    {
+      "name": "RequestAutoSoulShot",
+      "opcode": 208,
+      "extended": 5,
+      "format": "chdd",
+      "call_va": "0x103f7f0d"
+    },
+    {
+      "name": "SendWareHouseDepositList",
+      "opcode": 49,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x103f7ff7"
+    },
+    {
+      "name": "SendWareHouseWithdrawList",
+      "opcode": 50,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x103f8107"
+    },
+    {
+      "name": "RequestShortCutReg",
+      "opcode": 51,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x103f81d3"
+    },
+    {
+      "name": "RequestShortCutUse",
+      "opcode": 52,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x103f8266"
+    },
+    {
+      "name": "RequestShortCutDel",
+      "opcode": 53,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f82da"
+    },
+    {
+      "name": "RequestTargetCancel",
+      "opcode": 55,
+      "extended": null,
+      "format": "ch",
+      "call_va": "0x103f834d"
+    },
+    {
+      "name": "RequestMakeMacro",
+      "opcode": 193,
+      "extended": null,
+      "format": "cdSSSccb",
+      "call_va": "0x103f84b6"
+    },
+    {
+      "name": "RequestOpenMinimap",
+      "opcode": 205,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f8560"
+    },
+    {
+      "name": "RequestDeleteMacro",
+      "opcode": 194,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f85dd"
+    },
+    {
+      "name": "RequestMagicSkillUse",
+      "opcode": 47,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x103f86f6"
+    },
+    {
+      "name": "Say2",
+      "opcode": 56,
+      "extended": null,
+      "format": "cSd",
+      "call_va": "0x103f878b"
+    },
+    {
+      "name": "Say2",
+      "opcode": 56,
+      "extended": null,
+      "format": "cSdS",
+      "call_va": "0x103f87a4"
+    },
+    {
+      "name": "SendLogOutPacket",
+      "opcode": 9,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f881d"
+    },
+    {
+      "name": "SendCharacterInfo",
+      "opcode": 57,
+      "extended": null,
+      "format": "ccS",
+      "call_va": "0x103f887c"
+    },
+    {
+      "name": "SendSummonCmd",
+      "opcode": 57,
+      "extended": null,
+      "format": "ccS",
+      "call_va": "0x103f88ec"
+    },
+    {
+      "name": "SendL2ParamSetting",
+      "opcode": 57,
+      "extended": null,
+      "format": "ccdd",
+      "call_va": "0x103f896c"
+    },
+    {
+      "name": "SendServerStatus",
+      "opcode": 57,
+      "extended": null,
+      "format": "cc",
+      "call_va": "0x103f89df"
+    },
+    {
+      "name": "RequestEquipItem",
+      "opcode": 16,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f8a6a"
+    },
+    {
+      "name": "RequestUnEquipItem",
+      "opcode": 17,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f8aed"
+    },
+    {
+      "name": "RequestSkillItem",
+      "opcode": 63,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f8b5d"
+    },
+    {
+      "name": "RequestMagicItem",
+      "opcode": 62,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f8bad"
+    },
+    {
+      "name": "AnswerTradeRequest",
+      "opcode": 68,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f8c0d"
+    },
+    {
+      "name": "RequestActionUse",
+      "opcode": 69,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x103f8ca6"
+    },
+    {
+      "name": "RequestAttack",
+      "opcode": 4,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x103f8d3c"
+    },
+    {
+      "name": "RequestRestart",
+      "opcode": 70,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f8dad"
+    },
+    {
+      "name": "RequestRestartPoint",
+      "opcode": 109,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f8e0a"
+    },
+    {
+      "name": "RequestSiegeInfo",
+      "opcode": 71,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f8e6d"
+    },
+    {
+      "name": "RequestSEKCustom",
+      "opcode": 73,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f8eda"
+    },
+    {
+      "name": "RequestShowboard",
+      "opcode": 87,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f8f4f"
+    },
+    {
+      "name": "SendBypassBuildCmd",
+      "opcode": 91,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f8fca"
+    },
+    {
+      "name": "SendDestroyItem",
+      "opcode": 89,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f9039"
+    },
+    {
+      "name": "RequestDestroyItem",
+      "opcode": 89,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f90b7"
+    },
+    {
+      "name": "RequestCrystallizeItem",
+      "opcode": 114,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f9127"
+    },
+    {
+      "name": "RequestQuestList",
+      "opcode": 99,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f918d"
+    },
+    {
+      "name": "RequestDestroyQuest",
+      "opcode": 100,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f9202"
+    },
+    {
+      "name": "RequestEnchantItem",
+      "opcode": 88,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f9272"
+    },
+    {
+      "name": "RequestExAskJoinMPCC",
+      "opcode": 208,
+      "extended": 13,
+      "format": "chS",
+      "call_va": "0x103f92ef"
+    },
+    {
+      "name": "RequestExAcceptJoinMPCC",
+      "opcode": 208,
+      "extended": 14,
+      "format": "chd",
+      "call_va": "0x103f936f"
+    },
+    {
+      "name": "RequestExOustFromMPCC",
+      "opcode": 208,
+      "extended": 15,
+      "format": "chS",
+      "call_va": "0x103f93ef"
+    },
+    {
+      "name": "RequestAcquireSkillInfo",
+      "opcode": 107,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103f9483"
+    },
+    {
+      "name": "RequestAcquireSkill",
+      "opcode": 108,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103f9513"
+    },
+    {
+      "name": "RequestExEnchantSkillInfo",
+      "opcode": 208,
+      "extended": 6,
+      "format": "chdd",
+      "call_va": "0x103f959d"
+    },
+    {
+      "name": "RequestExEnchantSkill",
+      "opcode": 208,
+      "extended": 7,
+      "format": "chdd",
+      "call_va": "0x103f962d"
+    },
+    {
+      "name": "RequestGMCommand",
+      "opcode": 110,
+      "extended": null,
+      "format": "cSdd",
+      "call_va": "0x103f9cb9"
+    },
+    {
+      "name": "RequestPetition",
+      "opcode": 127,
+      "extended": null,
+      "format": "cSd",
+      "call_va": "0x103f9d27"
+    },
+    {
+      "name": "RequestPetitionCancel",
+      "opcode": 128,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103f9d90"
+    },
+    {
+      "name": "RequestGMList",
+      "opcode": 129,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103f9e00"
+    },
+    {
+      "name": "RequestPetGetItem",
+      "opcode": 143,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f9e75"
+    },
+    {
+      "name": "RequestPetUseItem",
+      "opcode": 138,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103f9ee5"
+    },
+    {
+      "name": "RequestGiveItemToPet",
+      "opcode": 139,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103f9f6b"
+    },
+    {
+      "name": "RequestGetItemFromPet",
+      "opcode": 140,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103f9fc6"
+    },
+    {
+      "name": "RequestDropItemFromPet",
+      "opcode": 18,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x103fa037"
+    },
+    {
+      "name": "RequestChangePetName",
+      "opcode": 137,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103fa0a5"
+    },
+    {
+      "name": "RequestRecipeBookOpen",
+      "opcode": 172,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa11d"
+    },
+    {
+      "name": "RequestRecipeItemDelete",
+      "opcode": 173,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa185"
+    },
+    {
+      "name": "RequestRecipeItemMakeInfo",
+      "opcode": 174,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa1f5"
+    },
+    {
+      "name": "RequestRecipeItemMakeSelf",
+      "opcode": 175,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa265"
+    },
+    {
+      "name": "RequestRecipeShopManageList",
+      "opcode": 176,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fa2d0"
+    },
+    {
+      "name": "RequestRecipeShopMessageSet",
+      "opcode": 177,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103fa329"
+    },
+    {
+      "name": "RequestRecipeShopListSet",
+      "opcode": 178,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x103fa40a"
+    },
+    {
+      "name": "RequestRecipeShopManageQuit",
+      "opcode": 179,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fa4a0"
+    },
+    {
+      "name": "RequestRecipeShopManageCancel",
+      "opcode": 180,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fa4f0"
+    },
+    {
+      "name": "RequestRecipeShopSellList",
+      "opcode": 183,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa545"
+    },
+    {
+      "name": "RequestRecipeShopMakeInfo",
+      "opcode": 181,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103fa5ba"
+    },
+    {
+      "name": "RequestRecipeShopMakeDo",
+      "opcode": 182,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103fa62f"
+    },
+    {
+      "name": "RequestHennaItemInfo",
+      "opcode": 187,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa695"
+    },
+    {
+      "name": "RequestHennaEquip",
+      "opcode": 188,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa705"
+    },
+    {
+      "name": "RequestHennaUnequipInfo",
+      "opcode": 190,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa775"
+    },
+    {
+      "name": "RequestHennaUnequip",
+      "opcode": 191,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa7e5"
+    },
+    {
+      "name": "RequestHennaItemList",
+      "opcode": 186,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa850"
+    },
+    {
+      "name": "RequestHennaUnequipList",
+      "opcode": 189,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fa8a0"
+    },
+    {
+      "name": "RequestPrivateStoreManage",
+      "opcode": 115,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fa8ed"
+    },
+    {
+      "name": "SetPrivateStoreList",
+      "opcode": 116,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103fa9de"
+    },
+    {
+      "name": "RequestPrivateStoreManageCancel",
+      "opcode": 117,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103faa5d"
+    },
+    {
+      "name": "RequestPrivateStoreQuit",
+      "opcode": 118,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103faa8d"
+    },
+    {
+      "name": "SetPrivateStoreMsg",
+      "opcode": 119,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103faac6"
+    },
+    {
+      "name": "RequestPrivateStoreList",
+      "opcode": 120,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103faaf2"
+    },
+    {
+      "name": "SendPrivateStoreBuyList",
+      "opcode": 121,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103fabde"
+    },
+    {
+      "name": "RequestPrivateStoreBuyManage",
+      "opcode": 144,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fac60"
+    },
+    {
+      "name": "SetPrivateStoreBuyList",
+      "opcode": 145,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x103fad7d"
+    },
+    {
+      "name": "RequestPrivateStoreBuyManageCancel",
+      "opcode": 146,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fae10"
+    },
+    {
+      "name": "RequestPrivateStoreBuyQuit",
+      "opcode": 147,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fae40"
+    },
+    {
+      "name": "SetPrivateStoreBuyMsg",
+      "opcode": 148,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x103fae79"
+    },
+    {
+      "name": "RequestPrivateStoreBuyList",
+      "opcode": 149,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103faeb5"
+    },
+    {
+      "name": "SendPrivateStoreBuyBuyList",
+      "opcode": 150,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103fafb3"
+    },
+    {
+      "name": "SendTimeCheckPacket",
+      "opcode": 151,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103fb05b"
+    },
+    {
+      "name": "RequestSkillCoolTime",
+      "opcode": 157,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fb0b0"
+    },
+    {
+      "name": "RequestPackageSendableItemList",
+      "opcode": 158,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fb19d"
+    },
+    {
+      "name": "RequestCastleSiegeInfo",
+      "opcode": 161,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fb20d"
+    },
+    {
+      "name": "RequestCastleSiegeAttackerList",
+      "opcode": 162,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fb27d"
+    },
+    {
+      "name": "RequestCastleSiegeDefenderList",
+      "opcode": 163,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fb2ed"
+    },
+    {
+      "name": "RequestJoinCastleSiege",
+      "opcode": 164,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103fb376"
+    },
+    {
+      "name": "RequestConfirmCastleSiegeWaitingList",
+      "opcode": 165,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103fb406"
+    },
+    {
+      "name": "RequestSetCastleSiegeTime",
+      "opcode": 166,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103fb48b"
+    },
+    {
+      "name": "RequestPackageSend",
+      "opcode": 159,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103fb576"
+    },
+    {
+      "name": "RequestMultiSellChoose",
+      "opcode": 167,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103fb636"
+    },
+    {
+      "name": "GMSnoopEnd",
+      "opcode": 171,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fb6a5"
+    },
+    {
+      "name": "NetPing",
+      "opcode": 168,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x103fb760"
+    },
+    {
+      "name": "RequestRemainTime",
+      "opcode": 169,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fb7e0"
+    },
+    {
+      "name": "BypassUserCmd",
+      "opcode": 170,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fb83d"
+    },
+    {
+      "name": "RequestObserverEndPacket",
+      "opcode": 184,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fb8f0"
+    },
+    {
+      "name": "RequestPledgePower",
+      "opcode": 192,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x103fb97c"
+    },
+    {
+      "name": "RequestPledgePower",
+      "opcode": 192,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103fb99b"
+    },
+    {
+      "name": "VoteSociality",
+      "opcode": 185,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x103fba05"
+    },
+    {
+      "name": "ConfirmDlg",
+      "opcode": 197,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x103fba8b"
+    },
+    {
+      "name": "RequestSSQStatus",
+      "opcode": 199,
+      "extended": null,
+      "format": "cc",
+      "call_va": "0x103fbaf5"
+    },
+    {
+      "name": "PetitionVote",
+      "opcode": 200,
+      "extended": null,
+      "format": "cddS",
+      "call_va": "0x103fbb7d"
+    },
+    {
+      "name": "ReplyGameGuardQuery",
+      "opcode": 202,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x103fbc44"
+    },
+    {
+      "name": "RequestSendL2FriendSay",
+      "opcode": 204,
+      "extended": null,
+      "format": "cSS",
+      "call_va": "0x103fbcba"
+    },
+    {
+      "name": "RequestSendMsnChatLog",
+      "opcode": 206,
+      "extended": null,
+      "format": "cSSd",
+      "call_va": "0x103fbd2f"
+    },
+    {
+      "name": "RequestReload",
+      "opcode": 207,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x103fbdb8"
+    },
+    {
+      "name": "MoveToLocation",
+      "opcode": 1,
+      "extended": null,
+      "format": "cddddddd",
+      "call_va": "0x10410e27"
+    },
+    {
+      "name": "MoveToLocation",
+      "opcode": 92,
+      "extended": null,
+      "format": "cddddddd",
+      "call_va": "0x10410fc6"
+    },
+    {
+      "name": "CanNotMoveAnymore",
+      "opcode": 54,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10411153"
+    },
+    {
+      "name": "CanNotMoveAnymore",
+      "opcode": 93,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x1041125e"
+    },
+    {
+      "name": "EnterWorld",
+      "opcode": 3,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10420d7d"
+    },
+    {
+      "name": "RequestPledgeInfo",
+      "opcode": 102,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10420e36"
+    }
+  ],
+  "target_selectors": [
+    {
+      "name": "ResponseAuthGameGuard",
+      "opcode": 7,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x10403768"
+    },
+    {
+      "name": "RequestServerList",
+      "opcode": 5,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x10403a76"
+    },
+    {
+      "name": "RequestServerLogin",
+      "opcode": 2,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x10403b0b"
+    },
+    {
+      "name": "MoveBackwardToLocation",
+      "opcode": 1,
+      "extended": null,
+      "format": "cdddddd",
+      "call_va": "0x10403c8d"
+    },
+    {
+      "name": "Action",
+      "opcode": 4,
+      "extended": null,
+      "format": "cddddc",
+      "call_va": "0x10403d50"
+    },
+    {
+      "name": "Atk",
+      "opcode": 10,
+      "extended": null,
+      "format": "cddddc",
+      "call_va": "0x10403df0"
+    },
+    {
+      "name": "Say",
+      "opcode": 2,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10403e66"
+    },
+    {
+      "name": "SocialAction",
+      "opcode": 27,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10403ea6"
+    },
+    {
+      "name": "ChangeMoveType",
+      "opcode": 28,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10403ee6"
+    },
+    {
+      "name": "ChangeWaitType",
+      "opcode": 29,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10403f26"
+    },
+    {
+      "name": "SAP",
+      "opcode": 48,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10403f60"
+    },
+    {
+      "name": "MoveWithDelta",
+      "opcode": 65,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10403fca"
+    },
+    {
+      "name": "GetOnVehicle",
+      "opcode": 66,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10404046"
+    },
+    {
+      "name": "GetOffVehicle",
+      "opcode": 67,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x104040b6"
+    },
+    {
+      "name": "FinishRotating",
+      "opcode": 75,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104041b6"
+    },
+    {
+      "name": "RequestGameStart",
+      "opcode": 13,
+      "extended": null,
+      "format": "cdhddd",
+      "call_va": "0x1040420a"
+    },
+    {
+      "name": "RequestCharacterDelete",
+      "opcode": 12,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10404255"
+    },
+    {
+      "name": "RequestCharacterRestore",
+      "opcode": 98,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104042a5"
+    },
+    {
+      "name": "RequestNewCharacter",
+      "opcode": 14,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104042f0"
+    },
+    {
+      "name": "RequestCharacterCreate",
+      "opcode": 11,
+      "extended": null,
+      "format": "cSdddddddddddd",
+      "call_va": "0x10404371"
+    },
+    {
+      "name": "ReviveReply",
+      "opcode": 122,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104043e9"
+    },
+    {
+      "name": "RequestItemList",
+      "opcode": 15,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10404430"
+    },
+    {
+      "name": "RequestTrade",
+      "opcode": 21,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10404476"
+    },
+    {
+      "name": "RequestAddTradeItem",
+      "opcode": 22,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x104044cc"
+    },
+    {
+      "name": "RequestTradeDone",
+      "opcode": 23,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10404515"
+    },
+    {
+      "name": "RequestEnterWorldPacket",
+      "opcode": 3,
+      "extended": null,
+      "format": "cbddddbdcccccccccccccccccccc",
+      "call_va": "0x10404675"
+    },
+    {
+      "name": "RequestUseItem",
+      "opcode": 20,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040471c"
+    },
+    {
+      "name": "RequestDropItem",
+      "opcode": 18,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x1040479a"
+    },
+    {
+      "name": "RequestSellItem",
+      "opcode": 30,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x10404889"
+    },
+    {
+      "name": "RequestBuyItem",
+      "opcode": 31,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x1040498c"
+    },
+    {
+      "name": "RequestPreviewItem",
+      "opcode": 198,
+      "extended": null,
+      "format": "cdddb",
+      "call_va": "0x10404a85"
+    },
+    {
+      "name": "RequestProcureCrop",
+      "opcode": 195,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x10404b8c"
+    },
+    {
+      "name": "RequestBuySeed",
+      "opcode": 196,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x10404c8f"
+    },
+    {
+      "name": "RequestTeleport",
+      "opcode": 26,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10404d1a"
+    },
+    {
+      "name": "RequestTeleport",
+      "opcode": 26,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x10404d4c"
+    },
+    {
+      "name": "RequestLinkHtml",
+      "opcode": 32,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10404dae"
+    },
+    {
+      "name": "RequestTutorialLinkHtml",
+      "opcode": 123,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10404dfe"
+    },
+    {
+      "name": "RequestTutorialQuestionMarkPressed",
+      "opcode": 125,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10404e45"
+    },
+    {
+      "name": "RequestTutorialClientEvent",
+      "opcode": 126,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10404e95"
+    },
+    {
+      "name": "RequestBBSWrite",
+      "opcode": 34,
+      "extended": null,
+      "format": "cSSSSSS",
+      "call_va": "0x10404f33"
+    },
+    {
+      "name": "RequestBypassToServer",
+      "opcode": 33,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10404f9e"
+    },
+    {
+      "name": "RequestTutorialPassCmdToServer",
+      "opcode": 124,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10404fee"
+    },
+    {
+      "name": "RequestSetPledgeCrest",
+      "opcode": 83,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x1040503a"
+    },
+    {
+      "name": "RequestSetPledgeCrest",
+      "opcode": 83,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x10405082"
+    },
+    {
+      "name": "RequestPledgeCrest",
+      "opcode": 104,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104050e5"
+    },
+    {
+      "name": "RequestExSetPledgeCrestLarge",
+      "opcode": 208,
+      "extended": 17,
+      "format": "chd",
+      "call_va": "0x1040513e"
+    },
+    {
+      "name": "RequestExSetPledgeCrestLarge",
+      "opcode": 208,
+      "extended": 17,
+      "format": "chdb",
+      "call_va": "0x1040515d"
+    },
+    {
+      "name": "RequestExPledgeCrestLarge",
+      "opcode": 208,
+      "extended": 16,
+      "format": "chd",
+      "call_va": "0x104051ba"
+    },
+    {
+      "name": "RequestPledgeExtendedInfo",
+      "opcode": 103,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x1040520e"
+    },
+    {
+      "name": "RequestPledgeMemberList",
+      "opcode": 60,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405250"
+    },
+    {
+      "name": "RequestCreatePledge",
+      "opcode": 35,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x1040529e"
+    },
+    {
+      "name": "RequestAnswerJoinPledge",
+      "opcode": 37,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104052ee"
+    },
+    {
+      "name": "RequestOustPledgeMember",
+      "opcode": 39,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x1040533e"
+    },
+    {
+      "name": "RequestDismissPledge",
+      "opcode": 40,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405380"
+    },
+    {
+      "name": "RequestJoinPledge",
+      "opcode": 36,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104053dc"
+    },
+    {
+      "name": "RequestWithDrawalPledge",
+      "opcode": 38,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405430"
+    },
+    {
+      "name": "RequestStartPledgeWar",
+      "opcode": 77,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x1040547e"
+    },
+    {
+      "name": "RequestStopPledgeWar",
+      "opcode": 79,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x104054de"
+    },
+    {
+      "name": "RequestGiveNickName",
+      "opcode": 85,
+      "extended": null,
+      "format": "cSS",
+      "call_va": "0x1040557c"
+    },
+    {
+      "name": "RequestJoinAlly",
+      "opcode": 130,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104055e1"
+    },
+    {
+      "name": "RequestAnswerJoinAlly",
+      "opcode": 131,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10405641"
+    },
+    {
+      "name": "RequestOustAlly",
+      "opcode": 133,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x104056a1"
+    },
+    {
+      "name": "RequestAllyInfo",
+      "opcode": 142,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104056f3"
+    },
+    {
+      "name": "RequestWithdrawAlly",
+      "opcode": 132,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405733"
+    },
+    {
+      "name": "RequestDismissAlly",
+      "opcode": 134,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405773"
+    },
+    {
+      "name": "RequestSetAllyCrest",
+      "opcode": 135,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x104057be"
+    },
+    {
+      "name": "RequestAllyCrest",
+      "opcode": 136,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10405808"
+    },
+    {
+      "name": "RequestPledgeSetAcademyMasterPupil",
+      "opcode": 208,
+      "extended": 25,
+      "format": "chdSS",
+      "call_va": "0x10405864"
+    },
+    {
+      "name": "RequestPledgePowerGradeList",
+      "opcode": 208,
+      "extended": 26,
+      "format": "ch",
+      "call_va": "0x104058a5"
+    },
+    {
+      "name": "RequestPledgeMemberPowerInfo",
+      "opcode": 208,
+      "extended": 27,
+      "format": "chdS",
+      "call_va": "0x104058ef"
+    },
+    {
+      "name": "RequestPledgeSetMemberPowerGrade",
+      "opcode": 208,
+      "extended": 28,
+      "format": "chSd",
+      "call_va": "0x1040593f"
+    },
+    {
+      "name": "RequestPledgeMemberInfo",
+      "opcode": 208,
+      "extended": 29,
+      "format": "chdS",
+      "call_va": "0x1040598f"
+    },
+    {
+      "name": "RequestPledgeWarList",
+      "opcode": 208,
+      "extended": 30,
+      "format": "chdd",
+      "call_va": "0x104059df"
+    },
+    {
+      "name": "RequestPledgeReorganizeMember",
+      "opcode": 208,
+      "extended": 36,
+      "format": "chdSdS",
+      "call_va": "0x10405a5c"
+    },
+    {
+      "name": "RequestPCCafeCouponUse",
+      "opcode": 208,
+      "extended": 32,
+      "format": "chS",
+      "call_va": "0x10405af0"
+    },
+    {
+      "name": "RequestFriendInvite",
+      "opcode": 94,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10405bbe"
+    },
+    {
+      "name": "RequestFriendDel",
+      "opcode": 97,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10405c0e"
+    },
+    {
+      "name": "RequestFriendList",
+      "opcode": 96,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405c50"
+    },
+    {
+      "name": "RequestFriendAddReply",
+      "opcode": 95,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10405c9e"
+    },
+    {
+      "name": "RequestBlock",
+      "opcode": 160,
+      "extended": null,
+      "format": "cdS",
+      "call_va": "0x10405d09"
+    },
+    {
+      "name": "RequestBlock",
+      "opcode": 160,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10405d2d"
+    },
+    {
+      "name": "RequestJoinParty",
+      "opcode": 41,
+      "extended": null,
+      "format": "cSd",
+      "call_va": "0x10405dbc"
+    },
+    {
+      "name": "RequestAnswerJoinParty",
+      "opcode": 42,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10405e1e"
+    },
+    {
+      "name": "RequestWithDrawalParty",
+      "opcode": 43,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405e60"
+    },
+    {
+      "name": "RequestOustPartyMember",
+      "opcode": 44,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10405eae"
+    },
+    {
+      "name": "RequestDismissParty",
+      "opcode": 45,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10405ef0"
+    },
+    {
+      "name": "RequestListPartyWating",
+      "opcode": 111,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10405f59"
+    },
+    {
+      "name": "RequestManagePartyRoom",
+      "opcode": 112,
+      "extended": null,
+      "format": "cdddddS",
+      "call_va": "0x10405ff3"
+    },
+    {
+      "name": "RequestJoinPartyRoom",
+      "opcode": 113,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10406087"
+    },
+    {
+      "name": "RequestHandOverPartyMaster",
+      "opcode": 208,
+      "extended": 4,
+      "format": "chS",
+      "call_va": "0x104060f3"
+    },
+    {
+      "name": "RequestManorList",
+      "opcode": 208,
+      "extended": 8,
+      "format": "ch",
+      "call_va": "0x1040615d"
+    },
+    {
+      "name": "RequestProcureCropList",
+      "opcode": 208,
+      "extended": 9,
+      "format": "chdb",
+      "call_va": "0x104062b5"
+    },
+    {
+      "name": "RequestSetCrop",
+      "opcode": 208,
+      "extended": 11,
+      "format": "chddb",
+      "call_va": "0x10406445"
+    },
+    {
+      "name": "RequestWriteHeroWords",
+      "opcode": 208,
+      "extended": 12,
+      "format": "chS",
+      "call_va": "0x1040654d"
+    },
+    {
+      "name": "RequestOlympiadObserverEnd",
+      "opcode": 208,
+      "extended": 18,
+      "format": "ch",
+      "call_va": "0x1040662d"
+    },
+    {
+      "name": "RequestOlympiadMatchList",
+      "opcode": 208,
+      "extended": 19,
+      "format": "ch",
+      "call_va": "0x104066fd"
+    },
+    {
+      "name": "RequestOustFromPartyRoom",
+      "opcode": 208,
+      "extended": 1,
+      "format": "chd",
+      "call_va": "0x104067b3"
+    },
+    {
+      "name": "RequestDismissPartyRoom",
+      "opcode": 208,
+      "extended": 2,
+      "format": "chdd",
+      "call_va": "0x10406803"
+    },
+    {
+      "name": "RequestWithdrawPartyRoom",
+      "opcode": 208,
+      "extended": 3,
+      "format": "chdd",
+      "call_va": "0x10406853"
+    },
+    {
+      "name": "RequestAutoSoulShot",
+      "opcode": 208,
+      "extended": 5,
+      "format": "chdd",
+      "call_va": "0x104068b1"
+    },
+    {
+      "name": "SendWareHouseDepositList",
+      "opcode": 49,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x10406978"
+    },
+    {
+      "name": "SendWareHouseWithdrawList",
+      "opcode": 50,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x10406a58"
+    },
+    {
+      "name": "RequestShortCutReg",
+      "opcode": 51,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10406af9"
+    },
+    {
+      "name": "RequestShortCutUse",
+      "opcode": 52,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x10406b7c"
+    },
+    {
+      "name": "RequestShortCutDel",
+      "opcode": 53,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10406c06"
+    },
+    {
+      "name": "RequestTargetCancel",
+      "opcode": 55,
+      "extended": null,
+      "format": "ch",
+      "call_va": "0x10406cc4"
+    },
+    {
+      "name": "RequestMakeMacro",
+      "opcode": 193,
+      "extended": null,
+      "format": "cdSSSccb",
+      "call_va": "0x10406df3"
+    },
+    {
+      "name": "RequestOpenMinimap",
+      "opcode": 205,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10406e83"
+    },
+    {
+      "name": "RequestDeleteMacro",
+      "opcode": 194,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10406ed1"
+    },
+    {
+      "name": "RequestMagicSkillUse",
+      "opcode": 47,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x10406fac"
+    },
+    {
+      "name": "RequestExMagicSkillUseGround",
+      "opcode": 208,
+      "extended": 47,
+      "format": "chdddddc",
+      "call_va": "0x1040705b"
+    },
+    {
+      "name": "Say2",
+      "opcode": 56,
+      "extended": null,
+      "format": "cSd",
+      "call_va": "0x104070f2"
+    },
+    {
+      "name": "Say2",
+      "opcode": 56,
+      "extended": null,
+      "format": "cSdS",
+      "call_va": "0x1040710d"
+    },
+    {
+      "name": "SendLogOutPacket",
+      "opcode": 9,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10407160"
+    },
+    {
+      "name": "SendCharacterInfo",
+      "opcode": 57,
+      "extended": null,
+      "format": "ccS",
+      "call_va": "0x104071b0"
+    },
+    {
+      "name": "SendSummonCmd",
+      "opcode": 57,
+      "extended": null,
+      "format": "ccS",
+      "call_va": "0x10407200"
+    },
+    {
+      "name": "SendL2ParamSetting",
+      "opcode": 57,
+      "extended": null,
+      "format": "ccdd",
+      "call_va": "0x1040725e"
+    },
+    {
+      "name": "SendServerStatus",
+      "opcode": 57,
+      "extended": null,
+      "format": "cc",
+      "call_va": "0x104072b2"
+    },
+    {
+      "name": "RequestEquipItem",
+      "opcode": 16,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040730e"
+    },
+    {
+      "name": "RequestUnEquipItem",
+      "opcode": 17,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10407371"
+    },
+    {
+      "name": "RequestSkillItem",
+      "opcode": 63,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104073b0"
+    },
+    {
+      "name": "RequestMagicItem",
+      "opcode": 62,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104073f0"
+    },
+    {
+      "name": "AnswerTradeRequest",
+      "opcode": 68,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10407441"
+    },
+    {
+      "name": "RequestActionUse",
+      "opcode": 69,
+      "extended": null,
+      "format": "cddc",
+      "call_va": "0x104074ac"
+    },
+    {
+      "name": "RequestAttack",
+      "opcode": 4,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x1040752f"
+    },
+    {
+      "name": "RequestRestart",
+      "opcode": 70,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10407580"
+    },
+    {
+      "name": "RequestRestartPoint",
+      "opcode": 109,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104075ce"
+    },
+    {
+      "name": "RequestSiegeInfo",
+      "opcode": 71,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10407610"
+    },
+    {
+      "name": "RequestSEKCustom",
+      "opcode": 73,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040766e"
+    },
+    {
+      "name": "RequestShowboard",
+      "opcode": 87,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104076c2"
+    },
+    {
+      "name": "SendBypassBuildCmd",
+      "opcode": 91,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x1040770e"
+    },
+    {
+      "name": "SendDestroyItem",
+      "opcode": 89,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040775c"
+    },
+    {
+      "name": "RequestDestroyItem",
+      "opcode": 89,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104077aa"
+    },
+    {
+      "name": "RequestCrystallizeItem",
+      "opcode": 114,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104077fa"
+    },
+    {
+      "name": "RequestQuestList",
+      "opcode": 99,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10407840"
+    },
+    {
+      "name": "RequestDestroyQuest",
+      "opcode": 100,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10407885"
+    },
+    {
+      "name": "RequestEnchantItem",
+      "opcode": 88,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104078d5"
+    },
+    {
+      "name": "RequestExAskJoinMPCC",
+      "opcode": 208,
+      "extended": 13,
+      "format": "chS",
+      "call_va": "0x10407933"
+    },
+    {
+      "name": "RequestExAcceptJoinMPCC",
+      "opcode": 208,
+      "extended": 14,
+      "format": "chdd",
+      "call_va": "0x10407991"
+    },
+    {
+      "name": "RequestExOustFromMPCC",
+      "opcode": 208,
+      "extended": 15,
+      "format": "chS",
+      "call_va": "0x104079f3"
+    },
+    {
+      "name": "RequestExMPCCShowPartyMembersInfo",
+      "opcode": 208,
+      "extended": 38,
+      "format": "chd",
+      "call_va": "0x10407a43"
+    },
+    {
+      "name": "RequestAcquireSkillInfo",
+      "opcode": 107,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10407aa9"
+    },
+    {
+      "name": "RequestAcquireSkill",
+      "opcode": 108,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10407b19"
+    },
+    {
+      "name": "RequestExEnchantSkillInfo",
+      "opcode": 208,
+      "extended": 6,
+      "format": "chdd",
+      "call_va": "0x10407b81"
+    },
+    {
+      "name": "RequestExEnchantSkill",
+      "opcode": 208,
+      "extended": 7,
+      "format": "chdd",
+      "call_va": "0x10407bf1"
+    },
+    {
+      "name": "RequestExFishRanking",
+      "opcode": 208,
+      "extended": 31,
+      "format": "ch",
+      "call_va": "0x10407c45"
+    },
+    {
+      "name": "RequestCursedWeaponList",
+      "opcode": 208,
+      "extended": 34,
+      "format": "ch",
+      "call_va": "0x10407c85"
+    },
+    {
+      "name": "RequestCursedWeaponLocation",
+      "opcode": 208,
+      "extended": 35,
+      "format": "ch",
+      "call_va": "0x10407cc5"
+    },
+    {
+      "name": "RequestGMCommand",
+      "opcode": 110,
+      "extended": null,
+      "format": "cSdd",
+      "call_va": "0x1040830c"
+    },
+    {
+      "name": "RequestPetition",
+      "opcode": 127,
+      "extended": null,
+      "format": "cSd",
+      "call_va": "0x1040835a"
+    },
+    {
+      "name": "RequestPetitionCancel",
+      "opcode": 128,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x104083a3"
+    },
+    {
+      "name": "RequestGMList",
+      "opcode": 129,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104083e3"
+    },
+    {
+      "name": "RequestPetGetItem",
+      "opcode": 143,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408428"
+    },
+    {
+      "name": "RequestPetUseItem",
+      "opcode": 138,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408478"
+    },
+    {
+      "name": "RequestGiveItemToPet",
+      "opcode": 139,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104084df"
+    },
+    {
+      "name": "RequestGetItemFromPet",
+      "opcode": 140,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x1040853c"
+    },
+    {
+      "name": "RequestDropItemFromPet",
+      "opcode": 18,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x1040859a"
+    },
+    {
+      "name": "RequestChangePetName",
+      "opcode": 137,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x104085e8"
+    },
+    {
+      "name": "RequestRecipeBookOpen",
+      "opcode": 172,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408641"
+    },
+    {
+      "name": "RequestRecipeItemDelete",
+      "opcode": 173,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408688"
+    },
+    {
+      "name": "RequestRecipeItemMakeInfo",
+      "opcode": 174,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104086d8"
+    },
+    {
+      "name": "RequestRecipeItemMakeSelf",
+      "opcode": 175,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408728"
+    },
+    {
+      "name": "RequestRecipeShopManageList",
+      "opcode": 176,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10408773"
+    },
+    {
+      "name": "RequestRecipeShopMessageSet",
+      "opcode": 177,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x104087bc"
+    },
+    {
+      "name": "RequestRecipeShopListSet",
+      "opcode": 178,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x1040887b"
+    },
+    {
+      "name": "RequestRecipeShopManageQuit",
+      "opcode": 179,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104088e3"
+    },
+    {
+      "name": "RequestRecipeShopManageCancel",
+      "opcode": 180,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10408923"
+    },
+    {
+      "name": "RequestRecipeShopSellList",
+      "opcode": 183,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408968"
+    },
+    {
+      "name": "RequestRecipeShopMakeInfo",
+      "opcode": 181,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104089bd"
+    },
+    {
+      "name": "RequestRecipeShopMakeDo",
+      "opcode": 182,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10408a12"
+    },
+    {
+      "name": "RequestHennaItemInfo",
+      "opcode": 187,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408a58"
+    },
+    {
+      "name": "RequestHennaEquip",
+      "opcode": 188,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408aa8"
+    },
+    {
+      "name": "RequestHennaUnequipInfo",
+      "opcode": 190,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408af8"
+    },
+    {
+      "name": "RequestHennaUnequip",
+      "opcode": 191,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408b48"
+    },
+    {
+      "name": "RequestHennaItemList",
+      "opcode": 186,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408b93"
+    },
+    {
+      "name": "RequestHennaUnequipList",
+      "opcode": 189,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408bd3"
+    },
+    {
+      "name": "RequestPrivateStoreManage",
+      "opcode": 115,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10408c10"
+    },
+    {
+      "name": "SetPrivateStoreList",
+      "opcode": 116,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x10408cc9"
+    },
+    {
+      "name": "RequestPrivateStoreManageCancel",
+      "opcode": 117,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10408d40"
+    },
+    {
+      "name": "RequestPrivateStoreQuit",
+      "opcode": 118,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10408d60"
+    },
+    {
+      "name": "SetPrivateStoreMsg",
+      "opcode": 119,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10408d89"
+    },
+    {
+      "name": "RequestPrivateStoreList",
+      "opcode": 120,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10408db5"
+    },
+    {
+      "name": "SendPrivateStoreBuyList",
+      "opcode": 121,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x10408e79"
+    },
+    {
+      "name": "RequestPrivateStoreBuyManage",
+      "opcode": 144,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10408ef3"
+    },
+    {
+      "name": "SetPrivateStoreBuyList",
+      "opcode": 145,
+      "extended": null,
+      "format": "cdb",
+      "call_va": "0x10408fda"
+    },
+    {
+      "name": "RequestPrivateStoreBuyManageCancel",
+      "opcode": 146,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10409053"
+    },
+    {
+      "name": "RequestPrivateStoreBuyQuit",
+      "opcode": 147,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10409073"
+    },
+    {
+      "name": "SetPrivateStoreBuyMsg",
+      "opcode": 148,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x1040909c"
+    },
+    {
+      "name": "RequestPrivateStoreBuyList",
+      "opcode": 149,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104090c8"
+    },
+    {
+      "name": "SendPrivateStoreBuyBuyList",
+      "opcode": 150,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x104091bb"
+    },
+    {
+      "name": "SendTimeCheckPacket",
+      "opcode": 151,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040924f"
+    },
+    {
+      "name": "RequestSkillCoolTime",
+      "opcode": 157,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x104092a3"
+    },
+    {
+      "name": "RequestPackageSendableItemList",
+      "opcode": 158,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10409341"
+    },
+    {
+      "name": "RequestCastleSiegeInfo",
+      "opcode": 161,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10409391"
+    },
+    {
+      "name": "RequestCastleSiegeAttackerList",
+      "opcode": 162,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104093e1"
+    },
+    {
+      "name": "RequestCastleSiegeDefenderList",
+      "opcode": 163,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10409431"
+    },
+    {
+      "name": "RequestJoinCastleSiege",
+      "opcode": 164,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x1040949c"
+    },
+    {
+      "name": "RequestConfirmCastleSiegeWaitingList",
+      "opcode": 165,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x1040951c"
+    },
+    {
+      "name": "RequestSetCastleSiegeTime",
+      "opcode": 166,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x1040958f"
+    },
+    {
+      "name": "RequestPackageSend",
+      "opcode": 159,
+      "extended": null,
+      "format": "cddb",
+      "call_va": "0x1040966f"
+    },
+    {
+      "name": "RequestMultiSellChoose",
+      "opcode": 167,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x10409729"
+    },
+    {
+      "name": "GMSnoopEnd",
+      "opcode": 171,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10409788"
+    },
+    {
+      "name": "NetPing",
+      "opcode": 168,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10409819"
+    },
+    {
+      "name": "RequestRemainTime",
+      "opcode": 169,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10409873"
+    },
+    {
+      "name": "BypassUserCmd",
+      "opcode": 170,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x104098c1"
+    },
+    {
+      "name": "RequestObserverEndPacket",
+      "opcode": 184,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10409953"
+    },
+    {
+      "name": "RequestPledgePower",
+      "opcode": 192,
+      "extended": null,
+      "format": "cdd",
+      "call_va": "0x104099ab"
+    },
+    {
+      "name": "RequestPledgePower",
+      "opcode": 192,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10409a4e"
+    },
+    {
+      "name": "ConfirmDlg",
+      "opcode": 197,
+      "extended": null,
+      "format": "cddd",
+      "call_va": "0x10409b3c"
+    },
+    {
+      "name": "RequestSSQStatus",
+      "opcode": 199,
+      "extended": null,
+      "format": "cc",
+      "call_va": "0x10409b98"
+    },
+    {
+      "name": "PetitionVote",
+      "opcode": 200,
+      "extended": null,
+      "format": "cddS",
+      "call_va": "0x10409c01"
+    },
+    {
+      "name": "RequestGetBossRecord",
+      "opcode": 208,
+      "extended": 24,
+      "format": "chd",
+      "call_va": "0x10409c63"
+    },
+    {
+      "name": "ReplyGameGuardQuery",
+      "opcode": 202,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10409e67"
+    },
+    {
+      "name": "RequestSendL2FriendSay",
+      "opcode": 204,
+      "extended": null,
+      "format": "cSS",
+      "call_va": "0x10409ebd"
+    },
+    {
+      "name": "RequestSendMsnChatLog",
+      "opcode": 206,
+      "extended": null,
+      "format": "cSSd",
+      "call_va": "0x10409f12"
+    },
+    {
+      "name": "RequestReload",
+      "opcode": 207,
+      "extended": null,
+      "format": "c",
+      "call_va": "0x10409f7b"
+    },
+    {
+      "name": "RequestAskJoinPartyRoom",
+      "opcode": 208,
+      "extended": 20,
+      "format": "chS",
+      "call_va": "0x1040a059"
+    },
+    {
+      "name": "AnswerJoinPartyRoom",
+      "opcode": 208,
+      "extended": 21,
+      "format": "chd",
+      "call_va": "0x1040a139"
+    },
+    {
+      "name": "RequestListPartyMatchingWaitingRoom",
+      "opcode": 208,
+      "extended": 22,
+      "format": "chdddd",
+      "call_va": "0x1040a23e"
+    },
+    {
+      "name": "RequestExitPartyMatchingWaitingRoom",
+      "opcode": 208,
+      "extended": 23,
+      "format": "ch",
+      "call_va": "0x1040a31d"
+    },
+    {
+      "name": "RequestExChangeName",
+      "opcode": 208,
+      "extended": 49,
+      "format": "chdSd",
+      "call_va": "0x1040a413"
+    },
+    {
+      "name": "RequestDuelStart",
+      "opcode": 208,
+      "extended": 39,
+      "format": "chSd",
+      "call_va": "0x1040a508"
+    },
+    {
+      "name": "RequestDuelAnswerStart",
+      "opcode": 208,
+      "extended": 40,
+      "format": "chddd",
+      "call_va": "0x1040a603"
+    },
+    {
+      "name": "RequestConfirmTargetItem",
+      "opcode": 208,
+      "extended": 41,
+      "format": "chd",
+      "call_va": "0x1040a6e1"
+    },
+    {
+      "name": "RequestConfirmRefinerItem",
+      "opcode": 208,
+      "extended": 42,
+      "format": "chdd",
+      "call_va": "0x1040a7b5"
+    },
+    {
+      "name": "RequestConfirmGemStone",
+      "opcode": 208,
+      "extended": 43,
+      "format": "chdddd",
+      "call_va": "0x1040a89d"
+    },
+    {
+      "name": "RequestRefine",
+      "opcode": 208,
+      "extended": 44,
+      "format": "chdddd",
+      "call_va": "0x1040a97d"
+    },
+    {
+      "name": "RequestConfirmCancelItem",
+      "opcode": 208,
+      "extended": 45,
+      "format": "chd",
+      "call_va": "0x1040aa51"
+    },
+    {
+      "name": "RequestRefineCancel",
+      "opcode": 208,
+      "extended": 46,
+      "format": "chd",
+      "call_va": "0x1040ab21"
+    },
+    {
+      "name": "RequestDuelSurrender",
+      "opcode": 208,
+      "extended": 48,
+      "format": "ch",
+      "call_va": "0x1040abed"
+    },
+    {
+      "name": "RequestSetSeed",
+      "opcode": 208,
+      "extended": 10,
+      "format": "chddb",
+      "call_va": "0x10413d97"
+    },
+    {
+      "name": "MTL",
+      "opcode": 1,
+      "extended": null,
+      "format": "cddddddd",
+      "call_va": "0x1042217a"
+    },
+    {
+      "name": "MTL",
+      "opcode": 92,
+      "extended": null,
+      "format": "cddddddd",
+      "call_va": "0x10422321"
+    },
+    {
+      "name": "CanNotMoveAnymore",
+      "opcode": 54,
+      "extended": null,
+      "format": "cdddd",
+      "call_va": "0x10422461"
+    },
+    {
+      "name": "CanNotMoveAnymore",
+      "opcode": 93,
+      "extended": null,
+      "format": "cddddd",
+      "call_va": "0x10422551"
+    },
+    {
+      "name": "EW",
+      "opcode": 3,
+      "extended": null,
+      "format": "cS",
+      "call_va": "0x10432780"
+    },
+    {
+      "name": "RequestPledgeInfo",
+      "opcode": 102,
+      "extended": null,
+      "format": "cd",
+      "call_va": "0x10432829"
+    }
+  ],
+  "denied": [
+    {
+      "name": "RequestPledgeSetAcademyMasterPupil",
+      "opcode": 208,
+      "extended": 25,
+      "format": "chdSS",
+      "call_va": "0x10405864"
+    },
+    {
+      "name": "RequestPledgePowerGradeList",
+      "opcode": 208,
+      "extended": 26,
+      "format": "ch",
+      "call_va": "0x104058a5"
+    },
+    {
+      "name": "RequestPledgeMemberPowerInfo",
+      "opcode": 208,
+      "extended": 27,
+      "format": "chdS",
+      "call_va": "0x104058ef"
+    },
+    {
+      "name": "RequestPledgeSetMemberPowerGrade",
+      "opcode": 208,
+      "extended": 28,
+      "format": "chSd",
+      "call_va": "0x1040593f"
+    },
+    {
+      "name": "RequestPledgeMemberInfo",
+      "opcode": 208,
+      "extended": 29,
+      "format": "chdS",
+      "call_va": "0x1040598f"
+    },
+    {
+      "name": "RequestPledgeWarList",
+      "opcode": 208,
+      "extended": 30,
+      "format": "chdd",
+      "call_va": "0x104059df"
+    },
+    {
+      "name": "RequestPledgeReorganizeMember",
+      "opcode": 208,
+      "extended": 36,
+      "format": "chdSdS",
+      "call_va": "0x10405a5c"
+    },
+    {
+      "name": "RequestPCCafeCouponUse",
+      "opcode": 208,
+      "extended": 32,
+      "format": "chS",
+      "call_va": "0x10405af0"
+    },
+    {
+      "name": "RequestExMagicSkillUseGround",
+      "opcode": 208,
+      "extended": 47,
+      "format": "chdddddc",
+      "call_va": "0x1040705b"
+    },
+    {
+      "name": "RequestExMPCCShowPartyMembersInfo",
+      "opcode": 208,
+      "extended": 38,
+      "format": "chd",
+      "call_va": "0x10407a43"
+    },
+    {
+      "name": "RequestExFishRanking",
+      "opcode": 208,
+      "extended": 31,
+      "format": "ch",
+      "call_va": "0x10407c45"
+    },
+    {
+      "name": "RequestCursedWeaponList",
+      "opcode": 208,
+      "extended": 34,
+      "format": "ch",
+      "call_va": "0x10407c85"
+    },
+    {
+      "name": "RequestCursedWeaponLocation",
+      "opcode": 208,
+      "extended": 35,
+      "format": "ch",
+      "call_va": "0x10407cc5"
+    },
+    {
+      "name": "RequestGetBossRecord",
+      "opcode": 208,
+      "extended": 24,
+      "format": "chd",
+      "call_va": "0x10409c63"
+    },
+    {
+      "name": "RequestAskJoinPartyRoom",
+      "opcode": 208,
+      "extended": 20,
+      "format": "chS",
+      "call_va": "0x1040a059"
+    },
+    {
+      "name": "AnswerJoinPartyRoom",
+      "opcode": 208,
+      "extended": 21,
+      "format": "chd",
+      "call_va": "0x1040a139"
+    },
+    {
+      "name": "RequestListPartyMatchingWaitingRoom",
+      "opcode": 208,
+      "extended": 22,
+      "format": "chdddd",
+      "call_va": "0x1040a23e"
+    },
+    {
+      "name": "RequestExitPartyMatchingWaitingRoom",
+      "opcode": 208,
+      "extended": 23,
+      "format": "ch",
+      "call_va": "0x1040a31d"
+    },
+    {
+      "name": "RequestExChangeName",
+      "opcode": 208,
+      "extended": 49,
+      "format": "chdSd",
+      "call_va": "0x1040a413"
+    },
+    {
+      "name": "RequestDuelStart",
+      "opcode": 208,
+      "extended": 39,
+      "format": "chSd",
+      "call_va": "0x1040a508"
+    },
+    {
+      "name": "RequestDuelAnswerStart",
+      "opcode": 208,
+      "extended": 40,
+      "format": "chddd",
+      "call_va": "0x1040a603"
+    },
+    {
+      "name": "RequestConfirmTargetItem",
+      "opcode": 208,
+      "extended": 41,
+      "format": "chd",
+      "call_va": "0x1040a6e1"
+    },
+    {
+      "name": "RequestConfirmRefinerItem",
+      "opcode": 208,
+      "extended": 42,
+      "format": "chdd",
+      "call_va": "0x1040a7b5"
+    },
+    {
+      "name": "RequestConfirmGemStone",
+      "opcode": 208,
+      "extended": 43,
+      "format": "chdddd",
+      "call_va": "0x1040a89d"
+    },
+    {
+      "name": "RequestRefine",
+      "opcode": 208,
+      "extended": 44,
+      "format": "chdddd",
+      "call_va": "0x1040a97d"
+    },
+    {
+      "name": "RequestConfirmCancelItem",
+      "opcode": 208,
+      "extended": 45,
+      "format": "chd",
+      "call_va": "0x1040aa51"
+    },
+    {
+      "name": "RequestRefineCancel",
+      "opcode": 208,
+      "extended": 46,
+      "format": "chd",
+      "call_va": "0x1040ab21"
+    },
+    {
+      "name": "RequestDuelSurrender",
+      "opcode": 208,
+      "extended": 48,
+      "format": "ch",
+      "call_va": "0x1040abed"
+    }
+  ],
+  "unknown_policy": "pass through and observe; absence from extraction does not prove incompatibility"
+}

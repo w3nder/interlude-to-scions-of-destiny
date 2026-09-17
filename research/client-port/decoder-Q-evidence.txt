@@ -1,0 +1,28 @@
+Engine SHA256: 508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d
+Decoder thunk 0x103034e5 -> 0x104026b0
+Switch: index = format_character - 0x51; byte table 0x104028ec; jump table 0x104028c8
+{
+  "Q": "0x1040279b",
+  "c": "0x10402705",
+  "d": "0x1040274d",
+  "f": "0x10402772",
+  "h": "0x10402727",
+  "S": "0x1040281a",
+  "s": "0x104027cd"
+}
+
+1040279b: mov eax, dword ptr [edi + 4]
+1040279e: add edi, 4
+104027a1: cmp esi, dword ptr [ebx + 0x4ef8]
+104027a7: jae 0x104027bb
+104027a9: mov ecx, dword ptr [esi]
+104027ab: mov dword ptr [eax], ecx
+104027ad: mov edx, dword ptr [esi + 4]
+104027b0: mov dword ptr [eax + 4], edx
+104027b3: add esi, 8
+104027b6: jmp 0x104028ae
+104027bb: mov dword ptr [eax], 0
+104027c1: mov dword ptr [eax + 4], 0
+104027c8: jmp 0x104028ae
+
+Q copies two dwords and advances the input cursor by 8 bytes. Field meaning and signedness are not established by this copy operation.

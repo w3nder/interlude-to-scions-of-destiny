@@ -1,0 +1,1236 @@
+{
+  "hashes": {
+    "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
+    "target": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+  },
+  "empty_layout_audit": [
+    {
+      "table": "extended",
+      "opcode": "0x00",
+      "name": "ExDummyPacket",
+      "source": {
+        "kind": "unresolved_address"
+      },
+      "target": {
+        "kind": "unresolved_address"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x02",
+      "name": "ExEventMatchListPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1f40"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff68f0e4801064a100000000",
+        "rva": "0x101350"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0D",
+      "name": "ExEventMatchGMTestPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff682057751064a100000000",
+        "rva": "0xf1f60"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff6800e5801064a100000000",
+        "rva": "0x1013e0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x0F",
+      "name": "ExClosePartyRoomPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff683857751064a100000000",
+        "rva": "0xf2000"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff6819e5801064a100000000",
+        "rva": "0x101480"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x11",
+      "name": "ExEventMatchLockResult",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf2110"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x101570"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x19",
+      "name": "ExShowQuestInfoPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff685857751064a100000000",
+        "rva": "0xf2130"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff6839e5801064a100000000",
+        "rva": "0x101580"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x25",
+      "name": "ExOpenMPCCPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff687857751064a100000000506489",
+        "rva": "0xf2280"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff6899e5801064a100000000506489",
+        "rva": "0x101720"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x26",
+      "name": "ExCloseMPCCPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff689857751064a100000000506489",
+        "rva": "0xf2310"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68b9e5801064a100000000506489",
+        "rva": "0x1017a0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2C",
+      "name": "ExOlympiadMatchEndPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff68b057751064a100000000",
+        "rva": "0xf23a0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff68d0e5801064a100000000",
+        "rva": "0x101820"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x2D",
+      "name": "ExMailArrivedPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff68c057751064a100000000",
+        "rva": "0xf2440"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff68e0e5801064a100000000",
+        "rva": "0x1018c0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x00",
+      "name": "VersionCheckPacket",
+      "source": {
+        "kind": "unresolved_address"
+      },
+      "target": {
+        "kind": "unresolved_address"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x08",
+      "name": "AttackOutofRangePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "56578b3d685e9d1085ff744b8db79401",
+        "rva": "0x114820"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "56578b3d38f5b11085ff744a8db79401",
+        "rva": "0x125b80"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x09",
+      "name": "AttackinCoolTimePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "56578b3d685e9d1085ff744b8db79401",
+        "rva": "0x1148f0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "56578b3d38f5b11085ff744a8db79401",
+        "rva": "0x125c30"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x0A",
+      "name": "AttackDeadTargetPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "56578b3d685e9d1085ff744b8db79401",
+        "rva": "0x1149c0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "56578b3d38f5b11085ff744a8db79401",
+        "rva": "0x125ce0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x14",
+      "name": "LoginFailPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1570"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100b60"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x18",
+      "name": "NewCharacterFailPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b116a00ff922802",
+        "rva": "0xf15e0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b82d4020000",
+        "rva": "0x100c30"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x19",
+      "name": "CharacterCreateSuccessPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b116a01ff922c02",
+        "rva": "0xf1610"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b82d8020000",
+        "rva": "0x100c50"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x1C",
+      "name": "SunRisePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b1168a4010000ff",
+        "rva": "0xf1640"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8244040000",
+        "rva": "0x100c70"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x1D",
+      "name": "SunSetPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b116a3cff92a805",
+        "rva": "0xf1670"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8244040000",
+        "rva": "0x100c90"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x1F",
+      "name": "TradeStartOkPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1760"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100d20"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x23",
+      "name": "CharacterDeleteSuccessPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b116a00ff922402",
+        "rva": "0xf1780"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b82d0020000",
+        "rva": "0x100d30"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x25",
+      "name": "ActionFailPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b11ff92a0010000",
+        "rva": "0xf17d0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8260020000",
+        "rva": "0x100d70"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x26",
+      "name": "SeverClosePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b116a02ff926402",
+        "rva": "0xf1820"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8214030000",
+        "rva": "0x100db0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x36",
+      "name": "SetOustPledgeMemberPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68a856751064a100000000506489",
+        "rva": "0xf1890"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff6869e4801064a100000000506489",
+        "rva": "0x100e00"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x38",
+      "name": "SetDismissPledgePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68c856751064a100000000506489",
+        "rva": "0xf1950"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff6889e4801064a100000000506489",
+        "rva": "0x100ea0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3D",
+      "name": "SetOustPartyMemberPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68e856751064a100000000506489",
+        "rva": "0xf1b10"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68a9e4801064a100000000506489",
+        "rva": "0x100fc0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x3F",
+      "name": "SetDismissPartyPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff680857751064a100000000506489",
+        "rva": "0xf1bd0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68c9e4801064a100000000506489",
+        "rva": "0x101060"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x50",
+      "name": "PartySmallWindowDeleteAllPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68286e751064a100000000506489",
+        "rva": "0x127fd0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "6aff68090a811064a100000000506489",
+        "rva": "0x139a10"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x57",
+      "name": "MagicListPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1cc0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x101140"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x65",
+      "name": "StartPledgeWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1a10"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100f40"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x66",
+      "name": "ReplyStartPledgeWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1a30"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100f50"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x67",
+      "name": "StopPledgeWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1a50"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100f60"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x68",
+      "name": "ReplyStopPledgeWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1a70"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100f70"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x69",
+      "name": "SurrenderPledgeWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1a90"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100f80"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x6A",
+      "name": "ReplySurrenderPledgeWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1ab0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100f90"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x6B",
+      "name": "SetPledgeCrestPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1af0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100fb0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x70",
+      "name": "DummyPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a144792d148b086864cb7b1051ff1580",
+        "rva": "0xf1ce0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1b8dad8118b08688ced871051ff15e4",
+        "rva": "0x101150"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x75",
+      "name": "TradePressOwnOkPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1720"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100cf0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x78",
+      "name": "FriendAdd",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1da0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1011b0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x79",
+      "name": "FriendRemove",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1dc0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1011c0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7A",
+      "name": "FriendList",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1e00"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1011e0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7B",
+      "name": "FriendStatus",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1de0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1011d0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7C",
+      "name": "TradePressOtherOkPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1740"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b82f8020000",
+        "rva": "0x100d00"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x7E",
+      "name": "LogOutOkPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "568b7424088b4e48e8c678efff8b7648",
+        "rva": "0x115e10"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "568b7424088b4e48e82c41eeff8b7648",
+        "rva": "0x127110"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x82",
+      "name": "PledgeShowMemberListDeleteAllPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b11ff9288020000",
+        "rva": "0xf1c90"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8254030000",
+        "rva": "0x101100"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x85",
+      "name": "SurrenderPersonallyPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1ad0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100fa0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x87",
+      "name": "DummyPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a144792d148b086864cb7b1051ff1580",
+        "rva": "0xf1ce0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1b8dad8118b08688ced871051ff15e4",
+        "rva": "0x101150"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x8E",
+      "name": "AcquireSkillDonePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b11ff9230040000",
+        "rva": "0xf1590"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff6850e4801064a100000000",
+        "rva": "0x100b70"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9E",
+      "name": "ReviveRequestPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf14a0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "558bec6aff6840e4801064a100000000",
+        "rva": "0x100a70"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x9F",
+      "name": "AbnormalVisualEffectPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x115eb0"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1271b0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xA3",
+      "name": "TutorialCloseHtmlPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b11ff9240010000",
+        "rva": "0xf1520"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8200020000",
+        "rva": "0x100b30"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xAD",
+      "name": "SetAllianceCrestPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1d60"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x101190"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xAF",
+      "name": "ServerCloseSocketPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1550"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x100b50"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB4",
+      "name": "AllianceInfoPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1d80"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1011a0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xBD",
+      "name": "ReplyStartAllianceWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1e20"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1011f0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xBF",
+      "name": "ReplyStopAllianceWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1e40"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x101200"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC0",
+      "name": "SurrenderAllianceWarPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1e60"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x101210"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC6",
+      "name": "BlockListPacket",
+      "source": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0xf1e80"
+      },
+      "target": {
+        "kind": "proven_no_payload_read",
+        "bytes": "32c0c3",
+        "rva": "0x1012c0"
+      },
+      "resolution": "both_handlers_ignore_payload"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xC8",
+      "name": "NormalCameraPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b11ff92f8010000",
+        "rva": "0xf1ea0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b82b8020000",
+        "rva": "0x1012d0"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xF6",
+      "name": "PetitionVotePacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1685e9d108b48548b11ff9274030000",
+        "rva": "0xf1ef0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a138f5b1108b48548b118b8274060000",
+        "rva": "0x101310"
+      },
+      "resolution": "pending"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xFE",
+      "name": "DummyPacket",
+      "source": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a144792d148b086864cb7b1051ff1580",
+        "rva": "0xf1ce0"
+      },
+      "target": {
+        "kind": "requires_control_flow_review",
+        "entry_bytes": "a1b8dad8118b08688ced871051ff15e4",
+        "rva": "0x101150"
+      },
+      "resolution": "pending"
+    }
+  ],
+  "extended_selectors": [
+    {
+      "name": "RequestAutoSoulShot",
+      "source": [
+        5
+      ],
+      "target": [
+        5
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestDismissPartyRoom",
+      "source": [
+        2
+      ],
+      "target": [
+        2
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExAcceptJoinMPCC",
+      "source": [
+        14
+      ],
+      "target": [
+        14
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExAskJoinMPCC",
+      "source": [
+        13
+      ],
+      "target": [
+        13
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExEnchantSkill",
+      "source": [
+        7
+      ],
+      "target": [
+        7
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExEnchantSkillInfo",
+      "source": [
+        6
+      ],
+      "target": [
+        6
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExOustFromMPCC",
+      "source": [
+        15
+      ],
+      "target": [
+        15
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExPledgeCrestLarge",
+      "source": [
+        16
+      ],
+      "target": [
+        16
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestExSetPledgeCrestLarge",
+      "source": [
+        17
+      ],
+      "target": [
+        17
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestHandOverPartyMaster",
+      "source": [
+        4
+      ],
+      "target": [
+        4
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestManorList",
+      "source": [
+        8
+      ],
+      "target": [
+        8
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestOlympiadMatchList",
+      "source": [
+        19
+      ],
+      "target": [
+        19
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestOlympiadObserverEnd",
+      "source": [
+        18
+      ],
+      "target": [
+        18
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestOustFromPartyRoom",
+      "source": [
+        1
+      ],
+      "target": [
+        1
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestProcureCropList",
+      "source": [
+        9
+      ],
+      "target": [
+        9
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestSetCrop",
+      "source": [
+        11
+      ],
+      "target": [
+        11
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestSetSeed",
+      "source": [
+        10
+      ],
+      "target": [
+        10
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestWithdrawPartyRoom",
+      "source": [
+        3
+      ],
+      "target": [
+        3
+      ],
+      "resolved": true,
+      "same_selector": true
+    },
+    {
+      "name": "RequestWriteHeroWords",
+      "source": [
+        12
+      ],
+      "target": [
+        12
+      ],
+      "resolved": true,
+      "same_selector": true
+    }
+  ],
+  "outbound_aliases": [
+    {
+      "source": "Attack",
+      "target_candidates": [
+        "Atk"
+      ],
+      "status": "wire_signature_candidate"
+    },
+    {
+      "source": "EnterWorld",
+      "target_candidates": [
+        "EW"
+      ],
+      "status": "wire_signature_candidate"
+    },
+    {
+      "source": "MoveToLocation",
+      "target_candidates": [
+        "MTL"
+      ],
+      "status": "wire_signature_candidate"
+    },
+    {
+      "source": "SendAppearingPacket",
+      "target_candidates": [
+        "SAP"
+      ],
+      "status": "wire_signature_candidate"
+    },
+    {
+      "source": "StartRotating",
+      "target_candidates": [],
+      "status": "unresolved"
+    },
+    {
+      "source": "ValidatePosition",
+      "target_candidates": [],
+      "status": "unresolved"
+    },
+    {
+      "source": "VoteSociality",
+      "target_candidates": [],
+      "status": "unresolved"
+    }
+  ],
+  "summary": {
+    "pending": 36,
+    "both_handlers_ignore_payload": 25
+  }
+}

@@ -1,0 +1,91 @@
+?OnReceiveVersionCheck@UGameEngine@@UAEXAAVL2ParamStack@@@Z
+0x1046eed0
+1046eed0: mov ecx, dword ptr [ecx + 0x34]
+1046eed3: mov eax, dword ptr [ecx]
+1046eed5: jmp dword ptr [eax + 0x2c4]
+1046eedb: nop 
+1046eedc: nop 
+1046eedd: nop 
+1046eede: nop 
+1046eedf: nop 
+?OnVersionCheck@UGameEngine@@UAEHXZ
+0x1046c810
+1046c810: mov eax, 1
+1046c815: ret 
+1046c816: nop 
+1046c817: nop 
+1046c818: nop 
+1046c819: nop 
+1046c81a: nop 
+1046c81b: nop 
+1046c81c: nop 
+1046c81d: nop 
+1046c81e: nop 
+1046c81f: nop 
+?RequestAuthLogin@UNetworkHandler@@UAEHPAG0@Z
+0x103f42e0
+103f42e0: mov edx, dword ptr [esp + 4]
+103f42e4: push esi
+103f42e5: mov esi, ecx
+103f42e7: xor eax, eax
+103f42e9: xor ecx, ecx
+103f42eb: mov dword ptr [0x109d788c], eax
+103f42f0: mov dword ptr [0x109d78aa], ecx
+103f42f6: push edi
+103f42f7: mov edi, dword ptr [0x142d8808]
+103f42fd: mov dword ptr [0x109d7890], eax
+103f4302: mov dword ptr [0x109d78ae], ecx
+103f4308: push 0xe
+103f430a: mov dword ptr [0x109d7894], eax
+103f430f: mov dword ptr [0x109d78b2], ecx
+103f4315: push edx
+103f4316: mov word ptr [0x109d7898], ax
+103f431c: mov dword ptr [0x109d78b6], ecx
+103f4322: push 0x109d788c
+103f4327: mov byte ptr [0x109d789a], al
+103f432c: mov byte ptr [0x109d78ba], cl
+103f4332: call edi
+103f4334: mov eax, dword ptr [esp + 0x1c]
+103f4338: push 0x10
+103f433a: push eax
+103f433b: push 0x109d78aa
+103f4340: call edi
+103f4342: mov ecx, dword ptr [esi + 0x4c]
+103f4345: add esp, 0x18
+103f4348: mov dword ptr [ecx + 0x4f68], 0
+103f4352: mov ecx, dword ptr [esi + 0x4c]
+103f4355: push 0x83a
+103f435a: lea edx, [ecx + 0x4858]
+103f4360: push edx
+103f4361: call 0x10313c19
+103f4366: mov dword ptr [esi + 0x50], 1
+103f436d: mov eax, dword ptr [0x142d7944]
+103f4372: mov ecx, dword ptr [eax]
+103f4374: push 0x107bd468
+103f4379: push ecx
+103f437a: call dword ptr [0x142d7780]
+103f4380: mov eax, dword ptr [0x10b36bbc]
+103f4385: mov edx, dword ptr [eax]
+103f4387: push 0x107bd468
+103f438c: push 2
+103f438e: push eax
+103f438f: call dword ptr [edx + 0x2c0]
+103f4395: add esp, 0x14
+103f4398: pop edi
+103f4399: mov eax, 1
+103f439e: pop esi
+103f439f: ret 8
+103f43a2: nop 
+103f43a3: nop 
+103f43a4: nop 
+103f43a5: nop 
+103f43a6: nop 
+103f43a7: nop 
+103f43a8: nop 
+103f43a9: nop 
+103f43aa: nop 
+103f43ab: nop 
+103f43ac: nop 
+103f43ad: nop 
+103f43ae: nop 
+103f43af: nop 

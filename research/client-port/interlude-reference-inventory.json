@@ -1,0 +1,121 @@
+[
+  {
+    "name": "engine.dll",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/engine.dll",
+      "size": 30704468,
+      "sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/engine.dll",
+      "size": 30704468,
+      "sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d"
+    },
+    "identical": true,
+    "differing_bytes": 0
+  },
+  {
+    "name": "nwindow.dll",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/nwindow.dll",
+      "size": 3850260,
+      "sha256": "711f568b99665f3a2e999b042cdf0d0841df861f70f84b41570e10be5c774032"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/nwindow.dll",
+      "size": 3850260,
+      "sha256": "cb85f7a5de375f1e9156ec6559aae2a0a809b3abac4150142aafb14bbf02b47b"
+    },
+    "identical": false,
+    "differing_bytes": 2
+  },
+  {
+    "name": "l2.exe",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/l2.exe",
+      "size": 491540,
+      "sha256": "790d9068796714389d82a400d14d26dcb9e6ecdfc6c2b5eba92ebd1a441b10ee"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/L2.exe",
+      "size": 491540,
+      "sha256": "790d9068796714389d82a400d14d26dcb9e6ecdfc6c2b5eba92ebd1a441b10ee"
+    },
+    "identical": true,
+    "differing_bytes": 0
+  },
+  {
+    "name": "core.dll",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/Core.dll",
+      "size": 1372180,
+      "sha256": "d83449b1cdf0ac717a98be9289caab03cb507324a696ef449e31369e28416639"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/Core.dll",
+      "size": 1372180,
+      "sha256": "d83449b1cdf0ac717a98be9289caab03cb507324a696ef449e31369e28416639"
+    },
+    "identical": true,
+    "differing_bytes": 0
+  },
+  {
+    "name": "interface.u",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/interface.u",
+      "size": 1964561,
+      "sha256": "4ca40e2936138d9551412767c695b6e54e8f2843daf437536811705704b91019"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/interface.u",
+      "size": 1964561,
+      "sha256": "4ca40e2936138d9551412767c695b6e54e8f2843daf437536811705704b91019"
+    },
+    "identical": true,
+    "differing_bytes": 0
+  },
+  {
+    "name": "interface.xdat",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/interface.xdat",
+      "size": 534267,
+      "sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/interface.xdat",
+      "size": 534267,
+      "sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55"
+    },
+    "identical": true,
+    "differing_bytes": 0
+  },
+  {
+    "name": "fire.dll",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/Fire.dll",
+      "size": 315412,
+      "sha256": "fbdab449469d1b469b87db48c6e321c419d24263a401bfd9d0b02172cdfe6c5b"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/Fire.dll",
+      "size": 319488,
+      "sha256": "ad75c6bce975d8d9ab6cc3c1431576777ebb0bf190357558a9a0b8899f29b752"
+    },
+    "identical": false
+  },
+  {
+    "name": "ipdrv.dll",
+    "system_1": {
+      "path": "/Users/wenderteixeira/Desktop/system-1/IpDrv.dll",
+      "size": 491540,
+      "sha256": "32d65382123b5c33f21de3b7a85ff5b2777394224eda6aacbcc7a7d3581682ef"
+    },
+    "interlude_reference": {
+      "path": "/Users/wenderteixeira/Desktop/C6_System_Win10Supported/IpDrv.dll",
+      "size": 491540,
+      "sha256": "32d65382123b5c33f21de3b7a85ff5b2777394224eda6aacbcc7a7d3581682ef"
+    },
+    "identical": true,
+    "differing_bytes": 0
+  }
+]

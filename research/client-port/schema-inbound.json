@@ -1,0 +1,113 @@
+{
+  "converters": [
+    {
+      "table": "primary",
+      "opcode": "0x58",
+      "name": "SkillList",
+      "source_layout": "d + count*(ddd)",
+      "target_layout": "d + count*(dddc)",
+      "conversion": "Append disabled=0 to each legacy skill",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/SkillList.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x91",
+      "name": "GMViewSkillInfo",
+      "source_layout": "Sd + count*(ddd)",
+      "target_layout": "Sd + count*(dddc)",
+      "conversion": "Append disabled=0 to each legacy skill",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/GMViewSkillInfo.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "primary",
+      "opcode": "0xB5",
+      "name": "PetStatusUpdate",
+      "source_layout": "dddddSdddddddddd",
+      "target_layout": "dddddSdddddddQQQ",
+      "conversion": "Zero-extend three unsigned experience fields",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/PetStatusUpdate.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x13",
+      "name": "ExFishingStart",
+      "source_layout": "ddddd",
+      "target_layout": "dddddcc",
+      "conversion": "Night lure=0; ranking UI=0",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/ExFishingStart.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x15",
+      "name": "ExFishingStartCombat",
+      "source_layout": "dddcc",
+      "target_layout": "dddccc",
+      "conversion": "Deceptive mode=0",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/ExFishingStartCombat.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x16",
+      "name": "ExFishingHpRegen",
+      "source_layout": "dddcccd",
+      "target_layout": "dddcccdc",
+      "conversion": "Normal HP bar=0",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/ExFishingHpRegen.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x17",
+      "name": "ExEnchantSkillList",
+      "source_layout": "d + count*(dddd)",
+      "target_layout": "d + count*(dddQ)",
+      "conversion": "Zero-extend experience cost",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/ExEnchantSkillList.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "extended",
+      "opcode": "0x18",
+      "name": "ExEnchantSkillInfo",
+      "source_layout": "dddddd + count*(dddd)",
+      "target_layout": "dddQdd + count*(dddd)",
+      "conversion": "Zero-extend experience cost; preserve success rate and all requirements",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/ExEnchantSkillInfo.java",
+      "recognition": "Exact bounded layout including counts and string terminators; complete modern layout passes unchanged",
+      "evidence": "comparison.json exact engine decoder callsites plus primary source field semantics"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x1B",
+      "name": "ItemList",
+      "source_layout": "hh + count*28 bytes",
+      "target_layout": "hh + count*36 bytes",
+      "conversion": "Preserve item row; append augmentation=0 and shadow duration=-1",
+      "evidence": "Complete source/target handlers in decompiled/batch: ItemList 10401620/10411870, InventoryUpdate 10402460/104123c0; missing h/hh decoder call recovered",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/ItemList.java"
+    },
+    {
+      "table": "primary",
+      "opcode": "0x27",
+      "name": "InventoryUpdate",
+      "source_layout": "h + count*30 bytes",
+      "target_layout": "h + count*38 bytes",
+      "conversion": "Preserve item row; append augmentation=0 and shadow duration=-1",
+      "evidence": "Complete source/target handlers in decompiled/batch: ItemList 10401620/10411870, InventoryUpdate 10402460/104123c0; missing h/hh decoder call recovered",
+      "reference": "https://github.com/VytautasBoznis/l2.skilas.lt/blob/master/aCis_gameserver/java/net/sf/l2j/gameserver/network/serverpackets/InventoryUpdate.java"
+    }
+  ],
+  "limits": "Synthetic structural and native-hook tests; live gameplay not yet verified for these conversions. No assets changed."
+}

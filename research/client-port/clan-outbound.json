@@ -1,0 +1,1256 @@
+[
+  {
+    "name": "RequestAllyCrest",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x88",
+        "name": "RequestAllyCrest",
+        "format": "cd",
+        "call_va": "0x103f6c95",
+        "method_va": "0x103f6c80",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestAllyCrest",
+        "export": "?RequestAllyCrest@UNetworkHandler@@UAEHH@Z",
+        "method_va": "0x104057f0",
+        "call_va": "0x10405808",
+        "opcode": "0x88",
+        "format": "cd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestAllyInfo",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x8E",
+        "name": "RequestAllyInfo",
+        "format": "c",
+        "call_va": "0x103f6ac0",
+        "method_va": "0x103f6ab0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestAllyInfo",
+        "export": "?RequestAllyInfo@UNetworkHandler@@UAEHXZ",
+        "method_va": "0x104056e0",
+        "call_va": "0x104056f3",
+        "opcode": "0x8E",
+        "format": "c",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestAnswerJoinAlly",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x83",
+        "name": "RequestAnswerJoinAlly",
+        "format": "cd",
+        "call_va": "0x103f69cd",
+        "method_va": "0x103f69b0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestAnswerJoinAlly",
+        "export": "?RequestAnswerJoinAlly@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x10405620",
+        "call_va": "0x10405641",
+        "opcode": "0x83",
+        "format": "cd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestAnswerJoinPledge",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x25",
+        "name": "RequestAnswerJoinPledge",
+        "format": "cd",
+        "call_va": "0x103f64ba",
+        "method_va": "0x103f64a0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestAnswerJoinPledge",
+        "export": "?RequestAnswerJoinPledge@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x104052d0",
+        "call_va": "0x104052ee",
+        "opcode": "0x25",
+        "format": "cd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestCreatePledge",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x23",
+        "name": "RequestCreatePledge",
+        "format": "cS",
+        "call_va": "0x103f643a",
+        "method_va": "0x103f6420",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "S",
+            "bytes": null,
+            "type": "string; encoder semantics pending"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestCreatePledge",
+        "export": "?RequestCreatePledge@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x10405280",
+        "call_va": "0x1040529e",
+        "opcode": "0x23",
+        "format": "cS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestDismissAlly",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x86",
+        "name": "RequestDismissAlly",
+        "format": "c",
+        "call_va": "0x103f6ba0",
+        "method_va": "0x103f6b90",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestDismissAlly",
+        "export": "?RequestDismissAlly@UNetworkHandler@@UAEHXZ",
+        "method_va": "0x10405760",
+        "call_va": "0x10405773",
+        "opcode": "0x86",
+        "format": "c",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestDismissPledge",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x28",
+        "name": "RequestDismissPledge",
+        "format": "c",
+        "call_va": "0x103f65ad",
+        "method_va": "0x103f65a0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestDismissPledge",
+        "export": "?RequestDismissPledge@UNetworkHandler@@UAEHXZ",
+        "method_va": "0x10405370",
+        "call_va": "0x10405380",
+        "opcode": "0x28",
+        "format": "c",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestExPledgeCrestLarge",
+    "status": "extended_subopcode_unresolved",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0xD0",
+        "name": "RequestExPledgeCrestLarge",
+        "format": "chd",
+        "call_va": "0x103f62d7",
+        "method_va": "0x103f62c0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "h",
+            "bytes": 2,
+            "type": "16-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestExPledgeCrestLarge",
+        "export": "?RequestExPledgeCrestLarge@UNetworkHandler@@UAEHH@Z",
+        "method_va": "0x104051a0",
+        "call_va": "0x104051ba",
+        "opcode": "0xD0",
+        "format": "chd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestExSetPledgeCrestLarge",
+    "status": "extended_subopcode_unresolved",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0xD0",
+        "name": "RequestExSetPledgeCrestLarge",
+        "format": "chd",
+        "call_va": "0x103f623b",
+        "method_va": "0x103f6220",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "h",
+            "bytes": 2,
+            "type": "16-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      },
+      {
+        "direction": "C -> S",
+        "opcode": "0xD0",
+        "name": "RequestExSetPledgeCrestLarge",
+        "format": "chdb",
+        "call_va": "0x103f6258",
+        "method_va": "0x103f6220",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "h",
+            "bytes": 2,
+            "type": "16-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          },
+          {
+            "name": "unknown_3",
+            "format": "b",
+            "bytes": null,
+            "type": "byte array; length is a separate native argument"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestExSetPledgeCrestLarge",
+        "export": "?RequestExSetPledgeCrestLarge@UNetworkHandler@@UAEHHPAD@Z",
+        "method_va": "0x10405120",
+        "call_va": "0x1040513e",
+        "opcode": "0xD0",
+        "format": "chd",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      },
+      {
+        "direction": "C -> S",
+        "name": "RequestExSetPledgeCrestLarge",
+        "export": "?RequestExSetPledgeCrestLarge@UNetworkHandler@@UAEHHPAD@Z",
+        "method_va": "0x10405120",
+        "call_va": "0x1040515d",
+        "opcode": "0xD0",
+        "format": "chdb",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestJoinAlly",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x82",
+        "name": "RequestJoinAlly",
+        "format": "cd",
+        "call_va": "0x103f694d",
+        "method_va": "0x103f6930",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestJoinAlly",
+        "export": "?RequestJoinAlly@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x104055c0",
+        "call_va": "0x104055e1",
+        "opcode": "0x82",
+        "format": "cd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestJoinPledge",
+    "status": "different_observed_opcode_or_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x24",
+        "name": "RequestJoinPledge",
+        "format": "cd",
+        "call_va": "0x103f662a",
+        "method_va": "0x103f6610",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestJoinPledge",
+        "export": "?RequestJoinPledge@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x104053b0",
+        "call_va": "0x104053dc",
+        "opcode": "0x24",
+        "format": "cdd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestOustAlly",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x85",
+        "name": "RequestOustAlly",
+        "format": "cS",
+        "call_va": "0x103f6a4d",
+        "method_va": "0x103f6a30",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "S",
+            "bytes": null,
+            "type": "string; encoder semantics pending"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestOustAlly",
+        "export": "?RequestOustAlly@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x10405680",
+        "call_va": "0x104056a1",
+        "opcode": "0x85",
+        "format": "cS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestOustPledgeMember",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x27",
+        "name": "RequestOustPledgeMember",
+        "format": "cS",
+        "call_va": "0x103f653a",
+        "method_va": "0x103f6520",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "S",
+            "bytes": null,
+            "type": "string; encoder semantics pending"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestOustPledgeMember",
+        "export": "?RequestOustPledgeMember@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x10405320",
+        "call_va": "0x1040533e",
+        "opcode": "0x27",
+        "format": "cS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeCrest",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x68",
+        "name": "RequestPledgeCrest",
+        "format": "cd",
+        "call_va": "0x103f61c2",
+        "method_va": "0x103f61b0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeCrest",
+        "export": "?RequestPledgeCrest@UNetworkHandler@@UAEHH@Z",
+        "method_va": "0x104050d0",
+        "call_va": "0x104050e5",
+        "opcode": "0x68",
+        "format": "cd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeExtendedInfo",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x67",
+        "name": "RequestPledgeExtendedInfo",
+        "format": "cS",
+        "call_va": "0x103f634a",
+        "method_va": "0x103f6330",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "S",
+            "bytes": null,
+            "type": "string; encoder semantics pending"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeExtendedInfo",
+        "export": "?RequestPledgeExtendedInfo@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x104051f0",
+        "call_va": "0x1040520e",
+        "opcode": "0x67",
+        "format": "cS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeInfo",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x66",
+        "name": "RequestPledgeInfo",
+        "format": "cd",
+        "call_va": "0x10420e36",
+        "method_va": "0x10420e20",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeInfo",
+        "export": "?RequestPledgeInfo@UNetworkHandler@@UAEHH@Z",
+        "method_va": "0x10432810",
+        "call_va": "0x10432829",
+        "opcode": "0x66",
+        "format": "cd",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeMemberInfo",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeMemberInfo",
+        "export": "?RequestPledgeMemberInfo@UNetworkHandler@@UAEXHPBG@Z",
+        "method_va": "0x10405970",
+        "call_va": "0x1040598f",
+        "opcode": "0xD0",
+        "format": "chdS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeMemberList",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x3C",
+        "name": "RequestPledgeMemberList",
+        "format": "c",
+        "call_va": "0x103f63bd",
+        "method_va": "0x103f63b0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeMemberList",
+        "export": "?RequestPledgeMemberList@UNetworkHandler@@UAEHXZ",
+        "method_va": "0x10405240",
+        "call_va": "0x10405250",
+        "opcode": "0x3C",
+        "format": "c",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeMemberPowerInfo",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeMemberPowerInfo",
+        "export": "?RequestPledgeMemberPowerInfo@UNetworkHandler@@UAEXHPBG@Z",
+        "method_va": "0x104058d0",
+        "call_va": "0x104058ef",
+        "opcode": "0xD0",
+        "format": "chdS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgePower",
+    "status": "different_observed_opcode_or_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0xC0",
+        "name": "RequestPledgePower",
+        "format": "cddb",
+        "call_va": "0x103fb97c",
+        "method_va": "0x103fb950",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          },
+          {
+            "name": "unknown_3",
+            "format": "b",
+            "bytes": null,
+            "type": "byte array; length is a separate native argument"
+          }
+        ]
+      },
+      {
+        "direction": "C -> S",
+        "opcode": "0xC0",
+        "name": "RequestPledgePower",
+        "format": "cdd",
+        "call_va": "0x103fb99b",
+        "method_va": "0x103fb950",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgePower",
+        "export": "?RequestPledgePower@UNetworkHandler@@UAEXHHPAE@Z",
+        "method_va": "0x10409980",
+        "call_va": "0x104099ab",
+        "opcode": "0xC0",
+        "format": "cdd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      },
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgePower",
+        "export": "?RequestPledgePower@UNetworkHandler@@UAEXHHPAE@Z",
+        "method_va": "0x10409980",
+        "call_va": "0x10409a4e",
+        "opcode": "0xC0",
+        "format": "cddd",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgePowerGradeList",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgePowerGradeList",
+        "export": "?RequestPledgePowerGradeList@UNetworkHandler@@UAEXXZ",
+        "method_va": "0x10405890",
+        "call_va": "0x104058a5",
+        "opcode": "0xD0",
+        "format": "ch",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeReorganizeMember",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeReorganizeMember",
+        "export": "?RequestPledgeReorganizeMember@UNetworkHandler@@UAEXAAVL2ParamStack@@@Z",
+        "method_va": "0x10405a10",
+        "call_va": "0x10405a5c",
+        "opcode": "0xD0",
+        "format": "chdSdS",
+        "call_target": "ecx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeSetAcademyMasterPupil",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeSetAcademyMasterPupil",
+        "export": "?RequestPledgeSetAcademyMasterPupil@UNetworkHandler@@UAEXHPBG0@Z",
+        "method_va": "0x10405840",
+        "call_va": "0x10405864",
+        "opcode": "0xD0",
+        "format": "chdSS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeSetMemberPowerGrade",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeSetMemberPowerGrade",
+        "export": "?RequestPledgeSetMemberPowerGrade@UNetworkHandler@@UAEXPBGH@Z",
+        "method_va": "0x10405920",
+        "call_va": "0x1040593f",
+        "opcode": "0xD0",
+        "format": "chSd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestPledgeWarList",
+    "status": "target_only_in_extraction",
+    "source": [],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestPledgeWarList",
+        "export": "?RequestPledgeWarList@UNetworkHandler@@UAEXHH@Z",
+        "method_va": "0x104059c0",
+        "call_va": "0x104059df",
+        "opcode": "0xD0",
+        "format": "chdd",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestSetAllyCrest",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x87",
+        "name": "RequestSetAllyCrest",
+        "format": "cdb",
+        "call_va": "0x103f6c1b",
+        "method_va": "0x103f6c00",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "b",
+            "bytes": null,
+            "type": "byte array; length is a separate native argument"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestSetAllyCrest",
+        "export": "?RequestSetAllyCrest@UNetworkHandler@@UAEHHPAD@Z",
+        "method_va": "0x104057a0",
+        "call_va": "0x104057be",
+        "opcode": "0x87",
+        "format": "cdb",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestSetPledgeCrest",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x53",
+        "name": "RequestSetPledgeCrest",
+        "format": "cd",
+        "call_va": "0x103f6136",
+        "method_va": "0x103f6120",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          }
+        ]
+      },
+      {
+        "direction": "C -> S",
+        "opcode": "0x53",
+        "name": "RequestSetPledgeCrest",
+        "format": "cdb",
+        "call_va": "0x103f614e",
+        "method_va": "0x103f6120",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "d",
+            "bytes": 4,
+            "type": "32-bit value LE"
+          },
+          {
+            "name": "unknown_2",
+            "format": "b",
+            "bytes": null,
+            "type": "byte array; length is a separate native argument"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestSetPledgeCrest",
+        "export": "?RequestSetPledgeCrest@UNetworkHandler@@UAEHHPAD@Z",
+        "method_va": "0x10405020",
+        "call_va": "0x1040503a",
+        "opcode": "0x53",
+        "format": "cd",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      },
+      {
+        "direction": "C -> S",
+        "name": "RequestSetPledgeCrest",
+        "export": "?RequestSetPledgeCrest@UNetworkHandler@@UAEHHPAD@Z",
+        "method_va": "0x10405020",
+        "call_va": "0x10405082",
+        "opcode": "0x53",
+        "format": "cdb",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestStartPledgeWar",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x4D",
+        "name": "RequestStartPledgeWar",
+        "format": "cS",
+        "call_va": "0x103f671a",
+        "method_va": "0x103f6700",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "S",
+            "bytes": null,
+            "type": "string; encoder semantics pending"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestStartPledgeWar",
+        "export": "?RequestStartPledgeWar@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x10405460",
+        "call_va": "0x1040547e",
+        "opcode": "0x4D",
+        "format": "cS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestStopPledgeWar",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x4F",
+        "name": "RequestStopPledgeWar",
+        "format": "cS",
+        "call_va": "0x103f67ba",
+        "method_va": "0x103f67a0",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          },
+          {
+            "name": "unknown_1",
+            "format": "S",
+            "bytes": null,
+            "type": "string; encoder semantics pending"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestStopPledgeWar",
+        "export": "?RequestStopPledgeWar@UNetworkHandler@@UAEHAAVL2ParamStack@@@Z",
+        "method_va": "0x104054c0",
+        "call_va": "0x104054de",
+        "opcode": "0x4F",
+        "format": "cS",
+        "call_target": "eax",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestWithDrawalPledge",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x26",
+        "name": "RequestWithDrawalPledge",
+        "format": "c",
+        "call_va": "0x103f669d",
+        "method_va": "0x103f6690",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestWithDrawalPledge",
+        "export": "?RequestWithDrawalPledge@UNetworkHandler@@UAEHXZ",
+        "method_va": "0x10405420",
+        "call_va": "0x10405430",
+        "opcode": "0x26",
+        "format": "c",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  },
+  {
+    "name": "RequestWithdrawAlly",
+    "status": "same_observed_opcode_and_format",
+    "source": [
+      {
+        "direction": "C -> S",
+        "opcode": "0x84",
+        "name": "RequestWithdrawAlly",
+        "format": "c",
+        "call_va": "0x103f6b30",
+        "method_va": "0x103f6b20",
+        "confidence": "static call site; field semantics mostly unknown",
+        "fields": [
+          {
+            "name": "opcode",
+            "format": "c",
+            "bytes": 1,
+            "type": "8-bit value"
+          }
+        ]
+      }
+    ],
+    "target": [
+      {
+        "direction": "C -> S",
+        "name": "RequestWithdrawAlly",
+        "export": "?RequestWithdrawAlly@UNetworkHandler@@UAEHXZ",
+        "method_va": "0x10405720",
+        "call_va": "0x10405733",
+        "opcode": "0x84",
+        "format": "c",
+        "call_target": "edx",
+        "confidence": "static immediate opcode and format; session phase and field semantics unresolved"
+      }
+    ]
+  }
+]

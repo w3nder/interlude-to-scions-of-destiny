@@ -1,0 +1,327 @@
+{
+  "build": "protocol-hooks-6-assets-audit",
+  "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+  "files": [
+    {
+      "path": "animations/L2killer_Helmet_UN.ukx",
+      "bytes": 1482496,
+      "sha256": "9cfebbfb12cb66c0d875092d02364b363af9ee7f52b6b3ab8e06f8b3fbc444b8"
+    },
+    {
+      "path": "animations/LineageNPCs_l2Killer02.ukx",
+      "bytes": 8230168,
+      "sha256": "16fdaa70e7fa2374092a428b8af28d1cfae4aa26e274e7c15ea2d36bd7196350"
+    },
+    {
+      "path": "animations/lineageMonsters_L2Killer.ukx",
+      "bytes": 32831102,
+      "sha256": "ad6d308e0f3e78dc602c1fc0bd51fbf5cef019ff0bb46b1112ea54930d4c89c3"
+    },
+    {
+      "path": "system/scotti.u",
+      "bytes": 4541,
+      "sha256": "7cd8a88ebf71dec03e9575f19d1e239f513231466a62274a885d488943eb79d1"
+    },
+    {
+      "path": "systextures/Vesper_Joias_By_ViNy.utx",
+      "bytes": 518172,
+      "sha256": "8447cf4a7de31a378c7ec91338112a9945bf0e0e3e6fc4af9c4c47473cbd4910"
+    },
+    {
+      "path": "systextures/bootcon.utx",
+      "bytes": 3939617,
+      "sha256": "a49b16f03d5d81a28fce13552e4d3adf4614ecb9025e9bccdc0cb21785162286"
+    },
+    {
+      "path": "systextures/c5fdarkelf.utx",
+      "bytes": 3944760,
+      "sha256": "caa2ea78e02b3d5068016dfe0804d7a0b5f48c8a090c9b1d746aa4921ed23035"
+    },
+    {
+      "path": "systextures/c5fdwarf.utx",
+      "bytes": 6389782,
+      "sha256": "e18244d05229b84f1d36b674d45c477be27d1a27ae0bdd710c6b812bd36d9770"
+    },
+    {
+      "path": "systextures/c5felf.utx",
+      "bytes": 5072036,
+      "sha256": "582561770b9df5d239dfd417d8d8f07785a3549a08f38a8d186408ae2daf00a9"
+    },
+    {
+      "path": "systextures/c5ffighter.utx",
+      "bytes": 4031778,
+      "sha256": "fc7884bef33b81fd8ac2391b1a571b4570350d4a7d2135dcf077d4a0850a8636"
+    },
+    {
+      "path": "systextures/c5fmagic.utx",
+      "bytes": 5255239,
+      "sha256": "00fd4f8d586eacfb77345efa2a45eeb3cd4004a9c42e9f94219005ee1fa16250"
+    },
+    {
+      "path": "systextures/c5forc.utx",
+      "bytes": 4466805,
+      "sha256": "abbe7fe752a7cf80f21f5370dbc9d35f8aa5f817a17f0e837d5bd23ede253051"
+    },
+    {
+      "path": "systextures/c5fshaman.utx",
+      "bytes": 4058763,
+      "sha256": "9a33f35c1148027c20be9a54139d0ca72e57a34eb41d61bae5cda94e25bc9464"
+    },
+    {
+      "path": "systextures/c5icon.utx",
+      "bytes": 36057,
+      "sha256": "653f4ae9710d0edfef8e3901f5a36b33696bd3c4b85d425e640464ab8bb40a95"
+    },
+    {
+      "path": "systextures/c5mdarkelf.utx",
+      "bytes": 4294917,
+      "sha256": "4ed4a03ab686d8d9f98774cdf16890c6516ca9562c4e6d742c5e4094c6c954e3"
+    },
+    {
+      "path": "systextures/c5mdwarf.utx",
+      "bytes": 4684820,
+      "sha256": "ab6976bb35d18ea157445394456e3b2f03c42130970a4e82bccc26af2ce9c786"
+    },
+    {
+      "path": "systextures/c5melf.utx",
+      "bytes": 4639034,
+      "sha256": "6631a9f2198b1d3275f8f5e180c6325b278b489da0e92dcc10382bf9b2ed8d53"
+    },
+    {
+      "path": "systextures/c5mfighter.utx",
+      "bytes": 3200439,
+      "sha256": "7076961de8767780310ea1998c7c19f95c20d8debe46f3f38272faacc7e70503"
+    },
+    {
+      "path": "systextures/c5mmagic.utx",
+      "bytes": 3242392,
+      "sha256": "5c868b2011758f90236850171925101406f0c6dcf0badf6ed9325cbf6c46c98f"
+    },
+    {
+      "path": "systextures/c5morc.utx",
+      "bytes": 4606935,
+      "sha256": "35af914715b2326a93c4732286217410971214a936a058778376257c2f20b88c"
+    },
+    {
+      "path": "systextures/c5mshaman.utx",
+      "bytes": 3736031,
+      "sha256": "840b98fe5b4da6c8fed9dd0525abeb5ac359f53f38102dbb1523cd543e311f10"
+    },
+    {
+      "path": "systextures/ct1FDarkElf.utx",
+      "bytes": 1740843,
+      "sha256": "0e6c5b73adb075b475f879c4a68cd646f24d9ac1eb8f84f90253c3f5f3d6fe49"
+    },
+    {
+      "path": "systextures/ct1FDwarf.utx",
+      "bytes": 558898,
+      "sha256": "b434f11ee6a745b8e24c18fa435eb6eaf4c9a55e94828fd27cd666d6a1443bb4"
+    },
+    {
+      "path": "systextures/ct1FElf.utx",
+      "bytes": 1937318,
+      "sha256": "95caa1cd334c9a282de1c771bfd30cc77d3574ced0bd67878edfeabbb6bd41ef"
+    },
+    {
+      "path": "systextures/ct1FFighter.utx",
+      "bytes": 1248459,
+      "sha256": "d882b09f7677101a7ae17a98b655f493dbc4eb2a1f6dda8d113e0e51dd43765f"
+    },
+    {
+      "path": "systextures/ct1FMagic.utx",
+      "bytes": 558897,
+      "sha256": "9881b8c80822efd790170b907ce87519d0f0c662a0e3be57a599e89e547ece19"
+    },
+    {
+      "path": "systextures/ct1FOrc.utx",
+      "bytes": 1247840,
+      "sha256": "23591422a61d53709fd958f9aeae9e9affb5542aaf48247aa3b7ff5f26762129"
+    },
+    {
+      "path": "systextures/ct1FShaman.utx",
+      "bytes": 558904,
+      "sha256": "69d75f8b8cb5ad9b3aa98309ec8ad3f19a2eef3f4e2a8e12ffcda7431bda82a1"
+    },
+    {
+      "path": "systextures/ct1Icon.utx",
+      "bytes": 230695,
+      "sha256": "549eb386b6c30f779fbbc7d503b39bc91dd88c1e72d896b1c63ba6801ec57f8c"
+    },
+    {
+      "path": "systextures/ct1MDarkElf.utx",
+      "bytes": 2894411,
+      "sha256": "992d2fc8f9aca84301c3750390ea6cede1258acf006686b206ab549b4fad8127"
+    },
+    {
+      "path": "systextures/ct1MDwarf.utx",
+      "bytes": 1087432,
+      "sha256": "31613e9d20ed5f710e2eb7caf1ad3ed382291226b4fde15993e946b12a610034"
+    },
+    {
+      "path": "systextures/ct1MElf.utx",
+      "bytes": 2861149,
+      "sha256": "7f191f9fab3f4a4a1e4aa3180b7d8a515bf2d230ffae16a20870f22046fc4456"
+    },
+    {
+      "path": "systextures/ct1MFighter.utx",
+      "bytes": 2139063,
+      "sha256": "f67b26609eb1b62e73852224b1c268120dd3698e949302b0e0f2904329626e6e"
+    },
+    {
+      "path": "systextures/ct1MMagic.utx",
+      "bytes": 988734,
+      "sha256": "64d4c89138fd3c6f2cad8b3c607f8ea106389b3922cb75ebeb3bfc25cfbe6e20"
+    },
+    {
+      "path": "systextures/ct1MOrc.utx",
+      "bytes": 2104794,
+      "sha256": "19cebc92513736718707532ad554ff21ae112d54ed8ffa95a357e055feb77db7"
+    },
+    {
+      "path": "systextures/ct1MShaman.utx",
+      "bytes": 955816,
+      "sha256": "1f82adde92386592cb8b8b0d9a033f5d8603b7a669783ecff77e9fe93515c05d"
+    },
+    {
+      "path": "systextures/epicdrop.utx",
+      "bytes": 1458854,
+      "sha256": "4b8d1a5495783247bc75d0fe66f3ab3aed409d674ae8f312a793d7743b646647"
+    },
+    {
+      "path": "systextures/epicfdarkelf.utx",
+      "bytes": 2115457,
+      "sha256": "5fac52d10bca5643f6c52b89f2f0c583b73d13404cd7e2d20d7a7ee46d05847c"
+    },
+    {
+      "path": "systextures/epicfdwarf.utx",
+      "bytes": 2115364,
+      "sha256": "3e750196a75dd78ad9d036b771aac018e1fddd9acdad47920b8756f35e09fb0b"
+    },
+    {
+      "path": "systextures/epicfelf.utx",
+      "bytes": 3688300,
+      "sha256": "1292ab97c26ebcb0d346f1ebb14337d3e764cc89876fb373cee23b00c6ecf9a4"
+    },
+    {
+      "path": "systextures/epicffighter.utx",
+      "bytes": 1984363,
+      "sha256": "1ed7380a6fa750746ad4062a5b9c178fb4096363551bd7b5a6f16eb3bac8ce69"
+    },
+    {
+      "path": "systextures/epicfmagic.utx",
+      "bytes": 2027931,
+      "sha256": "a4980ac3113c92a452bf959c26d00ce4bbd6c1e1a9db55faf2b303b2449ca0bf"
+    },
+    {
+      "path": "systextures/epicforc.utx",
+      "bytes": 6235321,
+      "sha256": "b3a37f37143e503d2202a9474db47087b5f6cdc69c57c3ddc6420059cab57cf4"
+    },
+    {
+      "path": "systextures/epicfshaman.utx",
+      "bytes": 6410161,
+      "sha256": "0feecb3cd6a730f0ee27b9e744b821c81158f5a43985c390bba7fce5773b2c8f"
+    },
+    {
+      "path": "systextures/epicicon.utx",
+      "bytes": 13599,
+      "sha256": "b01a843c5eb1405dea6e1eb5b4b4afda9f8d9ca30f702938af04a45ec42038df"
+    },
+    {
+      "path": "systextures/epicmdarkelf.utx",
+      "bytes": 2246557,
+      "sha256": "88957f8c9d81678b271700cb2055861ba42257b0d1c1c80fb451208276656574"
+    },
+    {
+      "path": "systextures/epicmdwarf.utx",
+      "bytes": 2639740,
+      "sha256": "0156ee1e46738772ed11e4b6bd4b9f0804678381877dd6df191b53a4e2838bad"
+    },
+    {
+      "path": "systextures/epicmelf.utx",
+      "bytes": 3961604,
+      "sha256": "5d1c1e5737f8caa1c63c2578c10e486b7dea5aff7639dee9cbaea0715baf6262"
+    },
+    {
+      "path": "systextures/epicmfighter.utx",
+      "bytes": 1984374,
+      "sha256": "a98a7e28c2868575605ea81bbc56be0328d6d72d5b3ab90ae09629df3db0eddf"
+    },
+    {
+      "path": "systextures/epicmmagic.utx",
+      "bytes": 2114824,
+      "sha256": "f061735af85f42e361367b86b249490c7120ca70155e7cd59873d79004f2d30b"
+    },
+    {
+      "path": "systextures/epicmorc.utx",
+      "bytes": 6060576,
+      "sha256": "178dae80a36e829b5675264ed0a42849e55306de16baea26a62f2eaab8b663d3"
+    },
+    {
+      "path": "systextures/epicmshaman.utx",
+      "bytes": 6235413,
+      "sha256": "0b4be33f93ae60ad4dc95b0029247a2c3f2b644ef9a35335db87b1754abb7706"
+    },
+    {
+      "path": "systextures/lineageaccessorytexmask.utx",
+      "bytes": 1191955,
+      "sha256": "3ff3657c23cab343811868222e0636e16b806b52aa44a00fe9a7990be1fe61c6"
+    },
+    {
+      "path": "systextures/purple.utx",
+      "bytes": 9187045,
+      "sha256": "55fa8ab58ff556efee39fce129917435d7b3e010bf68f4a75544e6857d4eacbe"
+    },
+    {
+      "path": "systextures/purple1icon.utx",
+      "bytes": 4708,
+      "sha256": "ffa0b90f2444ba25d4b4820edbaec03d1c86dcb39c3e3170610c075c723850c5"
+    },
+    {
+      "path": "system/itemname-e.dat",
+      "bytes": 252080,
+      "sha256": "40a2f96a45c6dccbf328f7480bdddff8dd4d221dddc9078c841e5fba9f124ab4"
+    },
+    {
+      "path": "system/weapongrp.dat",
+      "bytes": 79792,
+      "sha256": "e0a451af15d7e2c7b605a3655eed08690b51ff69cf1b2a279fdd51ab74f5f22a"
+    },
+    {
+      "path": "system/armorgrp.dat",
+      "bytes": 136112,
+      "sha256": "f7a59412c581c571a5cbe4e340df74716d54d174716a38dff7c933c4468aaa28"
+    },
+    {
+      "path": "system/etcitemgrp.dat",
+      "bytes": 81712,
+      "sha256": "c179961dc9cb4cf602763ab62c8b125c290201a3734b0d75ac7df2e30bd813f2"
+    },
+    {
+      "path": "system/npcgrp.dat",
+      "bytes": 446512,
+      "sha256": "f4321aa45c58f65ccfa10f423004fcacd48c4117ff71c7d481d440f522691e63"
+    },
+    {
+      "path": "system/npcname-e.dat",
+      "bytes": 101040,
+      "sha256": "8bb2f4fb18632dd0f7659713b28d430d69a44f50c66923d5ae952c87f950d8c9"
+    },
+    {
+      "path": "system/l2.exe",
+      "bytes": 499712,
+      "sha256": "794ceb44204f2bd6b5f4451810fbbdbb3a184c17fc018537d1f6a10da2a5627a"
+    },
+    {
+      "path": "system/l2.ini",
+      "bytes": 3376,
+      "sha256": "654afefd9abd06e79e9587e103e0c1e2bd1b9610f9c8ba56bc12b960982bbf47"
+    },
+    {
+      "path": "system/L2KProtocolCore.dll",
+      "bytes": 321388,
+      "sha256": "c9c3bd7dd27b947e2859d8ca1c0054ecccd003e9ad1c5940cb0b11fdbfd32920"
+    }
+  ],
+  "validation": "69 automated tests; DAT roundtrips; user confirmed texture correction loaded successfully. Full feature coverage remains incomplete."
+}

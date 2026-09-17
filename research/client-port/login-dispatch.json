@@ -1,0 +1,80 @@
+[
+  {
+    "opcode": "0x00",
+    "slot_rva": "0x7572c0",
+    "expected_pointer": "0x1030202c",
+    "handler_rva": "0x10be50"
+  },
+  {
+    "opcode": "0x01",
+    "slot_rva": "0x7572c4",
+    "expected_pointer": "0x1030105f",
+    "handler_rva": "0x10c450"
+  },
+  {
+    "opcode": "0x02",
+    "slot_rva": "0x7572c8",
+    "expected_pointer": "0x103104ab",
+    "handler_rva": "0x10c5e0"
+  },
+  {
+    "opcode": "0x03",
+    "slot_rva": "0x7572cc",
+    "expected_pointer": "0x103091d3",
+    "handler_rva": "0x10c710"
+  },
+  {
+    "opcode": "0x04",
+    "slot_rva": "0x7572d0",
+    "expected_pointer": "0x103061c2",
+    "handler_rva": "0x10c930"
+  },
+  {
+    "opcode": "0x05",
+    "slot_rva": "0x7572d4",
+    "expected_pointer": "0x10315302",
+    "handler_rva": "0x10cbd0"
+  },
+  {
+    "opcode": "0x06",
+    "slot_rva": "0x7572d8",
+    "expected_pointer": "0x1031434e",
+    "handler_rva": "0x10ccd0"
+  },
+  {
+    "opcode": "0x07",
+    "slot_rva": "0x7572dc",
+    "expected_pointer": "0x1031084d",
+    "handler_rva": "0x124500"
+  },
+  {
+    "opcode": "0x08",
+    "slot_rva": "0x7572e0",
+    "expected_pointer": "0x10308e18",
+    "handler_rva": "0x10cdc0"
+  },
+  {
+    "opcode": "0x09",
+    "slot_rva": "0x7572e4",
+    "expected_pointer": "0x10311676",
+    "handler_rva": "0x10ceb0"
+  },
+  {
+    "opcode": "0x0a",
+    "slot_rva": "0x7572e8",
+    "expected_pointer": "0x1030709f",
+    "handler_rva": "0x10c8d0"
+  },
+  {
+    "opcode": "0x0b",
+    "slot_rva": "0x7572ec",
+    "expected_pointer": "0x1031175c",
+    "handler_rva": "0x10c310"
+  },
+  {
+    "opcode": "0x0c",
+    "slot_rva": "0x7572f0",
+    "expected_pointer": "0x1030785b",
+    "handler_rva": "0x101150"
+  }
+]

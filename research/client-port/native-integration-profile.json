@@ -1,0 +1,137 @@
+{
+  "status": "analysis only; no hook installation authorized by this file",
+  "build_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+  "preferred_image_base": "0x10300000",
+  "socket_slots": [
+    {
+      "kind": "game",
+      "slot_rva": "0x58b594",
+      "expected_pointer": "0x1030d184",
+      "handler_rva": "0x1029b0",
+      "entry_bytes": "b800200000e816403a00568bb4240820"
+    },
+    {
+      "kind": "game",
+      "slot_rva": "0x58b5a4",
+      "expected_pointer": "0x1030e408",
+      "handler_rva": "0x101fd0",
+      "entry_bytes": "8b4c240483ec08568b7424148a460130"
+    },
+    {
+      "kind": "game",
+      "slot_rva": "0x58b5a8",
+      "expected_pointer": "0x10303116",
+      "handler_rva": "0x102070",
+      "entry_bytes": "83ec08558b6c2418568b7424148a1657"
+    },
+    {
+      "kind": "login",
+      "slot_rva": "0x58b704",
+      "expected_pointer": "0x10306e8d",
+      "handler_rva": "0x103040",
+      "entry_bytes": "b804200000e886393a0053568bb42410"
+    },
+    {
+      "kind": "login",
+      "slot_rva": "0x58b71c",
+      "expected_pointer": "0x1030a91b",
+      "handler_rva": "0x103140",
+      "entry_bytes": "538b5c240856578b7c24148b0783c007"
+    },
+    {
+      "kind": "login",
+      "slot_rva": "0x58b720",
+      "expected_pointer": "0x103094c6",
+      "handler_rva": "0x1031c0",
+      "entry_bytes": "8b442408a807752383b9b85000000089"
+    }
+  ],
+  "login_dispatch": [
+    {
+      "opcode": "0x00",
+      "slot_rva": "0x7572c0",
+      "expected_pointer": "0x1030202c",
+      "handler_rva": "0x10be50"
+    },
+    {
+      "opcode": "0x01",
+      "slot_rva": "0x7572c4",
+      "expected_pointer": "0x1030105f",
+      "handler_rva": "0x10c450"
+    },
+    {
+      "opcode": "0x02",
+      "slot_rva": "0x7572c8",
+      "expected_pointer": "0x103104ab",
+      "handler_rva": "0x10c5e0"
+    },
+    {
+      "opcode": "0x03",
+      "slot_rva": "0x7572cc",
+      "expected_pointer": "0x103091d3",
+      "handler_rva": "0x10c710"
+    },
+    {
+      "opcode": "0x04",
+      "slot_rva": "0x7572d0",
+      "expected_pointer": "0x103061c2",
+      "handler_rva": "0x10c930"
+    },
+    {
+      "opcode": "0x05",
+      "slot_rva": "0x7572d4",
+      "expected_pointer": "0x10315302",
+      "handler_rva": "0x10cbd0"
+    },
+    {
+      "opcode": "0x06",
+      "slot_rva": "0x7572d8",
+      "expected_pointer": "0x1031434e",
+      "handler_rva": "0x10ccd0"
+    },
+    {
+      "opcode": "0x07",
+      "slot_rva": "0x7572dc",
+      "expected_pointer": "0x1031084d",
+      "handler_rva": "0x124500"
+    },
+    {
+      "opcode": "0x08",
+      "slot_rva": "0x7572e0",
+      "expected_pointer": "0x10308e18",
+      "handler_rva": "0x10cdc0"
+    },
+    {
+      "opcode": "0x09",
+      "slot_rva": "0x7572e4",
+      "expected_pointer": "0x10311676",
+      "handler_rva": "0x10ceb0"
+    },
+    {
+      "opcode": "0x0a",
+      "slot_rva": "0x7572e8",
+      "expected_pointer": "0x1030709f",
+      "handler_rva": "0x10c8d0"
+    },
+    {
+      "opcode": "0x0b",
+      "slot_rva": "0x7572ec",
+      "expected_pointer": "0x1031175c",
+      "handler_rva": "0x10c310"
+    },
+    {
+      "opcode": "0x0c",
+      "slot_rva": "0x7572f0",
+      "expected_pointer": "0x1030785b",
+      "handler_rva": "0x101150"
+    }
+  ],
+  "login_dispatch_call_rva": "0x121b49",
+  "login_dispatch_abi": "cdecl(handler, payload_without_opcode), caller removes 8 bytes; return AL",
+  "login_phase_field": "UNetworkHandler + 0x50 == 1 selects login table; opcode >= 0x0c selects fallback 0x0c",
+  "limitations": [
+    "Relocated runtime pointers must be checked using actual module base",
+    "Entry bytes are evidence, not a complete instruction-boundary patch plan",
+    "C++ core has no socket lifetime, UI callbacks or hook installation yet"
+  ]
+}

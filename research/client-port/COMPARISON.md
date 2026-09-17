@@ -1,0 +1,70 @@
+# Comparação estática: L2Killer → system-1
+
+Objetivo: adaptar somente o cliente de destino para o servidor atual do Killer.
+Nenhuma alteração de binário ou validação de conexão foi realizada.
+
+## Cobertura e conferência
+
+- Origem: SHA-256 confirmado; 213 pontos de envio no catálogo original.
+- Reextração: 211 envios reproduzidos com opcode/formato idênticos; ValidatePosition e VoteSociality não foram recuperados pelo percurso dos exports.
+- Os 304 registros de recepção do catálogo foram reproduzidos, com os mesmos nomes e slots.
+- Destino: 237 pontos de envio e 341 registros de recepção (255 primários, 86 estendidos).
+- 7 handlers da origem têm divergências de segmentos em relação ao catálogo antigo; evidência detalhada em comparison.json.
+- Exemplo confirmado: o segmento antigo de MoveToLocation em 0x104132ba fica numa rotina posterior, iniciada em 0x10413280 e separada por padding INT3. Não deve ser concatenado ao handler 0x10413120.
+- Os limites de função são heurísticos (exports e padding); helpers e formatos construídos dinamicamente podem ficar fora da extração.
+- Q lê 8 bytes no decoder do destino: caso 0x1040279b, duas cópias de dword e avanço do cursor por 8. Evidência em decoder-Q-evidence.txt; o significado do campo ainda precisa ser resolvido.
+- Ghidra decompilou os handlers UIPacket (0x104342f0) e CIPacket (0x104366f0); arquivos em decompiled/. A inferência de tipos/assinaturas ainda é incompleta.
+
+## Referência Interlude fornecida depois
+
+`/Users/wenderteixeira/Desktop/C6_System_Win10Supported` foi fornecida pelo usuário como referência original do Interlude.
+A engine.dll é idêntica byte por byte à system-1 (SHA-256 508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d). Os dois catálogos extraídos são idênticos, desconsiderando o caminho de origem.
+L2.exe, Core.dll, IpDrv.dll, interface.u e interface.xdat também são idênticos. nwindow.dll difere em dois bytes; Fire.dll tem tamanho e conteúdo diferentes. Isso não autentica nenhuma pasta como distribuição oficial sem alterações.
+Inventário detalhado: interlude-reference-inventory.json. Nenhuma das duas pastas foi modificada.
+
+## Envios prioritários
+
+| Método | Killer (opcode: formato) | system-1 (opcode: formato) |
+|---|---|---|
+| RequestServerList | 0x05: `cddc` | 0x05: `cddc` |
+| RequestServerLogin | 0x02: `cddc` | 0x02: `cddc` |
+| RequestGameStart | 0x0D: `cdhddd` | 0x0D: `cdhddd` |
+| RequestEnterWorldPacket | 0x03: `cbdddd` | 0x03: `cbddddbdcccccccccccccccccccc` |
+| MoveBackwardToLocation | 0x01: `cdddddd` | 0x01: `cdddddd` |
+| Action | 0x04: `cddddc` | 0x04: `cddddc` |
+| Atk | não recuperado | 0x0A: `cddddc` |
+| RequestUseItem | 0x14: `cdd` | 0x14: `cdd` |
+| Say2 | 0x38: `cSd`<br>0x38: `cSdS` | 0x38: `cSd`<br>0x38: `cSdS` |
+| ValidatePosition | 0x48: `cddddd` | não recuperado |
+
+Igualdade de opcode e formato é um candidato a reutilização; ainda faltam fase da sessão e significado dos campos.
+
+Dos métodos agrupados por nome de export: 172 têm o mesmo opcode/formato observado; 6 têm diferenças; 19 envolvem subopcode estendido ainda não resolvido. Há 32 nomes só na extração do destino e 7 só na origem, o que não prova ausência real de funcionalidade.
+
+Os seis métodos com formatos diferentes são ConfirmDlg, RequestEnterWorldPacket, RequestJoinPartyRoom, RequestJoinPledge, RequestMultiSellChoose e RequestPledgePower.
+
+## Recepção prioritária
+
+| Slot primário | Origem → destino | Formatos observados |
+|---|---|---|
+| 0x01 | MoveToLocationPacket → MTLPacket | iguais |
+| 0x03 | CharInfoPacket → CIPacket | diferentes |
+| 0x04 | UserInfoPacket → UIPacket | diferentes |
+| 0x13 | CharacterSelectionInfoPacket → CharacterSelectionInfoPacket | diferentes |
+| 0x15 | CharacterSelectedPacket → CharacterSelectedPacket | diferentes |
+| 0x16 | NpcInfoPacket → NpcInfoPacket | diferentes |
+| 0x1B | ItemListPacket → ItemListPacket | diferentes |
+| 0x21 | TradeOtherAddPacket → TradeOtherAddPacket | iguais |
+| 0x27 | InventoryUpdatePacket → InventoryUpdatePacket | diferentes |
+
+MTLPacket, NSPacket, CIPacket e UIPacket são nomes abreviados do destino. A associação pelo slot é uma hipótese de correspondência, não validação de equivalência.
+
+## Próximo marco de implementação
+
+1. Identificar versão enviada, framing, criptografia e transição login/game nas duas engines.
+2. Resolver os campos de CharacterSelectionInfo (0x13), CharacterSelected (0x15) e UserInfo/UIPacket (0x04).
+3. Localizar interceptação de payload após decriptação e antes do dispatch, e envio antes de encriptação.
+4. Implementar e testar conversores com amostras conhecidas; só depois testar login/seleção/entrada no mundo.
+5. Prosseguir com CharInfo, NPCs, inventário e movimento; recursos visuais também dependem dos assets do cliente correspondente.
+
+Não copiar endereços, vtables ou estruturas de memória do patch C4 para a engine de destino.

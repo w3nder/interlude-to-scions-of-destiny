@@ -1,0 +1,44 @@
+[
+  {
+    "kind": "game",
+    "vtable": "0x1088b52c",
+    "slot": "0x68",
+    "thunk": "0x1030d184",
+    "function": "0x104029b0"
+  },
+  {
+    "kind": "game",
+    "vtable": "0x1088b52c",
+    "slot": "0x78",
+    "thunk": "0x1030e408",
+    "function": "0x10401fd0"
+  },
+  {
+    "kind": "game",
+    "vtable": "0x1088b52c",
+    "slot": "0x7c",
+    "thunk": "0x10303116",
+    "function": "0x10402070"
+  },
+  {
+    "kind": "login",
+    "vtable": "0x1088b69c",
+    "slot": "0x68",
+    "thunk": "0x10306e8d",
+    "function": "0x10403040"
+  },
+  {
+    "kind": "login",
+    "vtable": "0x1088b69c",
+    "slot": "0x78",
+    "thunk": "0x1030e408",
+    "function": "0x10401fd0"
+  },
+  {
+    "kind": "login",
+    "vtable": "0x1088b69c",
+    "slot": "0x7c",
+    "thunk": "0x10303116",
+    "function": "0x10402070"
+  }
+]
