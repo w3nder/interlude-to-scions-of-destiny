@@ -308,3 +308,7 @@ Snapshot sem payload em reports/live-clan-observation.json.
 
 
 Atualização após erro c5icon.utx corrupted: 20 texturas UTX adicionadas estavam sem container Lineage2. wrap_asset_textures.py aplicou Ver121, preservando integralmente o payload e conferindo tabelas names/imports/exports e ida/volta XOR. Originais em /Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/textures.before-ver121-20260917-052804. Formatos internos não alterados. Aceitação pelo loader e visual em jogo ainda pendentes; não confundir índice legível com compatibilidade total. Manifesto de assets atualizado.
+
+
+## Skills migradas — 2026-09-17
+Quatro DATs e três pacotes de ícones instalados, com backup system.before-skills-20260917-055311. Patch agora 71 arquivos. Anti Buff IDs9709/50012/50050 têm nomes e ícones resolvidos. Validação estrutural completa, visual pendente de reinício; 63 referências de ícones/sons ainda ausentes na origem/destino. Relatório reports/skills-validation.md. Não afirmar que o critical foi comprovadamente corrigido. DLL inalterada.

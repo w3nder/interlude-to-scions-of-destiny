@@ -321,7 +321,43 @@
       "path": "system/L2KProtocolCore.dll",
       "bytes": 321388,
       "sha256": "c9c3bd7dd27b947e2859d8ca1c0054ecccd003e9ad1c5940cb0b11fdbfd32920"
+    },
+    {
+      "path": "system/skillname-e.dat",
+      "bytes": 298672,
+      "sha256": "a624dfdce8dfe2b6c489b240406d8f19859df3e1b615049a1b4c09d53a764bdf"
+    },
+    {
+      "path": "system/skillgrp.dat",
+      "bytes": 159024,
+      "sha256": "1cfb910d20f6cce4fd1762af50c211bbe75b8405e957f6117ac2515a1553daff"
+    },
+    {
+      "path": "system/skillsoundgrp.dat",
+      "bytes": 28464,
+      "sha256": "cc23199a9dc30efc6b7771f45170bc97a8d0d501c9165d4d777f01245eec99fe"
+    },
+    {
+      "path": "system/mobskillanimgrp.dat",
+      "bytes": 128816,
+      "sha256": "7c97510158e67eefe4ba080cb1ea9bd564aa04d6ca7aef897df10ebcc50c8f2f"
+    },
+    {
+      "path": "systextures/Tony.utx",
+      "bytes": 9517399,
+      "sha256": "002f85b23d4cc86fe2c332f005d50da23eccf8fe94e8bbdb3b5347132a41e8e5"
+    },
+    {
+      "path": "systextures/TonyC6.utx",
+      "bytes": 21677815,
+      "sha256": "8c4f801602c5823cc0ab1ae922ad1696532496dfb699a9a19f6aa0b80d2018d9"
+    },
+    {
+      "path": "systextures/kaaliv2.utx",
+      "bytes": 9771649,
+      "sha256": "833c6520c0477701df73efc5c8090d7133314e7fa29e76665da9a1b89a42eb39"
     }
   ],
-  "validation": "69 automated tests; DAT roundtrips; user confirmed texture correction loaded successfully. Full feature coverage remains incomplete."
+  "validation": "69 automated tests; DAT roundtrips; user confirmed texture correction loaded successfully. Full feature coverage remains incomplete.",
+  "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending."
 }

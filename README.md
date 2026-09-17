@@ -9,7 +9,7 @@ Porte experimental do cliente Interlude para o protocolo C4 do L2Killer. Inclui 
 
 Feche o jogo e faça backup dos arquivos correspondentes no seu cliente. Copie o conteúdo de `patch/` (pastas `system`, `systextures` e `animations`) para a raiz do cliente Interlude. Abra `system/l2.exe`: o executável carrega `L2KProtocolCore.dll` automaticamente. O `l2.ini` aponta para `server.l2killer.org`.
 
-Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 64 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
+Base validada: C6_System_Win10Supported / engine.dll SHA-256 `508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d`. Não é um patch universal para qualquer system. `patch/manifest.json` contém os hashes dos 71 arquivos do porte. Confira com `python3 patch/verify.py`; para conferir a instalação, use `python3 patch/verify.py /caminho/do/cliente`.
 
 ## Fonte e compilação
 
@@ -29,3 +29,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 Build `protocol-hooks-6-assets-audit`: 35 conversores S2C e 3 C2S, seis DATs migrados e 55 pacotes adicionais. Vinte texturas receberam container Ver121 sem alterar seu conteúdo. 69 testes automatizados passaram; o usuário confirmou equipamentos no seletor e resolução do erro de textura. Isso não equivale a validação de todas as funcionalidades.
 
 CharacterSelected permanece sem conversão após uma regressão corrigida. Dois pacotes customizados de formato desconhecido e referências visuais ainda estão pendentes. O relatório de assets e os relatórios de cobertura documentam os limites. Arquivos do jogo e ferramentas de terceiros mantêm os direitos/licenças de seus respectivos autores.
+
+## Atualização de skills
+
+Incluídos `skillname-e.dat`, `skillgrp.dat`, `skillsoundgrp.dat` e `mobskillanimgrp.dat`, mais três pacotes de ícones customizados. A pasta `patch/` já contém a atualização. Reinicie o cliente após copiar. Consulte [validação de skills](research/client-port/reports/skills-validation.md) para resultados e pendências.
