@@ -52,6 +52,12 @@ class LoginHooksTests(unittest.TestCase):
             cp,flags,src,n,dst,cap,default,used=self.args(8);s=bytes(self.u.mem_read(src,n*2)).decode('utf-16le').encode('ascii');self.u.mem_write(dst,s);self.w32(used,0);self.ret(32,len(s))
         elif name in ('memcpy','memmove'):
             dst,src,n=self.args(3);self.u.mem_write(dst,bytes(self.u.mem_read(src,n)));self.ret(value=dst)
+        elif name=='strcmp':
+            a,b=self.args(2)
+            for i in range(65536):
+                x=self.u.mem_read(a+i,1)[0];y=self.u.mem_read(b+i,1)[0]
+                if x!=y or x==0:self.ret(value=(x-y)&0xffffffff);break
+            else:raise AssertionError('Unterminated strcmp fixture')
         elif name=='memcmp':
             a,b,n=self.args(3);self.ret(value=0 if self.u.mem_read(a,n)==self.u.mem_read(b,n) else 1)
         elif name=='memset':

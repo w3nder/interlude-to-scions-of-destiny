@@ -120,7 +120,10 @@ class GameTraceTests(unittest.TestCase):
         cases=[(b'\x24'+d(123,0),b'\x24'+d(123)),(b'\x24'+d(123,100),None),
                (b'\xa7'+d(100,200,3,0,0),b'\xa7'+d(100,200,3)),
                (b'\xa7'+d(100,200,3,1,0),None),
-               (b'\xc5'+d(12,1,999),b'\xc5'+d(12,1)),(b'\xc5\0',None)]
+               (b'\xc5'+d(12,1,999),b'\xc5'+d(12,1)),(b'\xc5\0',None),
+               (b'\x71'+d(100,200,20,80),b'\x71'+d(100,200)),
+               (b'\xd0\x0e\0'+d(1,999),b'\xd0\x0e\0'+d(1)),
+               (b'\xd0\x0e\0'+d(1)+b'\0',None)]
         for packet,_ in cases:
             self.outgoing=packet;h.call('game_trace::send_adapter',[h.sock,h.buf])
         self.assertEqual(sent,[want for _,want in cases if want is not None])
@@ -136,3 +139,20 @@ class GameTraceTests(unittest.TestCase):
         small=struct.pack('<H',4)+b'\x2d\0';h.u.mem_write(h.buf,small);h.call('receive_observer',[h.buf,len(small)],h.sock,8)
         self.assertEqual(decrypted,[9000,2]);self.assertEqual(h.frames,[frame,small])
         self.assertEqual(h.r32(h.sock+0x50bc),1)
+
+    def test_enterworld_serializer_boundary_preserves_variable_blob(self):
+        h=self.h;sent=[];formats=[];blob=bytes(range(32));source=b'\x03'+blob+struct.pack('<IIII',11,22,33,44)
+        h.w32(h.symbol('game_trace::serialize_original'),h.engine+0x68b6)
+        h.w32(h.symbol('game_trace::send_original'),h.engine+0x1029b0)
+        original=b'cbddddbd'+b'c'*20
+        h.u.mem_write(h.buf,original+b'\0')
+        def serialize():
+            dst,cap,fmt,args=h.args(4);f=bytearray()
+            while h.u.mem_read(fmt+len(f),1)!=b'\0':f+=h.u.mem_read(fmt+len(f),1)
+            formats.append(bytes(f));out=source+bytes(88) if bytes(f)==original else source
+            h.u.mem_write(dst,out);h.ret(value=len(out))
+        def send():
+            sock,fmt,n,data=h.args(4);sent.append(bytes(h.u.mem_read(data,n)));h.ret()
+        h.callbacks[h.engine+0x68b6]=serialize;h.callbacks[h.engine+0x1029b0]=send
+        h.call('game_trace::send_adapter',[h.sock,h.buf])
+        self.assertEqual(formats,[original,b'cbdddd']);self.assertEqual(sent,[source])

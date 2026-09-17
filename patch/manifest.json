@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-6-assets-audit",
+  "build": "protocol-hooks-7-outbound",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 321388,
-      "sha256": "c9c3bd7dd27b947e2859d8ca1c0054ecccd003e9ad1c5940cb0b11fdbfd32920"
+      "bytes": 321635,
+      "sha256": "f88387f99dc84d3c5e5ad4a83af3546afaaddd7de97c0c8688c8feaeef222f9c"
     },
     {
       "path": "system/skillname-e.dat",
@@ -358,6 +358,6 @@
       "sha256": "833c6520c0477701df73efc5c8090d7133314e7fa29e76665da9a1b89a42eb39"
     }
   ],
-  "validation": "69 automated tests; DAT roundtrips; user confirmed texture correction loaded successfully. Full feature coverage remains incomplete.",
+  "validation": "74 automated tests passed, including actual x86 serializer execution and send-hook sequencing. Build 7 gameplay validation pending.",
   "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending."
 }

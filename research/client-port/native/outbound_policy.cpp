@@ -1,4 +1,5 @@
 #include "outbound_policy.h"
+#include <string.h>
 namespace {
 struct Rule {uint16_t extended;const char* name;};
 const Rule denied[]={
@@ -16,6 +17,16 @@ L2K_API int l2k_outbound_blocked(const uint8_t* p,uint32_t n){
 L2K_API int l2k_outbound_convert(uint8_t* p,uint32_t n){
     if(!p||!n)return L2K_INVALID;
     switch(p[0]){
+    case 0xd0:
+        if(n<3)return L2K_INVALID;
+        if(p[1]!=0x0e||p[2]!=0)return 0;
+        // Exact engines: chdd -> chd; retain the first Top() response.
+        if(n==7)return 0;
+        return n==11?7:L2K_INVALID;
+    case 0x71:
+        // Exact engines: retain the first two Top() values; C4 has no suffix.
+        if(n==9)return 0;
+        return n==17?9:L2K_INVALID;
     case 0x24: // RequestJoinPledge: C4 supports only the main clan.
         if(n==5)return 0;
         if(n!=9||p[5]||p[6]||p[7]||p[8])return L2K_INVALID;
@@ -30,4 +41,12 @@ L2K_API int l2k_outbound_convert(uint8_t* p,uint32_t n){
         return n==13?9:L2K_INVALID;
     default:return 0;
     }
+}
+
+L2K_API const char* l2k_outbound_serialization_format(const char* format,const uint8_t* p,uint32_t n){
+    if(!format||!p||!n)return nullptr;
+    // EnterWorld: b has a native length argument, not a length on the wire.
+    // Rewrite the serializer contract, never guess the variable blob boundary.
+    if(p[0]==0x03 && !strcmp(format,"cbddddbdcccccccccccccccccccc"))return "cbdddd";
+    return nullptr;
 }

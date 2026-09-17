@@ -1,6 +1,6 @@
 # Auditoria de equivalência — 2026-09-17
 
-A auditoria é somente leitura e não ativa conversões. O cliente instalado foi restaurado para a build 4 após a regressão de entrada no mundo da build 5.
+A auditoria é somente leitura e não ativa conversões. As contagens descrevem diferenças nos binários originais; as traduções implementadas estão em outbound-schemas.json. O estado de instalação é registrado separadamente em build/current-runtime.json.
 
 ## Envio: argumentos reais do serializador
 
@@ -12,7 +12,7 @@ A auditoria é somente leitura e não ativa conversões. O cliente instalado foi
 
 Comparação limitada a prefixes sem desvios até o envio. O interpretador recusa instruções desconhecidas, registradores não modelados, buffers variáveis e helpers desconhecidos. Não substitui essas informações por curingas. A abstração de L2ParamStack.Top foi conferida em x86 nos dois binários para sequência, cursor e fim da lista.
 
-Diferença adicional identificada: `RequestExAcceptJoinMPCC` conserva D0:0E, mas C4 envia `chd` e Interlude `chdd`. Continua pendente de tradução semântica.
+Diferença adicional identificada: `RequestExAcceptJoinMPCC` conserva D0:0E, mas C4 envia `chd` e Interlude `chdd`. A build 7 traduz a resposta mantendo o primeiro argumento serializado; os demais limites de semântica de UI continuam documentados.
 
 ## Recepção: fluxo realmente alcançável
 
@@ -29,7 +29,7 @@ Diferença adicional identificada: `RequestExAcceptJoinMPCC` conserva D0:0E, mas
 - 40 pares não recuperam diretamente o argumento do pacote no critério conservador. Destes, os 25 no-ops anteriormente comprovados continuam dispensados; callbacks dos demais não são promovidos automaticamente a equivalentes.
 - Endereços, formatos recuperados, argumentos simbólicos, motivos de pendência e hashes estão em `wire-equivalence.json`.
 
-## Regressão e instalação
+## Histórico da regressão (não descreve a instalação atual)
 
 - Build 5 `6f710c50` retirada: rejeitou CharacterSelected15 de 281/289 bytes observado no servidor.
 - DLL instalada: `9bd942c5` (build 4, 13 conversores S2C). O trace da sessão restaurada contém EnterWorld e atualizações do mundo.

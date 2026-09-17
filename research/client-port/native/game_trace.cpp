@@ -78,6 +78,16 @@ void __cdecl send_adapter(void* socket,const char* format,...){
     uint8_t payload[8190];va_list args;va_start(args,format);
     int n=serialize_original(payload,sizeof(payload),format,args);va_end(args);
     if(n<=0||n>(int)sizeof(payload)){l2k_log("outbound rejected: serialization failed");return;}
+    const char* source_format=l2k_outbound_serialization_format(format,payload,(uint32_t)n);
+    if(source_format){
+        const int previous=n;
+        va_start(args,format);n=serialize_original(payload,sizeof(payload),source_format,args);va_end(args);
+        // Verified extra b[64], d and twenty c fields occupy exactly 88 bytes.
+        if(n<17 || n+88!=previous || payload[0]!=0x03){
+            l2k_log("outbound rejected: EnterWorld serializer contract mismatch");return;
+        }
+        record(socket,"C2S","converted_C4_serializer",payload,n);
+    }
     int decision=l2k_outbound_blocked(payload,(uint32_t)n);
     if(decision!=0){record(socket,"C2S","blocked_unsupported",payload,n);return;}
     int converted=l2k_outbound_convert(payload,(uint32_t)n);

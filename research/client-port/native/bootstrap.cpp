@@ -19,7 +19,7 @@ void l2k_log(const char* message) {
 // Called after Windows initializes imported DLLs, before the original entrypoint.
 L2K_API void l2k_bootstrap() {
     const DWORD saved=GetLastError();
-    l2k_log("DLL loaded; build=protocol-hooks-6-assets-audit; ABI=1");
+    l2k_log("DLL loaded; build=protocol-hooks-7-outbound; ABI=1");
     if(!l2k_install_login_hooks()) {
         l2k_log("FATAL: hooks not installed; client startup stopped");
         MessageBoxW(nullptr,L"L2K: engine incompatível ou falha ao instalar hooks. Consulte L2KProtocol.log.",L"L2K Protocol",MB_OK|MB_ICONERROR);

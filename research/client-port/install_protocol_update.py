@@ -18,7 +18,7 @@ def main():
     if sha(source)!=meta['dll_sha256']:raise SystemExit('Package hash mismatch')
     old_hash=sha(current)
     if old_hash==meta['dll_sha256']:print('Already installed');return
-    if old_hash not in (BASELINE,'834676a5f178374ef062b5592b472625ee153b53852b2bacf2061196965fd8a5','9bd942c569776bc94f756f41e7778a0db0c253f343ad50b16e60a715a09a250b'):raise SystemExit('Current DLL differs from the validated baseline; preserve it for review')
+    if old_hash not in (BASELINE,'c9c3bd7dd27b947e2859d8ca1c0054ecccd003e9ad1c5940cb0b11fdbfd32920','834676a5f178374ef062b5592b472625ee153b53852b2bacf2061196965fd8a5','9bd942c569776bc94f756f41e7778a0db0c253f343ad50b16e60a715a09a250b'):raise SystemExit('Current DLL differs from the validated baseline; preserve it for review')
     stamp=datetime.now().strftime('%Y%m%d-%H%M%S');backup=system/('L2KProtocolCore.before-protocol-'+stamp+'.dll')
     backup.write_bytes(current.read_bytes())
     if sha(backup)!=old_hash:raise SystemExit('Backup mismatch')

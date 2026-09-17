@@ -312,3 +312,7 @@ Atualização após erro c5icon.utx corrupted: 20 texturas UTX adicionadas estav
 
 ## Skills migradas — 2026-09-17
 Quatro DATs e três pacotes de ícones instalados, com backup system.before-skills-20260917-055311. Patch agora 71 arquivos. Anti Buff IDs9709/50012/50050 têm nomes e ícones resolvidos. Validação estrutural completa, visual pendente de reinício; 63 referências de ícones/sons ainda ausentes na origem/destino. Relatório reports/skills-validation.md. Não afirmar que o critical foi comprovadamente corrigido. DLL inalterada.
+
+
+## Build 7 — contratos C2S
+Instalada protocol-hooks-7-outbound, SHA256 f88387f99dc84d3c5e5ad4a83af3546afaaddd7de97c0c8688c8feaeef222f9c. 35 S2C +6 C2S, 74 testes passaram. Três novas correções: EnterWorld por reserialização do formato C4 (88 bytes exclusivos removidos), RequestJoinPartyRoom71 (17→9) e AcceptJoinMPCCD0:0E (11→7). Teste executa serializer real104021f0; preserva blob variável. RequestPledgePowerC0 exige semântica de callers/ações, ainda pendente. Relatório reports/outbound-build7.md. Usuário confirmou Windows abre com base fornecida e relatou desconexões por pacotes incompatíveis; não temos trace dessas sessões Windows. Não afirmar causa confirmada ou conclusão de todos os pacotes.

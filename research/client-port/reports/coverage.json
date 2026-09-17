@@ -1,12 +1,12 @@
 {
   "profile": "L2Killer-C4_to_Interlude-508974c7",
-  "generated_utc": "2026-09-17T08:25:34.948363+00:00",
+  "generated_utc": "2026-09-17T10:34:28.882254+00:00",
   "source_sha256": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
   "target_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "validation": {
     "status": "passed",
-    "unittest_cases": 69,
-    "results": "build/assets-protocol-check.txt"
+    "unittest_cases": 74,
+    "results": "build/outbound-build7-validation.log"
   },
   "limits": "Static similarity is not semantic compatibility. Unknown layouts do not produce automatic rewrites. Assets/dat files excluded.",
   "user_observed_working": [
@@ -485,20 +485,42 @@
       "source_layout": "cdd",
       "target_layout": "cddd",
       "conversion": "Preserve message ID and answer; drop target-only requestor ID"
+    },
+    {
+      "name": "RequestExAcceptJoinMPCC",
+      "opcode": "0xD0",
+      "extended": "0x0E",
+      "source_layout": "chd",
+      "target_layout": "chdd",
+      "conversion": "Preserve first serialized Top() argument; remove Interlude-only second dword. Exact lengths 7/11; other sizes rejected before encryption."
+    },
+    {
+      "name": "RequestJoinPartyRoom",
+      "opcode": "0x71",
+      "source_layout": "cdd",
+      "target_layout": "cdddd",
+      "conversion": "Preserve first two serialized Top() arguments; remove two Interlude-only trailing dwords. Exact lengths 9/17."
+    },
+    {
+      "name": "RequestEnterWorldPacket",
+      "opcode": "0x03",
+      "source_layout": "cbdddd",
+      "target_layout": "cbddddbdcccccccccccccccccccc",
+      "conversion": "Re-serialize original arguments with exact C4 format before encryption, retaining variable first blob and four dwords. Validate removed extension is exactly 88 bytes; no size-only wire slicing."
     }
   ],
   "catalogue_contract": "Opcode equality or matching format strings does not establish compatibility. Conditional reads, raw blocks, field semantics, repetitions and packet direction must be checked against exact engine handlers.",
   "counts": {
-    "passthrough": 348,
+    "passthrough": 345,
     "blocked_by_profile": 28,
     "native_same_serializer_contract": 137,
-    "Interlude_to_C4_converter": 3,
+    "Interlude_to_C4_converter": 6,
     "native_handlers_ignore_payload": 25,
     "strict_C4_to_Interlude_converter": 35,
     "bounded_layout_validator": 1
   },
   "release_complete": false,
-  "pending_semantic_validation": 348,
+  "pending_semantic_validation": 345,
   "handler_audit": {
     "hashes": {
       "source": "17a8bcacd57d071a3420d278a7570ddf2a13abba2f6d4336bb4eb48afd4e244b",
@@ -1749,8 +1771,8 @@
     }
   },
   "runtime_installation": {
-    "build": "protocol-hooks-6-assets-audit",
-    "dll_sha256": "c9c3bd7dd27b947e2859d8ca1c0054ecccd003e9ad1c5940cb0b11fdbfd32920",
+    "build": "protocol-hooks-7-outbound",
+    "dll_sha256": "f88387f99dc84d3c5e5ad4a83af3546afaaddd7de97c0c8688c8feaeef222f9c",
     "backup": "/Users/wenderteixeira/Downloads/Lineage2_Interlude_Client/system.before-assets-20260917-052113",
     "tables_installed": [
       {
@@ -1838,10 +1860,10 @@
     "asset_manifest": "/Users/wenderteixeira/Documents/L2Killer/research/client-port/build/assets-interlude/assets-manifest.json",
     "activation": "next client start; running client not interrupted",
     "s2c_converters": 35,
-    "c2s_converters": 3,
+    "c2s_converters": 6,
     "unsupported_extended_requests_blocked": 28,
     "candidate_source_is_not_installed": false,
-    "status": "installed; synthetic tests and DAT roundtrips passed; live visual validation pending"
+    "status": "installed; 74 tests passed; new outbound rules need live validation"
   },
   "blocked_features": [
     {
@@ -2581,8 +2603,8 @@
       "direction": "C2S",
       "name": "RequestEnterWorldPacket",
       "static_status": "different_observed_opcode_or_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "Interlude_to_C4_converter",
+      "test_coverage": "native send hook fixtures",
       "wire_audit": "requires_deeper_analysis"
     },
     {
@@ -2597,8 +2619,8 @@
       "direction": "C2S",
       "name": "RequestExAcceptJoinMPCC",
       "static_status": "extended_subopcode_unresolved",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "Interlude_to_C4_converter",
+      "test_coverage": "native send hook fixtures",
       "wire_audit": "different_serializer_argument_contract"
     },
     {
@@ -2863,8 +2885,8 @@
       "direction": "C2S",
       "name": "RequestJoinPartyRoom",
       "static_status": "different_observed_opcode_or_format",
-      "implementation": "passthrough",
-      "test_coverage": "not validated per packet",
+      "implementation": "Interlude_to_C4_converter",
+      "test_coverage": "native send hook fixtures",
       "wire_audit": "different_serializer_argument_contract"
     },
     {

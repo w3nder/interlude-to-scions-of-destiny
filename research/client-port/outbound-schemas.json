@@ -20,8 +20,30 @@
       "source_layout": "cdd",
       "target_layout": "cddd",
       "conversion": "Preserve message ID and answer; drop target-only requestor ID"
+    },
+    {
+      "name": "RequestExAcceptJoinMPCC",
+      "opcode": "0xD0",
+      "extended": "0x0E",
+      "source_layout": "chd",
+      "target_layout": "chdd",
+      "conversion": "Preserve first serialized Top() argument; remove Interlude-only second dword. Exact lengths 7/11; other sizes rejected before encryption."
+    },
+    {
+      "name": "RequestJoinPartyRoom",
+      "opcode": "0x71",
+      "source_layout": "cdd",
+      "target_layout": "cdddd",
+      "conversion": "Preserve first two serialized Top() arguments; remove two Interlude-only trailing dwords. Exact lengths 9/17."
+    },
+    {
+      "name": "RequestEnterWorldPacket",
+      "opcode": "0x03",
+      "source_layout": "cbdddd",
+      "target_layout": "cbddddbdcccccccccccccccccccc",
+      "conversion": "Re-serialize original arguments with exact C4 format before encryption, retaining variable first blob and four dwords. Validate removed extension is exactly 88 bytes; no size-only wire slicing."
     }
   ],
   "evidence": "decompiled/outbound source and target exact methods; primary clientpackets references; native send hook tests",
-  "limits": "RequestEnterWorldPacket, RequestJoinPartyRoom and RequestPledgePower differences remain pending; existing passthrough retained."
+  "limits": "RequestPledgePower still requires action/privilege semantic mapping. Unknown EnterWorld serializer formats remain unchanged. Caller/UI semantics require live validation; native serialization boundary tests do not prove all features."
 }
