@@ -56,6 +56,25 @@ class NativeLocalUITests(unittest.TestCase):
         self.assertEqual(h.u.reg_read(UC_X86_REG_EAX),1);self.assertEqual(self.queued(),expected)
         self.assertEqual(self.events,['enter','append','leave']);self.assertEqual(bytes(h.u.mem_read(h.sock+0x50bc,68)),before)
         self.assertEqual(self.allocated[-2:][0][1],len(payload));self.assertEqual(self.allocated[-1][1],12)
+    def test_extended_local_packet_matches_original_receive_descriptor(self):
+        h=self.h
+        for payload in [b'\xfe\x3d\x00'+d(0)+s('Member')+s('')+d(0)+s('')+s(''),b'\xfe\x3d\x00'+d(0)+s('A'*63)+s('')+d(0)+s('')+s(''),b'\x0f'+d(0)+s('<html/>')+d(0)]:
+            with self.subTest(opcode=payload[:3].hex()):
+                # Zero the bytes after the frame: the native copy over-reads them for FE packets.
+                frame=struct.pack('<H',len(payload)+2)+payload;h.u.mem_write(h.buf,frame+bytes(4));h.w32(h.sock+0x50bc,0)
+                h.call('test_original_receive',[h.buf,len(frame)],h.sock,8);expected=self.queued();sizes=[n for _,n in self.allocated[-2:]];self.events=[]
+                h.w32(h.sock+0x50bc,1);before=bytes(h.u.mem_read(h.sock+0x50bc,68))
+                h.u.mem_write(h.buf,payload+bytes(4));h.call('l2k_queue_local_packet(',[h.buf,len(payload)])
+                self.assertEqual(h.u.reg_read(UC_X86_REG_EAX),1);self.assertEqual(self.queued(),expected)
+                self.assertEqual([n for _,n in self.allocated[-2:]],sizes)
+                self.assertEqual(self.events,['enter','append','leave']);self.events=[]
+                self.assertEqual(bytes(h.u.mem_read(h.sock+0x50bc,68)),before)
+    def test_extended_local_packet_rejects_short_or_oversized_input(self):
+        h=self.h;count=len(self.allocated)
+        for payload in [b'',b'\xfe',b'\xfe\x3d',b'\x0f'+bytes(8190)]:
+            h.u.mem_write(h.buf,payload or b'\0');h.call('l2k_queue_local_packet(',[h.buf,len(payload)])
+            self.assertEqual(h.u.reg_read(UC_X86_REG_EAX),0)
+        self.assertEqual(len(self.allocated),count)
     def test_failed_descriptor_allocation_releases_body_and_never_queues(self):
         h=self.h;self.fail_at=1;payload=b'\x0f'+d(0)+s('<html/>')+d(0);h.u.mem_write(h.buf,payload)
         h.call('l2k_queue_local_html(',[h.buf,len(payload)])

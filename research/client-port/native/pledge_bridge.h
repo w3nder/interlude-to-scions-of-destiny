@@ -12,6 +12,8 @@ struct L2KPledgeState {
 struct L2KPledgeResult {
     uint32_t server_size,display_size;
     uint8_t server[41],display[8190];
+    // Interlude packet answered locally without any C4 request (FE:3D member info).
+    uint32_t local_size;uint8_t local[160];
 };
 L2K_API uint32_t l2k_pledge_state_size();
 L2K_API void l2k_pledge_reset(L2KPledgeState*);

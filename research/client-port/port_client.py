@@ -7,7 +7,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 from sender_coverage import enrich
 ROOT=Path(__file__).resolve().parent
-PLEDGE_REQUESTS={'RequestPledgePower','RequestPledgePowerGradeList','RequestPledgeMemberPowerInfo'}
+PLEDGE_REQUESTS={'RequestPledgePower','RequestPledgePowerGradeList','RequestPledgeMemberPowerInfo','RequestPledgeMemberInfo'}
 
 def read(name):return json.loads((ROOT/name).read_text())
 def write(path,data):path.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
@@ -117,7 +117,7 @@ def report(validation=None,trace=None):
              'limits':'Complete enumeration and evidence classification does not certify all inputs or live server behavior.'},
          'native_list_validation':{k:native_lists.get(k) for k in ('status','method_count','vector_pairs','scope','limits')},
          'runtime_installation':read('build/current-runtime.json') if (ROOT/'build/current-runtime.json').exists() else {'status':'not inspected'},
-         'member_permissions_bridge':{'requests':sorted(PLEDGE_REQUESTS),'response':'0x30 C4 32-byte bitset','evidence':'pledge-members-build12.md','rank_semantics':'local per-member editor; no fabricated C4 ranks'},
+         'member_permissions_bridge':{'requests':sorted(PLEDGE_REQUESTS),'response':'0x30 C4 32-byte bitset; RequestPledgeMemberInfo answered locally with FE:3D from the converted roster (empty title/grade/sub-pledge/sponsor)','evidence':'pledge-members-build12.md','rank_semantics':'local per-member editor; no fabricated C4 ranks'},
          'blocked_features':[p for p in policy['denied'] if p['name'] not in PLEDGE_REQUESTS],
          'fallback_policy_guards':policy['denied'],'packets':items}
     if trace:out['observed_game_trace']=summarize_trace(trace)

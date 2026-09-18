@@ -92,12 +92,14 @@ bool pledge_outgoing(void* socket,const uint8_t* p,uint32_t n){
     EnterCriticalSection(&pledge_lock);pledge_session(socket);
     int handled=l2k_pledge_send(&pledge_state,p,n,GetTickCount(),&result);
     if(result.display_size&&!l2k_queue_local_html(result.display,result.display_size))l2k_log("local clan UI could not be queued");
+    if(result.local_size&&!l2k_queue_local_packet(result.local,result.local_size))l2k_log("local clan member info could not be queued");
     LeaveCriticalSection(&pledge_lock);
     if(handled<=0)return false;
     if(result.server_size&&l2k_outbound_convert(result.server,result.server_size)>=0){
         record(socket,"C2S","converted_C4_pledge",result.server,result.server_size);
         send_original(socket,"b",result.server_size,result.server);
-    }else record(socket,"C2S","local_C4_pledge",p,n);
+    }else if(result.local_size)record(socket,"S2C","local_C4_member_info",result.local,result.local_size);
+    else record(socket,"C2S","local_C4_pledge",p,n);
     return true;
 }
 bool pledge_incoming(void* socket,const uint8_t* p,uint32_t n,bool legacy,uint8_t* member,int& member_size){
@@ -204,5 +206,5 @@ bool l2k_install_game_trace(){
     encrypt_original=reinterpret_cast<Cipher>(base+0x101fd0);decrypt_original=reinterpret_cast<Cipher>(base+0x102070);
     for(auto& p:patches)InterlockedExchangePointer(reinterpret_cast<void* volatile*>(base+p.slot),p.observer);
     while(prepared){--prepared;DWORD ignored;VirtualProtect(reinterpret_cast<void*>(base+patches[prepared].slot),4,old[prepared],&ignored);}
-    l2k_log("game_adapter=active; original game cipher; clan and schema converters; 26 unsupported Interlude requests and 10 summon action IDs blocked; local clan permissions; metadata trace");return true;
+    l2k_log("game_adapter=active; original game cipher; clan and schema converters; 26 unsupported Interlude requests and 10 summon action IDs blocked; local clan permissions and member info; metadata trace");return true;
 }

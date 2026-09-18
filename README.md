@@ -35,7 +35,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-15-clan-world-id`: corrige a inclusão do próprio personagem no clan usando o ID de mundo do UserInfo. A sessão real mostrou ID de seleção diferente do ID de mundo, com o mesmo nome; essa diferença bloqueava a build 14. O contexto de permissões também passa a usar o ID de mundo. Veja [diagnóstico e regressão](research/client-port/reports/clan-world-id-build15.md). Confirmação visual e alteração real de título ainda dependem de teste no jogo.
+Build `protocol-hooks-16-clan-member-info`: o pedido Interlude `RequestPledgeMemberInfo` (D0:1D), sem equivalente C4, passa a ser respondido localmente com `PledgeReceiveMemberInfo` (FE:3D) a partir da lista convertida; sem isso o textbox do membro ficava vazio e o pedido de título saía sem nome, gerando "target not found". Título, grau, subunidade e patrocinador ficam vazios porque o C4 não os fornece. Veja [causa e verificação](research/client-port/reports/clan-member-info-build16.md). A alteração real de título ainda depende de teste no jogo.
 
 Ajuste adicional `inventory-script-2`: corrige `InventoryWnd.EquipItemUpdate` em `Interface.u`, separando Left Tattoo (terceiro slot da primeira linha) e AIO Tattoo (quarto slot). O ajuste nativo anterior foi retirado e `NWindow.dll` restaurado. Seis testes reproduzem a sobreposição original e verificam a correção no bytecode e no layout; a confirmação visual em jogo ainda está pendente. Requer o `interface.xdat` original da base Win10Supported. Veja [evidência e reprodução](research/client-port/reports/inventory-script.md).
 

@@ -1,0 +1,17 @@
+{
+  "build": "protocol-hooks-16-clan-member-info",
+  "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+  "dll_sha256": "910e74bf0e52a9f183416b326039ece0bde43366edcfd6afa010748d06fd4590",
+  "validation": {
+    "status": "passed",
+    "tests": 31,
+    "modules": [
+      "test_pledge_bridge",
+      "test_native_local_ui",
+      "test_game_trace"
+    ],
+    "full_suite_tests": 153,
+    "live": "pending"
+  },
+  "scope": "RequestPledgeMemberInfo D0:1D answered locally with FE:3D from the converted C4 roster so the Interlude title request carries the member name; extended local queue proven against native ReceivePacket"
+}

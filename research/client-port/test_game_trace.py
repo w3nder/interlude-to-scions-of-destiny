@@ -11,7 +11,7 @@ class GameTraceTests(unittest.TestCase):
         cls.engine=pefile.PE(data=(ROOT/'build/interlude-engine.dll').read_bytes(),fast_load=True)
     def setUp(self):
         self.h=harness.LoginHooksTests(methodName='runTest');self.h.setUp();h=self.h
-        self.events=[];self.local_html=[];self.state=h.sock+0x50c0
+        self.events=[];self.local_html=[];self.local_packets=[];self.state=h.sock+0x50c0
         for rva,size in [(0x101fd0,0x80),(0x102070,0x90)]:h.u.mem_write(h.engine+rva,self.engine.get_data(rva,size))
         h.w32(h.symbol('game_trace::encrypt_original'),h.engine+0x101fd0);h.w32(h.symbol('game_trace::decrypt_original'),h.engine+0x102070)
         h.w32(h.symbol('game_trace::receive_original'),h.engine+0x120e60)
@@ -19,6 +19,9 @@ class GameTraceTests(unittest.TestCase):
         h.callbacks[h.engine+0x4a67d9]=self.native_copy
         h.callbacks[h.engine+0x120e60]=self.native_receive
         h.callbacks[h.symbol('l2k_queue_local_html(')]=self.local_display
+        h.callbacks[h.symbol('l2k_queue_local_packet(')]=self.local_packet
+    def local_packet(self):
+        h=self.h;p,n=h.args(2);self.local_packets.append(bytes(h.u.mem_read(p,n)));h.ret(value=1)
     def local_display(self):
         h=self.h;p,n=h.args(2);self.local_html.append(bytes(h.u.mem_read(p,n)));h.ret(value=1)
     def native_copy(self):
@@ -232,6 +235,32 @@ class GameTraceTests(unittest.TestCase):
         changed=bytearray(rights);changed[0]^=1
         self.assertEqual(sent,[b'\xc0'+d(200,2),b'\xc0'+d(200,3)+changed])
         self.assertEqual(h.r32(h.sock+0x50bc),1)
+
+    def test_member_info_request_is_serviced_locally_before_policy_block(self):
+        from test_structured_codec import d,s,h as word
+        from test_pledge_bridge import roster,member_info
+        h=self.h;sent=[]
+        h.w32(h.symbol('game_trace::serialize_original'),h.engine+0x68b6)
+        h.w32(h.symbol('game_trace::send_original'),h.engine+0x1029b0)
+        def serialize():
+            dst,cap,fmt,args=h.args(4);h.u.mem_write(dst,self.outgoing);h.ret(value=len(self.outgoing))
+        def send():
+            sock,fmt,n,p=h.args(4);sent.append(bytes(h.u.mem_read(p,n)));h.ret()
+        h.callbacks[h.engine+0x68b6]=serialize;h.callbacks[h.engine+0x1029b0]=send
+        def incoming(p):
+            frame=word(len(p)+2)+p;h.u.mem_write(h.buf,frame);h.call('receive_observer',[h.buf,len(frame)],h.sock,8)
+        def outgoing(p):
+            self.outgoing=p;h.call('game_trace::send_adapter',[h.sock,h.buf])
+        h.w32(h.sock+0x50bc,0);incoming(b'\x15'+s('Leader')+d(777))
+        modern=roster([('Member',200)]);incoming(modern[:1]+modern[5:9]+modern[13:-4])
+        outgoing(b'\xd0\x1d\0'+d(0)+s('Member'))
+        self.assertEqual(sent,[]);self.assertEqual(self.local_packets,[member_info('Member')])
+        self.assertEqual(self.events[-1][:2],(b'S2C',b'local_C4_member_info'));self.assertEqual(self.events[-1][2],member_info('Member'))
+        outgoing(b'\xd0\x1d\0'+d(0)+s('Stranger'))
+        self.assertEqual(sent,[]);self.assertEqual(len(self.local_packets),1)
+        self.assertEqual(self.events[-1][:2],(b'C2S',b'blocked_unsupported'))
+        # The title request itself keeps its native cSS bytes.
+        outgoing(b'\x55'+s('Member')+s('Title'));self.assertEqual(sent,[b'\x55'+s('Member')+s('Title')])
 
     def test_enterworld_serializer_boundary_preserves_variable_blob(self):
         h=self.h;sent=[];formats=[];blob=bytes(range(32));source=b'\x03'+blob+struct.pack('<IIII',11,22,33,44)

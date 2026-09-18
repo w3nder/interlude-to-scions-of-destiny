@@ -100,7 +100,7 @@ L2K_API void l2k_pledge_reset(L2KPledgeState* s){if(!s)return;uint32_t nonce=s->
 L2K_API int l2k_pledge_receive(L2KPledgeState* state,const uint8_t* p,uint32_t n,uint32_t now,L2KPledgeResult* out){
     if(!state||!p||!n||n>65533||!out)return L2K_INVALID;
     (void)now;
-    out->server_size=out->display_size=0;auto& s=*state;
+    out->server_size=out->display_size=out->local_size=0;auto& s=*state;
     if(p[0]==0x15){ // Observe identity only; never change the working world-entry packet.
         l2k_pledge_reset(&s);Reader r{p,n,1};if(!r.name(s.self_name)||!r.number(s.self_id)){s.self_id=0;s.self_name[0]=0;}return 0;
     }
@@ -148,7 +148,23 @@ L2K_API int l2k_pledge_receive(L2KPledgeState* state,const uint8_t* p,uint32_t n
 }
 L2K_API int l2k_pledge_send(L2KPledgeState* state,const uint8_t* p,uint32_t n,uint32_t now,L2KPledgeResult* out){
     if(!state||!p||!n||n>65533||!out)return L2K_INVALID;
-    out->server_size=out->display_size=0;auto& s=*state;
+    out->server_size=out->display_size=out->local_size=0;auto& s=*state;
+    if(p[0]==0xd0&&n>=3&&p[1]==0x1d&&p[2]==0){
+        // Interlude RequestPledgeMemberInfo (chdS) has no C4 counterpart, yet its
+        // FE:3D answer fills the member name used by the title request (55 cSS).
+        // Answer main-pledge members from the converted roster; C4 carries no
+        // titles, power grades, sub-pledges or sponsors, so those render empty.
+        Reader r{p,n,3};uint32_t type;uint16_t name[64]={};
+        if(!r.number(type)||type||!r.name(name)||r.pos!=n)return 0;
+        const uint16_t* known=nullptr;
+        if(s.self_name[0]&&equal(name,s.self_name))known=s.self_name;
+        for(uint32_t i=0;!known&&i<s.count;++i)if(equal(name,s.members[i].name))known=s.members[i].name;
+        if(!known)return 0;
+        uint8_t* q=out->local;q[0]=0xfe;q[1]=0x3d;q[2]=0;put(q+3,0);uint32_t pos=7;
+        for(unsigned i=0;i<64;++i){q[pos++]=uint8_t(known[i]);q[pos++]=uint8_t(known[i]>>8);if(!known[i])break;}
+        q[pos++]=0;q[pos++]=0;put(q+pos,0);pos+=4;q[pos++]=0;q[pos++]=0;q[pos++]=0;q[pos++]=0;
+        out->local_size=pos;return 1;
+    }
     // C4's UI ignores the response header, so a timeout must never allow a
     // second member query to overtake an outstanding uncorrelated response.
     bool waiting=s.pending!=0;

@@ -8,7 +8,12 @@ from test_structured_codec import d,s
 
 class Result(C.Structure):
     _fields_=[('server_size',C.c_uint32),('display_size',C.c_uint32),
-              ('server',C.c_ubyte*41),('display',C.c_ubyte*8190)]
+              ('server',C.c_ubyte*41),('display',C.c_ubyte*8190),
+              ('local_size',C.c_uint32),('local',C.c_ubyte*160)]
+
+def member_info(name):
+    # Interlude PledgeReceiveMemberInfo FE:3D dSSdSS with neutral C4 values.
+    return b'\xfe\x3d\x00'+d(0)+s(name)+s('')+d(0)+s('')+s('')
 
 def roster(members,leader='Leader',clan=77):
     return (b'\x53'+d(0,clan,0)+s('Clan')+s(leader)+d(*([0]*9))+s('Ally')+d(0,0,len(members))
@@ -29,6 +34,7 @@ class PledgeBridgeTests(unittest.TestCase):
         out=Result();f=self.lib.l2k_pledge_receive if receive else self.lib.l2k_pledge_send
         result=f(self.state,p,len(p),self.now,C.byref(out))
         self.wire=bytes(out.server[:out.server_size]);display=bytes(out.display[:out.display_size])
+        self.local=bytes(out.local[:out.local_size])
         if display:
             self.assertLessEqual(len(display),8190);self.assertEqual(display[:5],b'\x0f'+d(0));self.assertEqual(display[-6:],bytes(6))
             self.html=display[5:-6].decode('utf-16le');self.assertTrue(self.html.endswith('</body></html>'))
@@ -64,6 +70,29 @@ class PledgeBridgeTests(unittest.TestCase):
         self.call(info('Other',999),True)
         self.response(bytes(32));self.request('Self');self.assertEqual(self.wire,b'\xc0'+d(888,1))
 
+    def test_member_info_request_is_answered_locally_for_known_names(self):
+        self.setup_clan('Leader',[('Member',200),('Offline',0)])
+        for name in ['Member','Offline','Leader']:
+            self.assertEqual(self.call(b'\xd0\x1d\0'+d(0)+s(name))[0],1)
+            self.assertEqual(self.wire,b'');self.assertEqual(self.local,member_info(name));self.assertEqual(self.html,'')
+        self.call(b'\x54'+s('Joined')+d(80,88,0,1,300,0,0),True)
+        self.assertEqual(self.call(b'\xd0\x1d\0'+d(0)+s('Joined'))[0],1);self.assertEqual(self.local,member_info('Joined'))
+        self.call(b'\x56'+s('Member'),True)
+        self.assertEqual(self.call(b'\xd0\x1d\0'+d(0)+s('Member'))[0],0);self.assertEqual(self.local,b'')
+    def test_member_info_for_unknown_names_subpledges_or_bad_layout_keeps_fallback_policy(self):
+        self.setup_clan()
+        request=b'\xd0\x1d\0'+d(0)+s('Member')
+        for p in [b'\xd0\x1d\0'+d(0)+s('Stranger'),b'\xd0\x1d\0'+d(100)+s('Member'),b'\xd0\x1d\0'+d(0)+s('member'),request+b'\0',b'\xd0\x1d\1'+d(0)+s('Member')]+[request[:n] for n in range(3,len(request))]:
+            self.assertEqual(self.call(p)[0],0,p);self.assertEqual(self.local,b'');self.assertEqual(self.wire,b'')
+        self.setUp();self.assertEqual(self.call(request)[0],0)
+        self.call(b'\x15'+s('Solo')+d(100),True)
+        self.assertEqual(self.call(b'\xd0\x1d\0'+d(0)+s('Solo'))[0],1);self.assertEqual(self.local,member_info('Solo'))
+    def test_member_info_uses_longest_name_and_never_touches_permission_state(self):
+        long=chr(0x41)*63;self.setup_clan('Leader',[(long,200)])
+        self.request(long);self.assertEqual(self.wire,b'\xc0'+d(200,2))
+        self.assertEqual(self.call(b'\xd0\x1d\0'+d(0)+s(long))[0],1);self.assertEqual(self.local,member_info(long))
+        self.assertEqual(len(self.local),3+4+128+2+4+2+2)
+        self.response(bytes(32));self.assertIn('Dar titulo',self.html)
     def test_nonleader_can_read_self_but_not_edit_another_member(self):
         self.setup_clan('Other');self.request();self.assertEqual(self.wire,b'');self.assertIn('Somente o lider',self.html)
         self.request('Other');self.assertEqual(self.wire,b'\xc0'+d(100,1))
