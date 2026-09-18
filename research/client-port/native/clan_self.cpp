@@ -28,16 +28,18 @@ L2K_API int l2k_clan_self_receive(L2KClanSelf* state,const uint8_t* p,uint32_t n
   // The prefix through level is identical in both engines, including hybrid
   // packets whose later equipment/experience layout we do not rewrite.
   if(!r.skip(16)||!r.num(id)||!r.str(name)||!r.num(race)||!r.num(sex)||!r.num(klass)||!r.num(level))return 0;
-  if(!s.id||id!=s.id||!same(name,s.name)||race>4||sex>1||!level||level>255)return 0;
-  changed=!s.ready||s.race!=race||s.sex!=sex||s.klass!=klass||s.level!=level;
-  s.race=race;s.sex=sex;s.klass=klass;s.level=level;s.ready=1;
+  if(!s.id||!id||!same(name,s.name)||race>4||sex>1||!level||level>255)return 0;
+  // CharacterSelected carries a different identifier on the live C4 server.
+  // UserInfo is authoritative for the in-world object ID; the name must match.
+  changed=!s.ready||s.id!=id||s.race!=race||s.sex!=sex||s.klass!=klass||s.level!=level;
+  s.id=id;s.race=race;s.sex=sex;s.klass=klass;s.level=level;s.ready=1;
  }else if(p[0]==0x53){
   uint32_t main,clan,type,count;bool found=false;
   if(!r.num(main)||!r.num(clan)||!r.num(type)||main||!clan||type||!r.str()||!r.str()||!r.skip(36)||!r.str()||!r.skip(8)||!r.num(count))return 0;
   if(count>(n-r.pos)/26)return 0;
   for(uint32_t i=0;i<count;++i){uint16_t name[64]={};uint32_t id;
    if(!r.str(name)||!r.skip(16)||!r.num(id)||!r.skip(4))return 0;
-   if((s.id&&id==s.id)||(s.name[0]&&same(name,s.name)))found=true;
+   if((s.ready&&s.id&&id==s.id)||(s.name[0]&&same(name,s.name)))found=true;
   }
   if(r.pos!=n)return 0;
   s.eligible=legacy!=0;s.present=found;s.owned=0;

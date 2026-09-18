@@ -54,6 +54,16 @@ class PledgeBridgeTests(unittest.TestCase):
         self.assertIn('Pedido enviado',self.html);self.assertNotIn('_A_',self.html)
         self.click('R');self.assertEqual(self.wire,b'\xc0'+d(200,2))
         self.response(bytes(wanted));self.click('A');self.assertEqual(self.wire,b'')
+    def test_self_permissions_use_world_id_and_invalidate_old_selection(self):
+        from test_clan_self import info
+        self.setup_clan('Self');self.call(info(oid=777),True)
+        self.request('Self');self.assertEqual(self.wire,b'\xc0'+d(777,1))
+        self.call(info(oid=888),True)
+        result,display=self.response(bytes(32));self.assertEqual(display,b'')
+        self.request('Self');self.assertEqual(self.wire,b'\xc0'+d(888,1))
+        self.call(info('Other',999),True)
+        self.response(bytes(32));self.request('Self');self.assertEqual(self.wire,b'\xc0'+d(888,1))
+
     def test_nonleader_can_read_self_but_not_edit_another_member(self):
         self.setup_clan('Other');self.request();self.assertEqual(self.wire,b'');self.assertIn('Somente o lider',self.html)
         self.request('Other');self.assertEqual(self.wire,b'\xc0'+d(100,1))

@@ -1,5 +1,9 @@
 # Próprio personagem na lista do clan — build 14
 
+**Superada pela build 15.** O teste real falhou: o ID de seleção difere do ID de
+mundo nesta sessão. A igualdade exigida nesta versão impedia a inclusão.
+Consulte `clan-world-id-build15.md`; os testes abaixo não cobriam essa diferença.
+
 O conversor 53 anterior expandia os campos C4 para Interlude, mas preservava
 somente os membros presentes no pacote. O cliente Interlude constrói sua lista
 pelas entradas recebidas; uma atualização 54 não cria uma entrada ausente.

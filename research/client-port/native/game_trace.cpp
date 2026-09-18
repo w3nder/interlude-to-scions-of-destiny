@@ -103,7 +103,9 @@ bool pledge_outgoing(void* socket,const uint8_t* p,uint32_t n){
 bool pledge_incoming(void* socket,const uint8_t* p,uint32_t n,bool legacy,uint8_t* member,int& member_size){
     L2KPledgeResult result{};
     EnterCriticalSection(&pledge_lock);pledge_session(socket);
+    const uint32_t previous_self_id=pledge_state.self_id;
     int handled=l2k_pledge_receive(&pledge_state,p,n,GetTickCount(),&result);
+    if(p[0]==0x04&&previous_self_id!=pledge_state.self_id)record(socket,"S2C","local_C4_clan_world_id",p,n);
     member_size=l2k_clan_self_receive(&clan_self,p,n,legacy,member,160);
     if(member_size>0){L2KPledgeResult ignored{};l2k_pledge_receive(&pledge_state,member,member_size,GetTickCount(),&ignored);}
     if(result.display_size&&!l2k_queue_local_html(result.display,result.display_size))l2k_log("local clan UI could not be queued");

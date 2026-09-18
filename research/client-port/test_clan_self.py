@@ -8,8 +8,8 @@ from test_structured_codec import d,s
 def identity(name='Self',oid=100):return b'\x15'+s(name)+d(oid)
 def info(name='Self',oid=100,level=80,klass=88):
     return b'\x04'+d(1,2,3,4,oid)+s(name)+d(1,0,klass,level)+bytes(520)
-def member(op=0x55,level=80,klass=88):
-    return bytes([op])+s('Self')+d(level,klass,0,1,100,0)+ (d(0) if op==0x54 else b'')
+def member(op=0x55,level=80,klass=88,oid=100):
+    return bytes([op])+s('Self')+d(level,klass,0,1,oid,0)+ (d(0) if op==0x54 else b'')
 
 class ClanSelfTests(unittest.TestCase):
     @classmethod
@@ -48,7 +48,7 @@ class ClanSelfTests(unittest.TestCase):
             self.receive(event);self.assertEqual(self.receive(info())[0],0)
         self.setUp();self.receive(identity());self.receive(roster([]),1)
         self.assertEqual(self.receive(info('Other',100))[0],0)
-        self.assertEqual(self.receive(info('Self',200))[0],0)
+        self.assertEqual(self.receive(info('Self',200))[1],member(oid=200))
     def test_truncated_roster_and_prefix_never_create_member(self):
         self.receive(identity());p=roster([('Friend',200)])
         for n in range(1,len(p)):self.assertEqual(self.receive(p[:n],1)[0],0)
@@ -57,6 +57,21 @@ class ClanSelfTests(unittest.TestCase):
         q=info();prefix=21+len(s('Self'))+16
         for n in range(1,prefix):self.assertEqual(self.receive(q[:n])[0],0)
         self.assertEqual(self.receive(q)[1],member())
+    def test_charinfo_never_supplies_or_updates_self_identity(self):
+        self.receive(identity(oid=777));self.receive(roster([]),1)
+        # Even a matching name in a 03 packet cannot initialize our 04 state.
+        self.assertEqual(self.receive(b'\x03'+info(oid=100)[1:])[0],0)
+        self.assertEqual(self.receive(info(oid=100))[1],member())
+        self.assertEqual(self.receive(b'\x03'+info(oid=200,level=81)[1:])[0],0)
+        self.assertEqual(self.receive(info(oid=100))[0],0)
+
+    def test_selection_id_is_not_a_world_id_and_cannot_match_another_member(self):
+        self.receive(identity(oid=777))
+        self.receive(roster([('Friend',777)]),1)
+        self.assertEqual(self.receive(info(oid=100))[1],member(oid=100))
+        self.assertEqual(self.receive(info(oid=100))[0],0)
+        self.assertEqual(self.receive(info(oid=200))[1],member(0x54,oid=200))
+
     def test_capacity_failure_retries_without_marking_row_present(self):
         self.receive(identity());self.receive(roster([]),1)
         self.assertEqual(self.receive(info(),cap=len(member())-1)[0],-2)

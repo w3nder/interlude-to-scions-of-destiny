@@ -1,5 +1,5 @@
 {
-  "build": "protocol-hooks-14-clan-self",
+  "build": "protocol-hooks-15-clan-world-id",
   "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
   "files": [
     {
@@ -319,8 +319,8 @@
     },
     {
       "path": "system/L2KProtocolCore.dll",
-      "bytes": 353271,
-      "sha256": "2770548a58ef604351b086ab22fcf5dd64777b20264c4e8a9330b40f7de1f034"
+      "bytes": 354295,
+      "sha256": "336b6f83897b0296f816e47a13fc384f5dea3260b10cfd0a1360f0b846ed78c1"
     },
     {
       "path": "system/skillname-e.dat",
@@ -408,7 +408,7 @@
       "sha256": "899fbff8edd38b1496b9d4382d31cbc251a7ad64342e99a9db5a89df61428922"
     }
   ],
-  "validation": "40 targeted tests passed on build 14: clan self roster, clan codec, member permissions, emulated Windows hooks/title send, character codecs and outbound policy. Build 13 historical full-suite result: 126 tests. Live clan self/title validation pending.",
+  "validation": "43 targeted tests passed on build 15: clan self roster with world/selection ID split, clan codec, member permissions, emulated Windows hooks/title send, character codecs and outbound policy. Full suite: 147 tests passed. Live clan self/title validation pending.",
   "skills_update": "Four skill DATs merged and roundtrip verified; Anti Buff IDs 9709/50012/50050 icons resolve. Live testing pending.",
   "content_update": {
     "tables": [
@@ -425,10 +425,11 @@
   "inventory_ui_build": "inventory-script-2",
   "required_interface_xdat_sha256": "ee755d9865e548398d822493b9536a40b3f7483108b582723d89b03eeb803c55",
   "clan_self_update": {
-    "report": "research/client-port/reports/clan-self-build14.md",
+    "report": "research/client-port/reports/clan-world-id-build15.md",
+    "superseded": "research/client-port/reports/clan-self-build14.md",
     "validation": {
       "status": "passed",
-      "tests": 40,
+      "tests": 43,
       "modules": [
         "test_clan_self",
         "test_clan_codec",
@@ -437,6 +438,7 @@
         "test_character_codec",
         "test_outbound_policy"
       ],
+      "full_suite_tests": 147,
       "live": "pending"
     }
   }

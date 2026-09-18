@@ -35,7 +35,7 @@ As ferramentas de extração, auditoria binária, DAT e Wine dependem dos client
 
 ## Estado
 
-Build `protocol-hooks-14-clan-self`: completa a lista C4 com o próprio personagem quando omitido, usando o prefixo de UserInfo após confirmar a identidade da sessão. Evita duplicação, respeita remoção/saída e preserva o pedido nativo de alteração de título. Veja [correção e testes](research/client-port/reports/clan-self-build14.md). Validação visual e alteração real de título ainda dependem de teste no jogo.
+Build `protocol-hooks-15-clan-world-id`: corrige a inclusão do próprio personagem no clan usando o ID de mundo do UserInfo. A sessão real mostrou ID de seleção diferente do ID de mundo, com o mesmo nome; essa diferença bloqueava a build 14. O contexto de permissões também passa a usar o ID de mundo. Veja [diagnóstico e regressão](research/client-port/reports/clan-world-id-build15.md). Confirmação visual e alteração real de título ainda dependem de teste no jogo.
 
 Ajuste adicional `inventory-script-2`: corrige `InventoryWnd.EquipItemUpdate` em `Interface.u`, separando Left Tattoo (terceiro slot da primeira linha) e AIO Tattoo (quarto slot). O ajuste nativo anterior foi retirado e `NWindow.dll` restaurado. Seis testes reproduzem a sobreposição original e verificam a correção no bytecode e no layout; a confirmação visual em jogo ainda está pendente. Requer o `interface.xdat` original da base Win10Supported. Veja [evidência e reprodução](research/client-port/reports/inventory-script.md).
 

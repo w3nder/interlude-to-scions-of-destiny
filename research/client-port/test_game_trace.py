@@ -76,9 +76,9 @@ class GameTraceTests(unittest.TestCase):
         h.w32(h.sock+0x50bc,1)
         decrypted=[]
         h.callbacks[h.engine+0x102070]=lambda:(decrypted.append(1),h.ret(12))
-        receive(identity());receive(legacy);receive(info())
+        receive(identity(oid=777));receive(legacy);receive(info())
         payloads=[f[2:] for f in h.frames]
-        self.assertEqual(payloads,[identity(),modern,info(),member()])
+        self.assertEqual(payloads,[identity(oid=777),modern,info(),member()])
         self.assertEqual(len(decrypted),3)
         self.assertEqual(h.r32(h.sock+0x50bc),1)
         self.assertEqual(self.events[-1][1],b'local_C4_clan_self')

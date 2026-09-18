@@ -1,0 +1,20 @@
+{
+  "build": "protocol-hooks-15-clan-world-id",
+  "required_engine_sha256": "508974c711f207402719e92737e211a2f029c95c2f68fc0e1c31fcbb9dbb232d",
+  "dll_sha256": "336b6f83897b0296f816e47a13fc384f5dea3260b10cfd0a1360f0b846ed78c1",
+  "validation": {
+    "status": "passed",
+    "tests": 43,
+    "modules": [
+      "test_clan_self",
+      "test_clan_codec",
+      "test_pledge_bridge",
+      "test_game_trace",
+      "test_character_codec",
+      "test_outbound_policy"
+    ],
+    "full_suite_tests": 147,
+    "live": "pending"
+  },
+  "scope": "UserInfo world ID authoritative for the local C4 self member and member-permission context; CharacterSelected unchanged; native title request preserved"
+}

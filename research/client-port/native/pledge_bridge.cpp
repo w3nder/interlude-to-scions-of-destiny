@@ -104,6 +104,16 @@ L2K_API int l2k_pledge_receive(L2KPledgeState* state,const uint8_t* p,uint32_t n
     if(p[0]==0x15){ // Observe identity only; never change the working world-entry packet.
         l2k_pledge_reset(&s);Reader r{p,n,1};if(!r.name(s.self_name)||!r.number(s.self_id)){s.self_id=0;s.self_name[0]=0;}return 0;
     }
+    if(p[0]==0x04){
+        Reader r{p,n,17};uint16_t name[64]={};uint32_t id,race,sex,klass,level;
+        // The world object ID can differ from CharacterSelected's ID. Never
+        // send the selection ID in C4 member-permission requests once known.
+        if(r.number(id)&&r.name(name)&&r.number(race)&&r.number(sex)&&r.number(klass)&&r.number(level)
+           &&s.self_id&&id&&equal(name,s.self_name)&&race<=4&&sex<=1&&level&&level<=255&&id!=s.self_id){
+            close(s);s.self_id=id;
+        }
+        return 0;
+    }
     if(p[0]==0x82){if(n==1){s.count=s.clan=0;s.leader[0]=0;close(s);}return 0;}
     if(p[0]==0x53){
         Reader r{p,n,1};uint32_t clan,count;uint16_t lead[64]={};
