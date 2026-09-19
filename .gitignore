@@ -20,3 +20,5 @@
 /research/client-port/reports/live-*.json
 
 !/base/
+
+!/updater/
