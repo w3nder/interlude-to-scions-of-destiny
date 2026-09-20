@@ -4,9 +4,12 @@ package ui
 
 import (
 	"bytes"
+	"fmt"
 	"image"
 	"image/draw"
 	"image/png"
+	"os"
+	"path/filepath"
 	"syscall"
 	"unsafe"
 
@@ -75,12 +78,17 @@ const (
 	logoH         = 300
 )
 
+// Layout exato da WNDCLASSEXW em x64 (80 bytes): os dois int32 de
+// cbClsExtra/cbWndExtra nao podem faltar, senao RegisterClassExW falha.
 type wndClassEx struct {
-	Size, Style                     uint32
-	WndProc, Instance, Icon, Cursor uintptr
-	Background                      uintptr
-	MenuName, ClassName             *uint16
-	IconSm                          uintptr
+	Size, Style        uint32
+	WndProc, Instance  uintptr
+	ClsExtra, WndExtra int32
+	Icon, Cursor       uintptr
+	Background         uintptr
+	MenuName           *uint16
+	ClassName          *uint16
+	IconSm             uintptr
 }
 type msg struct {
 	Hwnd    uintptr
@@ -179,6 +187,9 @@ func fail(what string, err error) {
 	text := "Falha ao abrir a janela (" + what + ")"
 	if err != nil {
 		text += ": " + err.Error()
+	}
+	if exe, e := os.Executable(); e == nil {
+		os.WriteFile(filepath.Join(filepath.Dir(exe), "unkbot-updater.log"), []byte(fmt.Sprintf("%s\nsizeof(WNDCLASSEX)=%d\n", text, unsafe.Sizeof(wndClassEx{}))), 0o644)
 	}
 	pMessageBoxW.Call(0, uintptr(unsafe.Pointer(utf16(text))), uintptr(unsafe.Pointer(utf16("UnkBot Updater"))), 0x10)
 	panic(text)
