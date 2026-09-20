@@ -123,3 +123,28 @@ func TestPathsOutsideTheClientAreRejected(t *testing.T) {
 		t.Fatal("caminho fora da raiz devia ser recusado")
 	}
 }
+
+func TestBasePlanUsesPrefixAndSkipsPatchOwnedFiles(t *testing.T) {
+	root := t.TempDir()
+	s, m := server(t, map[string][]byte{"engine.dll": []byte("ENGINE"), "Core.dll": []byte("core"), "l2.exe": []byte("exe-original")}, "")
+	// O cliente ja tem o l2.exe do patch (diferente da base) e um Core.dll igual.
+	os.MkdirAll(filepath.Join(root, "system"), 0o755)
+	os.WriteFile(filepath.Join(root, "system", "l2.exe"), []byte("exe-patcheado"), 0o644)
+	os.WriteFile(filepath.Join(root, "system", "Core.dll"), []byte("core"), 0o644)
+	plan, err := PlanWith(m, root, Options{Prefix: "system/", Skip: map[string]bool{"system/l2.exe": true}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(plan.Download) != 1 || plan.Download[0].Path != "system/engine.dll" {
+		t.Fatalf("base deve baixar so engine.dll (Core igual, l2.exe e do patch): %+v", plan.Download)
+	}
+	if err := ApplyWith(s.URL+"/patch/", plan, root, "system/", nil); err != nil {
+		t.Fatal(err)
+	}
+	if got, _ := os.ReadFile(filepath.Join(root, "system", "engine.dll")); string(got) != "ENGINE" {
+		t.Fatalf("engine.dll: %q", got)
+	}
+	if got, _ := os.ReadFile(filepath.Join(root, "system", "l2.exe")); string(got) != "exe-patcheado" {
+		t.Fatal("o l2.exe do patch nao pode ser sobrescrito pela base")
+	}
+}

@@ -187,6 +187,9 @@ func (w *win) create(title string) {
 // serve para quem esta do outro lado.
 // trace grava passos no log ao lado do exe (diagnostico do Wine/Windows).
 func trace(format string, a ...any) {
+	if os.Getenv("UNKBOT_DEBUG") == "" {
+		return
+	}
 	if exe, e := os.Executable(); e == nil {
 		f, _ := os.OpenFile(filepath.Join(filepath.Dir(exe), "unkbot-updater.log"), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0o644)
 		if f != nil {

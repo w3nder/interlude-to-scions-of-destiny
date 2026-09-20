@@ -48,14 +48,14 @@ func Fetch(base string) (*Manifest, error) {
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
-		return nil, fmt.Errorf("manifest: HTTP %d", resp.StatusCode)
+		return nil, fmt.Errorf("manifest %s: HTTP %d", base, resp.StatusCode)
 	}
 	var m Manifest
 	if err := json.NewDecoder(io.LimitReader(resp.Body, 4<<20)).Decode(&m); err != nil {
 		return nil, fmt.Errorf("manifest: %w", err)
 	}
-	if len(m.Files) == 0 || m.RequiredEngine == "" {
-		return nil, errors.New("manifest: vazio ou sem engine exigida")
+	if len(m.Files) == 0 {
+		return nil, errors.New("manifest: vazio")
 	}
 	return &m, nil
 }
@@ -82,18 +82,37 @@ func safePath(root, rel string) (string, error) {
 	return filepath.Join(root, filepath.FromSlash(clean[1:])), nil
 }
 
-// Plan confere a base do cliente e decide o que precisa ser baixado.
-func Plan(m *Manifest, root string) (*Update, error) {
-	engine := filepath.Join(root, "system", "engine.dll")
-	got, err := fileSHA(engine)
-	if err != nil {
-		return nil, errors.New("esta pasta nao parece ser a raiz de um cliente Interlude (system/engine.dll nao encontrado)")
-	}
-	if got != m.RequiredEngine {
-		return nil, errors.New("este cliente nao e a base validada do porte (system/engine.dll difere); use a system C6_System_Win10Supported")
+// Options ajusta o plano: Prefix e o subdiretorio onde os caminhos do
+// manifest vivem (a base lista "engine.dll", que mora em "system/"); Skip
+// sao caminhos (ja com prefixo) que outro manifest substitui depois; Engine
+// exige que system/engine.dll ja seja a base validada antes de aplicar.
+type Options struct {
+	Prefix string
+	Skip   map[string]bool
+	Engine bool
+}
+
+// Plan decide o que o patch precisa baixar, exigindo a base validada.
+func Plan(m *Manifest, root string) (*Update, error) { return PlanWith(m, root, Options{Engine: true}) }
+
+func PlanWith(m *Manifest, root string, o Options) (*Update, error) {
+	if o.Engine {
+		got, err := fileSHA(filepath.Join(root, "system", "engine.dll"))
+		if err != nil {
+			return nil, errors.New("esta pasta nao parece ser a raiz de um cliente Interlude (system/engine.dll nao encontrado)")
+		}
+		if got != m.RequiredEngine {
+			return nil, errors.New("este cliente nao e a base validada do porte (system/engine.dll difere); use a system C6_System_Win10Supported")
+		}
 	}
 	p := &Update{Manifest: m}
 	for _, f := range m.Files {
+		if o.Prefix != "" {
+			f.Path = o.Prefix + f.Path
+		}
+		if o.Skip[f.Path] {
+			continue
+		}
 		dst, err := safePath(root, f.Path)
 		if err != nil {
 			return nil, err
@@ -108,8 +127,13 @@ func Plan(m *Manifest, root string) (*Update, error) {
 }
 
 // Apply baixa cada arquivo do plano para <destino>.unkbot-tmp, confere o
-// SHA-256 e so entao renomeia por cima do original.
+// SHA-256 e so entao renomeia por cima do original. `base` e a URL da pasta
+// do manifest; com Prefix no plano, a URL usa o caminho sem o prefixo.
 func Apply(base string, p *Update, root string, progress Progress) error {
+	return ApplyWith(base, p, root, "", progress)
+}
+
+func ApplyWith(base string, p *Update, root, prefix string, progress Progress) error {
 	var done int64
 	for _, f := range p.Download {
 		dst, err := safePath(root, f.Path)
@@ -120,7 +144,7 @@ func Apply(base string, p *Update, root string, progress Progress) error {
 			return err
 		}
 		tmp := dst + ".unkbot-tmp"
-		if err := download(base+f.Path, tmp, f.SHA256, func(n int64) {
+		if err := download(base+strings.TrimPrefix(f.Path, prefix), tmp, f.SHA256, func(n int64) {
 			if progress != nil {
 				progress(done+n, p.Bytes, f.Path)
 			}
