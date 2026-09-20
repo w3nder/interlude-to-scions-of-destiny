@@ -43,6 +43,7 @@ var (
 	pCreateSolidBrush     = gdi32.NewProc("CreateSolidBrush")
 	pInitCommonControlsEx = comctl32.NewProc("InitCommonControlsEx")
 	pGetModuleHandleW     = kernel32.NewProc("GetModuleHandleW")
+	pMessageBoxW          = user32.NewProc("MessageBoxW")
 )
 
 const (
@@ -146,13 +147,18 @@ func (w *win) create(title string) {
 	cursor, _, _ := pLoadCursorW.Call(0, 32512)
 	brush, _, _ := pCreateSolidBrush.Call(colorBg)
 	cls := wndClassEx{Size: uint32(unsafe.Sizeof(wndClassEx{})), WndProc: syscall.NewCallback(wndProc), Instance: w.instance, Cursor: cursor, Background: brush, ClassName: utf16("UnkBotUpdater")}
-	pRegisterClassExW.Call(uintptr(unsafe.Pointer(&cls)))
+	if atom, _, err := pRegisterClassExW.Call(uintptr(unsafe.Pointer(&cls))); atom == 0 {
+		fail("RegisterClassEx", err)
+	}
 	sw, _, _ := pGetSystemMetrics.Call(0)
 	sh, _, _ := pGetSystemMetrics.Call(1)
 	x := (int(sw) - winW) / 2
 	y := (int(sh) - winH) / 2
 	w.hwnd, _, _ = pCreateWindowExW.Call(0, uintptr(unsafe.Pointer(utf16("UnkBotUpdater"))), uintptr(unsafe.Pointer(utf16(title))),
 		wsOverlapped|wsCaption|wsSysMenu|wsMinimizeBox|wsVisible, uintptr(x), uintptr(y), winW, winH, 0, 0, w.instance, 0)
+	if w.hwnd == 0 {
+		fail("CreateWindowEx", nil)
+	}
 	child := func(class, text string, style uintptr, x, y, cx, cy, id int) uintptr {
 		h, _, _ := pCreateWindowExW.Call(0, uintptr(unsafe.Pointer(utf16(class))), uintptr(unsafe.Pointer(utf16(text))),
 			wsChild|wsVisible|style, uintptr(x), uintptr(y), uintptr(cx), uintptr(cy), w.hwnd, uintptr(id), w.instance, 0)
@@ -165,6 +171,17 @@ func (w *win) create(title string) {
 	w.closeBtn = child("BUTTON", "Fechar", bsPushButton, winW/2+10, logoH+80, 120, 34, idClose)
 	pShowWindow.Call(w.hwnd, 5)
 	pUpdateWindow.Call(w.hwnd)
+}
+
+// fail mostra o erro numa MessageBox: um updater que falha em silencio nao
+// serve para quem esta do outro lado.
+func fail(what string, err error) {
+	text := "Falha ao abrir a janela (" + what + ")"
+	if err != nil {
+		text += ": " + err.Error()
+	}
+	pMessageBoxW.Call(0, uintptr(unsafe.Pointer(utf16(text))), uintptr(unsafe.Pointer(utf16("UnkBot Updater"))), 0x10)
+	panic(text)
 }
 
 func wndProc(hwnd uintptr, m uint32, wp, lp uintptr) uintptr {
