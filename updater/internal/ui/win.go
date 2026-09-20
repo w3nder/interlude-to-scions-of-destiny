@@ -167,9 +167,11 @@ func (w *win) create(title string) {
 	if w.hwnd == 0 {
 		fail("CreateWindowEx", nil)
 	}
+	trace("janela %x instancia %x logo=%v", w.hwnd, w.instance, w.logo != nil)
 	child := func(class, text string, style uintptr, x, y, cx, cy, id int) uintptr {
-		h, _, _ := pCreateWindowExW.Call(0, uintptr(unsafe.Pointer(utf16(class))), uintptr(unsafe.Pointer(utf16(text))),
+		h, _, err := pCreateWindowExW.Call(0, uintptr(unsafe.Pointer(utf16(class))), uintptr(unsafe.Pointer(utf16(text))),
 			wsChild|wsVisible|style, uintptr(x), uintptr(y), uintptr(cx), uintptr(cy), w.hwnd, uintptr(id), w.instance, 0)
+		trace("child %s -> %x (%v)", class, h, err)
 		return h
 	}
 	w.status = child("STATIC", "Verificando atualizacoes...", ssCenter, 20, logoH+10, winW-40, 22, 0)
@@ -183,6 +185,17 @@ func (w *win) create(title string) {
 
 // fail mostra o erro numa MessageBox: um updater que falha em silencio nao
 // serve para quem esta do outro lado.
+// trace grava passos no log ao lado do exe (diagnostico do Wine/Windows).
+func trace(format string, a ...any) {
+	if exe, e := os.Executable(); e == nil {
+		f, _ := os.OpenFile(filepath.Join(filepath.Dir(exe), "unkbot-updater.log"), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0o644)
+		if f != nil {
+			fmt.Fprintf(f, format+"\n", a...)
+			f.Close()
+		}
+	}
+}
+
 func fail(what string, err error) {
 	text := "Falha ao abrir a janela (" + what + ")"
 	if err != nil {
@@ -210,8 +223,9 @@ func wndProc(hwnd uintptr, m uint32, wp, lp uintptr) uintptr {
 				dw = dw * (logoH - 20) / dh
 				dh = logoH - 20
 			}
-			pStretchDIBits.Call(hdc, uintptr((winW-dw)/2), 10, uintptr(dw), uintptr(dh), 0, 0, uintptr(b.Dx()), uintptr(b.Dy()),
+			r, _, err := pStretchDIBits.Call(hdc, uintptr((winW-dw)/2), 10, uintptr(dw), uintptr(dh), 0, 0, uintptr(b.Dx()), uintptr(b.Dy()),
 				uintptr(unsafe.Pointer(&w.logo.Pix[0])), uintptr(unsafe.Pointer(&hdr)), 0, 0x00CC0020)
+			trace("paint hdc=%x StretchDIBits=%d (%v) %dx%d", hdc, int32(r), err, dw, dh)
 		}
 		pEndPaint.Call(hwnd, uintptr(unsafe.Pointer(&ps)))
 		return 0

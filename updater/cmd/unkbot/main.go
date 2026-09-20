@@ -20,6 +20,10 @@ const (
 	version = "1.0.0"
 )
 
+// A janela Win32 precisa nascer e ser bombeada na MESMA thread do SO; o Go
+// migra goroutines entre threads, entao a main fica presa a sua thread.
+func init() { runtime.LockOSThread() }
+
 func clientRoot() string {
 	if len(os.Args) > 1 {
 		return os.Args[1]
