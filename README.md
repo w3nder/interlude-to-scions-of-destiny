@@ -4,8 +4,18 @@ Porte experimental do cliente Interlude para o protocolo C4 do L2Killer. Inclui 
 
 - `research/client-port/`: código C++/Python, testes, catálogos, evidências e ferramentas de migração.
 - `patch/`: somente os arquivos adicionados ou modificados pelo porte, com estrutura de pastas pronta para o cliente Interlude. Não contém o cliente completo.
+- `base/`: a system Interlude original validada (`C6_System_Win10Supported`), com hashes.
+- `updater/`: o UnkBot Updater (Go), launcher Windows que instala base + patch e abre o jogo.
 
-## Instalar o patch
+## Instalar (UnkBot Updater)
+
+1. Tenha um cliente Lineage II Interlude completo (qualquer `system` serve).
+2. Copie [`updater/dist/UnkBot Updater.exe`](updater/dist/) para a **raiz** do cliente (a pasta que contém `system/`).
+3. Abra o updater. Ele baixa a base `C6_System_Win10Supported` para `system/`, aplica o patch por cima e libera **Jogar**. Nas próximas aberturas só baixa o que mudou.
+
+O `l2.ini` resultante aponta para `server.l2killer.org`. Detalhes e regras de segurança em [`updater/README.md`](updater/README.md).
+
+### Instalação manual (sem o updater)
 
 Feche o jogo e faça backup da sua pasta `system`.
 
@@ -14,7 +24,7 @@ Feche o jogo e faça backup da sua pasta `system`.
 3. Copie as pastas de `patch/` para a raiz do cliente, aceitando substituir os arquivos correspondentes.
 4. Abra `system/l2.exe`: a DLL do porte carrega automaticamente.
 
-A base vem primeiro e o patch por último. Aplicar a base depois do patch desfaz o carregamento automático e as tabelas migradas. O `l2.ini` final aponta para `server.l2killer.org`.
+A base vem primeiro e o patch por último. Aplicar a base depois do patch desfaz o carregamento automático e as tabelas migradas.
 
 O erro de ponto de entrada `?GL2ShowCMViewer@@3HA` é compatível com mistura de versões: o executável do porte importa esse símbolo da `Core.dll`, presente na base fornecida. Não misture DLLs de outra system.
 
